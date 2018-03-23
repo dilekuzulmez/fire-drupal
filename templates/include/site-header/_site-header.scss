@@ -1,0 +1,10 @@
+.site-header {
+  display: flex;
+  padding: 12px 40px;
+  background-color: $color-primary;
+
+  &__logo {
+    margin-right: 15px;
+    color: #fff;
+  }
+}

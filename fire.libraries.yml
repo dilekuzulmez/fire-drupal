@@ -1,0 +1,7 @@
+bundle-styles:
+  css:
+    theme:
+      dist/bundle.css: {}
+bundle-scripts:
+  js:
+    dist/bundle.js: {}

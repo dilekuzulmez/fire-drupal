@@ -1,0 +1,12 @@
+.fire-main-navigation {
+  @include reset-list;
+  display: flex;
+
+  &__item {
+    margin-right: 15px;
+  }
+
+  &__link {
+    color: #fff;
+  }
+}

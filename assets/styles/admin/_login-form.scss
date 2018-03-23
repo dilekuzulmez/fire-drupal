@@ -1,0 +1,27 @@
+.user-login-form {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	.form-item {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 30px;
+
+		.description {
+			font-size: 14px;
+			color: $color-gray-light;
+			font-style: italic;
+		}
+
+		input {
+			padding: 5px;
+		}
+	}
+
+	.form-actions {
+
+		input[type="submit"] { }
+	}
+}

@@ -1,0 +1,39 @@
+{
+  "name": "fire",
+  "version": "1.0.0",
+  "description": "Custom Drupal 8 theme",
+  "scripts": {
+    "build": "webpack --env.production --progress",
+    "debug": "webpack --env.development --watch",
+    "debug:prod": "webpack --watch --env.production  -watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SKYCATCHFIRE",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "browser-sync": "^2.23.2",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "clean-webpack-plugin": "^0.1.17",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "node-sass": "^4.7.2",
+    "postcss-loader": "^2.0.9",
+    "postcss-scss": "^1.0.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "core-js": "^2.5.3",
+    "intersection-observer": "^0.5.0",
+    "jquery": "^3.3.1",
+    "lozad": "^1.3.0"
+  }
+}

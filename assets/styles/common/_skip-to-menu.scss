@@ -1,0 +1,65 @@
+.skip-to-menu {
+  position: absolute;
+  z-index: 2000;
+  color: $color-font;
+}
+.skip-to-menu__toggle {
+  opacity: 0;
+  pointer-events: none;
+}
+.skip-to-menu__toggle:focus {
+  opacity: 1;
+  pointer-events: auto;
+}
+.skip-to-menu__title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $color-gray-border;
+}
+.skip-to-menu__anchor:focus {
+  outline: dotted thin;
+}
+.skip-to-menu__anchor:active, .skip-to-menu__anchor:hover {
+  outline: none;
+}
+.skip-to-menu__select {
+  @include reset-list;
+  display: none;
+  max-width: 320px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid $color-gray-border;
+  border-radius: 2px;
+}
+.skip-to-menu__select--visible {
+  display: block;
+}
+.skip-to-menu__select-item {
+  list-style: none;
+}
+.skip-to-menu__select-anchor {
+  display: block;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: $color-font;
+}
+.skip-to-menu__select-anchor:hover, .skip-to-menu__select-anchor:focus {
+  color: $color-accent;
+}
+.skip-to-menu__select-anchor--h2 {
+  margin-left: 20px;
+}
+.skip-to-menu__select-anchor--h3 {
+  margin-left: 30px;
+}
+.skip-to-menu__select-anchor--h4 {
+  margin-left: 40px;
+}
+.skip-to-menu__select-anchor--h5 {
+  margin-left: 50px;
+}
+.skip-to-menu__select-anchor--h6 {
+  margin-left: 60px;
+}

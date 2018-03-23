@@ -1,0 +1,35 @@
+// src is relative to `main.scss`
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/Open_Sans/OpenSans-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/Open_Sans/OpenSans-Italic.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/Open_Sans/OpenSans-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/Open_Sans/OpenSans-SemiBold.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/Open_Sans/OpenSans-Light.ttf');
+  font-weight: 100;
+  font-style: normal;
+}

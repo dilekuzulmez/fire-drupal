@@ -1,0 +1,22 @@
+@mixin reset-list() {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+@mixin reset-last-paragraph {
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@mixin center-cover-background() {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+@mixin center-flex() {
+	align-items: center;
+	justify-content: center;
+}
