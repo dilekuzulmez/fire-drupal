@@ -32,13 +32,13 @@
 	{% import _self as menus %}
 	{% if items %}
 		{% if menu_level == 0 %}
-			<ul{{ attributes.addClass('fire-main-navigation') }}>
+			<ul{{ attributes.addClass('main-navigation') }}>
 		{% else %}
-			<ul class="fire-main-navigation">
+			<ul class="main-navigation">
 		{% endif %}
 		{% for item in items %}
-			<li{{ item.attributes.addClass('fire-main-navigation__item') }}>
-				{{ link(item.title, item.url, { 'class': ['fire-main-navigation__link'] }) }}
+			<li{{ item.attributes.addClass('main-navigation__item') }}>
+				{{ link(item.title, item.url, { 'class': ['main-navigation__link'] }) }}
 				{% if item.below %}
 					{{ menus.menu_links(item.below, attributes, menu_level + 1) }}
 				{% endif %}
