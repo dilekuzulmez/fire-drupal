@@ -14,6 +14,12 @@ $font-family-body: 'Open Sans', sans-serif;
 $font-family-title: 'Open Sans', sans-serif;
 $font-family-subtitle: 'Open Sans', sans-serif;
 
+$font-size-min: 12px;
+$font-size-max: 16px;
+
+$grid-breakpoint-min: 576px;
+$grid-breakpoint-max: 1200px;
+
 // Bootstrap variable overrides
 $grid-columns: 12;
 $grid-gutter-width: 30px;
@@ -27,8 +33,8 @@ $container-max-widths: (
 
 $grid-breakpoints: (
   xs: 0,
-  sm: 576px,
+  sm: $grid-breakpoint-min,
   md: 768px,
   lg: 992px,
-  xl: 1200px
+  xl: $grid-breakpoint-max
 );
