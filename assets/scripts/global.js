@@ -10,18 +10,17 @@ import { FireSkipToMenu, FireDetect } from '@common';
  * @description
  *
  * All global scripts should be initiated here
- * 
+ *
  **/
 export class FireGlobal {
+  init() {
+    const detect = new FireDetect();
+    detect.setHtmlClasses();
 
-	init() {
-		const detect = new FireDetect();
-		detect.setHtmlClasses();
+    const observer = lozad(); // lazy loads elements with default selector: `.lozad`
+    observer.observe();
 
-		const observer = lozad(); // lazy loads elements with default selector: `.lozad`
-		observer.observe();
-
-		const skipToMenu = new FireSkipToMenu('zach'); 
-		skipToMenu.init();
-	}
+    const skipToMenu = new FireSkipToMenu();
+    skipToMenu.init();
+  }
 }
