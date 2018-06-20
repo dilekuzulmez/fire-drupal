@@ -118,3 +118,49 @@ export function capitalizeFirstLetter(string) {
 export function clearFragment() {
   history.pushState('', document.title, window.location.pathname + window.location.search);
 }
+
+/**
+ * @type public
+ * @name shuffle
+ * @description
+ *
+ * Fisher-Yates (aka Knuth) Shuffle.
+ *
+ * @param {Array} array
+ * @return {Array}
+ *
+ **/
+export function shuffle(array) {
+  let currentIndex = array.length;
+  let temporaryValue;
+  let randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+/**
+ * @type public
+ * @name generateUniqueId
+ * @description
+ *
+ * Generates a unique string
+ *
+ * @param {Array} array
+ * @return {Array}
+ *
+ **/
+export function generateUniqueId() {
+  return shuffle(btoa(Math.random()).toLowerCase().replace(/=/, '').split('')).join('')
+}
