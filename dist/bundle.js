@@ -99,28 +99,6 @@ if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-var core = module.exports = { version: '2.5.3' };
-if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var hasOwnProperty = {}.hasOwnProperty;
-module.exports = function (it, key) {
-  return hasOwnProperty.call(it, key);
-};
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 /* WEBPACK VAR INJECTION */(function(module) {var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -10046,6 +10024,28 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31)(module)))
 
 /***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var core = module.exports = { version: '2.5.3' };
+if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var hasOwnProperty = {}.hasOwnProperty;
+module.exports = function (it, key) {
+  return hasOwnProperty.call(it, key);
+};
+
+/***/ }),
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10160,7 +10160,7 @@ module.exports = function (it) {
 
 
 var global = __webpack_require__(1);
-var core = __webpack_require__(2);
+var core = __webpack_require__(3);
 var hide = __webpack_require__(6);
 var redefine = __webpack_require__(20);
 var ctx = __webpack_require__(21);
@@ -10306,13 +10306,13 @@ module.exports = function (it) {
 
 var global = __webpack_require__(1);
 var hide = __webpack_require__(6);
-var has = __webpack_require__(3);
+var has = __webpack_require__(4);
 var SRC = __webpack_require__(14)('src');
 var TO_STRING = 'toString';
 var $toString = Function[TO_STRING];
 var TPL = ('' + $toString).split(TO_STRING);
 
-__webpack_require__(2).inspectSource = function (it) {
+__webpack_require__(3).inspectSource = function (it) {
   return $toString.call(it);
 };
 
@@ -10427,7 +10427,7 @@ module.exports = 'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,
 
 
 var def = __webpack_require__(7).f;
-var has = __webpack_require__(3);
+var has = __webpack_require__(4);
 var TAG = __webpack_require__(0)('toStringTag');
 
 module.exports = function (it, tag, stat) {
@@ -10507,11 +10507,23 @@ Object.keys(_component).forEach(function (key) {
   });
 });
 
-var _helpers = __webpack_require__(70);
+var _componentRecord = __webpack_require__(70);
+
+Object.keys(_componentRecord).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _componentRecord[key];
+    }
+  });
+});
+
+var _helpers = __webpack_require__(71);
 
 var helpers = _interopRequireWildcard(_helpers);
 
-var _storage = __webpack_require__(71);
+var _storage = __webpack_require__(72);
 
 var storage = _interopRequireWildcard(_storage);
 
@@ -10528,7 +10540,7 @@ var FireStorage = exports.FireStorage = storage;
 "use strict";
 
 
-var _jquery = __webpack_require__(4);
+var _jquery = __webpack_require__(2);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -10536,7 +10548,7 @@ __webpack_require__(32);
 
 var _global = __webpack_require__(64);
 
-var _siteHeader = __webpack_require__(72);
+var _siteHeader = __webpack_require__(73);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10546,7 +10558,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @description
  *
  * Initialize scripts when page is ready
- * 
+ *
  **/
 
 
@@ -10556,10 +10568,6 @@ var onPageReady = function onPageReady() {
   // init global scripts
   var global = new _global.FireGlobal();
   global.init();
-
-  // init include scripts
-  var siteHeader = new _siteHeader.SiteHeader();
-  siteHeader.init();
 };
 
 // fire all scripts
@@ -10623,7 +10631,7 @@ __webpack_require__(63);
 
 __webpack_require__(34);
 __webpack_require__(51);
-module.exports = __webpack_require__(2).Array.from;
+module.exports = __webpack_require__(3).Array.from;
 
 /***/ }),
 /* 34 */
@@ -10683,7 +10691,7 @@ var LIBRARY = __webpack_require__(37);
 var $export = __webpack_require__(12);
 var redefine = __webpack_require__(20);
 var hide = __webpack_require__(6);
-var has = __webpack_require__(3);
+var has = __webpack_require__(4);
 var Iterators = __webpack_require__(15);
 var $iterCreate = __webpack_require__(41);
 var setToStringTag = __webpack_require__(26);
@@ -10931,7 +10939,7 @@ module.exports = Object.keys || function keys(O) {
 "use strict";
 
 
-var has = __webpack_require__(3);
+var has = __webpack_require__(4);
 var toIObject = __webpack_require__(22);
 var arrayIndexOf = __webpack_require__(47)(false);
 var IE_PROTO = __webpack_require__(17)('IE_PROTO');
@@ -11031,7 +11039,7 @@ module.exports = document && document.documentElement;
 
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-var has = __webpack_require__(3);
+var has = __webpack_require__(4);
 var toObject = __webpack_require__(27);
 var IE_PROTO = __webpack_require__(17)('IE_PROTO');
 var ObjectProto = Object.prototype;
@@ -11150,7 +11158,7 @@ module.exports = function (object, index, value) {
 var classof = __webpack_require__(56);
 var ITERATOR = __webpack_require__(0)('iterator');
 var Iterators = __webpack_require__(15);
-module.exports = __webpack_require__(2).getIteratorMethod = function (it) {
+module.exports = __webpack_require__(3).getIteratorMethod = function (it) {
   if (it != undefined) return it[ITERATOR] || it['@@iterator'] || Iterators[classof(it)];
 };
 
@@ -11233,7 +11241,7 @@ module.exports = function (exec, skipClosing) {
 
 
 __webpack_require__(59);
-module.exports = __webpack_require__(2).String.includes;
+module.exports = __webpack_require__(3).String.includes;
 
 /***/ }),
 /* 59 */
@@ -11994,7 +12002,7 @@ module.exports = function (KEY) {
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 exports.FireGlobal = undefined;
 
@@ -12020,28 +12028,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * @description
  *
  * All global scripts should be initiated here
- * 
+ *
  **/
 var FireGlobal = exports.FireGlobal = function () {
-	function FireGlobal() {
-		_classCallCheck(this, FireGlobal);
-	}
+  function FireGlobal() {
+    _classCallCheck(this, FireGlobal);
+  }
 
-	_createClass(FireGlobal, [{
-		key: 'init',
-		value: function init() {
-			var detect = new _common.FireDetect();
-			detect.setHtmlClasses();
+  _createClass(FireGlobal, [{
+    key: 'init',
+    value: function init() {
+      var detect = new _common.FireDetect();
+      detect.setHtmlClasses();
 
-			var observer = (0, _lozad2.default)(); // lazy loads elements with default selector: `.lozad`
-			observer.observe();
+      var observer = (0, _lozad2.default)(); // lazy loads elements with default selector: `.lozad`
+      observer.observe();
 
-			var skipToMenu = new _common.FireSkipToMenu('zach');
-			skipToMenu.init();
-		}
-	}]);
+      var skipToMenu = new _common.FireSkipToMenu();
+      skipToMenu.init();
 
-	return FireGlobal;
+      var componentRecord = new _common.FireComponentRecord();
+      componentRecord.registerAll();
+    }
+  }]);
+
+  return FireGlobal;
 }();
 
 /***/ }),
@@ -12304,7 +12315,7 @@ exports.FireSkipToMenu = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _jquery = __webpack_require__(4);
+var _jquery = __webpack_require__(2);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -12452,7 +12463,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.FireComponent = undefined;
 
-var _jquery = __webpack_require__(4);
+var _jquery = __webpack_require__(2);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -12471,12 +12482,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * @param {String} key - a unique identifier for the component
  *
  **/
-var FireComponent = exports.FireComponent = function FireComponent(key) {
+var FireComponent = exports.FireComponent = function FireComponent(key, id) {
   _classCallCheck(this, FireComponent);
 
   // grab component HTML element and assign to a variable,
   // this is now usable anywhere this Class is extended
-  this.$component = (0, _jquery2.default)('[data-fire-component="' + key + '"]');
+  this.$component = (0, _jquery2.default)('[data-registered="' + id + '"][data-fire-component="' + key + '"]');
 
   // helper variable to check if the component exists
   this.componentExists = this.$component.length !== 0;
@@ -12484,6 +12495,75 @@ var FireComponent = exports.FireComponent = function FireComponent(key) {
 
 /***/ }),
 /* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.FireComponentRecord = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(2);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _common = __webpack_require__(28);
+
+var _siteHeader = __webpack_require__(73);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * @type class
+ * @name FireComponentRecord
+ * @description
+ *
+ * Component record class
+ *
+ **/
+var FireComponentRecord = exports.FireComponentRecord = function () {
+  function FireComponentRecord() {
+    _classCallCheck(this, FireComponentRecord);
+  }
+
+  _createClass(FireComponentRecord, [{
+    key: 'registerAll',
+    value: function registerAll() {
+      // loop through all components on the page
+      (0, _jquery2.default)('[data-fire-component]').each(function (index, component) {
+        // get name of component
+        var name = (0, _jquery2.default)(component).data('fire-component');
+
+        // generate a unique ID
+        var id = _common.FireHelpers.generateUniqueId();
+
+        // mark as registered
+        (0, _jquery2.default)(component).attr('data-registered', id);
+
+        // register correct component
+        switch (name) {
+          case 'site-header':
+            new _siteHeader.SiteHeader(id).init();
+            break;
+
+          default:
+            break;
+        }
+      });
+    }
+  }]);
+
+  return FireComponentRecord;
+}();
+
+/***/ }),
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12501,6 +12581,8 @@ exports.getPageType = getPageType;
 exports.lockBody = lockBody;
 exports.capitalizeFirstLetter = capitalizeFirstLetter;
 exports.clearFragment = clearFragment;
+exports.shuffle = shuffle;
+exports.generateUniqueId = generateUniqueId;
 /**
  * @type public
  * @name screenSizes
@@ -12628,8 +12710,54 @@ function clearFragment() {
   history.pushState('', document.title, window.location.pathname + window.location.search);
 }
 
+/**
+ * @type public
+ * @name shuffle
+ * @description
+ *
+ * Fisher-Yates (aka Knuth) Shuffle.
+ *
+ * @param {Array} array
+ * @return {Array}
+ *
+ **/
+function shuffle(array) {
+  var currentIndex = array.length;
+  var temporaryValue = void 0;
+  var randomIndex = void 0;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+/**
+ * @type public
+ * @name generateUniqueId
+ * @description
+ *
+ * Generates a unique string
+ *
+ * @param {Array} array
+ * @return {Array}
+ *
+ **/
+function generateUniqueId() {
+  return shuffle(btoa(Math.random()).toLowerCase().replace(/=/, '').split('')).join('');
+}
+
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12697,7 +12825,7 @@ function key(n) {
 }
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12710,7 +12838,7 @@ exports.SiteHeader = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _jquery = __webpack_require__(4);
+var _jquery = __webpack_require__(2);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -12727,13 +12855,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var SiteHeader = exports.SiteHeader = function (_FireComponent) {
   _inherits(SiteHeader, _FireComponent);
 
-  function SiteHeader() {
+  function SiteHeader(id) {
     _classCallCheck(this, SiteHeader);
 
     // keep things encapsulated inside the component
     // gives ability to use short selectors like `[data-logo]` in template
     // keeps scripts/events from leaking out
-    var _this = _possibleConstructorReturn(this, (SiteHeader.__proto__ || Object.getPrototypeOf(SiteHeader)).call(this, 'site-header'));
+    var _this = _possibleConstructorReturn(this, (SiteHeader.__proto__ || Object.getPrototypeOf(SiteHeader)).call(this, 'site-header', id));
     // register the component by calling `super()` and passing in the component key
     // this creates an instance of the `FireComponent` Class that we extended above
     // giving us access to the `this.$component` variable which contains a reference to the registered HTML element

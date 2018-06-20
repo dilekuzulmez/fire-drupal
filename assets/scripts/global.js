@@ -2,7 +2,7 @@
 import lozad from 'lozad';
 
 // common
-import { FireSkipToMenu, FireDetect } from '@common';
+import { FireSkipToMenu, FireDetect, FireComponentRecord } from '@common';
 
 /**
  * @type class
@@ -22,5 +22,8 @@ export class FireGlobal {
 
     const skipToMenu = new FireSkipToMenu();
     skipToMenu.init();
+
+    const componentRecord = new FireComponentRecord();
+    componentRecord.registerAll();
   }
 }

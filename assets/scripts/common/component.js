@@ -12,11 +12,10 @@ import $ from 'jquery';
  *
  **/
 export class FireComponent {
-  constructor(key) {
-
+  constructor(key, id) {
     // grab component HTML element and assign to a variable,
     // this is now usable anywhere this Class is extended
-    this.$component = $(`[data-fire-component="${key}"]`);
+    this.$component = $(`[data-registered="${id}"][data-fire-component="${key}"]`);
 
     // helper variable to check if the component exists
     this.componentExists = this.$component.length !== 0;
