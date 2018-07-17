@@ -16,16 +16,12 @@ import { SiteHeader } from '@include/site-header/site-header';
  * @description
  *
  * Initialize scripts when page is ready
- * 
+ *
  **/
 const onPageReady = () => {
   // init global scripts
   const global = new FireGlobal();
   global.init();
-
-  // init include scripts
-  const siteHeader = new SiteHeader();
-  siteHeader.init();
 };
 
 // fire all scripts
