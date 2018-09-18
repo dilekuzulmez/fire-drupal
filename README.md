@@ -23,7 +23,7 @@ The first command will install all the necessary dependencies for the project. T
 
 ```shell
 cd to/target/directory
-git clone https://github.com/bonfirered/thelaughingcow.com.git .
+git clone /to/origin/repo.git .
 npm install
 ```
 
