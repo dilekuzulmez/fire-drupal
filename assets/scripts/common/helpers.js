@@ -86,9 +86,32 @@ export function lockBody(lock) {
   if (lock === true) {
     pageOffset = $document.scrollTop();
     $body.css({ overflow: 'hidden' });
+    $body.attr('data-fire-lock-body', lock);
   } else if (lock === false) {
     $body.css({ overflow: '' });
     $document.scrollTop(pageOffset);
+    $body.attr('data-fire-lock-body', lock);
+  }
+}
+
+/**
+ * @type public
+ * @name lockBodyToggle
+ * @requires jQuery
+ * @description
+ *
+ * Toggles the body lock
+ *
+ * @return {Void}
+ *
+ **/
+export function lockBodyToggle() {
+  const status = $('body').attr('data-fire-lock-body');
+
+  if (status === undefined || status === 'false') {
+    lockBody(true);
+  } else {
+    lockBody(false);
   }
 }
 
