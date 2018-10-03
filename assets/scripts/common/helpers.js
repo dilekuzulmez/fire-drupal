@@ -86,12 +86,12 @@ export function lockBody(lock) {
   if (lock === true) {
     pageOffset = $document.scrollTop();
     $body.css({ overflow: 'hidden' });
-    $body.attr('data-fire-lock-body', lock);
   } else if (lock === false) {
     $body.css({ overflow: '' });
     $document.scrollTop(pageOffset);
-    $body.attr('data-fire-lock-body', lock);
   }
+
+  $body.attr('data-fire-lock-body', lock);
 }
 
 /**

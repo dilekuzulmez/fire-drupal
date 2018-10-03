@@ -72,7 +72,7 @@
 
 var store = __webpack_require__(26)('wks');
 var uid = __webpack_require__(14);
-var _Symbol = __webpack_require__(1).Symbol;
+var _Symbol = __webpack_require__(2).Symbol;
 var USE_SYMBOL = typeof _Symbol == 'function';
 
 var $exports = module.exports = function (name) {
@@ -83,29 +83,6 @@ $exports.store = store;
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
-var global = module.exports = typeof window != 'undefined' && window.Math == Math ? window : typeof self != 'undefined' && self.Math == Math ? self
-// eslint-disable-next-line no-new-func
-: Function('return this')();
-if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var core = module.exports = { version: '2.5.7' };
-if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10034,6 +10011,29 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+var global = module.exports = typeof window != 'undefined' && window.Math == Math ? window : typeof self != 'undefined' && self.Math == Math ? self
+// eslint-disable-next-line no-new-func
+: Function('return this')();
+if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var core = module.exports = { version: '2.5.7' };
+if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+
+/***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10159,8 +10159,8 @@ module.exports = function (it) {
 "use strict";
 
 
-var global = __webpack_require__(1);
-var core = __webpack_require__(2);
+var global = __webpack_require__(2);
+var core = __webpack_require__(3);
 var hide = __webpack_require__(5);
 var redefine = __webpack_require__(22);
 var ctx = __webpack_require__(23);
@@ -10384,7 +10384,7 @@ module.exports = function (exec) {
 
 
 var isObject = __webpack_require__(8);
-var document = __webpack_require__(1).document;
+var document = __webpack_require__(2).document;
 // typeof document.createElement is 'object' in old IE
 var is = isObject(document) && isObject(document.createElement);
 module.exports = function (it) {
@@ -10398,7 +10398,7 @@ module.exports = function (it) {
 "use strict";
 
 
-var global = __webpack_require__(1);
+var global = __webpack_require__(2);
 var hide = __webpack_require__(5);
 var has = __webpack_require__(10);
 var SRC = __webpack_require__(14)('src');
@@ -10406,7 +10406,7 @@ var TO_STRING = 'toString';
 var $toString = Function[TO_STRING];
 var TPL = ('' + $toString).split(TO_STRING);
 
-__webpack_require__(2).inspectSource = function (it) {
+__webpack_require__(3).inspectSource = function (it) {
   return $toString.call(it);
 };
 
@@ -10496,8 +10496,8 @@ module.exports = function (it) {
 "use strict";
 
 
-var core = __webpack_require__(2);
-var global = __webpack_require__(1);
+var core = __webpack_require__(3);
+var global = __webpack_require__(2);
 var SHARED = '__core-js_shared__';
 var store = global[SHARED] || (global[SHARED] = {});
 
@@ -10561,7 +10561,7 @@ exports.SiteHeader = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _jquery = __webpack_require__(3);
+var _jquery = __webpack_require__(1);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -10616,7 +10616,7 @@ var SiteHeader = exports.SiteHeader = function (_FireComponent) {
 "use strict";
 
 
-var _jquery = __webpack_require__(3);
+var _jquery = __webpack_require__(1);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -10707,7 +10707,7 @@ __webpack_require__(64);
 
 __webpack_require__(36);
 __webpack_require__(52);
-module.exports = __webpack_require__(2).Array.from;
+module.exports = __webpack_require__(3).Array.from;
 
 /***/ }),
 /* 36 */
@@ -11094,7 +11094,7 @@ module.exports = function (index, length) {
 "use strict";
 
 
-var document = __webpack_require__(1).document;
+var document = __webpack_require__(2).document;
 module.exports = document && document.documentElement;
 
 /***/ }),
@@ -11224,7 +11224,7 @@ module.exports = function (object, index, value) {
 var classof = __webpack_require__(57);
 var ITERATOR = __webpack_require__(0)('iterator');
 var Iterators = __webpack_require__(15);
-module.exports = __webpack_require__(2).getIteratorMethod = function (it) {
+module.exports = __webpack_require__(3).getIteratorMethod = function (it) {
   if (it != undefined) return it[ITERATOR] || it['@@iterator'] || Iterators[classof(it)];
 };
 
@@ -11307,7 +11307,7 @@ module.exports = function (exec, skipClosing) {
 
 
 __webpack_require__(60);
-module.exports = __webpack_require__(2).String.includes;
+module.exports = __webpack_require__(3).String.includes;
 
 /***/ }),
 /* 60 */
@@ -12387,7 +12387,7 @@ exports.FireSkipToMenu = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _jquery = __webpack_require__(3);
+var _jquery = __webpack_require__(1);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -12535,7 +12535,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.FireComponent = undefined;
 
-var _jquery = __webpack_require__(3);
+var _jquery = __webpack_require__(1);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -12579,7 +12579,7 @@ exports.FireComponentRecord = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _jquery = __webpack_require__(3);
+var _jquery = __webpack_require__(1);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -12658,7 +12658,7 @@ exports.clearFragment = clearFragment;
 exports.shuffle = shuffle;
 exports.generateUniqueId = generateUniqueId;
 
-var _jquery = __webpack_require__(3);
+var _jquery = __webpack_require__(1);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -12756,12 +12756,12 @@ function lockBody(lock) {
   if (lock === true) {
     pageOffset = $document.scrollTop();
     $body.css({ overflow: 'hidden' });
-    $body.attr('data-fire-lock-body', lock);
   } else if (lock === false) {
     $body.css({ overflow: '' });
     $document.scrollTop(pageOffset);
-    $body.attr('data-fire-lock-body', lock);
   }
+
+  $body.attr('data-fire-lock-body', lock);
 }
 
 /**
