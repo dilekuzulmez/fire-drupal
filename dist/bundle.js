@@ -72,7 +72,7 @@
 
 var store = __webpack_require__(26)('wks');
 var uid = __webpack_require__(14);
-var _Symbol = __webpack_require__(2).Symbol;
+var _Symbol = __webpack_require__(1).Symbol;
 var USE_SYMBOL = typeof _Symbol == 'function';
 
 var $exports = module.exports = function (name) {
@@ -83,6 +83,29 @@ $exports.store = store;
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+var global = module.exports = typeof window != 'undefined' && window.Math == Math ? window : typeof self != 'undefined' && self.Math == Math ? self
+// eslint-disable-next-line no-new-func
+: Function('return this')();
+if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var core = module.exports = { version: '2.5.7' };
+if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10011,29 +10034,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
-var global = module.exports = typeof window != 'undefined' && window.Math == Math ? window : typeof self != 'undefined' && self.Math == Math ? self
-// eslint-disable-next-line no-new-func
-: Function('return this')();
-if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var core = module.exports = { version: '2.5.7' };
-if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
-
-/***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10159,8 +10159,8 @@ module.exports = function (it) {
 "use strict";
 
 
-var global = __webpack_require__(2);
-var core = __webpack_require__(3);
+var global = __webpack_require__(1);
+var core = __webpack_require__(2);
 var hide = __webpack_require__(5);
 var redefine = __webpack_require__(22);
 var ctx = __webpack_require__(23);
@@ -10303,19 +10303,7 @@ Object.keys(_detect).forEach(function (key) {
   });
 });
 
-var _skipToMenu = __webpack_require__(69);
-
-Object.keys(_skipToMenu).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _skipToMenu[key];
-    }
-  });
-});
-
-var _component = __webpack_require__(70);
+var _component = __webpack_require__(69);
 
 Object.keys(_component).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -10327,7 +10315,7 @@ Object.keys(_component).forEach(function (key) {
   });
 });
 
-var _componentRecord = __webpack_require__(71);
+var _componentRecord = __webpack_require__(70);
 
 Object.keys(_componentRecord).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -10339,11 +10327,11 @@ Object.keys(_componentRecord).forEach(function (key) {
   });
 });
 
-var _helpers = __webpack_require__(72);
+var _helpers = __webpack_require__(71);
 
 var helpers = _interopRequireWildcard(_helpers);
 
-var _storage = __webpack_require__(73);
+var _storage = __webpack_require__(72);
 
 var storage = _interopRequireWildcard(_storage);
 
@@ -10384,7 +10372,7 @@ module.exports = function (exec) {
 
 
 var isObject = __webpack_require__(8);
-var document = __webpack_require__(2).document;
+var document = __webpack_require__(1).document;
 // typeof document.createElement is 'object' in old IE
 var is = isObject(document) && isObject(document.createElement);
 module.exports = function (it) {
@@ -10398,7 +10386,7 @@ module.exports = function (it) {
 "use strict";
 
 
-var global = __webpack_require__(2);
+var global = __webpack_require__(1);
 var hide = __webpack_require__(5);
 var has = __webpack_require__(10);
 var SRC = __webpack_require__(14)('src');
@@ -10406,7 +10394,7 @@ var TO_STRING = 'toString';
 var $toString = Function[TO_STRING];
 var TPL = ('' + $toString).split(TO_STRING);
 
-__webpack_require__(3).inspectSource = function (it) {
+__webpack_require__(2).inspectSource = function (it) {
   return $toString.call(it);
 };
 
@@ -10496,8 +10484,8 @@ module.exports = function (it) {
 "use strict";
 
 
-var core = __webpack_require__(3);
-var global = __webpack_require__(2);
+var core = __webpack_require__(2);
+var global = __webpack_require__(1);
 var SHARED = '__core-js_shared__';
 var store = global[SHARED] || (global[SHARED] = {});
 
@@ -10561,7 +10549,7 @@ exports.SiteHeader = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _jquery = __webpack_require__(1);
+var _jquery = __webpack_require__(3);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -10616,7 +10604,7 @@ var SiteHeader = exports.SiteHeader = function (_FireComponent) {
 "use strict";
 
 
-var _jquery = __webpack_require__(1);
+var _jquery = __webpack_require__(3);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -10707,7 +10695,7 @@ __webpack_require__(64);
 
 __webpack_require__(36);
 __webpack_require__(52);
-module.exports = __webpack_require__(3).Array.from;
+module.exports = __webpack_require__(2).Array.from;
 
 /***/ }),
 /* 36 */
@@ -11094,7 +11082,7 @@ module.exports = function (index, length) {
 "use strict";
 
 
-var document = __webpack_require__(2).document;
+var document = __webpack_require__(1).document;
 module.exports = document && document.documentElement;
 
 /***/ }),
@@ -11224,7 +11212,7 @@ module.exports = function (object, index, value) {
 var classof = __webpack_require__(57);
 var ITERATOR = __webpack_require__(0)('iterator');
 var Iterators = __webpack_require__(15);
-module.exports = __webpack_require__(3).getIteratorMethod = function (it) {
+module.exports = __webpack_require__(2).getIteratorMethod = function (it) {
   if (it != undefined) return it[ITERATOR] || it['@@iterator'] || Iterators[classof(it)];
 };
 
@@ -11307,7 +11295,7 @@ module.exports = function (exec, skipClosing) {
 
 
 __webpack_require__(60);
-module.exports = __webpack_require__(3).String.includes;
+module.exports = __webpack_require__(2).String.includes;
 
 /***/ }),
 /* 60 */
@@ -12110,9 +12098,6 @@ var FireGlobal = exports.FireGlobal = function () {
       var observer = (0, _lozad2.default)(); // lazy loads elements with default selector: `.lozad`
       observer.observe();
 
-      var skipToMenu = new _common.FireSkipToMenu();
-      skipToMenu.init();
-
       var componentRecord = new _common.FireComponentRecord();
       componentRecord.registerAll();
     }
@@ -12383,159 +12368,9 @@ var FireDetect = exports.FireDetect = function () {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.FireSkipToMenu = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _jquery = __webpack_require__(1);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * @type public
- * @name FireSkipToMenu
- * @description
- *
- * skip to menu (accessibility) functionality
- *
- **/
-var FireSkipToMenu = exports.FireSkipToMenu = function () {
-  function FireSkipToMenu() {
-    _classCallCheck(this, FireSkipToMenu);
-  }
-
-  _createClass(FireSkipToMenu, [{
-    key: '_buildMenu',
-    value: function _buildMenu() {
-      (0, _jquery2.default)('#js-skip-to-menu').append('\n\t\t\t<div id="skip-link">\n\t\t\t\t<button tab-index="0" id="skip-to-toggle" class="visually-hidden focusable">Skip to ...</button>\n\t\t\t\t<ul id="js-skip-to-select" class="skip-to-menu__select" aria-label="Skip To and Page Outline"></ul>\n\t\t\t</div>\n\t\t');
-
-      (0, _jquery2.default)('#js-skip-to-select').append('\n\t\t\t<li class="skip-to-menu__title" role="separator">Skip to</li>\n\t\t\t<li class="skip-to-menu__select-item" role="presentation">\n\t\t\t\t<a class="skip-to-menu__select-anchor" href="#site-content" role="menuitem">Main content</a>\n\t\t\t</li>\n\t\t\t<li class="skip-to-menu__select-item" role="presentation">\n\t\t\t\t<a class="skip-to-menu__select-anchor" href="#site-header" role="menuitem">Main Menu</a>\n\t\t\t</li>\n\t\t\t<li class="skip-to-menu__title" role="separator">Page Outline</li>\n\t\t');
-
-      // Grab ALL headers and adds them to menu
-      (0, _jquery2.default)(':header').each(function (index) {
-        // Sets up anchor name/id, remove punctuation and replaces spaces with dashes
-        var headerText = (0, _jquery2.default)(this).text().replace(/[.,\/#!$%\^&\*'?;:{}=\_`~()]/g, '').replace(/ /g, '-').toLowerCase();
-
-        (0, _jquery2.default)('#js-skip-to-select').append('\n\t\t\t\t<li class="skip-to-menu__select-item" role="presentation">\n\t\t\t\t\t<a class="skip-to-menu__select-anchor skip-to-menu__select-anchor--' + (0, _jquery2.default)(this).prop('tagName').toLowerCase() + '" href="#' + (headerText + '_' + index) + '" role="menuitem">\n\t\t\t\t\t\t' + (0, _jquery2.default)(this).prop('tagName').toLowerCase() + ': ' + (0, _jquery2.default)(this).text() + ' \n\t\t\t\t\t</a>\n\t\t\t\t</li>\n\t\t\t');
-
-        (0, _jquery2.default)(this).attr('id', headerText + '_' + index);
-        (0, _jquery2.default)(this).addClass('skip-to-menu__anchor');
-      });
-    }
-  }, {
-    key: '_initEventHandlers',
-    value: function _initEventHandlers() {
-      // Prevents keyboard scrolling when body has prevention class
-      window.addEventListener('keydown', function (e) {
-        if ((0, _jquery2.default)('body').hasClass('skip-to-menu-lock-keyboard-scroll')) {
-          // space and arrow keys
-          if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
-            e.preventDefault();
-          }
-        }
-      }, false);
-
-      // Adds offclick to skip to selection menu
-      (0, _jquery2.default)(document).mouseup(function (e) {
-        var container = (0, _jquery2.default)('#js-skip-to-select');
-
-        // if the target of the click isn't the container nor a descendant of the container
-        if (!container.is(e.target) && container.has(e.target).length === 0) {
-          container.removeClass('skip-to-menu__select--visible');
-          (0, _jquery2.default)('body').removeClass('skip-to-menu-lock-keyboard-scroll');
-        }
-      });
-
-      // Toggles skip to menu
-      (0, _jquery2.default)('#skip-to-toggle').click(function () {
-        // Locks body when toggled
-        (0, _jquery2.default)('body').addClass('skip-to-menu-lock-keyboard-scroll');
-
-        // Shows skip menu and jumps to first item in list
-        (0, _jquery2.default)('#js-skip-to-select').addClass('skip-to-menu__select--visible');
-        (0, _jquery2.default)('#js-skip-to-select li:first-of-type a').focus();
-      });
-
-      // Tracks up & down arrow key press
-      (0, _jquery2.default)('.skip-to-menu__select-anchor').keydown(function (event) {
-        // Up arrow
-        if (event.keyCode === 38) {
-          // If no anchor found jump to the next menu section
-          if ((0, _jquery2.default)(event.target).parent().prev().find('a').length === 0) {
-            (0, _jquery2.default)(event.target).parent().prev().prev().find('a').focus();
-
-            // If no anchor found even after jumping, jump to last item
-            if ((0, _jquery2.default)(event.target).parent().prev().prev().find('a').length === 0) {
-              (0, _jquery2.default)('.skip-to-menu__select-item:last').find('a').focus();
-            }
-          } else {
-            (0, _jquery2.default)(event.target).parent().prev().find('a').focus();
-          }
-        }
-
-        // Down arrow
-        if (event.keyCode === 40) {
-          // If no anchor found jump to the next menu section
-          if ((0, _jquery2.default)(event.target).parent().next().find('a').length === 0) {
-            (0, _jquery2.default)(event.target).parent().next().next().find('a').focus();
-
-            // If no anchor found even after jumping, jump to first item
-            if ((0, _jquery2.default)(event.target).parent().next().next().find('a').length === 0) {
-              (0, _jquery2.default)('.skip-to-menu__select-item:first').find('a').focus();
-            }
-          } else {
-            (0, _jquery2.default)(event.target).parent().next().find('a').focus();
-          }
-        }
-      });
-
-      // Jumps to selected anchor
-      (0, _jquery2.default)('.skip-to-menu__select-anchor').click(function () {
-        var anchor = (0, _jquery2.default)(this).attr('href');
-
-        // Animates to anchor
-        (0, _jquery2.default)('html, body').animate({
-          scrollTop: (0, _jquery2.default)(anchor).offset().top - (0, _jquery2.default)(window).height() / 2 - (0, _jquery2.default)(anchor).height()
-        }, 750);
-
-        // Focuses the selected anchor
-        (0, _jquery2.default)(anchor).focus();
-      });
-
-      // Hides menu when an anchor is clicked & removes scroll lock
-      (0, _jquery2.default)('.skip-to-menu__select-anchor').click(function () {
-        (0, _jquery2.default)('#js-skip-to-select').removeClass('skip-to-menu__select--visible');
-        (0, _jquery2.default)('body').removeClass('skip-to-menu-lock-keyboard-scroll');
-      });
-    }
-  }, {
-    key: 'init',
-    value: function init() {
-      this._buildMenu();
-      this._initEventHandlers();
-    }
-  }]);
-
-  return FireSkipToMenu;
-}();
-
-/***/ }),
-/* 70 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 exports.FireComponent = undefined;
 
-var _jquery = __webpack_require__(1);
+var _jquery = __webpack_require__(3);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -12566,7 +12401,7 @@ var FireComponent = exports.FireComponent = function FireComponent(key, id) {
 };
 
 /***/ }),
-/* 71 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12579,7 +12414,7 @@ exports.FireComponentRecord = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _jquery = __webpack_require__(1);
+var _jquery = __webpack_require__(3);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -12635,7 +12470,7 @@ var FireComponentRecord = exports.FireComponentRecord = function () {
 }();
 
 /***/ }),
-/* 72 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12658,7 +12493,7 @@ exports.clearFragment = clearFragment;
 exports.shuffle = shuffle;
 exports.generateUniqueId = generateUniqueId;
 
-var _jquery = __webpack_require__(1);
+var _jquery = __webpack_require__(3);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -12864,7 +12699,7 @@ function generateUniqueId() {
 }
 
 /***/ }),
-/* 73 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

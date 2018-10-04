@@ -2,7 +2,7 @@
 import lozad from 'lozad';
 
 // common
-import { FireSkipToMenu, FireDetect, FireComponentRecord } from '@common';
+import { FireDetect, FireComponentRecord } from '@common';
 
 /**
  * @type class
@@ -19,9 +19,6 @@ export class FireGlobal {
 
     const observer = lozad(); // lazy loads elements with default selector: `.lozad`
     observer.observe();
-
-    const skipToMenu = new FireSkipToMenu();
-    skipToMenu.init();
 
     const componentRecord = new FireComponentRecord();
     componentRecord.registerAll();
