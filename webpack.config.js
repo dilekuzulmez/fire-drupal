@@ -44,16 +44,6 @@ module.exports = function(env = { production: false }) {
     },
   ];
 
-  const scriptLoaders = [
-    {
-      test: /\.(js)$/,
-      loader: 'babel-loader',
-      options: {
-        presets: ['env', 'stage-3'],
-      },
-    },
-  ];
-
   const fontLoaders = [
     {
       test: /\.(ttf|eot|woff|woff2)$/,
@@ -68,7 +58,7 @@ module.exports = function(env = { production: false }) {
       'bundle.js': path.resolve(__dirname, `./main.js`),
     },
     devtool: 'source-map',
-    module: { loaders: [...styleLoaders, ...scriptLoaders, ...fontLoaders] },
+    module: { loaders: [...styleLoaders, ...fontLoaders] },
     plugins: [
       isProduction ? new UglifyJSPlugin() : () => {},
       new ExtractTextPlugin('bundle.css'),
