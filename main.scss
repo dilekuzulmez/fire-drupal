@@ -7,6 +7,7 @@
 // `~` is a webpack alias for `node_modules/`
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
+@import '~bootstrap/scss/utilities/display';
 
 // helpers
 @import './assets/styles/base/helpers';
