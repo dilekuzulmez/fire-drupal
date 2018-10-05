@@ -10,6 +10,12 @@
 	}
 }
 
+@mixin reset-last-list-item {
+	li:last-child {
+		margin-bottom: 0;
+	}
+}
+
 @mixin center-cover-background() {
 	background-size: cover;
 	background-position: center;
@@ -20,3 +26,9 @@
 	align-items: center;
 	justify-content: center;
 }
+
+@mixin maintain-ratio($dividend: 1, $divisor: 1.43) {
+  width: 100%;
+  padding-bottom: $dividend / $divisor * 100%;
+}
+
