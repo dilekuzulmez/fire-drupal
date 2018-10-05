@@ -57,3 +57,17 @@
 .invisible {
   visibility: hidden;
 }
+
+.for-desktop {
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
+
+.for-mobile {
+  display: none;
+
+  @include media-breakpoint-down(md) {
+    display: block;
+  }
+}
