@@ -52,12 +52,13 @@ module.exports = function(env = { production: false }) {
   const config = {
     mode: isProduction === true ? 'production' : 'development',
     entry: { 'bundle.css': path.resolve(__dirname, `./main.scss`), 'bundle.js': path.resolve(__dirname, `./main.js`) },
-    output: { path: path.resolve(__dirname, './dist'), filename: '[name]' },
+    output: { path: FireConstants.DESTINATION_PATH, filename: '[name]' },
     module: { rules: [...styleLoaders, ...fontLoaders] },
     resolve: { alias: aliases },
+    devtool: 'source-map',
     plugins: [
       new ExtractTextPlugin('bundle.css'),
-      new CleanWebpackPlugin(path.resolve(__dirname, `${ASSET_PATH}/dist`)),
+      new CleanWebpackPlugin(FireConstants.DESTINATION_PATH),
       new BrowserSyncPlugin({
         proxy: FireConstants.PROXY_URL,
         port: process.env.PORT || FireConstants.DEFAULT_PORT,
