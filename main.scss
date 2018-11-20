@@ -1,12 +1,16 @@
 // custom setup and helper classes
 @import './assets/styles/base/variables';
 @import './assets/styles/base/mixins';
-@import './assets/styles/base/helpers';
+@import './assets/styles/base/functions';
 
 //dependencies
 // `~` is a webpack alias for `node_modules/`
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
+@import '~bootstrap/scss/utilities/display';
+
+// helpers
+@import './assets/styles/base/helpers';
 
 // base
 @import './assets/styles/base/fonts';
