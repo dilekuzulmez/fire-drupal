@@ -1,11 +1,9 @@
 const path = require('path');
-const webpack = require('webpack');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
-// const CleanWebpackPlugin = require('clean-webpack-plugin');
-// const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const FireConstants = require('./fire-constants.config');
 
-const PROXY_URL = 'http://fire-theme.fire';
-const DEFAULT_PORT = 3000;
 const ASSET_PATH = './assets';
 
 module.exports = function(env = { production: false }) {
@@ -25,37 +23,47 @@ module.exports = function(env = { production: false }) {
     '@page': path.resolve(__dirname, 'templates/page'),
   };
 
-  // const postCssLoader = {
-  //   loader: 'postcss-loader',
-  //   options: {
-  //     parser: 'postcss-scss',
-  //     plugins: [require('autoprefixer')(), isProduction ? require('cssnano')() : () => {}],
-  //   },
-  // };
+  const postCssLoader = {
+    loader: 'postcss-loader',
+    options: {
+      parser: 'postcss-scss',
+      plugins: [require('autoprefixer')(), isProduction ? require('cssnano')() : () => {}],
+    },
+  };
 
-  // const styleLoaders = [
-  //   {
-  //     test: /\.scss$/,
-  //     use: ExtractTextPlugin.extract({
-  //       fallback: 'style-loader',
-  //       use: ['css-loader', postCssLoader, 'sass-loader'],
-  //     }),
-  //   },
-  // ];
+  const styleLoaders = [
+    {
+      test: /\.scss$/,
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: ['css-loader', postCssLoader, 'sass-loader'],
+      }),
+    },
+  ];
 
-  // const fontLoaders = [
-  //   {
-  //     test: /\.(ttf|eot|woff|woff2)$/,
-  //     loader: 'url-loader',
-  //     options: { limit: 10000, name: 'fonts/[name].[ext]' },
-  //   },
-  // ];
+  const fontLoaders = [
+    {
+      test: /\.(ttf|eot|woff|woff2)$/,
+      loader: 'url-loader',
+      options: { limit: 10000, name: 'fonts/[name].[ext]' },
+    },
+  ];
 
   const config = {
-    entry: {
-      'bundle.css': path.resolve(__dirname, `./main.scss`),
-      'bundle.js': path.resolve(__dirname, `./main.js`),
-    },
+    mode: isProduction === true ? 'production' : 'development',
+    entry: { 'bundle.css': path.resolve(__dirname, `./main.scss`), 'bundle.js': path.resolve(__dirname, `./main.js`) },
+    output: { path: path.resolve(__dirname, './dist'), filename: '[name]' },
+    module: { rules: [...styleLoaders, ...fontLoaders] },
+    resolve: { alias: aliases },
+    plugins: [
+      new ExtractTextPlugin('bundle.css'),
+      new CleanWebpackPlugin(path.resolve(__dirname, `${ASSET_PATH}/dist`)),
+      new BrowserSyncPlugin({
+        proxy: FireConstants.PROXY_URL,
+        port: process.env.PORT || FireConstants.DEFAULT_PORT,
+        files: [path.resolve(__dirname, '**/*.twig')],
+      }),
+    ],
   };
 
   return config;
