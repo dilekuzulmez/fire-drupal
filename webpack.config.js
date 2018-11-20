@@ -4,8 +4,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const FireConstants = require('./fire-constants.config');
 
-const ASSET_PATH = './assets';
-
 module.exports = function(env = { production: false }) {
   const isProduction = env.production === true;
 
@@ -41,6 +39,19 @@ module.exports = function(env = { production: false }) {
     },
   ];
 
+  const scriptLoaders = [
+    {
+      test: /\.m?js$/,
+      exclude: /(node_modules|bower_components)/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+        },
+      },
+    },
+  ];
+
   const fontLoaders = [
     {
       test: /\.(ttf|eot|woff|woff2)$/,
@@ -53,7 +64,7 @@ module.exports = function(env = { production: false }) {
     mode: isProduction === true ? 'production' : 'development',
     entry: { 'bundle.css': path.resolve(__dirname, `./main.scss`), 'bundle.js': path.resolve(__dirname, `./main.js`) },
     output: { path: FireConstants.DESTINATION_PATH, filename: '[name]' },
-    module: { rules: [...styleLoaders, ...fontLoaders] },
+    module: { rules: [...scriptLoaders, ...styleLoaders, ...fontLoaders] },
     resolve: { alias: aliases },
     devtool: 'source-map',
     plugins: [
