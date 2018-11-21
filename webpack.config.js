@@ -1,13 +1,8 @@
 const path = require('path');
-const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-
-const PROXY_URL = 'http://fire-theme.fire';
-const DEFAULT_PORT = 3000;
-const ASSET_PATH = './assets';
+const FireConstants = require('./fire-constants.config');
 
 module.exports = function(env = { production: false }) {
   const isProduction = env.production === true;
@@ -46,10 +41,13 @@ module.exports = function(env = { production: false }) {
 
   const scriptLoaders = [
     {
-      test: /\.(js)$/,
-      loader: 'babel-loader',
-      options: {
-        presets: ['env', 'stage-3'],
+      test: /\.m?js$/,
+      exclude: /(node_modules|bower_components)/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+        },
       },
     },
   ];
@@ -63,27 +61,21 @@ module.exports = function(env = { production: false }) {
   ];
 
   const config = {
-    entry: {
-      'bundle.css': path.resolve(__dirname, `./main.scss`),
-      'bundle.js': path.resolve(__dirname, `./main.js`),
-    },
+    mode: isProduction === true ? 'production' : 'development',
+    entry: { 'bundle.css': path.resolve(__dirname, `./main.scss`), 'bundle.js': path.resolve(__dirname, `./main.js`) },
+    output: { path: FireConstants.DESTINATION_PATH, filename: '[name]' },
+    module: { rules: [...scriptLoaders, ...styleLoaders, ...fontLoaders] },
+    resolve: { alias: aliases },
     devtool: 'source-map',
-    module: { loaders: [...styleLoaders, ...scriptLoaders, ...fontLoaders] },
     plugins: [
-      isProduction ? new UglifyJSPlugin() : () => {},
       new ExtractTextPlugin('bundle.css'),
-      new CleanWebpackPlugin(path.resolve(__dirname, `${ASSET_PATH}/dist`)),
+      new CleanWebpackPlugin(FireConstants.DESTINATION_PATH),
       new BrowserSyncPlugin({
-        proxy: PROXY_URL,
-        port: process.env.PORT || DEFAULT_PORT,
+        proxy: FireConstants.PROXY_URL,
+        port: process.env.PORT || FireConstants.DEFAULT_PORT,
         files: [path.resolve(__dirname, '**/*.twig')],
       }),
-      new webpack.DefinePlugin({
-        ENV: isProduction ? JSON.stringify('production') : JSON.stringify('development'),
-      }),
     ],
-    output: { filename: '[name]', path: path.resolve(__dirname, `./dist`) },
-    resolve: { alias: aliases },
   };
 
   return config;
