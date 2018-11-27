@@ -22,47 +22,26 @@
 
 <div class="status-messages">
   {% for type, messages in message_list %}
-    <div class="status-messages__inner status-messages__inner--{{ type }}">
-      <header class="status-messages__header">
+    <div class="status-messages__message">
+      <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
         {% if type == 'error' %}
-          <div class="status-messages__header-icon status-messages__header-icon--error">
-            <img src="/themes/fire/assets/media/close-white.svg" alt="">
-          </div>
-          <h2 class="status-messages__header-title">Error</h2>
-        {% elseif type == 'success' or type == 'status' %}
-          <div class="status-messages__header-icon status-messages__header-icon--success">
-            <img src="/themes/fire/assets/media/icon-checkmark.svg" alt="">
-          </div>
-          <h2 class="status-messages__header-title">Success</h2>
-        {% elseif type == 'warning' %}
-          <div class="status-messages__header-icon status-messages__header-icon--warning">
-            <img src="/themes/fire/assets/media/close-white.svg" alt="">
-          </div>
-          <h2 class="status-messages__header-title">Warning</h2>
+          <div role="alert">
         {% endif %}
-      </header>
-
-      <div class="status-messages__message">
-        <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
-          {% if type == 'error' %}
-            <div role="alert">
+          {% if status_headings[type] %}
+            <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
           {% endif %}
-            {% if status_headings[type] %}
-              <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
-            {% endif %}
-            {% if messages|length > 1 %}
-              <ul>
-                {% for message in messages %}
-                  <li>{{ message }}</li>
-                {% endfor %}
-              </ul>
-            {% else %}
-              {{ messages|first }}
-            {% endif %}
-          {% if type == 'error' %}
-            </div>
+          {% if messages|length > 1 %}
+            <ul>
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            {{ messages|first }}
           {% endif %}
-        </div>
+        {% if type == 'error' %}
+          </div>
+        {% endif %}
       </div>
     </div>
   {% endfor %}
