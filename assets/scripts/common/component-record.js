@@ -12,26 +12,33 @@ import { SiteHeader } from '@include/site-header/site-header';
  *
  **/
 export class FireComponentRecord {
-  registerAll() {
+  // register correct component
+  _registerComponent(component, name, id) {
+    // mark as registered
+    $(component).attr('data-registered', id);
+
+    // init correct component class
+    switch (name) {
+      case 'site-header':
+        new SiteHeader(id).init();
+        break;
+      default:
+        break;
+    }
+  }
+
+  registerAllComponents() {
     // loop through all components on the page
     $('[data-fire-component]').each((index, component) => {
       // get name of component
-      const name = $(component).data('fire-component');
+      let names = $(component).data('fire-component');
+      names = names.split(', ');
 
       // generate a unique ID
       const id = FireHelpers.generateUniqueId();
 
-      // mark as registered
-      $(component).attr('data-registered', id);
-
-      // register correct component
-      switch (name) {
-        case 'site-header':
-          new SiteHeader(id).init();
-          break;
-
-        default:
-          break;
+      for (const name of names) {
+        this._registerComponent(component, name, id);
       }
     });
   }

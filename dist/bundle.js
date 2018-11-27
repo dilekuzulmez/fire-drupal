@@ -153,24 +153,56 @@ function () {
   }
 
   _createClass(FireComponentRecord, [{
-    key: "registerAll",
-    value: function registerAll() {
+    key: "_registerComponent",
+    // register correct component
+    value: function _registerComponent(component, name, id) {
+      // mark as registered
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(component).attr('data-registered', id);
+
+      switch (name) {
+        case 'site-header':
+          new _include_site_header_site_header__WEBPACK_IMPORTED_MODULE_2__["SiteHeader"](id).init();
+          break;
+
+        default:
+          break;
+      }
+    }
+  }, {
+    key: "registerAllComponents",
+    value: function registerAllComponents() {
+      var _this = this;
+
       // loop through all components on the page
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-fire-component]').each(function (index, component) {
         // get name of component
-        var name = jquery__WEBPACK_IMPORTED_MODULE_0___default()(component).data('fire-component'); // generate a unique ID
+        var names = jquery__WEBPACK_IMPORTED_MODULE_0___default()(component).data('fire-component');
+        names = names.split(', '); // generate a unique ID
 
-        var id = _common__WEBPACK_IMPORTED_MODULE_1__["FireHelpers"].generateUniqueId(); // mark as registered
+        var id = _common__WEBPACK_IMPORTED_MODULE_1__["FireHelpers"].generateUniqueId();
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
 
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(component).attr('data-registered', id); // register correct component
+        try {
+          for (var _iterator = names[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var name = _step.value;
 
-        switch (name) {
-          case 'site-header':
-            new _include_site_header_site_header__WEBPACK_IMPORTED_MODULE_2__["SiteHeader"](id).init();
-            break;
-
-          default:
-            break;
+            _this._registerComponent(component, name, id);
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator.return != null) {
+              _iterator.return();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
         }
       });
     }
@@ -208,12 +240,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  *
  **/
 
-var FireComponent = function FireComponent(key, id) {
+var FireComponent = function FireComponent(id) {
   _classCallCheck(this, FireComponent);
 
   // grab component HTML element and assign to a variable,
   // this is now usable anywhere this Class is extended
-  this.$component = jquery__WEBPACK_IMPORTED_MODULE_0___default()("[data-registered=\"".concat(id, "\"][data-fire-component=\"").concat(key, "\"]")); // helper variable to check if the component exists
+  this.$component = jquery__WEBPACK_IMPORTED_MODULE_0___default()("[data-registered=\"".concat(id, "\"]")); // helper variable to check if the component exists
 
   this.componentExists = this.$component.length !== 0;
 };
@@ -697,7 +729,7 @@ var onPageReady = function onPageReady() {
 
   observer.observe();
   var componentRecord = new _common__WEBPACK_IMPORTED_MODULE_3__["FireComponentRecord"]();
-  componentRecord.registerAll();
+  componentRecord.registerAllComponents();
 }; // fire all scripts
 
 
@@ -13180,20 +13212,13 @@ function (_FireComponent) {
   _inherits(SiteHeader, _FireComponent);
 
   function SiteHeader(id) {
-    var _this;
-
     _classCallCheck(this, SiteHeader);
 
-    // register the component by calling `super()` and passing in the component key
+    // register the component by calling `super()` and passing in the component id
     // this creates an instance of the `FireComponent` Class that we extended above
     // giving us access to the `this.$component` variable which contains a reference to the registered HTML element
     // as well as `this.$componentExists` to check if the component exists on the page yet
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(SiteHeader).call(this, 'site-header', id)); // keep things encapsulated inside the component
-    // gives ability to use short selectors like `[data-logo]` in template
-    // keeps scripts/events from leaking out
-
-    _this.$logo = _this.$component.find('[data-logo]');
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(SiteHeader).call(this, id));
   }
 
   _createClass(SiteHeader, [{
