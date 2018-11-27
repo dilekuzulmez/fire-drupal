@@ -26,7 +26,8 @@
 {%
 	set bodyClasses = [
 		'fire-page',
-		node_type ? 'fire-page-type--' ~ node_type : 'fire-page-type--' ~ root_path
+		node_type ? 'fire-page-type--' ~ node_type : 'fire-page-type--' ~ root_path,
+    logged_in ? 'is-logged-in' : ''
 	]
 %}
 <!DOCTYPE html>
@@ -36,11 +37,11 @@
 		<title>{{ head_title|safe_join(' | ') }}</title>
 		<css-placeholder token="{{ placeholder_token|raw }}">
 		<js-placeholder token="{{ placeholder_token|raw }}">
-		<js-bottom-placeholder token="{{ placeholder_token|raw }}">
 	</head>
 	<body{{ attributes.addClass(bodyClasses) }}>
 		{{ page_top }}
 		{{ page }}
 		{{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
 	</body>
 </html>
