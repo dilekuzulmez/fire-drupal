@@ -659,63 +659,6 @@ function key(n) {
 
 /***/ }),
 
-/***/ "./assets/scripts/global.js":
-/*!**********************************!*\
-  !*** ./assets/scripts/global.js ***!
-  \**********************************/
-/*! exports provided: FireGlobal */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FireGlobal", function() { return FireGlobal; });
-/* harmony import */ var lozad__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lozad */ "./node_modules/lozad/dist/lozad.min.js");
-/* harmony import */ var lozad__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lozad__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @common */ "./assets/scripts/common/index.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-// dependencies
- // common
-
-
-/**
- * @type class
- * @name FireGlobal
- * @description
- *
- * All global scripts should be initiated here
- *
- **/
-
-var FireGlobal =
-/*#__PURE__*/
-function () {
-  function FireGlobal() {
-    _classCallCheck(this, FireGlobal);
-  }
-
-  _createClass(FireGlobal, [{
-    key: "init",
-    value: function init() {
-      var detect = new _common__WEBPACK_IMPORTED_MODULE_1__["FireDetect"]();
-      detect.setHtmlClasses();
-      var observer = lozad__WEBPACK_IMPORTED_MODULE_0___default()(); // lazy loads elements with default selector: `.lozad`
-
-      observer.observe();
-      var componentRecord = new _common__WEBPACK_IMPORTED_MODULE_1__["FireComponentRecord"]();
-      componentRecord.registerAll();
-    }
-  }]);
-
-  return FireGlobal;
-}();
-
-/***/ }),
-
 /***/ "./main.js":
 /*!*****************!*\
   !*** ./main.js ***!
@@ -727,15 +670,15 @@ function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _common_polyfills__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @common/polyfills */ "./assets/scripts/common/polyfills.js");
-/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @global */ "./assets/scripts/global.js");
-/* harmony import */ var _include_site_header_site_header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @include/site-header/site-header */ "./templates/include/site-header/site-header.js");
+/* harmony import */ var lozad__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lozad */ "./node_modules/lozad/dist/lozad.min.js");
+/* harmony import */ var lozad__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lozad__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _common_polyfills__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @common/polyfills */ "./assets/scripts/common/polyfills.js");
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @common */ "./assets/scripts/common/index.js");
 // dependencies
+
  // polyfills
 
- // global
-
- // includes
+ // common
 
 
 /**
@@ -748,9 +691,13 @@ __webpack_require__.r(__webpack_exports__);
  **/
 
 var onPageReady = function onPageReady() {
-  // init global scripts
-  var global = new _global__WEBPACK_IMPORTED_MODULE_2__["FireGlobal"]();
-  global.init();
+  var detect = new _common__WEBPACK_IMPORTED_MODULE_3__["FireDetect"]();
+  detect.setHtmlClasses();
+  var observer = lozad__WEBPACK_IMPORTED_MODULE_1___default()(); // lazy loads elements with default selector: `.lozad`
+
+  observer.observe();
+  var componentRecord = new _common__WEBPACK_IMPORTED_MODULE_3__["FireComponentRecord"]();
+  componentRecord.registerAll();
 }; // fire all scripts
 
 

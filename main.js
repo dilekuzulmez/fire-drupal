@@ -1,14 +1,12 @@
 // dependencies
 import $ from 'jquery';
+import lozad from 'lozad';
 
 // polyfills
 import '@common/polyfills';
 
-// global
-import { FireGlobal } from '@global';
-
-// includes
-import { SiteHeader } from '@include/site-header/site-header';
+// common
+import { FireDetect, FireComponentRecord } from '@common';
 
 /**
  * @type function
@@ -19,9 +17,14 @@ import { SiteHeader } from '@include/site-header/site-header';
  *
  **/
 const onPageReady = () => {
-  // init global scripts
-  const global = new FireGlobal();
-  global.init();
+  const detect = new FireDetect();
+  detect.setHtmlClasses();
+
+  const observer = lozad(); // lazy loads elements with default selector: `.lozad`
+  observer.observe();
+
+  const componentRecord = new FireComponentRecord();
+  componentRecord.registerAll();
 };
 
 // fire all scripts
