@@ -70,11 +70,16 @@ module.exports = function(env = { production: false }) {
     plugins: [
       new ExtractTextPlugin('bundle.css'),
       new CleanWebpackPlugin(FireConstants.DESTINATION_PATH),
-      new BrowserSyncPlugin({
-        proxy: FireConstants.PROXY_URL,
-        port: process.env.PORT || FireConstants.DEFAULT_PORT,
-        files: [path.resolve(__dirname, '**/*.twig')],
-      }),
+      new BrowserSyncPlugin(
+        {
+          proxy: FireConstants.PROXY_URL,
+          port: process.env.PORT || FireConstants.DEFAULT_PORT,
+          files: [path.resolve(__dirname, '**/*.twig')],
+        },
+        {
+          injectCss: true,
+        },
+      ),
     ],
   };
 
