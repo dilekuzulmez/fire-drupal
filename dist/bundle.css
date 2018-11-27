@@ -1691,14 +1691,14 @@ input:-moz-placeholder {
       color: #695b8e;
       background-color: #fff; }
 
-.main-navigation {
+.main-nav {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex; }
-  .main-navigation__item {
+  .main-nav__item {
     margin-right: 15px; }
-  .main-navigation__link {
+  .main-nav__link {
     color: #fff; }
 
 .site-header {
