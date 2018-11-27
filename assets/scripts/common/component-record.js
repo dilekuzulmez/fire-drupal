@@ -17,6 +17,7 @@ export class FireComponentRecord {
     // mark as registered
     $(component).attr('data-registered', id);
 
+    // init correct component class
     switch (name) {
       case 'site-header':
         new SiteHeader(id).init();
