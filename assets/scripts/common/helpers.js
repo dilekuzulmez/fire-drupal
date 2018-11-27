@@ -84,10 +84,9 @@ export function getPageType() {
 export function lockBody(lock) {
   const $body = $('body');
   const $document = $(document);
-  let pageOffset = 0;
+  const pageOffset = $document.scrollTop();
 
   if (lock === true) {
-    pageOffset = $document.scrollTop();
     $body.css({ overflow: 'hidden' });
   } else if (lock === false) {
     $body.css({ overflow: '' });
@@ -190,5 +189,10 @@ export function shuffle(array) {
  *
  **/
 export function generateUniqueId() {
-  return shuffle(btoa(Math.random()).toLowerCase().replace(/=/, '').split('')).join('')
+  return shuffle(
+    btoa(Math.random())
+      .toLowerCase()
+      .replace(/=/, '')
+      .split(''),
+  ).join('');
 }
