@@ -24,7 +24,7 @@ const onPageReady = () => {
   observer.observe();
 
   const componentRecord = new FireComponentRecord();
-  componentRecord.registerAll();
+  componentRecord.registerAllComponents();
 };
 
 // fire all scripts
