@@ -14,6 +14,7 @@ module.exports = function(env = { production: false }) {
     '@libs': path.resolve(__dirname, 'assets/scripts/libs'),
     '@common': path.resolve(__dirname, 'assets/scripts/common'),
     '@content': path.resolve(__dirname, 'templates/content'),
+    '@component': path.resolve(__dirname, 'templates/components'),
     '@block': path.resolve(__dirname, 'templates/block'),
     '@views': path.resolve(__dirname, 'templates/views'),
     '@navigation': path.resolve(__dirname, 'templates/navigation'),
