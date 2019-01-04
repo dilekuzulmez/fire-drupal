@@ -157,7 +157,7 @@ function () {
     // register correct component
     value: function _registerComponent(component, name, id) {
       // mark as registered
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(component).attr('data-registered', id);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(component).attr('data-registered', id); // init correct component class
 
       switch (name) {
         case 'site-header':
@@ -336,7 +336,7 @@ function () {
 /*!******************************************!*\
   !*** ./assets/scripts/common/helpers.js ***!
   \******************************************/
-/*! exports provided: breakpoints, isDesktop, isMobile, unsetTabIndex, setTabIndex, getPageType, lockBody, lockBodyToggle, capitalizeFirstLetter, clearFragment, shuffle, generateUniqueId */
+/*! exports provided: breakpoints, isDesktop, isMobile, unsetTabIndex, setTabIndex, getPageType, lockBody, lockBodyToggle, capitalizeFirstLetter, clearFragment, shuffle, generateUniqueId, addScript */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -353,6 +353,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearFragment", function() { return clearFragment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "shuffle", function() { return shuffle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateUniqueId", function() { return generateUniqueId; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addScript", function() { return addScript; });
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
@@ -454,10 +455,9 @@ function getPageType() {
 function lockBody(lock) {
   var $body = jquery__WEBPACK_IMPORTED_MODULE_0___default()('body');
   var $document = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document);
-  var pageOffset = 0;
+  var pageOffset = $document.scrollTop();
 
   if (lock === true) {
-    pageOffset = $document.scrollTop();
     $body.css({
       overflow: 'hidden'
     });
@@ -563,6 +563,31 @@ function shuffle(array) {
 
 function generateUniqueId() {
   return shuffle(btoa(Math.random()).toLowerCase().replace(/=/, '').split('')).join('');
+}
+/**
+ * @type public
+ * @name addScript
+ * @description
+ *
+ * Dynamically adds script tag to page
+ *
+ * @param {Object} attribute
+ * @param {String} text
+ * @param {Function} callback
+ * @return {Void}
+ *
+ **/
+
+function addScript(attribute, text, callback) {
+  var script = document.createElement('script');
+
+  for (var attr in attribute) {
+    script.setAttribute(attr, attribute[attr] ? attribute[attr] : null);
+  }
+
+  script.innerHTML = text;
+  script.onload = callback;
+  document.body.appendChild(script);
 }
 
 /***/ }),
@@ -724,12 +749,21 @@ __webpack_require__.r(__webpack_exports__);
 
 var onPageReady = function onPageReady() {
   var detect = new _common__WEBPACK_IMPORTED_MODULE_3__["FireDetect"]();
-  detect.setHtmlClasses();
-  var observer = lozad__WEBPACK_IMPORTED_MODULE_1___default()(); // lazy loads elements with default selector: `.lozad`
+  detect.setHtmlClasses(); // lazy loads elements with default selector: `.lozad`
 
+  var observer = lozad__WEBPACK_IMPORTED_MODULE_1___default()('.lozad', {
+    loaded: function loaded(el) {
+      el.onload = function () {
+        el.classList.add('lozad--loaded');
+      };
+    },
+    rootMargin: '0% 0% 100%'
+  });
   observer.observe();
   var componentRecord = new _common__WEBPACK_IMPORTED_MODULE_3__["FireComponentRecord"]();
-  componentRecord.registerAllComponents();
+  componentRecord.registerAllComponents(); // display page
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('has-loaded');
 }; // fire all scripts
 
 

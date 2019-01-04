@@ -1,34 +1,33 @@
 @mixin reset-list() {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 @mixin reset-last-paragraph {
-	p:last-child {
-		margin-bottom: 0;
-	}
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 @mixin reset-last-list-item {
-	li:last-child {
-		margin-bottom: 0;
-	}
+  li:last-child {
+    margin-bottom: 0;
+  }
 }
 
 @mixin center-cover-background() {
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @mixin center-flex() {
-	align-items: center;
-	justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
-@mixin maintain-ratio($dividend: 1, $divisor: 1.43) {
+@mixin maintain-ratio($divisor: 1.43, $dividend: 1) {
   width: 100%;
   padding-bottom: $dividend / $divisor * 100%;
 }
-

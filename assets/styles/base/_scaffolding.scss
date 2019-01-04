@@ -2,6 +2,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  opacity: 0;
+
+  &.has-loaded {
+    opacity: 1;
+  }
 }
 
 // added to markup by Drupal,
@@ -44,5 +49,5 @@ input:-webkit-autofill {
 }
 
 pre {
-	background-color: #eee;
+  background-color: #eee;
 }
