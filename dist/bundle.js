@@ -749,9 +749,16 @@ __webpack_require__.r(__webpack_exports__);
 
 var onPageReady = function onPageReady() {
   var detect = new _common__WEBPACK_IMPORTED_MODULE_3__["FireDetect"]();
-  detect.setHtmlClasses();
-  var observer = lozad__WEBPACK_IMPORTED_MODULE_1___default()(); // lazy loads elements with default selector: `.lozad`
+  detect.setHtmlClasses(); // lazy loads elements with default selector: `.lozad`
 
+  var observer = lozad__WEBPACK_IMPORTED_MODULE_1___default()('.lozad', {
+    loaded: function loaded(el) {
+      el.onload = function () {
+        el.classList.add('lozad--loaded');
+      };
+    },
+    rootMargin: '0% 0% 100%'
+  });
   observer.observe();
   var componentRecord = new _common__WEBPACK_IMPORTED_MODULE_3__["FireComponentRecord"]();
   componentRecord.registerAllComponents();
