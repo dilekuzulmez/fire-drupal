@@ -43,11 +43,11 @@ module.exports = function(env = { production: false }) {
   const scriptLoaders = [
     {
       test: /\.m?js$/,
-      exclude: /(node_modules|bower_components)/,
       use: {
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-env'],
+          presets: [['@babel/preset-env', { shippedProposals: true }]],
+          plugins: [['@babel/plugin-proposal-object-rest-spread', { loose: true, useBuiltIns: true }]],
         },
       },
     },
