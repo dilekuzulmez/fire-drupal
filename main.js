@@ -33,6 +33,9 @@ const onPageReady = () => {
 
   const componentRecord = new FireComponentRecord();
   componentRecord.registerAllComponents();
+
+  // display page
+  $('body').addClass('has-loaded');
 };
 
 // fire all scripts

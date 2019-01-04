@@ -761,7 +761,9 @@ var onPageReady = function onPageReady() {
   });
   observer.observe();
   var componentRecord = new _common__WEBPACK_IMPORTED_MODULE_3__["FireComponentRecord"]();
-  componentRecord.registerAllComponents();
+  componentRecord.registerAllComponents(); // display page
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('has-loaded');
 }; // fire all scripts
 
 

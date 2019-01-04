@@ -1598,7 +1598,10 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility; }
+  text-rendering: optimizeLegibility;
+  opacity: 0; }
+  body.has-loaded {
+    opacity: 1; }
 
 .dialog-off-canvas-main-canvas {
   display: flex;
