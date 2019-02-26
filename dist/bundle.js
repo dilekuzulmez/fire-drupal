@@ -336,7 +336,7 @@ function () {
 /*!******************************************!*\
   !*** ./assets/scripts/common/helpers.js ***!
   \******************************************/
-/*! exports provided: breakpoints, isDesktop, isMobile, unsetTabIndex, setTabIndex, getPageType, lockBody, lockBodyToggle, capitalizeFirstLetter, clearFragment, shuffle, generateUniqueId, addScript */
+/*! exports provided: breakpoints, isDesktop, isMobile, windowMatchesMaxWidthQuery, unsetTabIndex, setTabIndex, getPageType, lockBody, lockBodyToggle, capitalizeFirstLetter, clearFragment, shuffle, generateUniqueId, addScript */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -344,6 +344,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "breakpoints", function() { return breakpoints; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isDesktop", function() { return isDesktop; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isMobile", function() { return isMobile; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "windowMatchesMaxWidthQuery", function() { return windowMatchesMaxWidthQuery; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unsetTabIndex", function() { return unsetTabIndex; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTabIndex", function() { return setTabIndex; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPageType", function() { return getPageType; });
@@ -382,6 +383,9 @@ var breakpoints = {
 };
 var isDesktop = !window.matchMedia("(max-width: ".concat(breakpoints.md, "px)")).matches;
 var isMobile = window.matchMedia("(max-width: ".concat(breakpoints.md, "px)")).matches;
+var windowMatchesMaxWidthQuery = function windowMatchesMaxWidthQuery(width) {
+  return window.matchMedia("(max-width: ".concat(width, "px)")).matches;
+};
 /**
  * @type public
  * @name unsetTabIndex

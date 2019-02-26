@@ -18,6 +18,10 @@ export const breakpoints = {
 export const isDesktop = !window.matchMedia(`(max-width: ${breakpoints.md}px)`).matches;
 export const isMobile = window.matchMedia(`(max-width: ${breakpoints.md}px)`).matches;
 
+export const windowMatchesMaxWidthQuery = (width) => {
+  return window.matchMedia(`(max-width: ${width}px)`).matches;
+};
+
 /**
  * @type public
  * @name unsetTabIndex
