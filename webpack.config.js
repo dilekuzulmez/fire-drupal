@@ -22,20 +22,23 @@ module.exports = function(env = { production: false }) {
     '@page': path.resolve(__dirname, 'templates/page'),
   };
 
-  const postCssLoader = {
-    loader: 'postcss-loader',
-    options: {
-      parser: 'postcss-scss',
-      plugins: [require('autoprefixer')(), isProduction ? require('cssnano')() : () => {}],
-    },
-  };
-
   const styleLoaders = [
     {
       test: /\.scss$/,
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
-        use: ['css-loader', postCssLoader, 'sass-loader'],
+        use: [
+          { loader: 'css-loader', options: { sourceMap: true } },
+          {
+            loader: 'postcss-loader',
+            options: {
+              parser: 'postcss-scss',
+              sourceMap: true,
+              plugins: [require('autoprefixer')(), isProduction ? require('cssnano')() : () => {}],
+            },
+          },
+          { loader: 'sass-loader', options: { sourceMap: true } },
+        ],
       }),
     },
   ];
