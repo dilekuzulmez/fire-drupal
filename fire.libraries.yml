@@ -5,3 +5,7 @@ bundle-styles:
 bundle-scripts:
   js:
     dist/bundle.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/drupal.ajax
