@@ -336,7 +336,7 @@ function () {
 /*!******************************************!*\
   !*** ./assets/scripts/common/helpers.js ***!
   \******************************************/
-/*! exports provided: breakpoints, isDesktop, isMobile, unsetTabIndex, setTabIndex, getPageType, lockBody, lockBodyToggle, capitalizeFirstLetter, clearFragment, shuffle, generateUniqueId, addScript */
+/*! exports provided: breakpoints, isDesktop, isMobile, windowMatchesMaxWidthQuery, unsetTabIndex, setTabIndex, getPageType, lockBody, lockBodyToggle, capitalizeFirstLetter, clearFragment, shuffle, generateUniqueId, addScript */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -344,6 +344,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "breakpoints", function() { return breakpoints; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isDesktop", function() { return isDesktop; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isMobile", function() { return isMobile; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "windowMatchesMaxWidthQuery", function() { return windowMatchesMaxWidthQuery; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unsetTabIndex", function() { return unsetTabIndex; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTabIndex", function() { return setTabIndex; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPageType", function() { return getPageType; });
@@ -382,6 +383,9 @@ var breakpoints = {
 };
 var isDesktop = !window.matchMedia("(max-width: ".concat(breakpoints.md, "px)")).matches;
 var isMobile = window.matchMedia("(max-width: ".concat(breakpoints.md, "px)")).matches;
+var windowMatchesMaxWidthQuery = function windowMatchesMaxWidthQuery(width) {
+  return window.matchMedia("(max-width: ".concat(width, "px)")).matches;
+};
 /**
  * @type public
  * @name unsetTabIndex
@@ -446,29 +450,44 @@ function getPageType() {
  * @description
  *
  * Locks/unlocks body element where it currently is
+ * Allows you to manually pass value or uses scrollTop.
+ * Uses animate with step function to handle refresh issues.
  *
  * @param {Boolean}
+ * @param {Any}
  * @return {Void}
  *
  **/
 
-function lockBody(lock) {
+function lockBody(lock, position) {
   var $body = jquery__WEBPACK_IMPORTED_MODULE_0___default()('body');
   var $document = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document);
-  var pageOffset = $document.scrollTop();
+  var pageOffset = position ? position : $document.scrollTop();
 
   if (lock === true) {
     $body.css({
-      overflow: 'hidden'
+      overflow: 'hidden',
+      top: '-' + pageOffset + 'px'
     });
   } else if (lock === false) {
     $body.css({
-      overflow: ''
+      overflow: '',
+      top: ''
     });
-    $document.scrollTop(pageOffset);
   }
 
-  $body.attr('data-fire-lock-body', lock);
+  $body.attr('data-fire-lock-body', lock); // goes to a set position
+
+  if (position) {
+    $body.animate({
+      scrollTop: position
+    }, {
+      duration: 0,
+      step: function step(val) {
+        return window.scrollTo(0, val);
+      }
+    });
+  }
 }
 /**
  * @type public
@@ -727,11 +746,14 @@ function key(n) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var lozad__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lozad */ "./node_modules/lozad/dist/lozad.min.js");
-/* harmony import */ var lozad__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lozad__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _common_polyfills__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @common/polyfills */ "./assets/scripts/common/polyfills.js");
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @common */ "./assets/scripts/common/index.js");
+/* harmony import */ var jquery_once__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery-once */ "./node_modules/jquery-once/jquery.once.min.js");
+/* harmony import */ var jquery_once__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery_once__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var lozad__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lozad */ "./node_modules/lozad/dist/lozad.min.js");
+/* harmony import */ var lozad__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lozad__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _common_polyfills__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @common/polyfills */ "./assets/scripts/common/polyfills.js");
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @common */ "./assets/scripts/common/index.js");
 // dependencies
+
 
  // polyfills
 
@@ -748,10 +770,10 @@ __webpack_require__.r(__webpack_exports__);
  **/
 
 var onPageReady = function onPageReady() {
-  var detect = new _common__WEBPACK_IMPORTED_MODULE_3__["FireDetect"]();
+  var detect = new _common__WEBPACK_IMPORTED_MODULE_4__["FireDetect"]();
   detect.setHtmlClasses(); // lazy loads elements with default selector: `.lozad`
 
-  var observer = lozad__WEBPACK_IMPORTED_MODULE_1___default()('.lozad', {
+  var observer = lozad__WEBPACK_IMPORTED_MODULE_2___default()('.lozad', {
     loaded: function loaded(el) {
       el.onload = function () {
         el.classList.add('lozad--loaded');
@@ -760,7 +782,7 @@ var onPageReady = function onPageReady() {
     rootMargin: '0% 0% 100%'
   });
   observer.observe();
-  var componentRecord = new _common__WEBPACK_IMPORTED_MODULE_3__["FireComponentRecord"]();
+  var componentRecord = new _common__WEBPACK_IMPORTED_MODULE_4__["FireComponentRecord"]();
   componentRecord.registerAllComponents(); // display page
 
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('has-loaded');
@@ -925,7 +947,7 @@ module.exports = function (it) {
 /***/ (function(module, exports) {
 
 var core = module.exports = {
-  version: '2.5.7'
+  version: '2.6.5'
 };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
@@ -1166,6 +1188,17 @@ module.exports = function (exec) {
     return true;
   }
 };
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/_function-to-string.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/core-js/modules/_function-to-string.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./_shared */ "./node_modules/core-js/modules/_shared.js")('native-function-to-string', Function.toString);
 
 /***/ }),
 
@@ -1809,8 +1842,9 @@ var has = __webpack_require__(/*! ./_has */ "./node_modules/core-js/modules/_has
 
 var SRC = __webpack_require__(/*! ./_uid */ "./node_modules/core-js/modules/_uid.js")('src');
 
+var $toString = __webpack_require__(/*! ./_function-to-string */ "./node_modules/core-js/modules/_function-to-string.js");
+
 var TO_STRING = 'toString';
-var $toString = Function[TO_STRING];
 var TPL = ('' + $toString).split(TO_STRING);
 
 __webpack_require__(/*! ./_core */ "./node_modules/core-js/modules/_core.js").inspectSource = function (it) {
@@ -1897,7 +1931,7 @@ var store = global[SHARED] || (global[SHARED] = {});
 })('versions', []).push({
   version: core.version,
   mode: __webpack_require__(/*! ./_library */ "./node_modules/core-js/modules/_library.js") ? 'pure' : 'global',
-  copyright: '© 2018 Denis Pushkarev (zloirock.ru)'
+  copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
 });
 
 /***/ }),
@@ -2956,6 +2990,66 @@ __webpack_require__(/*! ./_iter-define */ "./node_modules/core-js/modules/_iter-
   window.IntersectionObserver = IntersectionObserver;
   window.IntersectionObserverEntry = IntersectionObserverEntry;
 })(window, document);
+
+/***/ }),
+
+/***/ "./node_modules/jquery-once/jquery.once.min.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/jquery-once/jquery.once.min.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+/*!
+ * jQuery Once v2.2.1 - http://github.com/robloach/jquery-once
+ * @license MIT, GPL-2.0
+ *   http://opensource.org/licenses/MIT
+ *   http://opensource.org/licenses/GPL-2.0
+ */
+(function (e) {
+  "use strict";
+
+  if (( false ? undefined : _typeof(exports)) === "object") {
+    e(__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"));
+  } else if (true) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")], __WEBPACK_AMD_DEFINE_FACTORY__ = (e),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {}
+})(function (t) {
+  "use strict";
+
+  var r = function r(e) {
+    e = e || "once";
+
+    if (typeof e !== "string") {
+      throw new TypeError("The jQuery Once id parameter must be a string");
+    }
+
+    return e;
+  };
+
+  t.fn.once = function (e) {
+    var n = "jquery-once-" + r(e);
+    return this.filter(function () {
+      return t(this).data(n) !== true;
+    }).data(n, true);
+  };
+
+  t.fn.removeOnce = function (e) {
+    return this.findOnce(e).removeData("jquery-once-" + r(e));
+  };
+
+  t.fn.findOnce = function (e) {
+    var n = "jquery-once-" + r(e);
+    return this.filter(function () {
+      return t(this).data(n) === true;
+    });
+  };
+});
 
 /***/ }),
 
@@ -12101,9 +12195,9 @@ __webpack_require__(/*! ./_iter-define */ "./node_modules/core-js/modules/_iter-
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-/*! lozad.js - v1.7.0 - 2018-11-08
+/*! lozad.js - v1.9.0 - 2019-02-09
 * https://github.com/ApoorvSaxena/lozad.js
-* Copyright (c) 2018 Apoorv Saxena; Licensed MIT */
+* Copyright (c) 2019 Apoorv Saxena; Licensed MIT */
 !function (t, e) {
   "object" == ( false ? undefined : _typeof(exports)) && "undefined" != typeof module ? module.exports = e() :  true ? !(__WEBPACK_AMD_DEFINE_FACTORY__ = (e),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
@@ -12124,14 +12218,22 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _type
 
     return t;
   },
-      r = "undefined" != typeof document && document.documentMode,
+      n = "undefined" != typeof document && document.documentMode,
       l = {
     rootMargin: "0px",
     threshold: 0,
     load: function load(t) {
       if ("picture" === t.nodeName.toLowerCase()) {
         var e = document.createElement("img");
-        r && t.getAttribute("data-iesrc") && (e.src = t.getAttribute("data-iesrc")), t.getAttribute("data-alt") && (e.alt = t.getAttribute("data-alt")), t.appendChild(e);
+        n && t.getAttribute("data-iesrc") && (e.src = t.getAttribute("data-iesrc")), t.getAttribute("data-alt") && (e.alt = t.getAttribute("data-alt")), t.appendChild(e);
+      }
+
+      if ("video" === t.nodeName.toLowerCase() && !t.getAttribute("data-src") && t.children) {
+        for (var r = t.children, o = void 0, a = 0; a <= r.length - 1; a++) {
+          (o = r[a].getAttribute("data-src")) && (r[a].src = o);
+        }
+
+        t.load();
       }
 
       t.getAttribute("data-src") && (t.src = t.getAttribute("data-src")), t.getAttribute("data-srcset") && t.setAttribute("srcset", t.getAttribute("data-srcset")), t.getAttribute("data-background-image") && (t.style.backgroundImage = "url('" + t.getAttribute("data-background-image") + "')"), t.getAttribute("data-toggle-class") && t.classList.toggle(t.getAttribute("data-toggle-class"));
@@ -12162,10 +12264,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _type
         n = e.root,
         i = e.rootMargin,
         d = e.threshold,
-        u = e.load,
-        c = e.loaded,
+        c = e.load,
+        u = e.loaded,
         s = void 0;
-    return window.IntersectionObserver && (s = new IntersectionObserver((r = u, o = c, function (t, e) {
+    return window.IntersectionObserver && (s = new IntersectionObserver((r = c, o = u, function (t, e) {
       t.forEach(function (t) {
         (0 < t.intersectionRatio || t.isIntersecting) && (e.unobserve(t.target), b(t.target) || (r(t.target), f(t.target), o(t.target)));
       });
@@ -12179,11 +12281,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _type
           var e = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : document;
           return t instanceof Element ? [t] : t instanceof NodeList ? t : e.querySelectorAll(t);
         }(a, n), e = 0; e < t.length; e++) {
-          b(t[e]) || (s ? s.observe(t[e]) : (u(t[e]), f(t[e]), c(t[e])));
+          b(t[e]) || (s ? s.observe(t[e]) : (c(t[e]), f(t[e]), u(t[e])));
         }
       },
       triggerLoad: function triggerLoad(t) {
-        b(t) || (u(t), f(t), c(t));
+        b(t) || (c(t), f(t), u(t));
       },
       observer: s
     };

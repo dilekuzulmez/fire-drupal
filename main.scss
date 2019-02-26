@@ -20,15 +20,21 @@
 @import './assets/styles/common/typography';
 @import './assets/styles/common/buttons';
 
-// navigation
-@import './templates/navigation/main-nav/main-nav';
-
 // includes
 @import './templates/include/site-header/site-header';
 @import './templates/include/site-footer/site-footer';
+
+// navigation
+@import './templates/navigation/main-nav/main-nav';
 
 // admin
 @import './assets/styles/admin/misc';
 @import './assets/styles/admin/local-tasks';
 @import './assets/styles/admin/login-form';
 @import './assets/styles/admin/wysiwyg';
+
+// misc
+@import './templates/misc/status-messages/status-messages';
+
+// components
+@import './templates/components/gap/gap';

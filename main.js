@@ -1,5 +1,6 @@
 // dependencies
 import $ from 'jquery';
+import 'jquery-once';
 import lozad from 'lozad';
 
 // polyfills

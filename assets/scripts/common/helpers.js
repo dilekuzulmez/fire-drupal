@@ -18,6 +18,10 @@ export const breakpoints = {
 export const isDesktop = !window.matchMedia(`(max-width: ${breakpoints.md}px)`).matches;
 export const isMobile = window.matchMedia(`(max-width: ${breakpoints.md}px)`).matches;
 
+export const windowMatchesMaxWidthQuery = (width) => {
+  return window.matchMedia(`(max-width: ${width}px)`).matches;
+};
+
 /**
  * @type public
  * @name unsetTabIndex
@@ -76,24 +80,37 @@ export function getPageType() {
  * @description
  *
  * Locks/unlocks body element where it currently is
+ * Allows you to manually pass value or uses scrollTop.
+ * Uses animate with step function to handle refresh issues.
  *
  * @param {Boolean}
+ * @param {Any}
  * @return {Void}
  *
  **/
-export function lockBody(lock) {
+export function lockBody(lock, position) {
   const $body = $('body');
   const $document = $(document);
-  const pageOffset = $document.scrollTop();
+  const pageOffset = position ? position : $document.scrollTop();
 
   if (lock === true) {
-    $body.css({ overflow: 'hidden' });
+    $body.css({ overflow: 'hidden', top: '-' + pageOffset + 'px' });
   } else if (lock === false) {
-    $body.css({ overflow: '' });
-    $document.scrollTop(pageOffset);
+    $body.css({ overflow: '', top: '' });
   }
 
   $body.attr('data-fire-lock-body', lock);
+
+  // goes to a set position
+  if (position) {
+    $body.animate(
+      { scrollTop: position },
+      {
+        duration: 0,
+        step: (val) => window.scrollTo(0, val),
+      },
+    );
+  }
 }
 
 /**
