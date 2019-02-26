@@ -925,7 +925,7 @@ module.exports = function (it) {
 /***/ (function(module, exports) {
 
 var core = module.exports = {
-  version: '2.5.7'
+  version: '2.6.5'
 };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
@@ -1166,6 +1166,17 @@ module.exports = function (exec) {
     return true;
   }
 };
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/_function-to-string.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/core-js/modules/_function-to-string.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./_shared */ "./node_modules/core-js/modules/_shared.js")('native-function-to-string', Function.toString);
 
 /***/ }),
 
@@ -1809,8 +1820,9 @@ var has = __webpack_require__(/*! ./_has */ "./node_modules/core-js/modules/_has
 
 var SRC = __webpack_require__(/*! ./_uid */ "./node_modules/core-js/modules/_uid.js")('src');
 
+var $toString = __webpack_require__(/*! ./_function-to-string */ "./node_modules/core-js/modules/_function-to-string.js");
+
 var TO_STRING = 'toString';
-var $toString = Function[TO_STRING];
 var TPL = ('' + $toString).split(TO_STRING);
 
 __webpack_require__(/*! ./_core */ "./node_modules/core-js/modules/_core.js").inspectSource = function (it) {
@@ -1897,7 +1909,7 @@ var store = global[SHARED] || (global[SHARED] = {});
 })('versions', []).push({
   version: core.version,
   mode: __webpack_require__(/*! ./_library */ "./node_modules/core-js/modules/_library.js") ? 'pure' : 'global',
-  copyright: '© 2018 Denis Pushkarev (zloirock.ru)'
+  copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
 });
 
 /***/ }),
@@ -12101,9 +12113,9 @@ __webpack_require__(/*! ./_iter-define */ "./node_modules/core-js/modules/_iter-
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-/*! lozad.js - v1.7.0 - 2018-11-08
+/*! lozad.js - v1.9.0 - 2019-02-09
 * https://github.com/ApoorvSaxena/lozad.js
-* Copyright (c) 2018 Apoorv Saxena; Licensed MIT */
+* Copyright (c) 2019 Apoorv Saxena; Licensed MIT */
 !function (t, e) {
   "object" == ( false ? undefined : _typeof(exports)) && "undefined" != typeof module ? module.exports = e() :  true ? !(__WEBPACK_AMD_DEFINE_FACTORY__ = (e),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
@@ -12124,14 +12136,22 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _type
 
     return t;
   },
-      r = "undefined" != typeof document && document.documentMode,
+      n = "undefined" != typeof document && document.documentMode,
       l = {
     rootMargin: "0px",
     threshold: 0,
     load: function load(t) {
       if ("picture" === t.nodeName.toLowerCase()) {
         var e = document.createElement("img");
-        r && t.getAttribute("data-iesrc") && (e.src = t.getAttribute("data-iesrc")), t.getAttribute("data-alt") && (e.alt = t.getAttribute("data-alt")), t.appendChild(e);
+        n && t.getAttribute("data-iesrc") && (e.src = t.getAttribute("data-iesrc")), t.getAttribute("data-alt") && (e.alt = t.getAttribute("data-alt")), t.appendChild(e);
+      }
+
+      if ("video" === t.nodeName.toLowerCase() && !t.getAttribute("data-src") && t.children) {
+        for (var r = t.children, o = void 0, a = 0; a <= r.length - 1; a++) {
+          (o = r[a].getAttribute("data-src")) && (r[a].src = o);
+        }
+
+        t.load();
       }
 
       t.getAttribute("data-src") && (t.src = t.getAttribute("data-src")), t.getAttribute("data-srcset") && t.setAttribute("srcset", t.getAttribute("data-srcset")), t.getAttribute("data-background-image") && (t.style.backgroundImage = "url('" + t.getAttribute("data-background-image") + "')"), t.getAttribute("data-toggle-class") && t.classList.toggle(t.getAttribute("data-toggle-class"));
@@ -12162,10 +12182,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _type
         n = e.root,
         i = e.rootMargin,
         d = e.threshold,
-        u = e.load,
-        c = e.loaded,
+        c = e.load,
+        u = e.loaded,
         s = void 0;
-    return window.IntersectionObserver && (s = new IntersectionObserver((r = u, o = c, function (t, e) {
+    return window.IntersectionObserver && (s = new IntersectionObserver((r = c, o = u, function (t, e) {
       t.forEach(function (t) {
         (0 < t.intersectionRatio || t.isIntersecting) && (e.unobserve(t.target), b(t.target) || (r(t.target), f(t.target), o(t.target)));
       });
@@ -12179,11 +12199,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _type
           var e = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : document;
           return t instanceof Element ? [t] : t instanceof NodeList ? t : e.querySelectorAll(t);
         }(a, n), e = 0; e < t.length; e++) {
-          b(t[e]) || (s ? s.observe(t[e]) : (u(t[e]), f(t[e]), c(t[e])));
+          b(t[e]) || (s ? s.observe(t[e]) : (c(t[e]), f(t[e]), u(t[e])));
         }
       },
       triggerLoad: function triggerLoad(t) {
-        b(t) || (u(t), f(t), c(t));
+        b(t) || (c(t), f(t), u(t));
       },
       observer: s
     };
