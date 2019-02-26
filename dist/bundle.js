@@ -450,29 +450,44 @@ function getPageType() {
  * @description
  *
  * Locks/unlocks body element where it currently is
+ * Allows you to manually pass value or uses scrollTop.
+ * Uses animate with step function to handle refresh issues.
  *
  * @param {Boolean}
+ * @param {Any}
  * @return {Void}
  *
  **/
 
-function lockBody(lock) {
+function lockBody(lock, position) {
   var $body = jquery__WEBPACK_IMPORTED_MODULE_0___default()('body');
   var $document = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document);
-  var pageOffset = $document.scrollTop();
+  var pageOffset = position ? position : $document.scrollTop();
 
   if (lock === true) {
     $body.css({
-      overflow: 'hidden'
+      overflow: 'hidden',
+      top: '-' + pageOffset + 'px'
     });
   } else if (lock === false) {
     $body.css({
-      overflow: ''
+      overflow: '',
+      top: ''
     });
-    $document.scrollTop(pageOffset);
   }
 
-  $body.attr('data-fire-lock-body', lock);
+  $body.attr('data-fire-lock-body', lock); // goes to a set position
+
+  if (position) {
+    $body.animate({
+      scrollTop: position
+    }, {
+      duration: 0,
+      step: function step(val) {
+        return window.scrollTo(0, val);
+      }
+    });
+  }
 }
 /**
  * @type public
