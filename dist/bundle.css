@@ -3550,4 +3550,21 @@ div.ipe-actions-block.ipe-actions {
 .span--secondary {
   color: #ba95e8; }
 
+.gap {
+  display: block;
+  position: relative;
+  width: 100vw; }
+  .gap--tablet, .gap--mobile {
+    display: none; }
+  @media (max-width: 991.98px) {
+    .gap--desktop {
+      display: none; }
+    .gap--tablet {
+      display: block; } }
+  @media (max-width: 767.98px) {
+    .gap--tablet {
+      display: none; }
+    .gap--mobile {
+      display: block; } }
+
 /*# sourceMappingURL=bundle.css.map*/

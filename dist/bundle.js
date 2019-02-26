@@ -727,11 +727,14 @@ function key(n) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var lozad__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lozad */ "./node_modules/lozad/dist/lozad.min.js");
-/* harmony import */ var lozad__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lozad__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _common_polyfills__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @common/polyfills */ "./assets/scripts/common/polyfills.js");
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @common */ "./assets/scripts/common/index.js");
+/* harmony import */ var jquery_once__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery-once */ "./node_modules/jquery-once/jquery.once.min.js");
+/* harmony import */ var jquery_once__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery_once__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var lozad__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lozad */ "./node_modules/lozad/dist/lozad.min.js");
+/* harmony import */ var lozad__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lozad__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _common_polyfills__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @common/polyfills */ "./assets/scripts/common/polyfills.js");
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @common */ "./assets/scripts/common/index.js");
 // dependencies
+
 
  // polyfills
 
@@ -748,10 +751,10 @@ __webpack_require__.r(__webpack_exports__);
  **/
 
 var onPageReady = function onPageReady() {
-  var detect = new _common__WEBPACK_IMPORTED_MODULE_3__["FireDetect"]();
+  var detect = new _common__WEBPACK_IMPORTED_MODULE_4__["FireDetect"]();
   detect.setHtmlClasses(); // lazy loads elements with default selector: `.lozad`
 
-  var observer = lozad__WEBPACK_IMPORTED_MODULE_1___default()('.lozad', {
+  var observer = lozad__WEBPACK_IMPORTED_MODULE_2___default()('.lozad', {
     loaded: function loaded(el) {
       el.onload = function () {
         el.classList.add('lozad--loaded');
@@ -760,7 +763,7 @@ var onPageReady = function onPageReady() {
     rootMargin: '0% 0% 100%'
   });
   observer.observe();
-  var componentRecord = new _common__WEBPACK_IMPORTED_MODULE_3__["FireComponentRecord"]();
+  var componentRecord = new _common__WEBPACK_IMPORTED_MODULE_4__["FireComponentRecord"]();
   componentRecord.registerAllComponents(); // display page
 
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('has-loaded');
@@ -2968,6 +2971,66 @@ __webpack_require__(/*! ./_iter-define */ "./node_modules/core-js/modules/_iter-
   window.IntersectionObserver = IntersectionObserver;
   window.IntersectionObserverEntry = IntersectionObserverEntry;
 })(window, document);
+
+/***/ }),
+
+/***/ "./node_modules/jquery-once/jquery.once.min.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/jquery-once/jquery.once.min.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+/*!
+ * jQuery Once v2.2.1 - http://github.com/robloach/jquery-once
+ * @license MIT, GPL-2.0
+ *   http://opensource.org/licenses/MIT
+ *   http://opensource.org/licenses/GPL-2.0
+ */
+(function (e) {
+  "use strict";
+
+  if (( false ? undefined : _typeof(exports)) === "object") {
+    e(__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"));
+  } else if (true) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")], __WEBPACK_AMD_DEFINE_FACTORY__ = (e),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {}
+})(function (t) {
+  "use strict";
+
+  var r = function r(e) {
+    e = e || "once";
+
+    if (typeof e !== "string") {
+      throw new TypeError("The jQuery Once id parameter must be a string");
+    }
+
+    return e;
+  };
+
+  t.fn.once = function (e) {
+    var n = "jquery-once-" + r(e);
+    return this.filter(function () {
+      return t(this).data(n) !== true;
+    }).data(n, true);
+  };
+
+  t.fn.removeOnce = function (e) {
+    return this.findOnce(e).removeData("jquery-once-" + r(e));
+  };
+
+  t.fn.findOnce = function (e) {
+    var n = "jquery-once-" + r(e);
+    return this.filter(function () {
+      return t(this).data(n) === true;
+    });
+  };
+});
 
 /***/ }),
 
