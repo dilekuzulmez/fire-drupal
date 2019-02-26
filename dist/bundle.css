@@ -284,23 +284,23 @@ html {
 *::after {
   box-sizing: inherit; }
 
-.container {
+.container, .status-messages {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto; }
   @media (min-width: 576px) {
-    .container {
+    .container, .status-messages {
       max-width: 540px; } }
   @media (min-width: 768px) {
-    .container {
+    .container, .status-messages {
       max-width: 720px; } }
   @media (min-width: 992px) {
-    .container {
+    .container, .status-messages {
       max-width: 960px; } }
   @media (min-width: 1200px) {
-    .container {
+    .container, .status-messages {
       max-width: 1140px; } }
 
 .container-fluid {
@@ -3402,17 +3402,6 @@ input:-moz-placeholder {
       color: #695b8e;
       background-color: #fff; }
 
-.main-nav {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: -webkit-flex;
-  display: flex; }
-  .main-nav__item {
-    margin-right: 15px; }
-  .main-nav__link {
-    color: #fff; }
-
 .site-header {
   display: -webkit-flex;
   display: flex;
@@ -3427,6 +3416,17 @@ input:-moz-placeholder {
   background-color: #695b8e;
   color: #fff;
   text-align: center; }
+
+.main-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-flex;
+  display: flex; }
+  .main-nav__item {
+    margin-right: 15px; }
+  .main-nav__link {
+    color: #fff; }
 
 body.toolbar-fixed #toolbar-administration {
   position: relative;
@@ -3549,6 +3549,10 @@ div.ipe-actions-block.ipe-actions {
 
 .span--secondary {
   color: #ba95e8; }
+
+.status-messages {
+  margin-top: 25px;
+  margin-bottom: 25px; }
 
 .gap {
   display: block;
