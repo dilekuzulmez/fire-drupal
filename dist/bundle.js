@@ -779,7 +779,7 @@ var onPageReady = function onPageReady() {
         el.classList.add('lozad--loaded');
       };
     },
-    rootMargin: '0% 0% 100%'
+    rootMargin: '0% 0% 150%'
   });
   observer.observe();
   var componentRecord = new _common__WEBPACK_IMPORTED_MODULE_4__["FireComponentRecord"]();

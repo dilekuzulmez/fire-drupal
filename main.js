@@ -28,7 +28,7 @@ const onPageReady = () => {
         el.classList.add('lozad--loaded');
       };
     },
-    rootMargin: '0% 0% 100%',
+    rootMargin: '0% 0% 150%',
   });
   observer.observe();
 
