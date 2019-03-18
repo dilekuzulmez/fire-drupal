@@ -2,6 +2,15 @@ import $ from 'jquery';
 
 import { FireComponent, FireHelpers } from '@common';
 
+/**
+ * @type public
+ * @name ConvertToInlineSvg
+ * @description
+ *
+ * Converts a source into an inline SVG
+ * More information: https://github.com/skycatchfire/fire/issues/68
+ *
+ **/
 export class ConvertToInlineSvg extends FireComponent {
   constructor(id) {
     super(id);
