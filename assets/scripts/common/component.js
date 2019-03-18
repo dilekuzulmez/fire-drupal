@@ -13,11 +13,17 @@ import $ from 'jquery';
  **/
 export class FireComponent {
   constructor(id) {
-    // grab component HTML element and assign to a variable,
-    // this is now usable anywhere this Class is extended
-    this.$component = $(`[data-registered="${id}"]`);
+    this.id = id;
+  }
 
-    // helper variable to check if the component exists
-    this.componentExists = this.$component.length !== 0;
+  // helper variable to check if the component exists
+  get componentExists() {
+    return this.$component.length !== 0;
+  }
+
+  // grab component HTML element and assign to a variable,
+  // this is now usable anywhere this Class is extended
+  get $component() {
+    return $(`[data-registered= "${this.id}"]`);
   }
 }

@@ -227,6 +227,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 // dependencies
 
 /**
@@ -240,15 +244,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  *
  **/
 
-var FireComponent = function FireComponent(id) {
-  _classCallCheck(this, FireComponent);
+var FireComponent =
+/*#__PURE__*/
+function () {
+  function FireComponent(id) {
+    _classCallCheck(this, FireComponent);
 
-  // grab component HTML element and assign to a variable,
-  // this is now usable anywhere this Class is extended
-  this.$component = jquery__WEBPACK_IMPORTED_MODULE_0___default()("[data-registered=\"".concat(id, "\"]")); // helper variable to check if the component exists
+    this.id = id;
+  } // helper variable to check if the component exists
 
-  this.componentExists = this.$component.length !== 0;
-};
+
+  _createClass(FireComponent, [{
+    key: "componentExists",
+    get: function get() {
+      return this.$component.length !== 0;
+    } // grab component HTML element and assign to a variable,
+    // this is now usable anywhere this Class is extended
+
+  }, {
+    key: "$component",
+    get: function get() {
+      return jquery__WEBPACK_IMPORTED_MODULE_0___default()("[data-registered= \"".concat(this.id, "\"]"));
+    }
+  }]);
+
+  return FireComponent;
+}();
 
 /***/ }),
 
@@ -672,7 +693,7 @@ function convertSourceToSVG(target, url, color, classes, id) {
 /*!****************************************!*\
   !*** ./assets/scripts/common/index.js ***!
   \****************************************/
-/*! exports provided: FireHelpers, FireStorage, trigger, FireDetect, FireComponent, FireComponentRecord, FireLazyLoader */
+/*! exports provided: FireHelpers, FireStorage, trigger, FireDetect, FireComponentRecord, FireLazyLoader, FireComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
