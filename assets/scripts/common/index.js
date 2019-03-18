@@ -8,3 +8,4 @@ export * from './analytics';
 export * from './detect';
 export * from './component';
 export * from './component-record';
+export * from './lazy-loader';

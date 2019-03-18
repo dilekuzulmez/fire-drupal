@@ -16,6 +16,12 @@
   }
 }
 
+@mixin reset-button {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+}
+
 @mixin center-cover-background() {
   background-size: cover;
   background-position: center;
