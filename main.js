@@ -1,13 +1,16 @@
 // dependencies
 import $ from 'jquery';
 import 'jquery-once';
-import lozad from 'lozad';
 
 // polyfills
 import '@common/polyfills';
 
 // common
-import { FireDetect, FireComponentRecord } from '@common';
+import { FireDetect, FireComponentRecord, FireLazyLoader } from '@common';
+
+const detect = new FireDetect();
+const componentRecord = new FireComponentRecord();
+const lazyLoader = new FireLazyLoader();
 
 /**
  * @type function
@@ -18,21 +21,9 @@ import { FireDetect, FireComponentRecord } from '@common';
  *
  **/
 const onPageReady = () => {
-  const detect = new FireDetect();
   detect.setHtmlClasses();
-
-  // lazy loads elements with default selector: `.lozad`
-  const observer = lozad('.lozad', {
-    loaded: (el) => {
-      el.onload = () => {
-        el.classList.add('lozad--loaded');
-      };
-    },
-    rootMargin: '0% 0% 150%',
-  });
-  observer.observe();
-
-  const componentRecord = new FireComponentRecord();
+  lazyLoader.init();
+  lazyLoader.observer.observe();
   componentRecord.registerAllComponents();
 
   // display page
