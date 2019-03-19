@@ -1,6 +1,5 @@
 // dependencies
 import $ from 'jquery';
-import 'jquery-once';
 
 // polyfills
 import '@common/polyfills';

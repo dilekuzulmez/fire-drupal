@@ -8,4 +8,5 @@ bundle-scripts:
   dependencies:
     - core/drupal
     - core/jquery
+    - core/jquery-once
     - core/drupal.ajax

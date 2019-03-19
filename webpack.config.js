@@ -71,6 +71,9 @@ module.exports = function(env = { production: false }) {
     module: { rules: [...scriptLoaders, ...styleLoaders, ...fontLoaders] },
     resolve: { alias: aliases },
     devtool: 'source-map',
+    externals: {
+      jquery: 'jQuery',
+    },
     plugins: [
       new ExtractTextPlugin('bundle.css'),
       new CleanWebpackPlugin(FireConstants.DESTINATION_PATH),
