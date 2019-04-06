@@ -2,7 +2,7 @@ name: Fire
 description: Custom Drupal 8 Theme
 type: theme
 core: 8.x
-libraries: 
+libraries:
   - fire/bundle-styles
   - fire/bundle-scripts
 stylesheets-remove:
@@ -31,6 +31,4 @@ stylesheets-remove:
   - core/themes/stable/css/system/components/tablesort.module.css
   - core/modules/layout_discovery/layouts/onecol/onecol.css
 regions:
-  header: 'Header'
   content: 'Main Content'
-  footer: 'Footer'
