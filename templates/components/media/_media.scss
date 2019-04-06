@@ -1,0 +1,27 @@
+.image {
+  $this: &;
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+  }
+
+  &--background {
+    @include style-background-image;
+  }
+
+  &--mobile {
+    display: none;
+
+    @include media-breakpoint-down(sm) {
+      display: block;
+    }
+  }
+
+  &:not(#{ $this }--mobile) {
+    &#{ $this }--has-mobile {
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+  }
+}

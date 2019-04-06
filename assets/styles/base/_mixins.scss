@@ -28,6 +28,15 @@
   background-repeat: no-repeat;
 }
 
+@mixin style-background-image() {
+  @include center-cover-background;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 @mixin center-flex() {
   align-items: center;
   justify-content: center;
