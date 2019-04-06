@@ -3595,4 +3595,20 @@ div.ipe-actions-block.ipe-actions {
   .image:not(.image--mobile).image--has-mobile {
     display: none; } }
 
+.pager__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center; }
+
+.pager__item {
+  margin: 0 12px; }
+  .is-active .pager__item-link {
+    text-decoration: underline; }
+
 /*# sourceMappingURL=bundle.css.map*/
