@@ -411,11 +411,62 @@ var breakpoints = {
   md: 992,
   lg: 1200
 };
-var isDesktop = window.matchMedia("(min-width: ".concat(breakpoints.md + 1, "px)")).matches;
-var isTablet = window.matchMedia("(max-width: ".concat(breakpoints.md, "px)")).matches;
-var isMobile = window.matchMedia("(max-width: ".concat(breakpoints.sm, "px)")).matches;
-function windowMatchesMaxWidthQuery(width) {
-  return window.matchMedia("(max-width: ".concat(width, "px)")).matches;
+/**
+ * @type public
+ * @name isDesktop
+ * @description
+ *
+ * Check for desktop breakpoint
+ *
+ * @return {Boolean}
+ *
+ **/
+
+function isDesktop() {
+  return window.matchMedia("(min-width: ".concat(breakpoints.md + 1, "px)")).matches;
+}
+/**
+ * @type public
+ * @name isTablet
+ * @description
+ *
+ * Check for tablet breakpoint
+ *
+ * @return {Boolean}
+ *
+ **/
+
+function isTablet() {
+  return window.matchMedia("(min-width: ".concat(breakpoints.sm + 1, "px)")).matches && window.matchMedia("(max-width: ".concat(breakpoints.md, "px)")).matches;
+}
+/**
+ * @type public
+ * @name isMobile
+ * @description
+ *
+ * Check for mobile breakpoint
+ *
+ * @return {Boolean}
+ *
+ **/
+
+function isMobile() {
+  return window.matchMedia("(max-width: ".concat(breakpoints.sm, "px)")).matches;
+}
+/**
+ * @type public
+ * @name windowMatchesMaxWidthQuery
+ * @description
+ *
+ * Check for specific media query
+ *
+ * @param {String}
+ * @return {Boolean}
+ *
+ **/
+
+function windowMatchesMaxWidthQuery(mediaQuery) {
+  return window.matchMedia(mediaQuery).matches;
 }
 /**
  * @type public
