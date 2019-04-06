@@ -1,0 +1,18 @@
+.pager {
+  &__items {
+    @include reset-list();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item {
+    margin: 0 12px;
+
+    &-link {
+      .is-active & {
+        text-decoration: underline;
+      }
+    }
+  }
+}

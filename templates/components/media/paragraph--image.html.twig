@@ -1,0 +1,48 @@
+{% set uri = content.field_image[0]['#media'].field_media_image.entity.uri.value %}
+{% set uri_mobile = content.field_image_mobile[0]['#media'].field_media_image.entity.uri.value %}
+{% set image_option = content.field_image_options['#items'].0.value %}
+{% set image_alt = content.field_image[0]['#media'].field_image_alt.0.value %}
+{% set is_background = image_option == 'image--background' %}
+{% set file_extension = uri|split('.')|last %}
+{% set file_extension_mobile = uri_mobile|split('.')|last %}
+
+{%
+  set classes = [
+    'image',
+    'lozad',
+    image_option,
+    uri_mobile ? 'image--has-mobile'
+  ]
+%}
+
+{% if uri %}
+  {% if view_mode != '' and uri|image_style(view_mode) != null and file_extension != 'svg' %}
+    {% if is_background %}
+      <div {{ attributes.addClass(classes) }} data-background-image="{{ uri|image_style(view_mode) }}"></div>
+    {% else %}
+      <img {{ attributes.addClass(classes) }} data-src="{{ uri|image_style(view_mode) }}" alt="{{ image_alt }}">
+    {% endif %}
+  {% else %}
+    {% if is_background %}
+      <div {{ attributes.addClass(classes) }} data-background-image="{{ file_url(uri) }}"></div>
+    {% else %}
+      <img {{ attributes.addClass(classes) }} data-src="{{ file_url(uri) }}" alt="{{ image_alt }}">
+    {% endif %}
+  {% endif %}
+{% endif %}
+
+{% if uri_mobile %}
+  {% if view_mode != '' and uri_mobile|image_style(view_mode) != null and file_extension_mobile != 'svg'  %}
+    {% if is_background %}
+      <div {{ attributes.addClass(classes, 'image--mobile') }} data-background-image="{{ uri_mobile|image_style(view_mode ~ "_mobile") }}"></div>
+    {% else %}
+      <img {{ attributes.addClass(classes, 'image--mobile') }} data-src="{{ uri_mobile|image_style(view_mode ~ "_mobile") }}" alt="{{ image_alt }}">
+    {% endif %}
+  {% else %}
+    {% if is_background %}
+      <div {{ attributes.addClass(classes, 'image--mobile') }} data-background-image="{{ file_url(uri_mobile) }}"></div>
+    {% else %}
+      <img {{ attributes.addClass(classes, 'image--mobile') }} data-src="{{ file_url(uri_mobile) }}" alt="{{ image_alt }}">
+    {% endif %}
+  {% endif %}
+{% endif %}

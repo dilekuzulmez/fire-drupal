@@ -15,12 +15,62 @@ export const breakpoints = {
   lg: 1200,
 };
 
-export const isDesktop = !window.matchMedia(`(max-width: ${breakpoints.md}px)`).matches;
-export const isMobile = window.matchMedia(`(max-width: ${breakpoints.md}px)`).matches;
+/**
+ * @type public
+ * @name isDesktop
+ * @description
+ *
+ * Check for desktop breakpoint
+ *
+ * @return {Boolean}
+ *
+ **/
+export function isDesktop() {
+  return window.matchMedia(`(min-width: ${breakpoints.md + 1}px)`).matches;
+}
 
-export const windowMatchesMaxWidthQuery = (width) => {
-  return window.matchMedia(`(max-width: ${width}px)`).matches;
-};
+/**
+ * @type public
+ * @name isTablet
+ * @description
+ *
+ * Check for tablet breakpoint
+ *
+ * @return {Boolean}
+ *
+ **/
+export function isTablet() {
+  return window.matchMedia(`(min-width: ${breakpoints.sm + 1}px)`).matches && window.matchMedia(`(max-width: ${breakpoints.md}px)`).matches;
+}
+
+/**
+ * @type public
+ * @name isMobile
+ * @description
+ *
+ * Check for mobile breakpoint
+ *
+ * @return {Boolean}
+ *
+ **/
+export function isMobile() {
+  return window.matchMedia(`(max-width: ${breakpoints.sm}px)`).matches;
+}
+
+/**
+ * @type public
+ * @name windowMatchesMaxWidthQuery
+ * @description
+ *
+ * Check for specific media query
+ *
+ * @param {String}
+ * @return {Boolean}
+ *
+ **/
+export function windowMatchesMaxWidthQuery(mediaQuery) {
+  return window.matchMedia(mediaQuery).matches;
+}
 
 /**
  * @type public
@@ -94,9 +144,9 @@ export function lockBody(lock, position) {
   const pageOffset = position ? position : $document.scrollTop();
 
   if (lock === true) {
-    $body.css({ overflow: 'hidden', top: '-' + pageOffset + 'px' });
+    $body.css({ overflow: 'hidden', top: '-' + pageOffset + 'px', position: 'fixed', width: '100%' });
   } else if (lock === false) {
-    $body.css({ overflow: '', top: '' });
+    $body.removeAttr('style');
   }
 
   $body.attr('data-fire-lock-body', lock);

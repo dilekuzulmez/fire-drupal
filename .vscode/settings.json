@@ -29,5 +29,5 @@
   "html.format.indentInnerHtml": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "breadcrumbs.enabled": true,
-  "prettier.printWidth": 140
+  "prettier.printWidth": 250
 }
