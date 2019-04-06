@@ -18,9 +18,9 @@ export const breakpoints = {
 export const isDesktop = !window.matchMedia(`(max-width: ${breakpoints.md}px)`).matches;
 export const isMobile = window.matchMedia(`(max-width: ${breakpoints.md}px)`).matches;
 
-export const windowMatchesMaxWidthQuery = (width) => {
+export function windowMatchesMaxWidthQuery(width) {
   return window.matchMedia(`(max-width: ${width}px)`).matches;
-};
+}
 
 /**
  * @type public
@@ -94,9 +94,9 @@ export function lockBody(lock, position) {
   const pageOffset = position ? position : $document.scrollTop();
 
   if (lock === true) {
-    $body.css({ overflow: 'hidden', top: '-' + pageOffset + 'px' });
+    $body.css({ overflow: 'hidden', top: '-' + pageOffset + 'px', position: 'fixed', width: '100%' });
   } else if (lock === false) {
-    $body.css({ overflow: '', top: '' });
+    $body.removeAttr('style');
   }
 
   $body.attr('data-fire-lock-body', lock);
