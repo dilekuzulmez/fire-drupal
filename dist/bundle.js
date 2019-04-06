@@ -86,10 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./assets/scripts/common/analytics.js":
-/*!********************************************!*\
-  !*** ./assets/scripts/common/analytics.js ***!
-  \********************************************/
+/***/ "./assets/scripts/base/analytics.js":
+/*!******************************************!*\
+  !*** ./assets/scripts/base/analytics.js ***!
+  \******************************************/
 /*! exports provided: trigger */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -113,10 +113,10 @@ var trigger = function trigger(event) {
 
 /***/ }),
 
-/***/ "./assets/scripts/common/component-record.js":
-/*!***************************************************!*\
-  !*** ./assets/scripts/common/component-record.js ***!
-  \***************************************************/
+/***/ "./assets/scripts/base/component-record.js":
+/*!*************************************************!*\
+  !*** ./assets/scripts/base/component-record.js ***!
+  \*************************************************/
 /*! exports provided: FireComponentRecord */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -125,8 +125,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FireComponentRecord", function() { return FireComponentRecord; });
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @common */ "./assets/scripts/common/index.js");
-/* harmony import */ var _include_site_header_site_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @include/site-header/site-header */ "./templates/include/site-header/site-header.js");
+/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @base */ "./assets/scripts/base/index.js");
+/* harmony import */ var _template_components_site_header_site_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @template/components/site-header/site-header */ "./templates/components/site-header/site-header.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -161,7 +161,7 @@ function () {
 
       switch (name) {
         case 'site-header':
-          new _include_site_header_site_header__WEBPACK_IMPORTED_MODULE_2__["SiteHeader"](id).init();
+          new _template_components_site_header_site_header__WEBPACK_IMPORTED_MODULE_2__["SiteHeader"](id).init();
           break;
 
         default:
@@ -179,7 +179,7 @@ function () {
         var names = jquery__WEBPACK_IMPORTED_MODULE_0___default()(component).data('fire-component');
         names = names.split(', '); // generate a unique ID
 
-        var id = _common__WEBPACK_IMPORTED_MODULE_1__["FireHelpers"].generateUniqueId();
+        var id = _base__WEBPACK_IMPORTED_MODULE_1__["FireHelpers"].generateUniqueId();
         var _iteratorNormalCompletion = true;
         var _didIteratorError = false;
         var _iteratorError = undefined;
@@ -213,10 +213,10 @@ function () {
 
 /***/ }),
 
-/***/ "./assets/scripts/common/component.js":
-/*!********************************************!*\
-  !*** ./assets/scripts/common/component.js ***!
-  \********************************************/
+/***/ "./assets/scripts/base/component.js":
+/*!******************************************!*\
+  !*** ./assets/scripts/base/component.js ***!
+  \******************************************/
 /*! exports provided: FireComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -231,7 +231,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-// dependencies
 
 /**
  * @type class
@@ -280,10 +279,10 @@ function () {
 
 /***/ }),
 
-/***/ "./assets/scripts/common/detect.js":
-/*!*****************************************!*\
-  !*** ./assets/scripts/common/detect.js ***!
-  \*****************************************/
+/***/ "./assets/scripts/base/detect.js":
+/*!***************************************!*\
+  !*** ./assets/scripts/base/detect.js ***!
+  \***************************************/
 /*! exports provided: FireDetect */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -360,10 +359,10 @@ function () {
 
 /***/ }),
 
-/***/ "./assets/scripts/common/helpers.js":
-/*!******************************************!*\
-  !*** ./assets/scripts/common/helpers.js ***!
-  \******************************************/
+/***/ "./assets/scripts/base/helpers.js":
+/*!****************************************!*\
+  !*** ./assets/scripts/base/helpers.js ***!
+  \****************************************/
 /*! exports provided: breakpoints, isDesktop, isTablet, isMobile, windowMatchesMaxWidthQuery, unsetTabIndex, setTabIndex, getPageType, lockBody, lockBodyToggle, capitalizeFirstLetter, clearFragment, shuffle, generateUniqueId, addScript, convertSourceToSVG */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -748,10 +747,10 @@ function convertSourceToSVG(target, url, color, classes, id) {
 
 /***/ }),
 
-/***/ "./assets/scripts/common/index.js":
-/*!****************************************!*\
-  !*** ./assets/scripts/common/index.js ***!
-  \****************************************/
+/***/ "./assets/scripts/base/index.js":
+/*!**************************************!*\
+  !*** ./assets/scripts/base/index.js ***!
+  \**************************************/
 /*! exports provided: FireHelpers, FireStorage, trigger, FireDetect, FireComponent, FireComponentRecord, FireLazyLoader */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -759,21 +758,21 @@ function convertSourceToSVG(target, url, color, classes, id) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FireHelpers", function() { return FireHelpers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FireStorage", function() { return FireStorage; });
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ "./assets/scripts/common/helpers.js");
-/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./storage */ "./assets/scripts/common/storage.js");
-/* harmony import */ var _analytics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./analytics */ "./assets/scripts/common/analytics.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ "./assets/scripts/base/helpers.js");
+/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./storage */ "./assets/scripts/base/storage.js");
+/* harmony import */ var _analytics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./analytics */ "./assets/scripts/base/analytics.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "trigger", function() { return _analytics__WEBPACK_IMPORTED_MODULE_2__["trigger"]; });
 
-/* harmony import */ var _detect__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./detect */ "./assets/scripts/common/detect.js");
+/* harmony import */ var _detect__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./detect */ "./assets/scripts/base/detect.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireDetect", function() { return _detect__WEBPACK_IMPORTED_MODULE_3__["FireDetect"]; });
 
-/* harmony import */ var _component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./component */ "./assets/scripts/common/component.js");
+/* harmony import */ var _component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./component */ "./assets/scripts/base/component.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireComponent", function() { return _component__WEBPACK_IMPORTED_MODULE_4__["FireComponent"]; });
 
-/* harmony import */ var _component_record__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./component-record */ "./assets/scripts/common/component-record.js");
+/* harmony import */ var _component_record__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./component-record */ "./assets/scripts/base/component-record.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireComponentRecord", function() { return _component_record__WEBPACK_IMPORTED_MODULE_5__["FireComponentRecord"]; });
 
-/* harmony import */ var _lazy_loader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lazy-loader */ "./assets/scripts/common/lazy-loader.js");
+/* harmony import */ var _lazy_loader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lazy-loader */ "./assets/scripts/base/lazy-loader.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireLazyLoader", function() { return _lazy_loader__WEBPACK_IMPORTED_MODULE_6__["FireLazyLoader"]; });
 
 
@@ -788,10 +787,10 @@ var FireStorage = _storage__WEBPACK_IMPORTED_MODULE_1__;
 
 /***/ }),
 
-/***/ "./assets/scripts/common/lazy-loader.js":
-/*!**********************************************!*\
-  !*** ./assets/scripts/common/lazy-loader.js ***!
-  \**********************************************/
+/***/ "./assets/scripts/base/lazy-loader.js":
+/*!********************************************!*\
+  !*** ./assets/scripts/base/lazy-loader.js ***!
+  \********************************************/
 /*! exports provided: FireLazyLoader */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -847,10 +846,10 @@ function () {
 
 /***/ }),
 
-/***/ "./assets/scripts/common/polyfills.js":
-/*!********************************************!*\
-  !*** ./assets/scripts/common/polyfills.js ***!
-  \********************************************/
+/***/ "./assets/scripts/base/polyfills.js":
+/*!******************************************!*\
+  !*** ./assets/scripts/base/polyfills.js ***!
+  \******************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -866,10 +865,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./assets/scripts/common/storage.js":
-/*!******************************************!*\
-  !*** ./assets/scripts/common/storage.js ***!
-  \******************************************/
+/***/ "./assets/scripts/base/storage.js":
+/*!****************************************!*\
+  !*** ./assets/scripts/base/storage.js ***!
+  \****************************************/
 /*! exports provided: getItem, setItem, removeItem, clear, key */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -943,17 +942,14 @@ function key(n) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _common_polyfills__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @common/polyfills */ "./assets/scripts/common/polyfills.js");
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @common */ "./assets/scripts/common/index.js");
-// dependencies
- // polyfills
-
- // common
+/* harmony import */ var _base_polyfills__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @base/polyfills */ "./assets/scripts/base/polyfills.js");
+/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @base */ "./assets/scripts/base/index.js");
 
 
-var detect = new _common__WEBPACK_IMPORTED_MODULE_2__["FireDetect"]();
-var componentRecord = new _common__WEBPACK_IMPORTED_MODULE_2__["FireComponentRecord"]();
-var lazyLoader = new _common__WEBPACK_IMPORTED_MODULE_2__["FireLazyLoader"]();
+
+var detect = new _base__WEBPACK_IMPORTED_MODULE_2__["FireDetect"]();
+var componentRecord = new _base__WEBPACK_IMPORTED_MODULE_2__["FireComponentRecord"]();
+var lazyLoader = new _base__WEBPACK_IMPORTED_MODULE_2__["FireLazyLoader"]();
 /**
  * @type function
  * @name onPageReady
@@ -1803,10 +1799,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _type
 
 /***/ }),
 
-/***/ "./templates/include/site-header/site-header.js":
-/*!******************************************************!*\
-  !*** ./templates/include/site-header/site-header.js ***!
-  \******************************************************/
+/***/ "./templates/components/site-header/site-header.js":
+/*!*********************************************************!*\
+  !*** ./templates/components/site-header/site-header.js ***!
+  \*********************************************************/
 /*! exports provided: SiteHeader */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1815,7 +1811,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SiteHeader", function() { return SiteHeader; });
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @common */ "./assets/scripts/common/index.js");
+/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @base */ "./assets/scripts/base/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1860,7 +1856,7 @@ function (_FireComponent) {
   }]);
 
   return SiteHeader;
-}(_common__WEBPACK_IMPORTED_MODULE_1__["FireComponent"]);
+}(_base__WEBPACK_IMPORTED_MODULE_1__["FireComponent"]);
 
 /***/ }),
 
