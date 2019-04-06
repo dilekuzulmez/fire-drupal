@@ -1,4 +1,3 @@
-// dependencies
 import $ from 'jquery';
 
 /**
