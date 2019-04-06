@@ -364,13 +364,14 @@ function () {
 /*!******************************************!*\
   !*** ./assets/scripts/common/helpers.js ***!
   \******************************************/
-/*! exports provided: breakpoints, isDesktop, isMobile, windowMatchesMaxWidthQuery, unsetTabIndex, setTabIndex, getPageType, lockBody, lockBodyToggle, capitalizeFirstLetter, clearFragment, shuffle, generateUniqueId, addScript, convertSourceToSVG */
+/*! exports provided: breakpoints, isDesktop, isTablet, isMobile, windowMatchesMaxWidthQuery, unsetTabIndex, setTabIndex, getPageType, lockBody, lockBodyToggle, capitalizeFirstLetter, clearFragment, shuffle, generateUniqueId, addScript, convertSourceToSVG */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "breakpoints", function() { return breakpoints; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isDesktop", function() { return isDesktop; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isTablet", function() { return isTablet; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isMobile", function() { return isMobile; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "windowMatchesMaxWidthQuery", function() { return windowMatchesMaxWidthQuery; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unsetTabIndex", function() { return unsetTabIndex; });
@@ -410,8 +411,9 @@ var breakpoints = {
   md: 992,
   lg: 1200
 };
-var isDesktop = !window.matchMedia("(max-width: ".concat(breakpoints.md, "px)")).matches;
-var isMobile = window.matchMedia("(max-width: ".concat(breakpoints.md, "px)")).matches;
+var isDesktop = window.matchMedia("(min-width: ".concat(breakpoints.md + 1, "px)")).matches;
+var isTablet = window.matchMedia("(max-width: ".concat(breakpoints.md, "px)")).matches;
+var isMobile = window.matchMedia("(max-width: ".concat(breakpoints.sm, "px)")).matches;
 function windowMatchesMaxWidthQuery(width) {
   return window.matchMedia("(max-width: ".concat(width, "px)")).matches;
 }

@@ -15,8 +15,9 @@ export const breakpoints = {
   lg: 1200,
 };
 
-export const isDesktop = !window.matchMedia(`(max-width: ${breakpoints.md}px)`).matches;
-export const isMobile = window.matchMedia(`(max-width: ${breakpoints.md}px)`).matches;
+export const isDesktop = window.matchMedia(`(min-width: ${breakpoints.md + 1}px)`).matches;
+export const isTablet = window.matchMedia(`(max-width: ${breakpoints.md}px)`).matches;
+export const isMobile = window.matchMedia(`(max-width: ${breakpoints.sm}px)`).matches;
 
 export function windowMatchesMaxWidthQuery(width) {
   return window.matchMedia(`(max-width: ${width}px)`).matches;
