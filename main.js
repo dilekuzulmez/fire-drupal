@@ -1,11 +1,6 @@
-// dependencies
 import $ from 'jquery';
-
-// polyfills
-import '@common/polyfills';
-
-// common
-import { FireDetect, FireComponentRecord, FireLazyLoader } from '@common';
+import '@base/polyfills';
+import { FireDetect, FireComponentRecord, FireLazyLoader } from '@base';
 
 const detect = new FireDetect();
 const componentRecord = new FireComponentRecord();

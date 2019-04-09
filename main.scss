@@ -9,23 +9,14 @@
 @import '~bootstrap/scss/bootstrap-grid';
 @import '~bootstrap/scss/utilities/display';
 
-// helpers
-@import './assets/styles/base/helpers';
-
 // base
+@import './assets/styles/base/helpers';
 @import './assets/styles/base/fonts';
 @import './assets/styles/base/scaffolding';
+@import './assets/styles/base/typography';
 
-// common
-@import './assets/styles/common/typography';
-@import './assets/styles/common/buttons';
-
-// includes
-@import './templates/include/site-header/site-header';
-@import './templates/include/site-footer/site-footer';
-
-// navigation
-@import './templates/navigation/main-nav/main-nav';
+// global components
+@import './assets/styles/components/buttons';
 
 // admin
 @import './assets/styles/admin/misc';
@@ -33,10 +24,11 @@
 @import './assets/styles/admin/login-form';
 @import './assets/styles/admin/wysiwyg';
 
-// misc
-@import './templates/misc/status-messages/status-messages';
-
 // components
+@import './templates/components/site-header/site-header';
+@import './templates/components/site-footer/site-footer';
+@import './templates/components/main-nav/main-nav';
+@import './templates/components/status-messages/status-messages';
 @import './templates/components/gap/gap';
 @import './templates/components/media/media';
 @import './templates/components/pager/pager';

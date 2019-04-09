@@ -1,7 +1,6 @@
 import $ from 'jquery';
-
-import { FireHelpers } from '@common';
-import { SiteHeader } from '@include/site-header/site-header';
+import { FireHelpers } from '@base';
+import { SiteHeader } from '@template/components/site-header/site-header';
 
 /**
  * @type class

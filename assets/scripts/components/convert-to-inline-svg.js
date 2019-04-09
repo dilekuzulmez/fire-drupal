@@ -1,6 +1,4 @@
-import $ from 'jquery';
-
-import { FireComponent, FireHelpers } from '@common';
+import { FireComponent, FireHelpers } from '@base';
 
 /**
  * @type public
@@ -14,16 +12,26 @@ import { FireComponent, FireHelpers } from '@common';
 export class ConvertToInlineSvg extends FireComponent {
   constructor(id) {
     super(id);
+  }
 
-    this.url = this.$component.attr('src');
-    this.id = this.$component.attr('id');
-    this.classes = this.$component.attr('class');
-    this.color = this.$component.attr('data-color') ? this.$component.attr('data-color') : null;
+  get url() {
+    return this.$component.attr('src');
+  }
+
+  get id() {
+    return this.$component.attr('id');
+  }
+
+  get classes() {
+    return this.$component.attr('class');
+  }
+
+  get color() {
+    return this.$component.attr('data-color') ? this.$component.attr('data-color') : null;
   }
 
   init() {
     if (!this.componentExists) return;
-
     FireHelpers.convertSourceToSVG(this.$component, this.url, this.color, this.classes, this.id);
   }
 }

@@ -43,8 +43,8 @@
  * @see html.html.twig
  */
 #}
-{% include directory ~ "/templates/include/site-header/site-header.html.twig" %}
+{% include "@fire/components/site-header/site-header.html.twig" %}
 <main>
-	{{ page.content }}
+  {{ page.content }}
 </main>
-{% include directory ~ "/templates/include/site-footer/site-footer.html.twig" %}
+{% include "@fire/components/site-footer/site-footer.html.twig" %}

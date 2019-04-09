@@ -3402,32 +3402,6 @@ input:-moz-placeholder {
       color: #695b8e;
       background-color: #fff; }
 
-.site-header {
-  display: -webkit-flex;
-  display: flex;
-  padding: 12px 40px;
-  background-color: #695b8e; }
-  .site-header__logo {
-    margin-right: 15px;
-    color: #fff; }
-
-.site-footer {
-  padding: 12px 0;
-  background-color: #695b8e;
-  color: #fff;
-  text-align: center; }
-
-.main-nav {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: -webkit-flex;
-  display: flex; }
-  .main-nav__item {
-    margin-right: 15px; }
-  .main-nav__link {
-    color: #fff; }
-
 body.toolbar-fixed #toolbar-administration {
   position: relative;
   z-index: 40; }
@@ -3549,6 +3523,32 @@ div.ipe-actions-block.ipe-actions {
 
 .span--secondary {
   color: #ba95e8; }
+
+.site-header {
+  display: -webkit-flex;
+  display: flex;
+  padding: 12px 40px;
+  background-color: #695b8e; }
+  .site-header__logo {
+    margin-right: 15px;
+    color: #fff; }
+
+.site-footer {
+  padding: 12px 0;
+  background-color: #695b8e;
+  color: #fff;
+  text-align: center; }
+
+.main-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-flex;
+  display: flex; }
+  .main-nav__item {
+    margin-right: 15px; }
+  .main-nav__link {
+    color: #fff; }
 
 .status-messages {
   margin-top: 25px;
