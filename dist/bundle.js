@@ -409,7 +409,7 @@ function () {
 /*!****************************************!*\
   !*** ./assets/scripts/base/helpers.js ***!
   \****************************************/
-/*! exports provided: breakpoints, isDesktop, isTablet, isMobile, windowMatchesMaxWidthQuery, unsetTabIndex, setTabIndex, getPageType, lockBody, lockBodyToggle, capitalizeFirstLetter, clearFragment, shuffle, generateUniqueId, addScript, convertSourceToSVG, findVisibleSection */
+/*! exports provided: breakpoints, isDesktop, isTablet, isMobile, windowMatchesMaxWidthQuery, unsetTabIndex, setTabIndex, getPageType, lockBody, lockBodyToggle, capitalizeFirstLetter, clearFragment, shuffle, generateUniqueId, addScript, convertSourceToSVG, iOSFixDoubleTap, findVisibleSection */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -430,6 +430,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateUniqueId", function() { return generateUniqueId; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addScript", function() { return addScript; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertSourceToSVG", function() { return convertSourceToSVG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iOSFixDoubleTap", function() { return iOSFixDoubleTap; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findVisibleSection", function() { return findVisibleSection; });
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
@@ -783,6 +784,24 @@ function convertSourceToSVG(target, url, color, classes, id) {
     }
 
     target.replaceWith($svg);
+  });
+}
+/**
+ * @type public
+ * @name iOSFixDoubleTap
+ * @description
+ *
+ * Fixes double tap issue on iOS devices
+ *
+ * @param {Array} array
+ * @return {Array}
+ *
+ **/
+
+function iOSFixDoubleTap() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('button, a').on('touchstart', function (event) {
+    var $target = jquery__WEBPACK_IMPORTED_MODULE_0___default()(event.currentTarget);
+    $target.is(':focus') ? $target.blur() : $target.focus();
   });
 }
 /**
