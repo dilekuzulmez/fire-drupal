@@ -133,34 +133,23 @@ export function getPageType() {
  * Allows you to manually pass value or uses scrollTop.
  * Uses animate with step function to handle refresh issues.
  *
- * @param {Boolean}
- * @param {Any}
+ * @param {Boolean} lock
+ * @param {Number} position
  * @return {Void}
  *
  **/
 export function lockBody(lock, position) {
   const $body = $('body');
   const $document = $(document);
-  const pageOffset = position ? position : $document.scrollTop();
 
   if (lock === true) {
-    $body.css({ overflow: 'hidden', top: '-' + pageOffset + 'px', position: 'fixed', width: '100%' });
+    $body.css({ overflow: 'hidden', top: '-' + position + 'px', position: 'fixed', width: '100%' });
   } else if (lock === false) {
     $body.removeAttr('style');
+    $document.scrollTop(position);
   }
 
   $body.attr('data-fire-lock-body', lock);
-
-  // goes to a set position
-  if (position) {
-    $body.animate(
-      { scrollTop: position },
-      {
-        duration: 0,
-        step: (val) => window.scrollTo(0, val),
-      },
-    );
-  }
 }
 
 /**
@@ -260,7 +249,7 @@ export function generateUniqueId() {
     btoa(Math.random())
       .toLowerCase()
       .replace(/=/, '')
-      .split(''),
+      .split('')
   ).join('');
 }
 
