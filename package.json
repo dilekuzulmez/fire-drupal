@@ -1,15 +1,13 @@
 {
   "name": "fire",
-  "version": "1.0.0",
   "description": "Custom Drupal 8 theme",
+  "author": "SKYCATCHFIRE",
   "scripts": {
     "build": "webpack --env.production --progress",
     "debug": "webpack --env.development --watch",
     "debug:prod": "webpack --watch --env.production  -watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "SKYCATCHFIRE",
-  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
