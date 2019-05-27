@@ -341,7 +341,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  * @description
  *
  * Useful methods used to detect browser, platform, etc
- * 
+ *
  **/
 var FireDetect =
 /*#__PURE__*/
@@ -391,6 +391,12 @@ function () {
       if (this.touch === true) {
         html.classList.add('has-touch-support');
       }
+    }
+  }, {
+    key: "detectTrueViewHeight",
+    value: function detectTrueViewHeight() {
+      var vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
     }
   }]);
 
@@ -785,7 +791,7 @@ function convertSourceToSVG(target, url, color, classes, id) {
 /*!**************************************!*\
   !*** ./assets/scripts/base/index.js ***!
   \**************************************/
-/*! exports provided: FireHelpers, FireStorage, FireAnalytics, FireDetect, FireComponent, FireLazyLoader, FireComponentRecord */
+/*! exports provided: FireHelpers, FireStorage, FireAnalytics, FireComponent, FireComponentRecord, FireLazyLoader, FireDetect */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

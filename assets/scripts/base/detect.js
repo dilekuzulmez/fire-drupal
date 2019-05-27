@@ -4,7 +4,7 @@
  * @description
  *
  * Useful methods used to detect browser, platform, etc
- * 
+ *
  **/
 export class FireDetect {
   constructor() {
@@ -34,7 +34,7 @@ export class FireDetect {
   }
 
   detectTouch() {
-    return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
   }
 
   setHtmlClasses() {
@@ -43,5 +43,10 @@ export class FireDetect {
     if (this.touch === true) {
       html.classList.add('has-touch-support');
     }
+  }
+
+  detectTrueViewHeight() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
 }
