@@ -70,6 +70,7 @@ module.exports = function(env = { production: false }) {
     plugins: [
       new CleanWebpackPlugin({
         verbose: true,
+        cleanAfterEveryBuildPatterns: ['!fonts/*'],
       }),
       new ExtractTextPlugin('bundle.css'),
       new BrowserSyncPlugin(
