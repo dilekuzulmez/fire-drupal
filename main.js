@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import '@base/polyfills';
-import { FireDetect, FireComponentRecord, FireLazyLoader } from '@base';
+import { FireDetect, FireComponentRecord, FireLazyLoader, FireHelpers } from '@base';
 
 const detect = new FireDetect();
 const componentRecord = new FireComponentRecord();
@@ -19,6 +19,10 @@ const onPageReady = () => {
   lazyLoader.init();
   lazyLoader.observer.observe();
   componentRecord.registerAllComponents();
+
+  if (detect.touch && (detect.platform === 'iPhone' || detect.platform === 'iPad')) {
+    FireHelpers.iOSFixDoubleTap();
+  }
 
   // display page
   $('body').addClass('has-loaded');

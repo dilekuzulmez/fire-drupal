@@ -133,34 +133,23 @@ export function getPageType() {
  * Allows you to manually pass value or uses scrollTop.
  * Uses animate with step function to handle refresh issues.
  *
- * @param {Boolean}
- * @param {Any}
+ * @param {Boolean} lock
+ * @param {Number} position
  * @return {Void}
  *
  **/
 export function lockBody(lock, position) {
   const $body = $('body');
   const $document = $(document);
-  const pageOffset = position ? position : $document.scrollTop();
 
   if (lock === true) {
-    $body.css({ overflow: 'hidden', top: '-' + pageOffset + 'px', position: 'fixed', width: '100%' });
+    $body.css({ overflow: 'hidden', top: '-' + position + 'px', position: 'fixed', width: '100%' });
   } else if (lock === false) {
     $body.removeAttr('style');
+    $document.scrollTop(position);
   }
 
   $body.attr('data-fire-lock-body', lock);
-
-  // goes to a set position
-  if (position) {
-    $body.animate(
-      { scrollTop: position },
-      {
-        duration: 0,
-        step: (val) => window.scrollTo(0, val),
-      },
-    );
-  }
 }
 
 /**
@@ -260,7 +249,7 @@ export function generateUniqueId() {
     btoa(Math.random())
       .toLowerCase()
       .replace(/=/, '')
-      .split(''),
+      .split('')
   ).join('');
 }
 
@@ -293,7 +282,6 @@ export function addScript(attribute, text, callback) {
  * @description
  *
  * Converts a source into an inline SVG
- * More information: https://github.com/skycatchfire/fire/issues/68
  *
  * @param {Object} target
  * @param {String} url
@@ -305,6 +293,7 @@ export function addScript(attribute, text, callback) {
  **/
 export function convertSourceToSVG(target, url, color, classes, id) {
   const fileExtension = url.split('.').pop();
+
   if (fileExtension !== 'svg') return;
 
   $.get(url, (data) => {
@@ -319,6 +308,13 @@ export function convertSourceToSVG(target, url, color, classes, id) {
     if (classes) {
       $svg.attr('class', classes);
     }
+
+    // Generates unqiue IDs for SVGs
+    const ids = $svg.find('[id]');
+    ids.each((index, id) => {
+      const currentId = $(id).attr('id');
+      $(id).attr('id', currentId + generateUniqueId());
+    });
 
     // manually sets viewBox so SVG can be scaled
     if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
@@ -344,4 +340,35 @@ export function convertSourceToSVG(target, url, color, classes, id) {
 
     target.replaceWith($svg);
   });
+}
+
+/**
+ * @type public
+ * @name iOSFixDoubleTap
+ * @description
+ *
+ * Fixes double tap issue on iOS devices
+ *
+ * @param {Array} array
+ * @return {Array}
+ *
+ **/
+export function iOSFixDoubleTap() {
+  $('button, a').on('touchstart', (event) => {
+    const $target = $(event.currentTarget);
+    $target.is(':focus') ? $target.blur() : $target.focus();
+  });
+}
+
+/**
+ * @type public
+ * @name findVisibleSection
+ * @description
+ *
+ * @param {Element} element
+ * @return {Element}
+ *
+ **/
+export function findVisibleSection(element) {
+  return element.is(':hidden') || element.hasClass('gap') ? findVisibleSection(element.next()) : element;
 }

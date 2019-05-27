@@ -10,16 +10,12 @@
   "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.snippetSuggestions": "top",
-  "editor.formatOnPaste": true,
   "explorer.confirmDragAndDrop": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+
   "emmet.triggerExpansionOnTab": true,
   "explorer.confirmDelete": false,
-  "editor.formatOnSave": true,
-  "prettier.singleQuote": true,
-  "prettier.useTabs": false,
-  "prettier.tabWidth": 2,
-  "prettier.arrowParens": "always",
-  "prettier.trailingComma": "all",
   "[html]": {
     "editor.formatOnSave": false
   },
@@ -29,5 +25,13 @@
   "html.format.indentInnerHtml": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "breadcrumbs.enabled": true,
-  "prettier.printWidth": 250
+
+  "prettier.printWidth": 200,
+  "prettier.singleQuote": true,
+  "prettier.useTabs": false,
+  "prettier.tabWidth": 2,
+  "prettier.arrowParens": "always",
+  "prettier.trailingComma": "es5",
+  "prettier.semi": true,
+  "prettier.bracketSpacing": true
 }
