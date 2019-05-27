@@ -68,7 +68,9 @@ module.exports = function(env = { production: false }) {
       jquery: 'jQuery',
     },
     plugins: [
-      new CleanWebpackPlugin(),
+      new CleanWebpackPlugin({
+        verbose: true,
+      }),
       new ExtractTextPlugin('bundle.css'),
       new BrowserSyncPlugin(
         {
