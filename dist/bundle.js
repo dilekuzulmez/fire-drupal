@@ -534,8 +534,8 @@ function getPageType() {
  * Allows you to manually pass value or uses scrollTop.
  * Uses animate with step function to handle refresh issues.
  *
- * @param {Boolean}
- * @param {Any}
+ * @param {Boolean} lock
+ * @param {Number} position
  * @return {Void}
  *
  **/
@@ -543,31 +543,20 @@ function getPageType() {
 function lockBody(lock, position) {
   var $body = jquery__WEBPACK_IMPORTED_MODULE_0___default()('body');
   var $document = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document);
-  var pageOffset = position ? position : $document.scrollTop();
 
   if (lock === true) {
     $body.css({
       overflow: 'hidden',
-      top: '-' + pageOffset + 'px',
+      top: '-' + position + 'px',
       position: 'fixed',
       width: '100%'
     });
   } else if (lock === false) {
     $body.removeAttr('style');
+    $document.scrollTop(position);
   }
 
-  $body.attr('data-fire-lock-body', lock); // goes to a set position
-
-  if (position) {
-    $body.animate({
-      scrollTop: position
-    }, {
-      duration: 0,
-      step: function step(val) {
-        return window.scrollTo(0, val);
-      }
-    });
-  }
+  $body.attr('data-fire-lock-body', lock);
 }
 /**
  * @type public
