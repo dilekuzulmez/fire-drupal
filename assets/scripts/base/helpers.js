@@ -282,7 +282,6 @@ export function addScript(attribute, text, callback) {
  * @description
  *
  * Converts a source into an inline SVG
- * More information: https://github.com/skycatchfire/fire/issues/68
  *
  * @param {Object} target
  * @param {String} url
@@ -294,6 +293,7 @@ export function addScript(attribute, text, callback) {
  **/
 export function convertSourceToSVG(target, url, color, classes, id) {
   const fileExtension = url.split('.').pop();
+
   if (fileExtension !== 'svg') return;
 
   $.get(url, (data) => {
@@ -308,6 +308,13 @@ export function convertSourceToSVG(target, url, color, classes, id) {
     if (classes) {
       $svg.attr('class', classes);
     }
+
+    // Generates unqiue IDs for SVGs
+    const ids = $svg.find('[id]');
+    ids.each((index, id) => {
+      const currentId = $(id).attr('id');
+      $(id).attr('id', currentId + generateUniqueId());
+    });
 
     // manually sets viewBox so SVG can be scaled
     if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
