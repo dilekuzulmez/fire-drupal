@@ -90,26 +90,66 @@
 /*!******************************************!*\
   !*** ./assets/scripts/base/analytics.js ***!
   \******************************************/
-/*! exports provided: trigger */
+/*! exports provided: FireAnalytics */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "trigger", function() { return trigger; });
-// Note: Google Analytics should be initiated using a Drupal module
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FireAnalytics", function() { return FireAnalytics; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-/**
- * @type function
- * @name trigger
- * @description
- *
- * Trigger a GA event
- *
- **/
-var trigger = function trigger(event) {
-  if (typeof window.dataLayer === 'undefined') return;
-  dataLayer.push(event);
-};
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+// Note: Google Analytics should be initiated using a Drupal module
+var FireAnalytics =
+/*#__PURE__*/
+function () {
+  function FireAnalytics() {
+    _classCallCheck(this, FireAnalytics);
+  }
+
+  _createClass(FireAnalytics, null, [{
+    key: "sendEvent",
+    value: function sendEvent(category, action, label) {
+      if (!FireAnalytics.isSetup) {
+        return;
+      }
+
+      ga('send', 'event', category, action, label);
+    }
+  }, {
+    key: "isSetup",
+    get: function get() {
+      return typeof window.ga === 'undefined' ? false : true;
+    }
+  }, {
+    key: "category",
+    get: function get() {
+      return {
+        SLIDERS: 'Sliders',
+        MODALS: 'Modals',
+        BUTTONS: 'Buttons',
+        FORMS: 'Forms',
+        ERRORS: 'Errors'
+      };
+    }
+  }, {
+    key: "action",
+    get: function get() {
+      return {
+        SUBMIT: 'Submit',
+        CLICK: 'Click',
+        OPEN: 'Open',
+        CLOSE: 'Close',
+        ERROR: 'Error'
+      };
+    }
+  }]);
+
+  return FireAnalytics;
+}();
 
 /***/ }),
 
@@ -745,7 +785,7 @@ function convertSourceToSVG(target, url, color, classes, id) {
 /*!**************************************!*\
   !*** ./assets/scripts/base/index.js ***!
   \**************************************/
-/*! exports provided: FireHelpers, FireStorage, trigger, FireDetect, FireComponent, FireComponentRecord, FireLazyLoader */
+/*! exports provided: FireHelpers, FireStorage, FireAnalytics, FireDetect, FireComponent, FireLazyLoader, FireComponentRecord */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -755,7 +795,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ "./assets/scripts/base/helpers.js");
 /* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./storage */ "./assets/scripts/base/storage.js");
 /* harmony import */ var _analytics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./analytics */ "./assets/scripts/base/analytics.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "trigger", function() { return _analytics__WEBPACK_IMPORTED_MODULE_2__["trigger"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireAnalytics", function() { return _analytics__WEBPACK_IMPORTED_MODULE_2__["FireAnalytics"]; });
 
 /* harmony import */ var _detect__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./detect */ "./assets/scripts/base/detect.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireDetect", function() { return _detect__WEBPACK_IMPORTED_MODULE_3__["FireDetect"]; });
