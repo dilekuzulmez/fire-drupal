@@ -1038,7 +1038,12 @@ var onPageReady = function onPageReady() {
   detect.setHtmlClasses();
   lazyLoader.init();
   lazyLoader.observer.observe();
-  componentRecord.registerAllComponents(); // display page
+  componentRecord.registerAllComponents();
+
+  if (detect.touch && (detect.platform === 'iPhone' || detect.platform === 'iPad')) {
+    _base__WEBPACK_IMPORTED_MODULE_2__["FireHelpers"].iOSFixDoubleTap();
+  } // display page
+
 
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('has-loaded');
 }; // fire all scripts
