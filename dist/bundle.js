@@ -409,7 +409,7 @@ function () {
 /*!****************************************!*\
   !*** ./assets/scripts/base/helpers.js ***!
   \****************************************/
-/*! exports provided: breakpoints, isDesktop, isTablet, isMobile, windowMatchesMaxWidthQuery, unsetTabIndex, setTabIndex, getPageType, lockBody, lockBodyToggle, capitalizeFirstLetter, clearFragment, shuffle, generateUniqueId, addScript, convertSourceToSVG */
+/*! exports provided: breakpoints, isDesktop, isTablet, isMobile, windowMatchesMaxWidthQuery, unsetTabIndex, setTabIndex, getPageType, lockBody, lockBodyToggle, capitalizeFirstLetter, clearFragment, shuffle, generateUniqueId, addScript, convertSourceToSVG, findVisibleSection */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -430,6 +430,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateUniqueId", function() { return generateUniqueId; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addScript", function() { return addScript; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertSourceToSVG", function() { return convertSourceToSVG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findVisibleSection", function() { return findVisibleSection; });
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
@@ -784,6 +785,19 @@ function convertSourceToSVG(target, url, color, classes, id) {
     target.replaceWith($svg);
   });
 }
+/**
+ * @type public
+ * @name findVisibleSection
+ * @description
+ *
+ * @param {Element} element
+ * @return {Element}
+ *
+ **/
+
+function findVisibleSection(element) {
+  return element.is(':hidden') || element.hasClass('gap') ? findVisibleSection(element.next()) : element;
+}
 
 /***/ }),
 
@@ -791,7 +805,7 @@ function convertSourceToSVG(target, url, color, classes, id) {
 /*!**************************************!*\
   !*** ./assets/scripts/base/index.js ***!
   \**************************************/
-/*! exports provided: FireHelpers, FireStorage, FireAnalytics, FireComponent, FireComponentRecord, FireLazyLoader, FireDetect */
+/*! exports provided: FireHelpers, FireStorage, FireAnalytics, FireDetect, FireComponent, FireComponentRecord, FireLazyLoader */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
