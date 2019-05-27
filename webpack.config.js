@@ -68,8 +68,8 @@ module.exports = function(env = { production: false }) {
       jquery: 'jQuery',
     },
     plugins: [
-      new ExtractTextPlugin('bundle.css'),
       new CleanWebpackPlugin(),
+      new ExtractTextPlugin('bundle.css'),
       new BrowserSyncPlugin(
         {
           proxy: FireConstants.PROXY_URL,
