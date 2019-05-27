@@ -284,23 +284,23 @@ html {
 *::after {
   box-sizing: inherit; }
 
-.container, .status-messages {
+.container {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto; }
   @media (min-width: 576px) {
-    .container, .status-messages {
+    .container {
       max-width: 540px; } }
   @media (min-width: 768px) {
-    .container, .status-messages {
+    .container {
       max-width: 720px; } }
   @media (min-width: 992px) {
-    .container, .status-messages {
+    .container {
       max-width: 960px; } }
   @media (min-width: 1200px) {
-    .container, .status-messages {
+    .container {
       max-width: 1140px; } }
 
 .container-fluid {
@@ -3349,7 +3349,7 @@ div.ipe-actions-block.ipe-actions {
     .ipe-category-picker-top .vertical-tabs__menu {
       border: 0; }
       .ipe-category-picker-top .vertical-tabs__menu-item {
-        border: 1px solid #e2e2e2 !important; }
+        border: 1px solid #9b9b9b !important; }
     .ipe-category-picker-top .vertical-tabs__panes {
       margin-top: 20px; }
 
@@ -3426,8 +3426,23 @@ div.ipe-actions-block.ipe-actions {
     color: #fff; }
 
 .status-messages {
-  margin-top: 25px;
-  margin-bottom: 25px; }
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  bottom: 0;
+  width: 100%; }
+  .status-messages__message {
+    padding: 5px 15px;
+    color: #fff;
+    background-color: rgba(105, 91, 142, 0.9); }
+    .status-messages__message--error {
+      background-color: rgba(155, 32, 32, 0.9); }
+    .status-messages__message--warning {
+      background-color: rgba(214, 184, 65, 0.9); }
+  .status-messages a {
+    color: #fff;
+    text-decoration: underline;
+    white-space: nowrap; }
 
 .gap {
   display: block;
@@ -3469,6 +3484,26 @@ div.ipe-actions-block.ipe-actions {
 @media (max-width: 767.98px) {
   .image:not(.image--mobile).image--has-mobile {
     display: none; } }
+
+.video--background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden; }
+  .video--background iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200vw;
+    height: 56.25vw;
+    /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+    min-height: 200vh;
+    min-width: 200vh;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
 
 .pager__items {
   margin: 0;

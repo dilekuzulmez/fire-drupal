@@ -1,3 +1,4 @@
+// colors
 $color-primary: #695b8e;
 $color-secondary: #ba95e8;
 $color-accent: #37b57b;
@@ -6,11 +7,18 @@ $color-gray: #171717;
 $color-gray-light: #9b9b9b;
 $color-gray-lighter: #f9f8f8;
 
-$color-gray-border: #e2e2e2;
+$color-gray-border: #9b9b9b;
+
+$color-warning: #d6b841;
+$color-error: #9b2020;
 
 $color-font: $color-gray;
 
+// fonts
 $font-family: 'Open Sans', sans-serif;
+
+// z-indexes
+$z-index-status-messages: 10;
 
 // Bootstrap variable overrides
 $grid-columns: 12;
