@@ -69,7 +69,7 @@ module.exports = function(env = { production: false }) {
     },
     plugins: [
       new ExtractTextPlugin('bundle.css'),
-      new CleanWebpackPlugin(FireConstants.DESTINATION_PATH),
+      new CleanWebpackPlugin(),
       new BrowserSyncPlugin(
         {
           proxy: FireConstants.PROXY_URL,
@@ -78,7 +78,7 @@ module.exports = function(env = { production: false }) {
         },
         {
           injectCss: true,
-        },
+        }
       ),
     ],
   };

@@ -980,6 +980,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(onPageReady);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 /**
  * Copyright 2016 Google Inc. All Rights Reserved.
  *
@@ -988,9 +990,14 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(onPageReady);
  *  https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
  *
  */
-(function (window, document) {
-  'use strict'; // Exits early if all IntersectionObserver and IntersectionObserverEntry
+(function () {
+  'use strict'; // Exit early if we're not running in a browser.
+
+  if ((typeof window === "undefined" ? "undefined" : _typeof(window)) !== 'object') {
+    return;
+  } // Exit early if all IntersectionObserver and IntersectionObserverEntry
   // features are natively supported.
+
 
   if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
     // Minimal polyfill for Edge 15's lack of `isIntersecting`
@@ -1006,12 +1013,17 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(onPageReady);
     return;
   }
   /**
+   * A local reference to the document.
+   */
+
+
+  var document = window.document;
+  /**
    * An IntersectionObserver registry. This registry exists to hold a strong
    * reference to IntersectionObserver instances currently observing a target
    * element. Without this registry, instances without another reference may be
    * garbage collected.
    */
-
 
   var registry = [];
   /**
@@ -1681,13 +1693,18 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(onPageReady);
       return parent.host;
     }
 
+    if (parent && parent.assignedSlot) {
+      // If the parent is distributed in a <slot>, return the parent of a slot.
+      return parent.assignedSlot.parentNode;
+    }
+
     return parent;
   } // Exposes the constructors globally.
 
 
   window.IntersectionObserver = IntersectionObserver;
   window.IntersectionObserverEntry = IntersectionObserverEntry;
-})(window, document);
+})();
 
 /***/ }),
 
