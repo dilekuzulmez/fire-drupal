@@ -46,10 +46,7 @@
   {% else %}
     {% set formatted_video_url = "https://player.vimeo.com/video/" ~ video_url|video_id ~ "?byline=false&portrait=false&title=false" %}
   {% endif %}
-{% elseif 'youtube' in video_url %}
-  {% set video_type = 'youtube' %}
-  {% set formatted_video_url = "https://www.youtube.com/embed/" ~ video_url|video_id ~ "?autoplay=0&controls=0&modestbranding=1&rel=0&enablejsapi=1" %}
-{% elseif 'youtu.be' in video_url %}
+{% elseif 'youtube' in video_url or 'youtu.be' in video_url %}
   {% set video_type = 'youtube' %}
   {% set formatted_video_url = "https://www.youtube.com/embed/" ~ video_url|video_id ~ "?autoplay=0&controls=0&modestbranding=1&rel=0&enablejsapi=1" %}
 {% endif %}
