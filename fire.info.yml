@@ -20,6 +20,7 @@ stylesheets-remove:
   - core/themes/stable/css/system/components/tree-child.module.css
   - core/themes/stable/css/system/components/container-inline.module.css
   - core/themes/stable/css/system/components/details.module.css
+  - core/themes/stable/css/system/components/hidden.module.css
   - core/themes/stable/css/system/components/item-list.module.css
   - core/themes/stable/css/system/components/position-container.module.css
   - core/themes/stable/css/system/components/reset-appearance.module.css
