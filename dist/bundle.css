@@ -3427,7 +3427,6 @@ div.ipe-actions-block.ipe-actions {
 
 .status-messages {
   position: fixed;
-  bottom: 0;
   z-index: 10;
   bottom: 0;
   width: 100%; }
