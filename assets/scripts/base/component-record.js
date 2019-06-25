@@ -12,7 +12,7 @@ import { SiteHeader } from '@template/components/site-header/site-header';
  **/
 export class FireComponentRecord {
   // register correct component
-  _registerComponent(component, name, id) {
+  _registerComponent(component, name, id, afterBehaviorHit) {
     // mark as registered
     $(component).attr('data-registered', id);
 
@@ -26,7 +26,7 @@ export class FireComponentRecord {
     }
   }
 
-  registerAllComponents() {
+  registerAllComponents(afterBehaviorHit) {
     // loop through all components on the page
     $('[data-fire-component]').each((index, component) => {
       // get name of component
@@ -37,7 +37,7 @@ export class FireComponentRecord {
       const id = FireHelpers.generateUniqueId();
 
       for (const name of names) {
-        this._registerComponent(component, name, id);
+        this._registerComponent(component, name, id, afterBehaviorHit);
       }
     });
   }
