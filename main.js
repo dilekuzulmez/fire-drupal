@@ -26,6 +26,14 @@ const onPageReady = () => {
 
   // display page
   $('body').addClass('has-loaded');
+
+  // global Drupal behaviors
+  Drupal.behaviors.fireGlobal = {
+    attach: (context, settings) => {
+      componentRecord.registerAllComponents(true);
+      lazyLoader.observer.observe();
+    },
+  };
 };
 
 // fire all scripts
