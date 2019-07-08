@@ -3327,10 +3327,10 @@ input:-moz-placeholder {
 
 body.toolbar-fixed #toolbar-administration {
   position: relative;
-  z-index: 40; }
+  z-index: 10001; }
 
 #panels-ipe-tray {
-  z-index: 41; }
+  z-index: 10002; }
   .panels-ipe-tabs-open #panels-ipe-tray {
     top: 40px; }
 
