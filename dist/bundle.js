@@ -329,11 +329,14 @@ function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FireDetect", function() { return FireDetect; });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 /**
  * @type class
@@ -343,6 +346,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  * Useful methods used to detect browser, platform, etc
  *
  **/
+
 var FireDetect =
 /*#__PURE__*/
 function () {
@@ -397,6 +401,10 @@ function () {
     value: function detectTrueViewHeight() {
       var vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('resize', function () {
+        vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
+      });
     }
   }]);
 
@@ -824,7 +832,7 @@ function findVisibleSection(element) {
 /*!**************************************!*\
   !*** ./assets/scripts/base/index.js ***!
   \**************************************/
-/*! exports provided: FireHelpers, FireStorage, FireAnalytics, FireDetect, FireComponent, FireComponentRecord, FireLazyLoader */
+/*! exports provided: FireHelpers, FireStorage, FireAnalytics, FireComponent, FireComponentRecord, FireLazyLoader, FireDetect */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1036,6 +1044,7 @@ var lazyLoader = new _base__WEBPACK_IMPORTED_MODULE_2__["FireLazyLoader"]();
 
 var onPageReady = function onPageReady() {
   detect.setHtmlClasses();
+  detect.detectTrueViewHeight();
   lazyLoader.init();
   lazyLoader.observer.observe();
   componentRecord.registerAllComponents();

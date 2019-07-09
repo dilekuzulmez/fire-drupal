@@ -16,6 +16,7 @@ const lazyLoader = new FireLazyLoader();
  **/
 const onPageReady = () => {
   detect.setHtmlClasses();
+  detect.detectTrueViewHeight();
   lazyLoader.init();
   lazyLoader.observer.observe();
   componentRecord.registerAllComponents();
