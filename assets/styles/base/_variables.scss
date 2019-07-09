@@ -18,7 +18,11 @@ $color-font: $color-gray;
 $font-family: 'Open Sans', sans-serif;
 
 // z-indexes
+$z-index-admin-header: 10001;
 $z-index-status-messages: 10;
+
+// misc
+$vh: calc(var(--vh, 1vh) * 100);
 
 // Bootstrap variable overrides
 $grid-columns: 12;

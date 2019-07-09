@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 /**
  * @type class
  * @name FireDetect
@@ -48,5 +50,10 @@ export class FireDetect {
   detectTrueViewHeight() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    $(window).on('resize', () => {
+      vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
   }
 }
