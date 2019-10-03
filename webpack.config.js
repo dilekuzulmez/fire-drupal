@@ -27,7 +27,7 @@ module.exports = function(env = { production: false }) {
             options: {
               parser: 'postcss-scss',
               sourceMap: true,
-              plugins: [require('autoprefixer')(), isProduction ? require('cssnano')() : () => {}],
+              plugins: [require('autoprefixer')({ grid: true, browsers: ['>1%'] }), isProduction ? require('cssnano')() : () => {}],
             },
           },
           { loader: 'sass-loader', options: { sourceMap: true } },

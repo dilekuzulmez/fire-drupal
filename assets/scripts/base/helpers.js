@@ -54,7 +54,7 @@ export function isTablet() {
  *
  **/
 export function isMobile() {
-  return window.matchMedia(`(max-width: ${breakpoints.sm}px)`).matches;
+  return window.matchMedia(`(max-width: ${breakpoints.sm - 1}px)`).matches;
 }
 
 /**
@@ -371,4 +371,22 @@ export function iOSFixDoubleTap() {
  **/
 export function findVisibleSection(element) {
   return element.is(':hidden') || element.hasClass('gap') ? findVisibleSection(element.next()) : element;
+}
+
+/**
+ * @type public
+ * @name moveBootstrapModalsToBody
+ * @description
+ *
+ * Moves modal to body on open.
+ *
+ * @return {Void}
+ *
+ **/
+export function moveBootstrapModalsToBody() {
+  $('.modal-dialog')
+    .parent()
+    .on('show.bs.modal', (e) => {
+      $(e.relatedTarget.attributes['data-target'].value).appendTo('body');
+    });
 }
