@@ -3227,49 +3227,6 @@ div.ipe-actions-block.ipe-actions {
     .gap--mobile {
       display: block; } }
 
-@media (max-width: 767.98px) {
-  .image {
-    display: block; } }
-
-.image--background {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; }
-
-.image--mobile {
-  display: none; }
-  @media (max-width: 767.98px) {
-    .image--mobile {
-      display: block; } }
-
-@media (max-width: 767.98px) {
-  .image:not(.image--mobile).image--has-mobile {
-    display: none; } }
-
-.video--background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden; }
-  .video--background iframe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200vw;
-    height: 56.25vw;
-    /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
-    min-height: 200vh;
-    min-width: 200vh;
-    transform: translate(-50%, -50%); }
-
 .pager__items {
   margin: 0;
   padding: 0;
