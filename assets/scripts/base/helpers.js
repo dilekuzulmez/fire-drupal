@@ -54,7 +54,7 @@ export function isTablet() {
  *
  **/
 export function isMobile() {
-  return window.matchMedia(`(max-width: ${breakpoints.sm}px)`).matches;
+  return window.matchMedia(`(max-width: ${breakpoints.sm - 1}px)`).matches;
 }
 
 /**

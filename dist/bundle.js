@@ -506,7 +506,7 @@ function isTablet() {
  **/
 
 function isMobile() {
-  return window.matchMedia("(max-width: ".concat(breakpoints.sm, "px)")).matches;
+  return window.matchMedia("(max-width: ".concat(breakpoints.sm - 1, "px)")).matches;
 }
 /**
  * @type public
@@ -832,7 +832,7 @@ function findVisibleSection(element) {
 /*!**************************************!*\
   !*** ./assets/scripts/base/index.js ***!
   \**************************************/
-/*! exports provided: FireHelpers, FireStorage, FireAnalytics, FireComponent, FireComponentRecord, FireLazyLoader, FireDetect */
+/*! exports provided: FireHelpers, FireStorage, FireAnalytics, FireDetect, FireComponent, FireComponentRecord, FireLazyLoader */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
