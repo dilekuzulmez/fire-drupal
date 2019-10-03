@@ -20,6 +20,7 @@ const onPageReady = () => {
   lazyLoader.init();
   lazyLoader.observer.observe();
   componentRecord.registerAllComponents();
+  FireHelpers.moveBootstrapModalsToBody();
 
   if (detect.touch && (detect.platform === 'iPhone' || detect.platform === 'iPad')) {
     FireHelpers.iOSFixDoubleTap();

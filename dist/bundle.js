@@ -417,7 +417,7 @@ function () {
 /*!****************************************!*\
   !*** ./assets/scripts/base/helpers.js ***!
   \****************************************/
-/*! exports provided: breakpoints, isDesktop, isTablet, isMobile, windowMatchesMaxWidthQuery, unsetTabIndex, setTabIndex, getPageType, lockBody, lockBodyToggle, capitalizeFirstLetter, clearFragment, shuffle, generateUniqueId, addScript, convertSourceToSVG, iOSFixDoubleTap, findVisibleSection */
+/*! exports provided: breakpoints, isDesktop, isTablet, isMobile, windowMatchesMaxWidthQuery, unsetTabIndex, setTabIndex, getPageType, lockBody, lockBodyToggle, capitalizeFirstLetter, clearFragment, shuffle, generateUniqueId, addScript, convertSourceToSVG, iOSFixDoubleTap, findVisibleSection, moveBootstrapModalsToBody */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -440,6 +440,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertSourceToSVG", function() { return convertSourceToSVG; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iOSFixDoubleTap", function() { return iOSFixDoubleTap; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findVisibleSection", function() { return findVisibleSection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "moveBootstrapModalsToBody", function() { return moveBootstrapModalsToBody; });
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
@@ -825,6 +826,22 @@ function iOSFixDoubleTap() {
 function findVisibleSection(element) {
   return element.is(':hidden') || element.hasClass('gap') ? findVisibleSection(element.next()) : element;
 }
+/**
+ * @type public
+ * @name moveBootstrapModalsToBody
+ * @description
+ *
+ * Moves modal to body on open.
+ *
+ * @return {Void}
+ *
+ **/
+
+function moveBootstrapModalsToBody() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.modal-dialog').parent().on('show.bs.modal', function (e) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(e.relatedTarget.attributes['data-target'].value).appendTo('body');
+  });
+}
 
 /***/ }),
 
@@ -1048,6 +1065,7 @@ var onPageReady = function onPageReady() {
   lazyLoader.init();
   lazyLoader.observer.observe();
   componentRecord.registerAllComponents();
+  _base__WEBPACK_IMPORTED_MODULE_2__["FireHelpers"].moveBootstrapModalsToBody();
 
   if (detect.touch && (detect.platform === 'iPhone' || detect.platform === 'iPad')) {
     _base__WEBPACK_IMPORTED_MODULE_2__["FireHelpers"].iOSFixDoubleTap();
