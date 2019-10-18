@@ -1,5 +1,5 @@
 let inMemoryStorage = {};
-let storage = sessionStorage;
+let storage = localStorage;
 
 function isSupported() {
   try {

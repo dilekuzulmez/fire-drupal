@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+
+{% set is_submit = attributes.type == 'submit' %}
+
+{% if is_submit %}
+  {% set btn_classes = ['btn', 'btn-secondary'] %}
+{% else %}
+  {% set btn_classes = ['form-control'] %}
+{% endif %}
+
+<input{{ attributes.addClass(btn_classes).removeClass(['form-text']) }} />{{ children }}

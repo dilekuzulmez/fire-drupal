@@ -980,7 +980,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clear", function() { return clear; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "key", function() { return key; });
 var inMemoryStorage = {};
-var storage = sessionStorage;
+var storage = localStorage;
 
 function isSupported() {
   try {
