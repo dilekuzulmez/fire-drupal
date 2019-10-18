@@ -3227,17 +3227,4 @@ div.ipe-actions-block.ipe-actions {
     .gap--mobile {
       display: block; } }
 
-.pager__items {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
-.pager__item {
-  margin: 0 12px; }
-  .is-active .pager__item-link {
-    text-decoration: underline; }
-
 /*# sourceMappingURL=bundle.css.map*/
