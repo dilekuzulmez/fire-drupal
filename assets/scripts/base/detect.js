@@ -55,7 +55,6 @@ export class FireDetect {
     $(window).on(
       'resize',
       throttle(() => {
-        console.log('hit');
         vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
       }, 1000)

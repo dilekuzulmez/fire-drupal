@@ -495,7 +495,6 @@
                   jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on(
                     'resize',
                     lodash_throttle__WEBPACK_IMPORTED_MODULE_1___default()(function() {
-                      console.log('hit');
                       vh = window.innerHeight * 0.01;
                       document.documentElement.style.setProperty('--vh', ''.concat(vh, 'px'));
                     }, 1000)
