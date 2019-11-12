@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import '@base/polyfills';
+import balanceText from 'balance-text';
 import { FireDetect, FireComponentRecord, FireLazyLoader, FireHelpers } from '@base';
 
 const detect = new FireDetect();
@@ -25,6 +26,8 @@ const onPageReady = () => {
   if (detect.touch && (detect.platform === 'iPhone' || detect.platform === 'iPad')) {
     FireHelpers.iOSFixDoubleTap();
   }
+
+  balanceText();
 
   // display page
   $('body').addClass('has-loaded');
