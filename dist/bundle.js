@@ -1014,7 +1014,7 @@
       /*!**************************************!*\
   !*** ./assets/scripts/base/index.js ***!
   \**************************************/
-      /*! exports provided: FireHelpers, FireStorage, FireAnalytics, FireComponent, FireComponentRecord, FireLazyLoader, FireDetect */
+      /*! exports provided: FireHelpers, FireStorage, FireAnalytics, FireDetect, FireComponent, FireComponentRecord, FireLazyLoader */
       /***/ function(module, __webpack_exports__, __webpack_require__) {
         'use strict';
         __webpack_require__.r(__webpack_exports__);
@@ -1242,13 +1242,15 @@
         /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ 'jquery');
         /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/ __webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
         /* harmony import */ var _base_polyfills__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @base/polyfills */ './assets/scripts/base/polyfills.js');
-        /* harmony import */ var balance_text__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! balance-text */ './node_modules/balance-text/balancetext.js');
-        /* harmony import */ var balance_text__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/ __webpack_require__.n(balance_text__WEBPACK_IMPORTED_MODULE_2__);
-        /* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @base */ './assets/scripts/base/index.js');
+        /* harmony import */ var bootstrap_js_src_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap/js/src/util */ './node_modules/bootstrap/js/src/util.js');
+        /* harmony import */ var bootstrap_js_src_alert__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/js/src/alert */ './node_modules/bootstrap/js/src/alert.js');
+        /* harmony import */ var balance_text__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! balance-text */ './node_modules/balance-text/balancetext.js');
+        /* harmony import */ var balance_text__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/ __webpack_require__.n(balance_text__WEBPACK_IMPORTED_MODULE_4__);
+        /* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @base */ './assets/scripts/base/index.js');
 
-        var detect = new _base__WEBPACK_IMPORTED_MODULE_3__['FireDetect']();
-        var componentRecord = new _base__WEBPACK_IMPORTED_MODULE_3__['FireComponentRecord']();
-        var lazyLoader = new _base__WEBPACK_IMPORTED_MODULE_3__['FireLazyLoader']();
+        var detect = new _base__WEBPACK_IMPORTED_MODULE_5__['FireDetect']();
+        var componentRecord = new _base__WEBPACK_IMPORTED_MODULE_5__['FireComponentRecord']();
+        var lazyLoader = new _base__WEBPACK_IMPORTED_MODULE_5__['FireLazyLoader']();
         /**
          * @type function
          * @name onPageReady
@@ -1264,13 +1266,13 @@
           lazyLoader.init();
           lazyLoader.observer.observe();
           componentRecord.registerAllComponents();
-          _base__WEBPACK_IMPORTED_MODULE_3__['FireHelpers'].moveBootstrapModalsToBody();
+          _base__WEBPACK_IMPORTED_MODULE_5__['FireHelpers'].moveBootstrapModalsToBody();
 
           if (detect.touch && (detect.platform === 'iPhone' || detect.platform === 'iPad')) {
-            _base__WEBPACK_IMPORTED_MODULE_3__['FireHelpers'].iOSFixDoubleTap();
+            _base__WEBPACK_IMPORTED_MODULE_5__['FireHelpers'].iOSFixDoubleTap();
           }
 
-          balance_text__WEBPACK_IMPORTED_MODULE_2___default()(); // display page
+          balance_text__WEBPACK_IMPORTED_MODULE_4___default()(); // display page
 
           jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('has-loaded'); // global Drupal behaviors
 
@@ -13354,6 +13356,409 @@
 
           return publicInterface;
         });
+
+        /***/
+      },
+
+    /***/ './node_modules/bootstrap/js/src/alert.js':
+      /*!************************************************!*\
+  !*** ./node_modules/bootstrap/js/src/alert.js ***!
+  \************************************************/
+      /*! exports provided: default */
+      /***/ function(module, __webpack_exports__, __webpack_require__) {
+        'use strict';
+        __webpack_require__.r(__webpack_exports__);
+        /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ 'jquery');
+        /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/ __webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+        /* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util */ './node_modules/bootstrap/js/src/util.js');
+        function _classCallCheck(instance, Constructor) {
+          if (!(instance instanceof Constructor)) {
+            throw new TypeError('Cannot call a class as a function');
+          }
+        }
+
+        function _defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ('value' in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+
+        function _createClass(Constructor, protoProps, staticProps) {
+          if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) _defineProperties(Constructor, staticProps);
+          return Constructor;
+        }
+
+        /**
+         * --------------------------------------------------------------------------
+         * Bootstrap (v4.3.1): alert.js
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         * --------------------------------------------------------------------------
+         */
+
+        /**
+         * ------------------------------------------------------------------------
+         * Constants
+         * ------------------------------------------------------------------------
+         */
+
+        var NAME = 'alert';
+        var VERSION = '4.3.1';
+        var DATA_KEY = 'bs.alert';
+        var EVENT_KEY = '.'.concat(DATA_KEY);
+        var DATA_API_KEY = '.data-api';
+        var JQUERY_NO_CONFLICT = jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn[NAME];
+        var Selector = {
+          DISMISS: '[data-dismiss="alert"]',
+        };
+        var Event = {
+          CLOSE: 'close'.concat(EVENT_KEY),
+          CLOSED: 'closed'.concat(EVENT_KEY),
+          CLICK_DATA_API: 'click'.concat(EVENT_KEY).concat(DATA_API_KEY),
+        };
+        var ClassName = {
+          ALERT: 'alert',
+          FADE: 'fade',
+          SHOW: 'show',
+          /**
+           * ------------------------------------------------------------------------
+           * Class Definition
+           * ------------------------------------------------------------------------
+           */
+        };
+
+        var Alert =
+          /*#__PURE__*/
+          (function() {
+            function Alert(element) {
+              _classCallCheck(this, Alert);
+
+              this._element = element;
+            } // Getters
+
+            _createClass(
+              Alert,
+              [
+                {
+                  key: 'close',
+                  // Public
+                  value: function close(element) {
+                    var rootElement = this._element;
+
+                    if (element) {
+                      rootElement = this._getRootElement(element);
+                    }
+
+                    var customEvent = this._triggerCloseEvent(rootElement);
+
+                    if (customEvent.isDefaultPrevented()) {
+                      return;
+                    }
+
+                    this._removeElement(rootElement);
+                  },
+                },
+                {
+                  key: 'dispose',
+                  value: function dispose() {
+                    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.removeData(this._element, DATA_KEY);
+                    this._element = null;
+                  }, // Private
+                },
+                {
+                  key: '_getRootElement',
+                  value: function _getRootElement(element) {
+                    var selector = _util__WEBPACK_IMPORTED_MODULE_1__['default'].getSelectorFromElement(element);
+                    var parent = false;
+
+                    if (selector) {
+                      parent = document.querySelector(selector);
+                    }
+
+                    if (!parent) {
+                      parent = jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).closest('.'.concat(ClassName.ALERT))[0];
+                    }
+
+                    return parent;
+                  },
+                },
+                {
+                  key: '_triggerCloseEvent',
+                  value: function _triggerCloseEvent(element) {
+                    var closeEvent = jquery__WEBPACK_IMPORTED_MODULE_0___default.a.Event(Event.CLOSE);
+                    jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).trigger(closeEvent);
+                    return closeEvent;
+                  },
+                },
+                {
+                  key: '_removeElement',
+                  value: function _removeElement(element) {
+                    var _this = this;
+
+                    jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).removeClass(ClassName.SHOW);
+
+                    if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).hasClass(ClassName.FADE)) {
+                      this._destroyElement(element);
+
+                      return;
+                    }
+
+                    var transitionDuration = _util__WEBPACK_IMPORTED_MODULE_1__['default'].getTransitionDurationFromElement(element);
+                    jquery__WEBPACK_IMPORTED_MODULE_0___default()(element)
+                      .one(_util__WEBPACK_IMPORTED_MODULE_1__['default'].TRANSITION_END, function(event) {
+                        return _this._destroyElement(element, event);
+                      })
+                      .emulateTransitionEnd(transitionDuration);
+                  },
+                },
+                {
+                  key: '_destroyElement',
+                  value: function _destroyElement(element) {
+                    jquery__WEBPACK_IMPORTED_MODULE_0___default()(element)
+                      .detach()
+                      .trigger(Event.CLOSED)
+                      .remove();
+                  }, // Static
+                },
+              ],
+              [
+                {
+                  key: '_jQueryInterface',
+                  value: function _jQueryInterface(config) {
+                    return this.each(function() {
+                      var $element = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this);
+                      var data = $element.data(DATA_KEY);
+
+                      if (!data) {
+                        data = new Alert(this);
+                        $element.data(DATA_KEY, data);
+                      }
+
+                      if (config === 'close') {
+                        data[config](this);
+                      }
+                    });
+                  },
+                },
+                {
+                  key: '_handleDismiss',
+                  value: function _handleDismiss(alertInstance) {
+                    return function(event) {
+                      if (event) {
+                        event.preventDefault();
+                      }
+
+                      alertInstance.close(this);
+                    };
+                  },
+                },
+                {
+                  key: 'VERSION',
+                  get: function get() {
+                    return VERSION;
+                  },
+                },
+              ]
+            );
+
+            return Alert;
+          })();
+        /**
+         * ------------------------------------------------------------------------
+         * Data Api implementation
+         * ------------------------------------------------------------------------
+         */
+
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on(Event.CLICK_DATA_API, Selector.DISMISS, Alert._handleDismiss(new Alert()));
+        /**
+         * ------------------------------------------------------------------------
+         * jQuery
+         * ------------------------------------------------------------------------
+         */
+
+        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn[NAME] = Alert._jQueryInterface;
+        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn[NAME].Constructor = Alert;
+
+        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn[NAME].noConflict = function() {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn[NAME] = JQUERY_NO_CONFLICT;
+          return Alert._jQueryInterface;
+        };
+
+        /* harmony default export */ __webpack_exports__['default'] = Alert;
+
+        /***/
+      },
+
+    /***/ './node_modules/bootstrap/js/src/util.js':
+      /*!***********************************************!*\
+  !*** ./node_modules/bootstrap/js/src/util.js ***!
+  \***********************************************/
+      /*! exports provided: default */
+      /***/ function(module, __webpack_exports__, __webpack_require__) {
+        'use strict';
+        __webpack_require__.r(__webpack_exports__);
+        /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ 'jquery');
+        /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/ __webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+        /**
+         * --------------------------------------------------------------------------
+         * Bootstrap (v4.3.1): util.js
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         * --------------------------------------------------------------------------
+         */
+
+        /**
+         * ------------------------------------------------------------------------
+         * Private TransitionEnd Helpers
+         * ------------------------------------------------------------------------
+         */
+
+        var TRANSITION_END = 'transitionend';
+        var MAX_UID = 1000000;
+        var MILLISECONDS_MULTIPLIER = 1000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
+
+        function toType(obj) {
+          return {}.toString
+            .call(obj)
+            .match(/\s([a-z]+)/i)[1]
+            .toLowerCase();
+        }
+
+        function getSpecialTransitionEndEvent() {
+          return {
+            bindType: TRANSITION_END,
+            delegateType: TRANSITION_END,
+            handle: function handle(event) {
+              if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(event.target).is(this)) {
+                return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
+              }
+
+              return undefined; // eslint-disable-line no-undefined
+            },
+          };
+        }
+
+        function transitionEndEmulator(duration) {
+          var _this = this;
+
+          var called = false;
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).one(Util.TRANSITION_END, function() {
+            called = true;
+          });
+          setTimeout(function() {
+            if (!called) {
+              Util.triggerTransitionEnd(_this);
+            }
+          }, duration);
+          return this;
+        }
+
+        function setTransitionEndSupport() {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn.emulateTransitionEnd = transitionEndEmulator;
+          jquery__WEBPACK_IMPORTED_MODULE_0___default.a.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
+        }
+        /**
+         * --------------------------------------------------------------------------
+         * Public Util Api
+         * --------------------------------------------------------------------------
+         */
+
+        var Util = {
+          TRANSITION_END: 'bsTransitionEnd',
+          getUID: function getUID(prefix) {
+            do {
+              // eslint-disable-next-line no-bitwise
+              prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
+            } while (document.getElementById(prefix));
+
+            return prefix;
+          },
+          getSelectorFromElement: function getSelectorFromElement(element) {
+            var selector = element.getAttribute('data-target');
+
+            if (!selector || selector === '#') {
+              var hrefAttr = element.getAttribute('href');
+              selector = hrefAttr && hrefAttr !== '#' ? hrefAttr.trim() : '';
+            }
+
+            try {
+              return document.querySelector(selector) ? selector : null;
+            } catch (err) {
+              return null;
+            }
+          },
+          getTransitionDurationFromElement: function getTransitionDurationFromElement(element) {
+            if (!element) {
+              return 0;
+            } // Get transition-duration of the element
+
+            var transitionDuration = jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).css('transition-duration');
+            var transitionDelay = jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).css('transition-delay');
+            var floatTransitionDuration = parseFloat(transitionDuration);
+            var floatTransitionDelay = parseFloat(transitionDelay); // Return 0 if element or transition duration is not found
+
+            if (!floatTransitionDuration && !floatTransitionDelay) {
+              return 0;
+            } // If multiple durations are defined, take the first
+
+            transitionDuration = transitionDuration.split(',')[0];
+            transitionDelay = transitionDelay.split(',')[0];
+            return (parseFloat(transitionDuration) + parseFloat(transitionDelay)) * MILLISECONDS_MULTIPLIER;
+          },
+          reflow: function reflow(element) {
+            return element.offsetHeight;
+          },
+          triggerTransitionEnd: function triggerTransitionEnd(element) {
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).trigger(TRANSITION_END);
+          },
+          // TODO: Remove in v5
+          supportsTransitionEnd: function supportsTransitionEnd() {
+            return Boolean(TRANSITION_END);
+          },
+          isElement: function isElement(obj) {
+            return (obj[0] || obj).nodeType;
+          },
+          typeCheckConfig: function typeCheckConfig(componentName, config, configTypes) {
+            for (var property in configTypes) {
+              if (Object.prototype.hasOwnProperty.call(configTypes, property)) {
+                var expectedTypes = configTypes[property];
+                var value = config[property];
+                var valueType = value && Util.isElement(value) ? 'element' : toType(value);
+
+                if (!new RegExp(expectedTypes).test(valueType)) {
+                  throw new Error(
+                    ''.concat(componentName.toUpperCase(), ': ') + 'Option "'.concat(property, '" provided type "').concat(valueType, '" ') + 'but expected type "'.concat(expectedTypes, '".')
+                  );
+                }
+              }
+            }
+          },
+          findShadowRoot: function findShadowRoot(element) {
+            if (!document.documentElement.attachShadow) {
+              return null;
+            } // Can find the shadow root otherwise it'll return the document
+
+            if (typeof element.getRootNode === 'function') {
+              var root = element.getRootNode();
+              return root instanceof ShadowRoot ? root : null;
+            }
+
+            if (element instanceof ShadowRoot) {
+              return element;
+            } // when we don't find a shadow root
+
+            if (!element.parentNode) {
+              return null;
+            }
+
+            return Util.findShadowRoot(element.parentNode);
+          },
+        };
+        setTransitionEndSupport();
+        /* harmony default export */ __webpack_exports__['default'] = Util;
 
         /***/
       },

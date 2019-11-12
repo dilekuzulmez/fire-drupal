@@ -243,12 +243,12 @@ $grid-gutter-width: 30px;
 // $line-height-lg:              1.5 !default;
 // $line-height-sm:              1.5 !default;
 
-// $border-width:                1px !default;
-// $border-color:                $gray-300 !default;
+$border-width: 1px;
+$border-color: $gray-300;
 
-// $border-radius:               .25rem !default;
-// $border-radius-lg:            .3rem !default;
-// $border-radius-sm:            .2rem !default;
+$border-radius: 0.25rem;
+$border-radius-lg: 0.3rem;
+$border-radius-sm: 0.2rem;
 
 // $rounded-pill:                50rem !default;
 
@@ -294,14 +294,14 @@ $font-family-sans-serif: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe 
 // $font-size-lg:                $font-size-base * 1.25 !default;
 // $font-size-sm:                $font-size-base * .875 !default;
 
-// $font-weight-lighter:         lighter !default;
-// $font-weight-light:           300 !default;
-// $font-weight-normal:          400 !default;
-// $font-weight-bold:            700 !default;
-// $font-weight-bolder:          bolder !default;
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
 
-// $font-weight-base:            $font-weight-normal !default;
-// $line-height-base:            1.5 !default;
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.5;
 
 // $h1-font-size:                $font-size-base * 2.5 !default;
 // $h2-font-size:                $font-size-base * 2 !default;
@@ -954,20 +954,20 @@ $pagination-active-border-color: $pagination-color;
 // $modal-show-transform:              none !default;
 // $modal-transition:                  transform .3s ease-out !default;
 
-// // Alerts
-// //
-// // Define alert colors, border radius, and padding.
+// Alerts
+//
+// Define alert colors, border radius, and padding.
 
-// $alert-padding-y:                   .75rem !default;
-// $alert-padding-x:                   1.25rem !default;
-// $alert-margin-bottom:               1rem !default;
-// $alert-border-radius:               $border-radius !default;
-// $alert-link-font-weight:            $font-weight-bold !default;
-// $alert-border-width:                $border-width !default;
+$alert-padding-y: 0.75rem !default;
+$alert-padding-x: 1.25rem !default;
+$alert-margin-bottom: 1rem !default;
+$alert-border-radius: $border-radius !default;
+$alert-link-font-weight: $font-weight-bold !default;
+$alert-border-width: $border-width !default;
 
-// $alert-bg-level:                    -10 !default;
-// $alert-border-level:                -9 !default;
-// $alert-color-level:                 6 !default;
+$alert-bg-level: -10 !default;
+$alert-border-level: -9 !default;
+$alert-color-level: 6 !default;
 
 // // Progress bars
 

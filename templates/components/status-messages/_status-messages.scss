@@ -1,33 +1,10 @@
 .status-messages {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  z-index: $z-index-status-messages;
-  width: 100%;
-  max-height: 300px;
-  overflow-y: scroll;
-
-  &__message {
-    padding: 5px 15px;
-    color: #fff;
-    background-color: rgba($primary, 0.9);
-
-    &--error {
-      background-color: rgba($danger, 0.9);
-    }
-
-    &--warning {
-      background-color: rgba($warning, 0.9);
-    }
-
-    pre {
-      color: $body-color;
-    }
+  .close {
+    background-color: transparent;
+    border: 0;
   }
 
-  a {
-    color: #fff;
-    text-decoration: underline;
-    white-space: nowrap;
+  ul {
+    margin-bottom: 0;
   }
 }
