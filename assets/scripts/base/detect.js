@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import throttle from 'lodash/throttle';
 
 /**
  * @type class
@@ -51,9 +52,12 @@ export class FireDetect {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-    $(window).on('resize', () => {
-      vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    });
+    $(window).on(
+      'resize',
+      throttle(() => {
+        vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }, 1000)
+    );
   }
 }

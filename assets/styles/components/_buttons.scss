@@ -1,2 +1,16 @@
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+a {
+  color: $primary;
+
+  &:hover {
+    color: darken($primary, 20%);
+  }
+}
+
 .btn {
 }

@@ -51,17 +51,17 @@ div.ipe-actions-block.ipe-actions {
   .ipe-tab {
     &.active {
       a {
-        color: $color-primary;
+        color: $primary;
         border: none;
-        border-bottom: 3px solid $color-primary;
+        border-bottom: 3px solid $primary;
       }
     }
 
     &:hover {
       a {
-        color: $color-primary;
+        color: $primary;
         border: none;
-        border-bottom: 3px solid $color-primary;
+        border-bottom: 3px solid $primary;
       }
     }
   }
@@ -97,7 +97,7 @@ div.ipe-actions-block.ipe-actions {
       border: 0;
 
       &-item {
-        border: 1px solid $color-gray-border !important;
+        border: 1px solid $gray-400 !important;
       }
     }
 

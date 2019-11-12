@@ -1,7 +1,4 @@
 body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
   opacity: 0;
 
   &.has-loaded {
@@ -25,20 +22,10 @@ img {
   max-width: 100%;
 }
 
-strong {
-  font-weight: bold;
-}
-
-button {
-  &:hover {
-    cursor: pointer;
-  }
-}
-
 // Removes Chrome autofill yellow
 @-webkit-keyframes autofill {
   to {
-    color: $color-font;
+    color: $body-color;
     background-color: #fff;
   }
 }
@@ -49,5 +36,5 @@ input:-webkit-autofill {
 }
 
 pre {
-  background-color: #eee;
+  background-color: $gray-300;
 }
