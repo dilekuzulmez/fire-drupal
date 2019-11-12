@@ -10,18 +10,18 @@
   &__message {
     padding: 5px 15px;
     color: #fff;
-    background-color: rgba($color-primary, 0.9);
+    background-color: rgba($primary, 0.9);
 
     &--error {
-      background-color: rgba($color-error, 0.9);
+      background-color: rgba($danger, 0.9);
     }
 
     &--warning {
-      background-color: rgba($color-warning, 0.9);
+      background-color: rgba($warning, 0.9);
     }
 
     pre {
-      color: $color-font;
+      color: $body-color;
     }
   }
 
