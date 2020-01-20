@@ -4345,60 +4345,6 @@ input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%; }
 
-.overflow-visible {
-  overflow: visible !important; }
-
-.overflow-hidden {
-  overflow: hidden !important; }
-
-/**
- * Hide elements from all users.
- *
- * Used for elements which should not be immediately displayed to any user. An
- * example would be collapsible details that will be expanded with a click
- * from a user. The effect of this class can be toggled with the jQuery show()
- * and hide() functions.
- */
-.hidden {
-  display: none !important; }
-
-/**
- * Hide elements visually, but keep them available for screen readers.
- *
- * Used for information required for screen reader users to understand and use
- * the site where visual display is undesirable. Information provided in this
- * manner should be kept concise, to avoid unnecessary burden on the user.
- * "!important" is used to prevent unintentional overrides.
- */
-.visually-hidden,
-.sr-only {
-  position: absolute !important;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0; }
-
-/**
- * The .focusable class extends the .visually-hidden class to allow
- * the element to be focusable when navigated to via the keyboard.
- */
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  position: static !important;
-  clip: auto;
-  overflow: visible;
-  height: auto;
-  width: auto; }
-
-/**
- * Hide visually and from screen readers, but maintain layout.
- */
-.invisible {
-  visibility: hidden; }
-
 @font-face {
   font-family: 'Open Sans';
   src: url(fonts/OpenSans-Regular.ttf);
@@ -4488,6 +4434,60 @@ input:-ms-input-placeholder {
 input:-moz-placeholder {
   /* Firefox 18- */
   color: rgba(33, 37, 41, 0.9); }
+
+/**
+ * Hide elements from all users.
+ *
+ * Used for elements which should not be immediately displayed to any user. An
+ * example would be collapsible details that will be expanded with a click
+ * from a user. The effect of this class can be toggled with the jQuery show()
+ * and hide() functions.
+ */
+.hidden {
+  display: none !important; }
+
+/**
+ * Hide elements visually, but keep them available for screen readers.
+ *
+ * Used for information required for screen reader users to understand and use
+ * the site where visual display is undesirable. Information provided in this
+ * manner should be kept concise, to avoid unnecessary burden on the user.
+ * "!important" is used to prevent unintentional overrides.
+ */
+.visually-hidden,
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0; }
+
+/**
+ * The .focusable class extends the .visually-hidden class to allow
+ * the element to be focusable when navigated to via the keyboard.
+ */
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  position: static !important;
+  clip: auto;
+  overflow: visible;
+  height: auto;
+  width: auto; }
+
+/**
+ * Hide visually and from screen readers, but maintain layout.
+ */
+.invisible {
+  visibility: hidden; }
+
+.overflow-visible {
+  overflow: visible !important; }
+
+.overflow-hidden {
+  overflow: hidden !important; }
 
 button:hover {
   cursor: pointer; }
