@@ -1,4 +1,13 @@
 @function px2vw($target) {
-  $vw-context: (1000*.01) * 1px;
+  $vw-context: (1000 * 0.01) * 1px;
   @return ($target/$vw-context) * 1vw;
+}
+
+@function spacer($key) {
+  @if map-has-key($spacers, $key) {
+    @return map-get($spacers, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $spacers.";
+  @return null;
 }
