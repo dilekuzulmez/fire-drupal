@@ -1,26 +1,13 @@
 html,
 body {
   @include reset-last-paragraph;
-  font-family: $font-family-sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: $body-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
 strong {
-  font-weight: bold;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  margin-top: 0;
-  margin-bottom: 0;
+  font-weight: $font-weight-bold;
 }
 
 input {
