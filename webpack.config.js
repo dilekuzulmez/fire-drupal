@@ -10,6 +10,7 @@ module.exports = function(env = { production: false }) {
   console.info('Environment: ', env);
 
   const aliases = {
+    '@': path.resolve(__dirname, '.'),
     '@base': path.resolve(__dirname, 'assets/scripts/base'),
     '@component': path.resolve(__dirname, 'assets/scripts/components'),
     '@template': path.resolve(__dirname, 'templates'),
