@@ -17,10 +17,12 @@
 @import '~bootstrap/scss/buttons';
 
 // base
-@import './assets/styles/base/helpers';
 @import './assets/styles/base/fonts';
 @import './assets/styles/base/scaffolding';
 @import './assets/styles/base/typography';
+
+// helpers
+@import './assets/styles/helpers/index';
 
 // global components
 @import './assets/styles/components/buttons';
