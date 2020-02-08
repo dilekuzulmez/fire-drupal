@@ -1,0 +1,15 @@
+.bg-image-center-cover {
+  @include center-cover-background;
+}
+
+.bg-ratio-16-9 {
+  @include maintain-ratio(16, 9);
+}
+
+.object-fit {
+  &-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

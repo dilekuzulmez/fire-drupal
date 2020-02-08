@@ -2,8 +2,18 @@
 // Custom variables
 // ==========================================================================
 
+$text-sizes: (
+  12: 12px,
+  14: 14px,
+  16: 16px,
+  18: 18px,
+  20: 20px,
+  24: 24px,
+);
+
 // z-indexes
 $z-index-admin-header: 10001;
+$z-index-ajax-progress: 20001;
 
 // misc
 $vh: calc(var(--vh, 1vh) * 100);
@@ -16,81 +26,43 @@ $vh: calc(var(--vh, 1vh) * 100);
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 // Color system
-$white: #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black: #000 !default;
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
 
-$grays: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
-$grays: map-merge(
-  (
-    '100': $gray-100,
-    '200': $gray-200,
-    '300': $gray-300,
-    '400': $gray-400,
-    '500': $gray-500,
-    '600': $gray-600,
-    '700': $gray-700,
-    '800': $gray-800,
-    '900': $gray-900,
-  ),
-  $grays
-);
+$primary: #37b57b;
+$secondary: #695b8e;
+$accent: #ba95e8;
 
-$blue: #007bff;
-$indigo: #6610f2;
-$purple: #6f42c1;
-$pink: #e83e8c;
-$red: #dc3545;
-$orange: #fd7e14;
-$yellow: #ffc107;
-$green: #28a745;
-$teal: #20c997;
-$cyan: #17a2b8;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
 
-$colors: ();
-// stylelint-disable-next-line scss/dollar-variable-default
-$colors: map-merge(
-  (
-    'blue': $blue,
-    'indigo': $indigo,
-    'purple': $purple,
-    'pink': $pink,
-    'red': $red,
-    'orange': $orange,
-    'yellow': $yellow,
-    'green': $green,
-    'teal': $teal,
-    'cyan': $cyan,
-    'white': $white,
-    'gray': $gray-600,
-    'gray-dark': $gray-800,
-  ),
-  $colors
-);
-
-$primary: #695b8e;
-$secondary: #ba95e8;
-$accent: #37b57b;
-$success: $green;
-$info: $cyan;
-$warning: $yellow;
-$danger: $red;
 $light: $gray-100;
-$dark: $gray-800;
+$dark: $gray-900;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $theme-colors: map-merge(
   (
+    'gray-100': $gray-100,
+    'gray-200': $gray-200,
+    'gray-300': $gray-300,
+    'gray-400': $gray-400,
+    'gray-500': $gray-500,
+    'gray-600': $gray-600,
+    'gray-700': $gray-700,
+    'gray-800': $gray-800,
+    'gray-900': $gray-900,
     'primary': $primary,
     'secondary': $secondary,
     'accent': $accent,
@@ -104,13 +76,13 @@ $theme-colors: map-merge(
   $theme-colors
 );
 
-// // Set a specific jump point for requesting color jumps
+// Set a specific jump point for requesting color jumps
 // $theme-color-interval: 8% !default;
 
-// // The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
 // $yiq-contrasted-threshold: 150 !default;
 
-// // Customize the light and dark text colors for use in our YIQ color contrast function.
+// Customize the light and dark text colors for use in our YIQ color contrast function.
 // $yiq-text-dark: $gray-900 !default;
 // $yiq-text-light: $white !default;
 
@@ -138,56 +110,53 @@ $theme-colors: map-merge(
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
 
-// $spacer: 1rem !default;
-// $spacers: () !default;
-// // stylelint-disable-next-line scss/dollar-variable-default
-// $spacers: map-merge(
-//   (
-//     0: 0,
-//     1: (
-//       $spacer * 0.25,
-//     ),
-//     2: (
-//       $spacer * 0.5,
-//     ),
-//     3: $spacer,
-//     4: (
-//       $spacer * 1.5,
-//     ),
-//     5: (
-//       $spacer * 3,
-//     ),
-//   ),
-//   $spacers
-// );
+$spacer: 1rem;
+$spacers: ();
+// prettier-ignore
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * 0.25), // 4px
+    2: ($spacer * 0.5), // 8px
+    3: $spacer, // 1rem | 16px
+    4: ($spacer * 1.5), // 24px
+    5: ($spacer * 2), // 32px
+    6: ($spacer * 3), // 48px
+    7: ($spacer * 4), // 64px
+    8: ($spacer * 5), // 80px
+    9: ($spacer * 6), // 96px
+  ),
+  $spacers
+);
 
-// // This variable affects the `.h-*` and `.w-*` classes.
-// $sizes: () !default;
-// // stylelint-disable-next-line scss/dollar-variable-default
-// $sizes: map-merge(
-//   (
-//     25: 25%,
-//     50: 50%,
-//     75: 75%,
-//     100: 100%,
-//     auto: auto,
-//   ),
-//   $sizes
-// );
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: ();
+// prettier-ignore
+$sizes: map-merge(
+  (
+    '25p': 25%,
+    '45p': 45%,
+    '50p': 50%,
+    '75p': 75%,
+    '100p': 100%,
+    auto: auto,
+  ),
+  $sizes
+);
 
 // Body
 //
 // Settings for the `<body>` element.
 
-$body-bg: $white;
-$body-color: $gray-900;
+$body-bg: theme-color('white');
+$body-color: theme-color('dark');
 
 // Links
 //
 // Style anchor elements.
 
-// $link-color: theme-color('primary') !default;
-// $link-decoration: none !default;
+$link-color: theme-color('primary');
+$link-decoration: underline;
 // $link-hover-color: darken($link-color, 15%) !default;
 // $link-hover-decoration: underline !default;
 // // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
@@ -218,7 +187,6 @@ $grid-breakpoints: (
 // Grid containers
 //
 // Define the maximum width of `.container` for different screen sizes.
-
 $container-max-widths: (
   sm: 540px,
   md: 720px,
@@ -228,26 +196,26 @@ $container-max-widths: (
 
 @include _assert-ascending($container-max-widths, '$container-max-widths');
 
-// // Grid columns
-// //
-// // Set the number of columns and specify the width of the gutters.
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
 
 $grid-columns: 12;
 $grid-gutter-width: 30px;
 
-// // Components
-// //
-// // Define common padding and border radius sizes and more.
+// Components
+//
+// Define common padding and border radius sizes and more.
 
 // $line-height-lg:              1.5 !default;
 // $line-height-sm:              1.5 !default;
 
 $border-width: 1px;
-$border-color: $gray-300;
+$border-color: theme-color('gray-300');
 
-$border-radius: 0.25rem;
-$border-radius-lg: 0.3rem;
-$border-radius-sm: 0.2rem;
+$border-radius: 0.25rem; // 4px
+$border-radius-lg: 0.5rem; // 8px
+$border-radius-sm: 0.19; // 3px
 
 // $rounded-pill:                50rem !default;
 
@@ -289,42 +257,42 @@ $font-family-sans-serif: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe 
 // $font-family-base:            $font-family-sans-serif !default;
 // // stylelint-enable value-keyword-case
 
-// $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
-// $font-size-lg:                $font-size-base * 1.25 !default;
-// $font-size-sm:                $font-size-base * .875 !default;
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-size-lg: $font-size-base * 1.25; // 20px
+$font-size-sm: $font-size-base * 0.875; // 14px
 
 $font-weight-lighter: lighter;
 $font-weight-light: 300;
 $font-weight-normal: 400;
-$font-weight-bold: 700;
-$font-weight-bolder: bolder;
+$font-weight-bold: 500;
+$font-weight-bolder: bold;
 
 $font-weight-base: $font-weight-normal;
 $line-height-base: 1.5;
 
-// $h1-font-size:                $font-size-base * 2.5 !default;
-// $h2-font-size:                $font-size-base * 2 !default;
-// $h3-font-size:                $font-size-base * 1.75 !default;
-// $h4-font-size:                $font-size-base * 1.5 !default;
-// $h5-font-size:                $font-size-base * 1.25 !default;
-// $h6-font-size:                $font-size-base !default;
+$h1-font-size: $font-size-base * 2.5; // 40px
+$h2-font-size: $font-size-base * 2; // 32px
+$h3-font-size: $font-size-base * 1.75; // 28px
+$h4-font-size: $font-size-base * 1.5; // 24px
+$h5-font-size: $font-size-base * 1.25; // 20px
+$h6-font-size: $font-size-base; // 16px
 
-// $headings-margin-bottom:      $spacer / 2 !default;
+$headings-margin-bottom: $spacer;
 $headings-font-family: $font-family-sans-serif;
-// $headings-font-weight:        500 !default;
-// $headings-line-height:        1.2 !default;
-// $headings-color:              null !default;
+$headings-font-weight: $font-weight-bold;
+$headings-line-height: 1.3;
+$headings-color: $body-color;
 
-// $display1-size:               6rem !default;
-// $display2-size:               5.5rem !default;
-// $display3-size:               4.5rem !default;
-// $display4-size:               3.5rem !default;
+$display1-size: 6rem; // 96px
+$display2-size: 5.5rem; // 88px
+$display3-size: 4.5rem; // 72px
+$display4-size: 3.5rem; // 56px
 
-// $display1-weight:             300 !default;
-// $display2-weight:             300 !default;
-// $display3-weight:             300 !default;
-// $display4-weight:             300 !default;
-// $display-line-height:         $headings-line-height !default;
+$display1-weight: $headings-font-weight;
+$display2-weight: $headings-font-weight;
+$display3-weight: $headings-font-weight;
+$display4-weight: $headings-font-weight;
+$display-line-height: $headings-line-height;
 
 // $lead-font-size:              $font-size-base * 1.25 !default;
 // $lead-font-weight:            300 !default;

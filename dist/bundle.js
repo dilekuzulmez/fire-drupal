@@ -1087,6 +1087,7 @@ var onPageReady = function onPageReady() {
 
   Drupal.behaviors.fireGlobal = {
     attach: function attach(context, settings) {
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(context).is('.toolbar-menu')) return;
       componentRecord.registerAllComponents(true);
       lazyLoader.observer.observe();
     }
