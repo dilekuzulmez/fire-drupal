@@ -15,6 +15,7 @@
 @import '~bootstrap/scss/alert';
 @import '~bootstrap/scss/forms';
 @import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/type';
 
 // base
 @import './assets/styles/base/fonts';
@@ -39,5 +40,4 @@
 @import './templates/components/site-footer/site-footer';
 @import './templates/components/main-nav/main-nav';
 @import './templates/components/status-messages/status-messages';
-@import './templates/components/gap/gap';
 @import './templates/components/pagination/pagination';
