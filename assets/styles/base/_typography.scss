@@ -1,13 +1,12 @@
 html,
 body {
-  @include reset-last-paragraph;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
 strong {
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-bolder;
 }
 
 input {

@@ -10,7 +10,7 @@
 // dependencies
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
-@import '~bootstrap/scss/utilities/display';
+@import '~bootstrap/scss/utilities';
 @import '~bootstrap/scss/pagination';
 @import '~bootstrap/scss/alert';
 @import '~bootstrap/scss/forms';
@@ -26,14 +26,10 @@
 @import './assets/styles/helpers/index';
 
 // global components
-@import './assets/styles/components/buttons';
-@import './assets/styles/components/ajax-progress';
+@import './assets/styles/components/index';
 
 // admin
-@import './assets/styles/admin/misc';
-@import './assets/styles/admin/local-tasks';
-@import './assets/styles/admin/login-form';
-@import './assets/styles/admin/wysiwyg';
+@import './assets/styles/admin/index';
 
 // components
 @import './templates/components/site-header/site-header';

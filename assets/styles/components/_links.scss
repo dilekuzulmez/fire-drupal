@@ -1,0 +1,21 @@
+.link {
+  text-decoration: $link-decoration;
+  font-weight: $font-weight-bold;
+}
+
+@each $color, $value in $theme-colors {
+  .link-#{$color} {
+    color: $value;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      color: darken($value, 10%);
+    }
+  }
+}
+
+a {
+  @extend .link;
+}

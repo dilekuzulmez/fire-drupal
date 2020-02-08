@@ -4,13 +4,6 @@ button {
   }
 }
 
-a {
-  color: $primary;
-
-  &:hover {
-    color: darken($primary, 20%);
-  }
-}
-
 .btn {
+  text-decoration: none;
 }
