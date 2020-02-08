@@ -4497,6 +4497,29 @@ a {
   a:hover {
     color: #3b3350; }
 
+.ajax-progress.ajax-progress-fullscreen {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20001;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(105, 91, 142, 0.7); }
+  .ajax-progress.ajax-progress-fullscreen::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-image: url(/themes/fire/assets/media/svgs/spinner.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat; }
+
 body.toolbar-fixed #toolbar-administration {
   position: relative;
   z-index: 10001; }

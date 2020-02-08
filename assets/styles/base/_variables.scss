@@ -4,6 +4,7 @@
 
 // z-indexes
 $z-index-admin-header: 10001;
+$z-index-ajax-progress: 20001;
 
 // misc
 $vh: calc(var(--vh, 1vh) * 100);
