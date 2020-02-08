@@ -82,7 +82,5 @@
 %}
 
 <div{{ attributes.addClass(classes) }}>
-  {% for section in node.field_sections.value if section.target_id %}
-    {{ drupal_entity('paragraph', section.target_id) }}
-  {% endfor %}
+  {{ content.field_sections }}
 </div>
