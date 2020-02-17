@@ -134,19 +134,16 @@ export function getPageType() {
  * Uses animate with step function to handle refresh issues.
  *
  * @param {Boolean} lock
- * @param {Number} position
  * @return {Void}
  *
  **/
-export function lockBody(lock, position) {
+export function lockBody(lock) {
   const $body = $('body');
-  const $document = $(document);
 
   if (lock === true) {
-    $body.css({ overflow: 'hidden', top: '-' + position + 'px', position: 'fixed', width: '100%' });
+    $body.css({ overflow: 'hidden' });
   } else if (lock === false) {
     $body.removeAttr('style');
-    $document.scrollTop(position);
   }
 
   $body.attr('data-fire-lock-body', lock);
