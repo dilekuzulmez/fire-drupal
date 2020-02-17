@@ -9847,23 +9847,38 @@ button:hover {
   color: #dc3545; }
 
 #block-fire-local-tasks {
-  padding: 12px 0;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
           justify-content: center;
-  background-color: #212529; }
+  max-width: 100%;
+  padding: 10px 10px;
+  background-color: #000; }
+  .is-logged-in #block-fire-local-tasks {
+    z-index: 1030;
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    padding-left: 35px;
+    background-color: #000;
+    border-radius: 25px; }
   #block-fire-local-tasks ul {
     margin: 0;
     padding: 0;
     list-style: none;
     display: -webkit-box;
     display: flex; }
+    @media (max-width: 767.98px) {
+      #block-fire-local-tasks ul {
+        max-width: 100%; } }
     #block-fire-local-tasks ul li {
-      padding: 0 12px; }
+      padding: 0 8px;
+      font-size: 13px; }
       #block-fire-local-tasks ul li a {
-        color: #fff;
-        text-decoration: none; }
+        font-weight: bold;
+        color: #fff; }
+        .is-logged-in #block-fire-local-tasks ul li a {
+          color: #fff; }
 
 .user-login-form {
   position: relative;
