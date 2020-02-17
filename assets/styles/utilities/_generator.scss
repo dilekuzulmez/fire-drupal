@@ -69,8 +69,17 @@ $utilities: map-merge((
 
     .#{$property-class + $infix + $property-class-modifier} {
       @each $property in $properties {
-        // stylelint-disable-next-line declaration-no-important
-        #{$property}: $value !important;
+        @if map-get($utility, hover) {
+          @if map-get($utility, transition) and map-get($utility, 'transition-time') {
+            transition: #{map-get($utility, transition)} map-get($utility, 'transition-time');
+          }
+
+          &:hover {
+            #{$property}: $value !important;
+          }
+        } @else {
+          #{$property}: $value !important;
+        }
       }
     }
   }
