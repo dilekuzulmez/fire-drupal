@@ -31,4 +31,9 @@ export class FireComponent {
   get componentExists() {
     return this.$component.length !== 0;
   }
+
+  // helper function to find specific child element of component
+  findElement(element) {
+    return this.$component.find(`[data-element=${element}]`);
+  }
 }
