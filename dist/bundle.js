@@ -595,25 +595,19 @@ function getPageType() {
  * Uses animate with step function to handle refresh issues.
  *
  * @param {Boolean} lock
- * @param {Number} position
  * @return {Void}
  *
  **/
 
-function lockBody(lock, position) {
+function lockBody(lock) {
   var $body = jquery__WEBPACK_IMPORTED_MODULE_0___default()('body');
-  var $document = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document);
 
   if (lock === true) {
     $body.css({
-      overflow: 'hidden',
-      top: '-' + position + 'px',
-      position: 'fixed',
-      width: '100%'
+      overflow: 'hidden'
     });
   } else if (lock === false) {
     $body.removeAttr('style');
-    $document.scrollTop(position);
   }
 
   $body.attr('data-fire-lock-body', lock);
