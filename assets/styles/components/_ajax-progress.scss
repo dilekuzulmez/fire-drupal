@@ -1,13 +1,14 @@
 .ajax-progress.ajax-progress-fullscreen {
-  @include center-flex;
   position: fixed;
   top: 0;
   left: 0;
   z-index: $z-index-ajax-progress;
   width: 100%;
   height: 100%;
-  background-color: rgba(theme-color('primary'), 0.7);
-  color: theme-color('white');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(theme-color('secondary'), 0.7);
 
   &::after {
     content: '';
