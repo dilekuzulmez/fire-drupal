@@ -1,7 +1,5 @@
 import $ from 'jquery';
 import '@base/polyfills';
-import 'bootstrap/js/src/util';
-import 'bootstrap/js/src/alert';
 import balanceText from 'balance-text';
 import { FireDetect, FireComponentRecord, FireLazyLoader, FireHelpers } from '@base';
 

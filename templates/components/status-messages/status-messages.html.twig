@@ -28,12 +28,12 @@
   }
 %}
 
-<div class="status-messages mt-3">
+<div class="mt-3">
   <div class="container">
     <div class="row">
       <div class="col-12">
         {% for type, messages in message_list %}
-          <div class="status-messages__message status-messages__message--{{ type }} alert alert-{{ variations[type] }} alert-dismissible fade show" role="alert">
+          <div class="status-messages__message--{{ type }} alert alert-{{ variations[type] }}" role="alert">
             <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
               {% if type == 'error' %}
                 <div role="alert">
