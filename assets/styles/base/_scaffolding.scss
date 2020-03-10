@@ -1,6 +1,8 @@
 body {
   @include reset-last-paragraph;
-  opacity: 0;
+  &.fire-page {
+    opacity: 0;
+  }
 
   &.has-loaded {
     opacity: 1;

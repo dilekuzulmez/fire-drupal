@@ -5,6 +5,8 @@ core: 8.x
 libraries:
   - fire/bundle-styles
   - fire/bundle-scripts
+ckeditor_stylesheets:
+  - dist/bundle.css
 stylesheets-remove:
   - core/themes/stable/css/views/views.module.css
   - core/themes/stable/css/system/components/align.module.css
