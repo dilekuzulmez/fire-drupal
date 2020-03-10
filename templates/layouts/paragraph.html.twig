@@ -39,6 +39,7 @@
  */
 #}
 
+{% set fire_component = fire_component ? fire_component : '' %}
 {% set classes = classes ? classes : [] %}
 
 {%
@@ -87,7 +88,7 @@
     {% if section_id %}id="{{ section_id }}"{% endif %}
     {% if section_classes %}class="{{ section_classes }}"{% endif %}
   >
-    <div{{ attributes.setAttribute('class', '').addClass(classes) }}>
+    <div{{ attributes.setAttribute('class', '').addClass(classes).setAttribute('data-fire-component', fire_component) }}>
       {% block content %}
         {{ content }}
       {% endblock %}
