@@ -296,6 +296,12 @@ function () {
 
 
   _createClass(FireComponent, [{
+    key: "findElement",
+    // helper function to find specific child element of component
+    value: function findElement(element) {
+      return this.$component.find("[data-element=".concat(element, "]"));
+    }
+  }, {
     key: "$component",
     get: function get() {
       return jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.componentSelector);
@@ -450,7 +456,7 @@ function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArra
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
 
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
@@ -1042,8 +1048,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _base_polyfills__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @base/polyfills */ "./assets/scripts/base/polyfills.js");
 /* harmony import */ var bootstrap_js_src_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap/js/src/util */ "./node_modules/bootstrap/js/src/util.js");
 /* harmony import */ var bootstrap_js_src_alert__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/js/src/alert */ "./node_modules/bootstrap/js/src/alert.js");
-/* harmony import */ var balance_text__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! balance-text */ "./node_modules/balance-text/balancetext.js");
-/* harmony import */ var balance_text__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(balance_text__WEBPACK_IMPORTED_MODULE_4__);
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'balance-text'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @base */ "./assets/scripts/base/index.js");
 
 
@@ -1075,7 +1080,7 @@ var onPageReady = function onPageReady() {
     _base__WEBPACK_IMPORTED_MODULE_5__["FireHelpers"].iOSFixDoubleTap();
   }
 
-  balance_text__WEBPACK_IMPORTED_MODULE_4___default()(); // display page
+  !(function webpackMissingModule() { var e = new Error("Cannot find module 'balance-text'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(); // display page
 
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('has-loaded'); // global Drupal behaviors
 
@@ -1109,15 +1114,15 @@ var _global = _interopRequireDefault(__webpack_require__(/*! core-js/library/fn/
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
-    "default": obj
+    default: obj
   };
 }
 
-if (_global["default"]._babelPolyfill && typeof console !== "undefined" && console.warn) {
+if (_global.default._babelPolyfill && typeof console !== "undefined" && console.warn) {
   console.warn("@babel/polyfill is loaded more than once on this page. This is probably not desirable/intended " + "and may have consequences if different versions of the polyfills are applied sequentially. " + "If you do need to load the polyfill more than once, use @babel/polyfill/noConflict " + "instead to bypass the warning.");
 }
 
-_global["default"]._babelPolyfill = true;
+_global.default._babelPolyfill = true;
 
 /***/ }),
 
@@ -1157,7 +1162,7 @@ __webpack_require__(/*! core-js/fn/promise/finally */ "./node_modules/@babel/pol
 
 __webpack_require__(/*! core-js/web */ "./node_modules/@babel/polyfill/node_modules/core-js/web/index.js");
 
-__webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerator-runtime/runtime.js");
+__webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/@babel/polyfill/node_modules/regenerator-runtime/runtime.js");
 
 /***/ }),
 
@@ -1647,7 +1652,7 @@ module.exports = function (it) {
 /***/ (function(module, exports) {
 
 var core = module.exports = {
-  version: '2.6.11'
+  version: '2.6.9'
 };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
@@ -2936,7 +2941,7 @@ module.exports = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
 /***/ (function(module, exports) {
 
 var core = module.exports = {
-  version: '2.6.11'
+  version: '2.6.9'
 };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
@@ -11830,782 +11835,721 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/@ba
 
 /***/ }),
 
-/***/ "./node_modules/balance-text/balancetext.js":
-/*!**************************************************!*\
-  !*** ./node_modules/balance-text/balancetext.js ***!
-  \**************************************************/
+/***/ "./node_modules/@babel/polyfill/node_modules/regenerator-runtime/runtime.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/@babel/polyfill/node_modules/regenerator-runtime/runtime.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-/*
- * Copyright (c) 2012 Adobe Systems Incorporated. All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License. *
- */
+/* WEBPACK VAR INJECTION */(function(module) {function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 /**
- * balancetext.js
+ * Copyright (c) 2014-present, Facebook, Inc.
  *
- * Author: Randy Edmunds
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
+var runtime = function (exports) {
+  "use strict";
 
-/* global define, module */
+  var Op = Object.prototype;
+  var hasOwn = Op.hasOwnProperty;
+  var undefined; // More compressible than void 0.
 
-/*
- * Copyright (c) 2007-2009 unscriptable.com and John M. Hann
- *
- * Permission is hereby granted, free of charge, to any person
- * obtaining a copy of this software and associated documentation
- * files (the “Software”), to deal in the Software without
- * restriction, including without limitation the rights to use,
- * copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following
- * conditions:
- *
- * The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
- * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
- * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
- * OTHER DEALINGS IN THE SOFTWARE.
- *
- * Except as contained in this notice, the name(s) of the above
- * copyright holders (unscriptable.com and John M. Hann) shall not be
- * used in advertising or otherwise to promote the sale, use or other
- * dealings in this Software without prior written authorization.
- *
- * http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
- *
- * Tested to work on (lowest browser):
- * - Sarari 4
- * - Chrome 16
- * - Firefox 10
- * - IE 9
- * - Edge 13
- */
-(function (root, factory) {
-  if (true) {
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-  } else {}
-})(this, function () {
-  /**
-   * Line breaking global vars
-   */
-  var breakMatches, wsnwMatches, wsnwOffset;
-  /**
-   * Selectors and elements to watch;
-   * calling $.balanceText(elements) adds "elements" to this list.
-   */
+  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
 
-  var watching = {
-    sel: [],
-    // default class to watch
-    el: []
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    var generator = Object.create(protoGenerator.prototype);
+    var context = new Context(tryLocsList || []); // The ._invoke method unifies the implementations of the .next,
+    // .throw, and .return methods.
+
+    generator._invoke = makeInvokeMethod(innerFn, self, context);
+    return generator;
+  }
+
+  exports.wrap = wrap; // Try/catch helper to minimize deoptimizations. Returns a completion
+  // record like context.tryEntries[i].completion. This interface could
+  // have been (and was previously) designed to take a closure to be
+  // invoked without arguments, but in all the cases we care about we
+  // already have an existing method we want to call, so there's no need
+  // to create a new function object. We can even get away with assuming
+  // the method takes exactly one argument, since that happens to be true
+  // in every case, so we don't have to touch the arguments object. The
+  // only additional allocation required is the completion record, which
+  // has a stable shape and so hopefully should be cheap to allocate.
+
+  function tryCatch(fn, obj, arg) {
+    try {
+      return {
+        type: "normal",
+        arg: fn.call(obj, arg)
+      };
+    } catch (err) {
+      return {
+        type: "throw",
+        arg: err
+      };
+    }
+  }
+
+  var GenStateSuspendedStart = "suspendedStart";
+  var GenStateSuspendedYield = "suspendedYield";
+  var GenStateExecuting = "executing";
+  var GenStateCompleted = "completed"; // Returning this object from the innerFn has the same effect as
+  // breaking out of the dispatch switch statement.
+
+  var ContinueSentinel = {}; // Dummy constructor functions that we use as the .constructor and
+  // .constructor.prototype properties for functions that return Generator
+  // objects. For full spec compliance, you may wish to configure your
+  // minifier not to mangle the names of these two functions.
+
+  function Generator() {}
+
+  function GeneratorFunction() {}
+
+  function GeneratorFunctionPrototype() {} // This is a polyfill for %IteratorPrototype% for environments that
+  // don't natively support it.
+
+
+  var IteratorPrototype = {};
+
+  IteratorPrototype[iteratorSymbol] = function () {
+    return this;
   };
-  /**
-   * Have handlers been initialized?
-   */
 
-  var handlersInitialized = false;
-  /**
-   * Is this a polyfill?
-   */
+  var getProto = Object.getPrototypeOf;
+  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
 
-  var polyfilled = false;
-  /**
-   * Do nothing
-   */
-
-  function noop() {}
-  /**
-   * Loop that works with array-likes
-   * @param {Array-like} elements - List of elements to run a function on
-   * @param {Function}   callback - The function to call on each supplied element
-   */
-
-
-  function forEach(elements, callback) {
-    Array.prototype.forEach.call(elements, callback);
-  }
-  /**
-   * Polyfill for $(document).ready()
-   *
-   * @param {Function} fn - The function to execute when the document is ready
-   */
-
-
-  function ready(fn) {
-    if (document.readyState !== "loading") {
-      fn();
-    } else if (document.addEventListener) {
-      document.addEventListener("DOMContentLoaded", fn);
-    } else {
-      document.attachEvent("onreadystatechange", function () {
-        if (document.readyState !== "loading") {
-          fn();
-        }
-      });
-    }
-  }
-  /**
-   * Debounces a function over a threshold
-   *
-   * @param {Function} func      - The function to debounce
-   * @param {number}   threshold - time in ms
-   * @param {boolean}  execAsap  - when true, execute immediately
-   * @param args
-   * @return {Function} Debounced function
-   */
-
-
-  function debounce(func, threshold, execAsap) {
-    for (var _len = arguments.length, args = new Array(_len > 3 ? _len - 3 : 0), _key = 3; _key < _len; _key++) {
-      args[_key - 3] = arguments[_key];
-    }
-
-    var timeout;
-    return function () {
-      var obj = this;
-
-      function delayed() {
-        if (!execAsap) {
-          func.apply(obj, args);
-        }
-
-        timeout = null;
-      }
-
-      if (timeout) {
-        clearTimeout(timeout);
-      } else if (execAsap) {
-        func.apply(obj, args);
-      }
-
-      timeout = setTimeout(delayed, threshold || 100);
-    };
-  }
-  /**
-   * Determine whether the document supports TextWrap
-   * @return {boolean}
-   */
-
-
-  function hasTextWrap() {
-    if (typeof window === "undefined") {
-      return false;
-    }
-
-    var style = document.documentElement.style;
-    return style.textWrap || style.WebkitTextWrap || style.MozTextWrap || style.MsTextWrap;
-  }
-  /**
-   * Object for tracking next whitespace params
-   */
-  // eslint-disable-next-line camelcase
-
-
-  function NextWS_params() {
-    this.reset();
+  if (NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+    // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
   }
 
-  NextWS_params.prototype.reset = function () {
-    this.index = 0;
-    this.width = 0;
-  };
-  /**
-   * Check if index is contained in previously calculated list of white-space:nowrap ranges
-   *
-   * @param {number} index - the index of the character to check
-   * @return {boolean}
-   */
+  var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype);
+  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
+  GeneratorFunctionPrototype.constructor = GeneratorFunction;
+  GeneratorFunctionPrototype[toStringTagSymbol] = GeneratorFunction.displayName = "GeneratorFunction"; // Helper for defining the .next, .throw, and .return methods of the
+  // Iterator interface in terms of a single ._invoke method.
 
-
-  function isWhiteSpaceNoWrap(index) {
-    // Is index inside 1 of the ranges?
-    // start and end are breakable, but not inside range
-    return wsnwMatches.some(function (range) {
-      return range.start < index && index < range.end;
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function (method) {
+      prototype[method] = function (arg) {
+        return this._invoke(method, arg);
+      };
     });
   }
-  /**
-   * Recursively calculate white-space:nowrap offsets for line.
-   *
-   * @param {Node}    el         - the element to act on
-   * @param {boolean} includeTag - include length of tag itself
-   */
 
+  exports.isGeneratorFunction = function (genFun) {
+    var ctor = typeof genFun === "function" && genFun.constructor;
+    return ctor ? ctor === GeneratorFunction || // For the native GeneratorFunction constructor, the best we can
+    // do is to check its .name property.
+    (ctor.displayName || ctor.name) === "GeneratorFunction" : false;
+  };
 
-  function recursiveCalcNoWrapOffsetsForLine(el, includeTag) {
-    if (el.nodeType === el.ELEMENT_NODE) {
-      // Found an embedded tag
-      var style = window.getComputedStyle(el);
+  exports.mark = function (genFun) {
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    } else {
+      genFun.__proto__ = GeneratorFunctionPrototype;
 
-      if (style.whiteSpace === "nowrap") {
-        // Tag with white-space:nowrap - add match, skip children
-        var len = el.outerHTML.length;
-        wsnwMatches.push({
-          start: wsnwOffset,
-          end: wsnwOffset + len
-        });
-        wsnwOffset += len;
-      } else {
-        // Tag without white-space:nowrap - recursively check children of tag
-        forEach(el.childNodes, function (child) {
-          recursiveCalcNoWrapOffsetsForLine(child, true);
-        });
-
-        if (includeTag) {
-          // Length of opening tag, attributes, and closing tag
-          wsnwOffset += el.outerHTML.length - el.innerHTML.length;
-        }
+      if (!(toStringTagSymbol in genFun)) {
+        genFun[toStringTagSymbol] = "GeneratorFunction";
       }
-    } else if (el.nodeType === el.COMMENT_NODE) {
-      wsnwOffset += el.length + 7; // delimiter: <!-- -->
-    } else if (el.nodeType === el.PROCESSING_INSTRUCTION_NODE) {
-      wsnwOffset += el.length + 2; // delimiter: < >
-    } else {
-      // Text node: add length
-      wsnwOffset += el.length;
     }
-  }
-  /**
-   * Calculate white-space:nowrap offsets for line.
-   *
-   * @param {Node}    el             - the element to act on
-   * @param {string}  oldWS          - "old" whitespace setting for temporarily resetting
-   * @param {number}  lineCharOffset - char offset of current line from start of text
-   */
+
+    genFun.prototype = Object.create(Gp);
+    return genFun;
+  }; // Within the body of any async function, `await x` is transformed to
+  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+  // `hasOwn.call(value, "__await")` to determine if the yielded value is
+  // meant to be awaited.
 
 
-  function calcNoWrapOffsetsForLine(el, oldWS, lineCharOffset) {
-    // For first line (lineCharOffset === 0), calculate start and end offsets for each
-    // white-space:nowrap element in the line.
-    if (lineCharOffset === 0) {
-      // Reset whiteSpace setting when breakMatches is being calculated
-      // so white-space:nowrap can be detected in text
-      el.style.whiteSpace = oldWS;
-      wsnwOffset = 0;
-      wsnwMatches = [];
-      recursiveCalcNoWrapOffsetsForLine(el, false); // Restore temporary whitespace setting to recalc width
+  exports.awrap = function (arg) {
+    return {
+      __await: arg
+    };
+  };
 
-      el.style.whiteSpace = "nowrap";
-    } else {
-      // For all other lines, update the offsets for current line
-      // 1. Ignore matches less than offset
-      // 2. Subtract offset from remaining matches
-      var newMatches = [];
-      wsnwMatches.forEach(function (match) {
-        if (match.start > lineCharOffset) {
-          newMatches.push({
-            start: match.start - lineCharOffset,
-            end: match.end - lineCharOffset
+  function AsyncIterator(generator) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+
+      if (record.type === "throw") {
+        reject(record.arg);
+      } else {
+        var result = record.arg;
+        var value = result.value;
+
+        if (value && _typeof(value) === "object" && hasOwn.call(value, "__await")) {
+          return Promise.resolve(value.__await).then(function (value) {
+            invoke("next", value, resolve, reject);
+          }, function (err) {
+            invoke("throw", err, resolve, reject);
           });
         }
-      });
-      wsnwMatches = newMatches;
-    }
-  }
-  /**
-   * Strip balance-text tags from an element inserted in previous run
-   *
-   * @param {Node} el - the element to act on
-   */
 
-
-  function removeTags(el) {
-    // Remove soft-hyphen breaks
-    var brs = el.querySelectorAll('br[data-owner="balance-text-hyphen"]');
-    forEach(brs, function (br) {
-      br.outerHTML = "";
-    }); // Replace other breaks with whitespace
-
-    brs = el.querySelectorAll('br[data-owner="balance-text"]');
-    forEach(brs, function (br) {
-      br.outerHTML = " ";
-    }); // Restore hyphens inserted for soft-hyphens
-
-    var spans = el.querySelectorAll('span[data-owner="balance-text-softhyphen"]');
-
-    if (spans.length > 0) {
-      forEach(spans, function (span) {
-        var textNode = document.createTextNode("\xAD");
-        span.parentNode.insertBefore(textNode, span);
-        span.parentNode.removeChild(span);
-      });
-    } // Remove spans inserted for justified text
-
-
-    spans = el.querySelectorAll('span[data-owner="balance-text-justify"]');
-
-    if (spans.length > 0) {
-      var txt = "";
-      forEach(spans, function (span) {
-        txt += span.textContent;
-        span.parentNode.removeChild(span);
-      });
-      el.innerHTML = txt;
-    }
-  }
-  /**
-   * Checks to see if we should justify the balanced text with the
-   * element based on the textAlign property in the computed CSS
-   *
-   * @param {Node} el - element to check
-   * @return {boolean}
-   */
-
-
-  var isJustified = function isJustified(el) {
-    var style = el.currentStyle || window.getComputedStyle(el, null);
-    return style.textAlign === "justify";
-  };
-  /**
-   * Add whitespace after words in text to justify the string to
-   * the specified size.
-   * @param {Node}    el       - the element to justify
-   * @param {string}  txt      - text string
-   * @param {number}  conWidth - container width
-   * @return {string} Justified text
-   */
-
-
-  function justify(el, txt, conWidth) {
-    txt = txt.trim();
-    var words = txt.split(" ").length;
-    txt = "".concat(txt, " "); // if we don't have at least 2 words, no need to justify.
-
-    if (words < 2) {
-      return txt;
-    } // Find width of text in the DOM
-
-
-    var tmp = document.createElement("span");
-    tmp.innerHTML = txt;
-    el.appendChild(tmp);
-    var size = tmp.offsetWidth;
-    tmp.parentNode.removeChild(tmp); // Figure out our word spacing and return the element
-
-    var wordSpacing = Math.floor((conWidth - size) / (words - 1));
-    tmp.style.wordSpacing = "".concat(wordSpacing, "px");
-    tmp.setAttribute("data-owner", "balance-text-justify");
-    var div = document.createElement("div");
-    div.appendChild(tmp);
-    return div.innerHTML;
-  }
-  /**
-   * Returns true iff char at index is a break char outside of HTML < > tags.
-   * Break char can be: whitespace (except non-breaking-space: u00a0),
-   * hypen, emdash (u2014), endash (u2013), or soft-hyphen (u00ad).
-   *
-   * @param {string} txt   - the text to check
-   * @param {number} index - the index of the character to check
-   * @return {boolean}
-   */
-
-
-  function isBreakChar(txt, index) {
-    var re = /([^\S\u00a0]|-|\u2014|\u2013|\u00ad)(?![^<]*>)/g;
-    var match;
-
-    if (!breakMatches) {
-      // Only calc break matches once per line
-      breakMatches = [];
-      match = re.exec(txt);
-
-      while (match !== null) {
-        if (!isWhiteSpaceNoWrap(match.index)) {
-          breakMatches.push(match.index);
-        }
-
-        match = re.exec(txt);
+        return Promise.resolve(value).then(function (unwrapped) {
+          // When a yielded Promise is resolved, its final value becomes
+          // the .value of the Promise<{value,done}> result for the
+          // current iteration.
+          result.value = unwrapped;
+          resolve(result);
+        }, function (error) {
+          // If a rejected Promise was yielded, throw the rejection back
+          // into the async generator function so it can be handled there.
+          return invoke("throw", error, resolve, reject);
+        });
       }
     }
 
-    return breakMatches.indexOf(index) !== -1;
+    var previousPromise;
+
+    function enqueue(method, arg) {
+      function callInvokeWithMethodAndArg() {
+        return new Promise(function (resolve, reject) {
+          invoke(method, arg, resolve, reject);
+        });
+      }
+
+      return previousPromise = // If enqueue has been called before, then we want to wait until
+      // all previous Promises have been resolved before calling invoke,
+      // so that results are always delivered in the correct order. If
+      // enqueue has not been called before, then it is important to
+      // call invoke immediately, without waiting on a callback to fire,
+      // so that the async generator function has the opportunity to do
+      // any necessary setup in a predictable way. This predictability
+      // is why the Promise constructor synchronously invokes its
+      // executor callback, and why async functions synchronously
+      // execute code before the first await. Since we implement simple
+      // async functions in terms of async generators, it is especially
+      // important to get this right, even though it requires care.
+      previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, // Avoid propagating failures to Promises returned by later
+      // invocations of the iterator.
+      callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg();
+    } // Define the unified helper method that is used to implement .next,
+    // .throw, and .return (see defineIteratorMethods).
+
+
+    this._invoke = enqueue;
   }
-  /**
-   * In the current implementation, an index is a break
-   * opportunity in txt iff it is:
-   * - 0 or txt.length
-   * - index of a non-whitespace char immediately preceded by a
-   *   whitespace, hyphen, soft-hyphen, em-dash, or en-dash char.
-   *
-   * Thus, it doesn't honour "white-space" or any other Unicode
-   * line-breaking classes.)
-   *
-   * @precondition 0 <= index && index <= txt.length
-   *
-   * @param {string} txt   - the text to check
-   * @param {number} index - the index to check
-   * @return {boolean}
-   */
+
+  defineIteratorMethods(AsyncIterator.prototype);
+
+  AsyncIterator.prototype[asyncIteratorSymbol] = function () {
+    return this;
+  };
+
+  exports.AsyncIterator = AsyncIterator; // Note that simple async functions are implemented on top of
+  // AsyncIterator objects; they just return a Promise for the value of
+  // the final result produced by the iterator.
+
+  exports.async = function (innerFn, outerFn, self, tryLocsList) {
+    var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList));
+    return exports.isGeneratorFunction(outerFn) ? iter // If outerFn is a generator, return the full iterator.
+    : iter.next().then(function (result) {
+      return result.done ? result.value : iter.next();
+    });
+  };
+
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = GenStateSuspendedStart;
+    return function invoke(method, arg) {
+      if (state === GenStateExecuting) {
+        throw new Error("Generator is already running");
+      }
+
+      if (state === GenStateCompleted) {
+        if (method === "throw") {
+          throw arg;
+        } // Be forgiving, per 25.3.3.3.3 of the spec:
+        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
 
 
-  function isBreakOpportunity(txt, index) {
-    return index === 0 || index === txt.length || isBreakChar(txt, index - 1) && !isBreakChar(txt, index);
-  }
-  /**
-   * Finds the first break opportunity (@see isBreakOpportunity)
-   * in txt that's both after-or-equal-to index c in the direction dir
-   * and resulting in line width equal to or past clamp(desWidth,
-   * 0, conWidth) in direction dir.  Sets ret.index and ret.width
-   * to the corresponding index and line width (from the start of
-   * txt to ret.index).
-   *
-   * @param {Node}    el       - element
-   * @param {string}  txt      - text string
-   * @param {number}  conWidth - container width
-   * @param {number}  desWidth - desired width
-   * @param {number}  dir      - direction (-1 or +1)
-   * @param {number}  c        - char index (0 <= c && c <= txt.length)
-   * @param {Object}  ret      - return {index: {number}, width: {number}} of previous/next break
-   */
+        return doneResult();
+      }
 
+      context.method = method;
+      context.arg = arg;
 
-  function findBreakOpportunity(el, txt, conWidth, desWidth, dir, c, ret) {
-    var w;
+      while (true) {
+        var delegate = context.delegate;
 
-    if (txt && typeof txt === "string") {
-      for (;;) {
-        while (!isBreakOpportunity(txt, c)) {
-          c += dir;
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
         }
 
-        el.innerHTML = txt.substr(0, c);
-        w = el.offsetWidth;
-
-        if (dir < 0) {
-          if (w <= desWidth || w <= 0 || c === 0) {
-            break;
+        if (context.method === "next") {
+          // Setting context._sent for legacy support of Babel's
+          // function.sent implementation.
+          context.sent = context._sent = context.arg;
+        } else if (context.method === "throw") {
+          if (state === GenStateSuspendedStart) {
+            state = GenStateCompleted;
+            throw context.arg;
           }
-        } else if (desWidth <= w || conWidth <= w || c === txt.length) {
+
+          context.dispatchException(context.arg);
+        } else if (context.method === "return") {
+          context.abrupt("return", context.arg);
+        }
+
+        state = GenStateExecuting;
+        var record = tryCatch(innerFn, self, context);
+
+        if (record.type === "normal") {
+          // If an exception is thrown from innerFn, we leave state ===
+          // GenStateExecuting and loop back for another invocation.
+          state = context.done ? GenStateCompleted : GenStateSuspendedYield;
+
+          if (record.arg === ContinueSentinel) {
+            continue;
+          }
+
+          return {
+            value: record.arg,
+            done: context.done
+          };
+        } else if (record.type === "throw") {
+          state = GenStateCompleted; // Dispatch the exception by looping back around to the
+          // context.dispatchException(context.arg) call above.
+
+          context.method = "throw";
+          context.arg = record.arg;
+        }
+      }
+    };
+  } // Call delegate.iterator[context.method](context.arg) and handle the
+  // result, either by returning a { value, done } result from the
+  // delegate iterator, or by modifying context.method and context.arg,
+  // setting context.delegate to null, and returning the ContinueSentinel.
+
+
+  function maybeInvokeDelegate(delegate, context) {
+    var method = delegate.iterator[context.method];
+
+    if (method === undefined) {
+      // A .throw or .return when the delegate iterator has no .throw
+      // method always terminates the yield* loop.
+      context.delegate = null;
+
+      if (context.method === "throw") {
+        // Note: ["return"] must be used for ES3 parsing compatibility.
+        if (delegate.iterator["return"]) {
+          // If the delegate iterator has a return method, give it a
+          // chance to clean up.
+          context.method = "return";
+          context.arg = undefined;
+          maybeInvokeDelegate(delegate, context);
+
+          if (context.method === "throw") {
+            // If maybeInvokeDelegate(context) changed context.method from
+            // "return" to "throw", let that override the TypeError below.
+            return ContinueSentinel;
+          }
+        }
+
+        context.method = "throw";
+        context.arg = new TypeError("The iterator does not provide a 'throw' method");
+      }
+
+      return ContinueSentinel;
+    }
+
+    var record = tryCatch(method, delegate.iterator, context.arg);
+
+    if (record.type === "throw") {
+      context.method = "throw";
+      context.arg = record.arg;
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    var info = record.arg;
+
+    if (!info) {
+      context.method = "throw";
+      context.arg = new TypeError("iterator result is not an object");
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    if (info.done) {
+      // Assign the result of the finished delegate to the temporary
+      // variable specified by delegate.resultName (see delegateYield).
+      context[delegate.resultName] = info.value; // Resume execution at the desired location (see delegateYield).
+
+      context.next = delegate.nextLoc; // If context.method was "throw" but the delegate handled the
+      // exception, let the outer generator proceed normally. If
+      // context.method was "next", forget context.arg since it has been
+      // "consumed" by the delegate iterator. If context.method was
+      // "return", allow the original .return call to continue in the
+      // outer generator.
+
+      if (context.method !== "return") {
+        context.method = "next";
+        context.arg = undefined;
+      }
+    } else {
+      // Re-yield the result returned by the delegate method.
+      return info;
+    } // The delegate iterator is finished, so forget it and continue with
+    // the outer generator.
+
+
+    context.delegate = null;
+    return ContinueSentinel;
+  } // Define Generator.prototype.{next,throw,return} in terms of the
+  // unified ._invoke helper method.
+
+
+  defineIteratorMethods(Gp);
+  Gp[toStringTagSymbol] = "Generator"; // A Generator should always return itself as the iterator object when the
+  // @@iterator function is called on it. Some browsers' implementations of the
+  // iterator prototype chain incorrectly implement this, causing the Generator
+  // object to not be returned from this call. This ensures that doesn't happen.
+  // See https://github.com/facebook/regenerator/issues/274 for more details.
+
+  Gp[iteratorSymbol] = function () {
+    return this;
+  };
+
+  Gp.toString = function () {
+    return "[object Generator]";
+  };
+
+  function pushTryEntry(locs) {
+    var entry = {
+      tryLoc: locs[0]
+    };
+
+    if (1 in locs) {
+      entry.catchLoc = locs[1];
+    }
+
+    if (2 in locs) {
+      entry.finallyLoc = locs[2];
+      entry.afterLoc = locs[3];
+    }
+
+    this.tryEntries.push(entry);
+  }
+
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal";
+    delete record.arg;
+    entry.completion = record;
+  }
+
+  function Context(tryLocsList) {
+    // The root entry object (effectively a try statement without a catch
+    // or a finally block) gives us a place to store values thrown from
+    // locations where there is no enclosing try statement.
+    this.tryEntries = [{
+      tryLoc: "root"
+    }];
+    tryLocsList.forEach(pushTryEntry, this);
+    this.reset(true);
+  }
+
+  exports.keys = function (object) {
+    var keys = [];
+
+    for (var key in object) {
+      keys.push(key);
+    }
+
+    keys.reverse(); // Rather than returning an object with a next method, we keep
+    // things simple and return the next function itself.
+
+    return function next() {
+      while (keys.length) {
+        var key = keys.pop();
+
+        if (key in object) {
+          next.value = key;
+          next.done = false;
+          return next;
+        }
+      } // To avoid creating an additional object, we just hang the .value
+      // and .done properties off the next function object itself. This
+      // also ensures that the minifier will not anonymize the function.
+
+
+      next.done = true;
+      return next;
+    };
+  };
+
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+
+      if (iteratorMethod) {
+        return iteratorMethod.call(iterable);
+      }
+
+      if (typeof iterable.next === "function") {
+        return iterable;
+      }
+
+      if (!isNaN(iterable.length)) {
+        var i = -1,
+            next = function next() {
+          while (++i < iterable.length) {
+            if (hasOwn.call(iterable, i)) {
+              next.value = iterable[i];
+              next.done = false;
+              return next;
+            }
+          }
+
+          next.value = undefined;
+          next.done = true;
+          return next;
+        };
+
+        return next.next = next;
+      }
+    } // Return an iterator with no values.
+
+
+    return {
+      next: doneResult
+    };
+  }
+
+  exports.values = values;
+
+  function doneResult() {
+    return {
+      value: undefined,
+      done: true
+    };
+  }
+
+  Context.prototype = {
+    constructor: Context,
+    reset: function reset(skipTempReset) {
+      this.prev = 0;
+      this.next = 0; // Resetting context._sent for legacy support of Babel's
+      // function.sent implementation.
+
+      this.sent = this._sent = undefined;
+      this.done = false;
+      this.delegate = null;
+      this.method = "next";
+      this.arg = undefined;
+      this.tryEntries.forEach(resetTryEntry);
+
+      if (!skipTempReset) {
+        for (var name in this) {
+          // Not sure about the optimal order of these conditions:
+          if (name.charAt(0) === "t" && hasOwn.call(this, name) && !isNaN(+name.slice(1))) {
+            this[name] = undefined;
+          }
+        }
+      }
+    },
+    stop: function stop() {
+      this.done = true;
+      var rootEntry = this.tryEntries[0];
+      var rootRecord = rootEntry.completion;
+
+      if (rootRecord.type === "throw") {
+        throw rootRecord.arg;
+      }
+
+      return this.rval;
+    },
+    dispatchException: function dispatchException(exception) {
+      if (this.done) {
+        throw exception;
+      }
+
+      var context = this;
+
+      function handle(loc, caught) {
+        record.type = "throw";
+        record.arg = exception;
+        context.next = loc;
+
+        if (caught) {
+          // If the dispatched exception was caught by a catch block,
+          // then let that catch block handle the exception normally.
+          context.method = "next";
+          context.arg = undefined;
+        }
+
+        return !!caught;
+      }
+
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        var record = entry.completion;
+
+        if (entry.tryLoc === "root") {
+          // Exception thrown outside of any try block that could handle
+          // it, so set the completion value of the entire function to
+          // throw the exception.
+          return handle("end");
+        }
+
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc");
+          var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            } else if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            }
+          } else if (hasFinally) {
+            if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+          } else {
+            throw new Error("try statement without catch or finally");
+          }
+        }
+      }
+    },
+    abrupt: function abrupt(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+
+        if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
           break;
         }
-
-        c += dir;
       }
-    }
 
-    ret.index = c;
-    ret.width = w;
-  }
-  /**
-   * Detects the width of a non-breaking space character, given the height of
-   * the element with no-wrap applied.
-   *
-   * @param {Node}   el - element
-   * @param {number} h  - height
-   * @return {number}
-   */
+      if (finallyEntry && (type === "break" || type === "continue") && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc) {
+        // Ignore the finally entry if control is not jumping to a
+        // location outside the try/catch block.
+        finallyEntry = null;
+      }
 
+      var record = finallyEntry ? finallyEntry.completion : {};
+      record.type = type;
+      record.arg = arg;
 
-  function getSpaceWidth(el, h) {
-    var container = document.createElement("div");
-    container.style.display = "block";
-    container.style.position = "absolute";
-    container.style.bottom = 0;
-    container.style.right = 0;
-    container.style.width = 0;
-    container.style.height = 0;
-    container.style.margin = 0;
-    container.style.padding = 0;
-    container.style.visibility = "hidden";
-    container.style.overflow = "hidden";
-    var space = document.createElement("span");
-    space.style.fontSize = "2000px";
-    space.innerHTML = "&nbsp;";
-    container.appendChild(space);
-    el.appendChild(container);
-    var dims = space.getBoundingClientRect();
-    container.parentNode.removeChild(container);
-    var spaceRatio = dims.height / dims.width;
-    return h / spaceRatio;
-  }
-  /**
-   * Get a list of elements regardless of input
-   *
-   * @param {string|Node|Array-like} elements - The selector to query, one or more elements
-   * @return {Array<{Node}>}
-   */
+      if (finallyEntry) {
+        this.method = "next";
+        this.next = finallyEntry.finallyLoc;
+        return ContinueSentinel;
+      }
 
+      return this.complete(record);
+    },
+    complete: function complete(record, afterLoc) {
+      if (record.type === "throw") {
+        throw record.arg;
+      }
 
-  function getElementsList(elements) {
-    if (!elements) {
-      return [];
-    } // is selector
+      if (record.type === "break" || record.type === "continue") {
+        this.next = record.arg;
+      } else if (record.type === "return") {
+        this.rval = this.arg = record.arg;
+        this.method = "return";
+        this.next = "end";
+      } else if (record.type === "normal" && afterLoc) {
+        this.next = afterLoc;
+      }
 
+      return ContinueSentinel;
+    },
+    finish: function finish(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
 
-    if (typeof elements === "string") {
-      return document.querySelectorAll(elements);
-    } // is single element
+        if (entry.finallyLoc === finallyLoc) {
+          this.complete(entry.completion, entry.afterLoc);
+          resetTryEntry(entry);
+          return ContinueSentinel;
+        }
+      }
+    },
+    "catch": function _catch(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
 
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
 
-    if (elements.tagName && elements.querySelectorAll) {
-      return [elements];
-    }
-
-    return elements;
-  }
-  /**
-   *  When a browser has native support for the text-wrap property,
-   * the text balanceText plugin will let the browser handle it natively,
-   * otherwise it will apply its own text balancing code.
-   *
-   * @param {string|Node|Array-like} elements - the list of elements to balance
-   */
-
-
-  function balanceText(elements) {
-    forEach(getElementsList(elements), function (el) {
-      // In a lower level language, this algorithm takes time
-      // comparable to normal text layout other than the fact
-      // that we do two passes instead of one, so we should
-      // be able to do without this limit.
-      var maxTextWidth = 5000; // strip balance-text generated tags
-
-      removeTags(el); // save settings
-
-      var oldWS = el.style.whiteSpace;
-      var oldFloat = el.style.float;
-      var oldDisplay = el.style.display;
-      var oldPosition = el.style.position;
-      var oldLH = el.style.lineHeight; // remove line height before measuring container size
-
-      el.style.lineHeight = "normal";
-      var containerWidth = el.offsetWidth;
-      var containerHeight = el.offsetHeight; // temporary settings
-
-      el.style.whiteSpace = "nowrap";
-      el.style.float = "none";
-      el.style.display = "inline";
-      el.style.position = "static";
-      var nowrapWidth = el.offsetWidth;
-      var nowrapHeight = el.offsetHeight; // An estimate of the average line width reduction due
-      // to trimming trailing space that we expect over all
-      // lines other than the last.
-
-      var spaceWidth = oldWS === "pre-wrap" ? 0 : getSpaceWidth(el, nowrapHeight);
-
-      if (containerWidth > 0 && // prevent divide by zero
-      nowrapWidth > containerWidth && // text is more than 1 line
-      nowrapWidth < maxTextWidth) {
-        // text is less than arbitrary limit (make this a param?)
-        var remainingText = el.innerHTML;
-        var newText = "";
-        var lineText = "";
-        var shouldJustify = isJustified(el);
-        var totLines = Math.round(containerHeight / nowrapHeight);
-        var remLines = totLines;
-        var lineCharOffset = 0; // loop vars
-
-        var desiredWidth, guessIndex, le, ge, splitIndex, isHyphen, isSoftHyphen; // Determine where to break:
-
-        while (remLines > 1) {
-          // clear whitespace match cache for each line
-          breakMatches = null; // Must calc white-space:nowrap offsets before first call to findBreakOpportunity()
-
-          calcNoWrapOffsetsForLine(el, oldWS, lineCharOffset);
-          desiredWidth = Math.round((nowrapWidth + spaceWidth) / remLines - spaceWidth); // Guessed char index
-
-          guessIndex = Math.round((remainingText.length + 1) / remLines) - 1;
-          le = new NextWS_params(); // Find a breaking space somewhere before (or equal to) desired width,
-          // not necessarily the closest to the desired width.
-
-          findBreakOpportunity(el, remainingText, containerWidth, desiredWidth, -1, guessIndex, le); // Find first breaking char after (or equal to) desired width.
-
-          ge = new NextWS_params();
-          guessIndex = le.index;
-          findBreakOpportunity(el, remainingText, containerWidth, desiredWidth, +1, guessIndex, ge); // Find first breaking char before (or equal to) desired width.
-
-          le.reset();
-          guessIndex = ge.index;
-          findBreakOpportunity(el, remainingText, containerWidth, desiredWidth, -1, guessIndex, le); // Find closest string to desired length
-
-          if (le.index === 0) {
-            splitIndex = ge.index;
-          } else if (containerWidth < ge.width || le.index === ge.index) {
-            splitIndex = le.index;
-          } else {
-            splitIndex = Math.abs(desiredWidth - le.width) < Math.abs(ge.width - desiredWidth) ? le.index : ge.index;
-          } // Break string
-
-
-          lineText = remainingText.substr(0, splitIndex).replace(/\s$/, "");
-          isSoftHyphen = Boolean(lineText.match(/\u00ad$/));
-
-          if (isSoftHyphen) {
-            // Replace soft-hyphen causing break with explicit hyphen
-            lineText = lineText.replace(/\u00ad$/, '<span data-owner="balance-text-softhyphen">-</span>');
+          if (record.type === "throw") {
+            var thrown = record.arg;
+            resetTryEntry(entry);
           }
 
-          if (shouldJustify) {
-            newText += justify(el, lineText, containerWidth);
-          } else {
-            newText += lineText;
-            isHyphen = isSoftHyphen || Boolean(lineText.match(/(-|\u2014|\u2013)$/));
-            newText += isHyphen ? '<br data-owner="balance-text-hyphen" />' : '<br data-owner="balance-text" />';
-          }
-
-          remainingText = remainingText.substr(splitIndex);
-          lineCharOffset = splitIndex; // update counters
-
-          remLines--;
-          el.innerHTML = remainingText;
-          nowrapWidth = el.offsetWidth;
+          return thrown;
         }
-
-        if (shouldJustify) {
-          el.innerHTML = newText + justify(el, remainingText, containerWidth);
-        } else {
-          el.innerHTML = newText + remainingText;
-        }
-      } // restore settings
+      } // The context.catch method must only be called with a location
+      // argument that corresponds to a known catch block.
 
 
-      el.style.whiteSpace = oldWS;
-      el.style.float = oldFloat;
-      el.style.display = oldDisplay;
-      el.style.position = oldPosition;
-      el.style.lineHeight = oldLH;
-    });
-  }
-  /**
-   * Call the balanceText plugin on elements that it's watching.
-   */
+      throw new Error("illegal catch attempt");
+    },
+    delegateYield: function delegateYield(iterable, resultName, nextLoc) {
+      this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      };
 
+      if (this.method === "next") {
+        // Deliberately forget the last sent value so that we don't
+        // accidentally pass it on to the delegate.
+        this.arg = undefined;
+      }
 
-  function updateWatched() {
-    var selectors = watching.sel.join(",");
-    var selectedElements = getElementsList(selectors);
-    var elements = Array.prototype.concat.apply(watching.el, selectedElements);
-    balanceText(elements);
-  }
-  /**
-   * Initialize the events for which to re-apply BalanceText.  They are:
-   * - Document ready
-   * - Document full load
-   * - Window resize
-   */
-
-
-  function initHandlers() {
-    if (handlersInitialized) {
-      return;
-    } // Apply on DOM ready
-
-
-    ready(updateWatched); // Reapply on full load
-
-    window.addEventListener("load", updateWatched); // Reapply on resize
-
-    window.addEventListener("resize", debounce(updateWatched));
-    handlersInitialized = true;
-  }
-  /**
-   * Apply the BalanceText routine on the document and watch the list
-   * of elements.  On window resize, re-apply BalanceText to the given elements
-   *
-   * @param {string|Node|Array-like} elements - the elements to watch after applying BalanceText
-   */
-
-
-  function balanceTextAndWatch(elements) {
-    if (typeof elements === "string") {
-      watching.sel.push(elements);
-    } else {
-      forEach(getElementsList(elements), function (el) {
-        watching.el.push(el);
-      });
+      return ContinueSentinel;
     }
+  }; // Regardless of whether this script is executing as a CommonJS module
+  // or not, return the runtime object so that we can declare the variable
+  // regeneratorRuntime in the outer scope, which allows this module to be
+  // injected easily by `bin/regenerator --include-runtime script.js`.
 
-    initHandlers();
-    updateWatched();
-  }
-  /**
-   * Stop watching elements
-   *
-   * @param {string|Node|Array-like} elements
-   */
+  return exports;
+}( // If this script is executing as a CommonJS module, use module.exports
+// as the regeneratorRuntime namespace. Otherwise create a new empty
+// object. Either way, the resulting object will be used to initialize
+// the regeneratorRuntime variable at the top of this file.
+( false ? undefined : _typeof(module)) === "object" ? module.exports : {});
 
-
-  function unwatch(elements) {
-    if (typeof elements === "string") {
-      watching.sel = watching.sel.filter(function (el) {
-        return el !== elements;
-      });
-    } else {
-      elements = getElementsList(elements);
-      watching.el = watching.el.filter(function (el) {
-        return elements.indexOf(el) === -1;
-      });
-    }
-  }
-  /**
-   * Treat this app as a polyfill.  Watch for changes to the .balance-text selector
-   */
-
-
-  function polyfill() {
-    if (polyfilled) {
-      return;
-    }
-
-    watching.sel.push(".balance-text");
-    initHandlers();
-    polyfilled = true;
-  }
-  /**
-   * Public interface
-   *
-   * @param {string|Node|Array-like} elements - elements to balance
-   * @param {Object}                 options  - processing options
-   *  - {boolean} watch - watch elements for resize
-   */
-
-
-  function publicInterface(elements, options) {
-    if (!elements) {
-      // empty call means polyfill (watch for changes)
-      polyfill();
-    } else if (options && options.watch === true) {
-      balanceTextAndWatch(elements);
-    } else if (options && options.watch === false) {
-      unwatch(elements);
-    } else {
-      balanceText(elements);
-    }
-  }
-
-  publicInterface.updateWatched = updateWatched;
-
-  if (hasTextWrap()) {
-    noop.updateWatched = noop;
-    return noop;
-  }
-
-  return publicInterface;
-});
+try {
+  regeneratorRuntime = runtime;
+} catch (accidentalStrictMode) {
+  // This module should not be running in strict mode, so the above
+  // assignment should always work unless something is misconfigured. Just
+  // in case runtime.js accidentally runs in strict mode, we can escape
+  // strict mode using a global Function call. This could conceivably fail
+  // if a Content Security Policy forbids using Function, but in that case
+  // the proper solution is to fix the accidental strict mode problem. If
+  // you've misconfigured your bundler to force strict mode and applied a
+  // CSP to forbid Function, and you're not willing to fix either of those
+  // problems, please detail your unique predicament in a GitHub issue.
+  Function("r", "regeneratorRuntime = r")(runtime);
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
 
@@ -12629,7 +12573,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.4.1): alert.js
+ * Bootstrap (v4.3.1): alert.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -12642,7 +12586,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  */
 
 var NAME = 'alert';
-var VERSION = '4.4.1';
+var VERSION = '4.3.1';
 var DATA_KEY = 'bs.alert';
 var EVENT_KEY = ".".concat(DATA_KEY);
 var DATA_API_KEY = '.data-api';
@@ -12659,12 +12603,13 @@ var ClassName = {
   ALERT: 'alert',
   FADE: 'fade',
   SHOW: 'show'
+  /**
+   * ------------------------------------------------------------------------
+   * Class Definition
+   * ------------------------------------------------------------------------
+   */
+
 };
-/**
- * ------------------------------------------------------------------------
- * Class Definition
- * ------------------------------------------------------------------------
- */
 
 var Alert =
 /*#__PURE__*/
@@ -12824,7 +12769,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.4.1): util.js
+ * Bootstrap (v4.3.1): util.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -12974,25 +12919,8 @@ var Util = {
     }
 
     return Util.findShadowRoot(element.parentNode);
-  },
-  jQueryDetection: function jQueryDetection() {
-    if (typeof jquery__WEBPACK_IMPORTED_MODULE_0___default.a === 'undefined') {
-      throw new TypeError('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
-    }
-
-    var version = jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn.jquery.split(' ')[0].split('.');
-    var minMajor = 1;
-    var ltMajor = 2;
-    var minMinor = 9;
-    var minPatch = 1;
-    var maxMajor = 4;
-
-    if (version[0] < ltMajor && version[1] < minMinor || version[0] === minMajor && version[1] === minMinor && version[2] < minPatch || version[0] >= maxMajor) {
-      throw new Error('Bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0');
-    }
   }
 };
-Util.jQueryDetection();
 setTransitionEndSupport();
 /* harmony default export */ __webpack_exports__["default"] = (Util);
 
@@ -14097,7 +14025,6 @@ function debounce(func, wait, options) {
 
       if (maxing) {
         // Handle invocations in a tight loop.
-        clearTimeout(timerId);
         timerId = setTimeout(timerExpired, wait);
         return invokeFunc(lastCallTime);
       }
@@ -14449,7 +14376,7 @@ module.exports = toNumber;
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-/*! lozad.js - v1.14.0 - 2019-10-19
+/*! lozad.js - v1.9.0 - 2019-02-09
 * https://github.com/ApoorvSaxena/lozad.js
 * Copyright (c) 2019 Apoorv Saxena; Licensed MIT */
 !function (t, e) {
@@ -14460,42 +14387,48 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _type
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : undefined;
 }(this, function () {
   "use strict";
+
+  var g = Object.assign || function (t) {
+    for (var e = 1; e < arguments.length; e++) {
+      var r = arguments[e];
+
+      for (var o in r) {
+        Object.prototype.hasOwnProperty.call(r, o) && (t[o] = r[o]);
+      }
+    }
+
+    return t;
+  },
+      n = "undefined" != typeof document && document.documentMode,
+      l = {
+    rootMargin: "0px",
+    threshold: 0,
+    load: function load(t) {
+      if ("picture" === t.nodeName.toLowerCase()) {
+        var e = document.createElement("img");
+        n && t.getAttribute("data-iesrc") && (e.src = t.getAttribute("data-iesrc")), t.getAttribute("data-alt") && (e.alt = t.getAttribute("data-alt")), t.appendChild(e);
+      }
+
+      if ("video" === t.nodeName.toLowerCase() && !t.getAttribute("data-src") && t.children) {
+        for (var r = t.children, o = void 0, a = 0; a <= r.length - 1; a++) {
+          (o = r[a].getAttribute("data-src")) && (r[a].src = o);
+        }
+
+        t.load();
+      }
+
+      t.getAttribute("data-src") && (t.src = t.getAttribute("data-src")), t.getAttribute("data-srcset") && t.setAttribute("srcset", t.getAttribute("data-srcset")), t.getAttribute("data-background-image") && (t.style.backgroundImage = "url('" + t.getAttribute("data-background-image") + "')"), t.getAttribute("data-toggle-class") && t.classList.toggle(t.getAttribute("data-toggle-class"));
+    },
+    loaded: function loaded() {}
+  };
   /**
      * Detect IE browser
      * @const {boolean}
      * @private
      */
 
-  var d = "undefined" != typeof document && document.documentMode,
-      c = {
-    rootMargin: "0px",
-    threshold: 0,
-    load: function load(t) {
-      if ("picture" === t.nodeName.toLowerCase()) {
-        var e = document.createElement("img");
-        d && t.getAttribute("data-iesrc") && (e.src = t.getAttribute("data-iesrc")), t.getAttribute("data-alt") && (e.alt = t.getAttribute("data-alt")), t.append(e);
-      }
 
-      if ("video" === t.nodeName.toLowerCase() && !t.getAttribute("data-src") && t.children) {
-        for (var r = t.children, a = void 0, o = 0; o <= r.length - 1; o++) {
-          (a = r[o].getAttribute("data-src")) && (r[o].src = a);
-        }
-
-        t.load();
-      }
-
-      if (t.getAttribute("data-src") && (t.src = t.getAttribute("data-src")), t.getAttribute("data-srcset") && t.setAttribute("srcset", t.getAttribute("data-srcset")), t.getAttribute("data-background-image")) t.style.backgroundImage = "url('" + t.getAttribute("data-background-image").split(",").join("'),url('") + "')";else if (t.getAttribute("data-background-image-set")) {
-        var i = t.getAttribute("data-background-image-set").split(","),
-            n = i[0].substr(0, i[0].indexOf(" ")) || i[0]; // Substring before ... 1x
-
-        n = -1 === n.indexOf("url(") ? "url(" + n + ")" : n, 1 === i.length ? t.style.backgroundImage = n : t.setAttribute("style", (t.getAttribute("style") || "") + "background-image: " + n + "; background-image: -webkit-image-set(" + i + "); background-image: image-set(" + i + ")");
-      }
-      t.getAttribute("data-toggle-class") && t.classList.toggle(t.getAttribute("data-toggle-class"));
-    },
-    loaded: function loaded() {}
-  };
-
-  function l(t) {
+  function f(t) {
     t.setAttribute("data-loaded", !0);
   }
 
@@ -14505,758 +14438,40 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _type
 
   return function () {
     var r,
-        a,
-        o = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : ".lozad",
+        o,
+        a = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : ".lozad",
         t = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : {},
-        e = Object.assign({}, c, t),
-        i = e.root,
-        n = e.rootMargin,
+        e = g({}, l, t),
+        n = e.root,
+        i = e.rootMargin,
         d = e.threshold,
-        u = e.load,
-        s = e.loaded,
-        g = void 0;
-    return "undefined" != typeof window && window.IntersectionObserver && (g = new IntersectionObserver((r = u, a = s, function (t, e) {
+        c = e.load,
+        u = e.loaded,
+        s = void 0;
+    return window.IntersectionObserver && (s = new IntersectionObserver((r = c, o = u, function (t, e) {
       t.forEach(function (t) {
-        (0 < t.intersectionRatio || t.isIntersecting) && (e.unobserve(t.target), b(t.target) || (r(t.target), l(t.target), a(t.target)));
+        (0 < t.intersectionRatio || t.isIntersecting) && (e.unobserve(t.target), b(t.target) || (r(t.target), f(t.target), o(t.target)));
       });
     }), {
-      root: i,
-      rootMargin: n,
+      root: n,
+      rootMargin: i,
       threshold: d
     })), {
       observe: function observe() {
         for (var t = function (t) {
           var e = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : document;
           return t instanceof Element ? [t] : t instanceof NodeList ? t : e.querySelectorAll(t);
-        }(o, i), e = 0; e < t.length; e++) {
-          b(t[e]) || (g ? g.observe(t[e]) : (u(t[e]), l(t[e]), s(t[e])));
+        }(a, n), e = 0; e < t.length; e++) {
+          b(t[e]) || (s ? s.observe(t[e]) : (c(t[e]), f(t[e]), u(t[e])));
         }
       },
       triggerLoad: function triggerLoad(t) {
-        b(t) || (u(t), l(t), s(t));
+        b(t) || (c(t), f(t), u(t));
       },
-      observer: g
+      observer: s
     };
   };
 });
-
-/***/ }),
-
-/***/ "./node_modules/regenerator-runtime/runtime.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/regenerator-runtime/runtime.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(module) {function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-var runtime = function (exports) {
-  "use strict";
-
-  var Op = Object.prototype;
-  var hasOwn = Op.hasOwnProperty;
-  var undefined; // More compressible than void 0.
-
-  var $Symbol = typeof Symbol === "function" ? Symbol : {};
-  var iteratorSymbol = $Symbol.iterator || "@@iterator";
-  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
-  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
-
-  function wrap(innerFn, outerFn, self, tryLocsList) {
-    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
-    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
-    var generator = Object.create(protoGenerator.prototype);
-    var context = new Context(tryLocsList || []); // The ._invoke method unifies the implementations of the .next,
-    // .throw, and .return methods.
-
-    generator._invoke = makeInvokeMethod(innerFn, self, context);
-    return generator;
-  }
-
-  exports.wrap = wrap; // Try/catch helper to minimize deoptimizations. Returns a completion
-  // record like context.tryEntries[i].completion. This interface could
-  // have been (and was previously) designed to take a closure to be
-  // invoked without arguments, but in all the cases we care about we
-  // already have an existing method we want to call, so there's no need
-  // to create a new function object. We can even get away with assuming
-  // the method takes exactly one argument, since that happens to be true
-  // in every case, so we don't have to touch the arguments object. The
-  // only additional allocation required is the completion record, which
-  // has a stable shape and so hopefully should be cheap to allocate.
-
-  function tryCatch(fn, obj, arg) {
-    try {
-      return {
-        type: "normal",
-        arg: fn.call(obj, arg)
-      };
-    } catch (err) {
-      return {
-        type: "throw",
-        arg: err
-      };
-    }
-  }
-
-  var GenStateSuspendedStart = "suspendedStart";
-  var GenStateSuspendedYield = "suspendedYield";
-  var GenStateExecuting = "executing";
-  var GenStateCompleted = "completed"; // Returning this object from the innerFn has the same effect as
-  // breaking out of the dispatch switch statement.
-
-  var ContinueSentinel = {}; // Dummy constructor functions that we use as the .constructor and
-  // .constructor.prototype properties for functions that return Generator
-  // objects. For full spec compliance, you may wish to configure your
-  // minifier not to mangle the names of these two functions.
-
-  function Generator() {}
-
-  function GeneratorFunction() {}
-
-  function GeneratorFunctionPrototype() {} // This is a polyfill for %IteratorPrototype% for environments that
-  // don't natively support it.
-
-
-  var IteratorPrototype = {};
-
-  IteratorPrototype[iteratorSymbol] = function () {
-    return this;
-  };
-
-  var getProto = Object.getPrototypeOf;
-  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
-
-  if (NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
-    // This environment has a native %IteratorPrototype%; use it instead
-    // of the polyfill.
-    IteratorPrototype = NativeIteratorPrototype;
-  }
-
-  var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype);
-  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
-  GeneratorFunctionPrototype.constructor = GeneratorFunction;
-  GeneratorFunctionPrototype[toStringTagSymbol] = GeneratorFunction.displayName = "GeneratorFunction"; // Helper for defining the .next, .throw, and .return methods of the
-  // Iterator interface in terms of a single ._invoke method.
-
-  function defineIteratorMethods(prototype) {
-    ["next", "throw", "return"].forEach(function (method) {
-      prototype[method] = function (arg) {
-        return this._invoke(method, arg);
-      };
-    });
-  }
-
-  exports.isGeneratorFunction = function (genFun) {
-    var ctor = typeof genFun === "function" && genFun.constructor;
-    return ctor ? ctor === GeneratorFunction || // For the native GeneratorFunction constructor, the best we can
-    // do is to check its .name property.
-    (ctor.displayName || ctor.name) === "GeneratorFunction" : false;
-  };
-
-  exports.mark = function (genFun) {
-    if (Object.setPrototypeOf) {
-      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
-    } else {
-      genFun.__proto__ = GeneratorFunctionPrototype;
-
-      if (!(toStringTagSymbol in genFun)) {
-        genFun[toStringTagSymbol] = "GeneratorFunction";
-      }
-    }
-
-    genFun.prototype = Object.create(Gp);
-    return genFun;
-  }; // Within the body of any async function, `await x` is transformed to
-  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
-  // `hasOwn.call(value, "__await")` to determine if the yielded value is
-  // meant to be awaited.
-
-
-  exports.awrap = function (arg) {
-    return {
-      __await: arg
-    };
-  };
-
-  function AsyncIterator(generator) {
-    function invoke(method, arg, resolve, reject) {
-      var record = tryCatch(generator[method], generator, arg);
-
-      if (record.type === "throw") {
-        reject(record.arg);
-      } else {
-        var result = record.arg;
-        var value = result.value;
-
-        if (value && _typeof(value) === "object" && hasOwn.call(value, "__await")) {
-          return Promise.resolve(value.__await).then(function (value) {
-            invoke("next", value, resolve, reject);
-          }, function (err) {
-            invoke("throw", err, resolve, reject);
-          });
-        }
-
-        return Promise.resolve(value).then(function (unwrapped) {
-          // When a yielded Promise is resolved, its final value becomes
-          // the .value of the Promise<{value,done}> result for the
-          // current iteration.
-          result.value = unwrapped;
-          resolve(result);
-        }, function (error) {
-          // If a rejected Promise was yielded, throw the rejection back
-          // into the async generator function so it can be handled there.
-          return invoke("throw", error, resolve, reject);
-        });
-      }
-    }
-
-    var previousPromise;
-
-    function enqueue(method, arg) {
-      function callInvokeWithMethodAndArg() {
-        return new Promise(function (resolve, reject) {
-          invoke(method, arg, resolve, reject);
-        });
-      }
-
-      return previousPromise = // If enqueue has been called before, then we want to wait until
-      // all previous Promises have been resolved before calling invoke,
-      // so that results are always delivered in the correct order. If
-      // enqueue has not been called before, then it is important to
-      // call invoke immediately, without waiting on a callback to fire,
-      // so that the async generator function has the opportunity to do
-      // any necessary setup in a predictable way. This predictability
-      // is why the Promise constructor synchronously invokes its
-      // executor callback, and why async functions synchronously
-      // execute code before the first await. Since we implement simple
-      // async functions in terms of async generators, it is especially
-      // important to get this right, even though it requires care.
-      previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, // Avoid propagating failures to Promises returned by later
-      // invocations of the iterator.
-      callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg();
-    } // Define the unified helper method that is used to implement .next,
-    // .throw, and .return (see defineIteratorMethods).
-
-
-    this._invoke = enqueue;
-  }
-
-  defineIteratorMethods(AsyncIterator.prototype);
-
-  AsyncIterator.prototype[asyncIteratorSymbol] = function () {
-    return this;
-  };
-
-  exports.AsyncIterator = AsyncIterator; // Note that simple async functions are implemented on top of
-  // AsyncIterator objects; they just return a Promise for the value of
-  // the final result produced by the iterator.
-
-  exports.async = function (innerFn, outerFn, self, tryLocsList) {
-    var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList));
-    return exports.isGeneratorFunction(outerFn) ? iter // If outerFn is a generator, return the full iterator.
-    : iter.next().then(function (result) {
-      return result.done ? result.value : iter.next();
-    });
-  };
-
-  function makeInvokeMethod(innerFn, self, context) {
-    var state = GenStateSuspendedStart;
-    return function invoke(method, arg) {
-      if (state === GenStateExecuting) {
-        throw new Error("Generator is already running");
-      }
-
-      if (state === GenStateCompleted) {
-        if (method === "throw") {
-          throw arg;
-        } // Be forgiving, per 25.3.3.3.3 of the spec:
-        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
-
-
-        return doneResult();
-      }
-
-      context.method = method;
-      context.arg = arg;
-
-      while (true) {
-        var delegate = context.delegate;
-
-        if (delegate) {
-          var delegateResult = maybeInvokeDelegate(delegate, context);
-
-          if (delegateResult) {
-            if (delegateResult === ContinueSentinel) continue;
-            return delegateResult;
-          }
-        }
-
-        if (context.method === "next") {
-          // Setting context._sent for legacy support of Babel's
-          // function.sent implementation.
-          context.sent = context._sent = context.arg;
-        } else if (context.method === "throw") {
-          if (state === GenStateSuspendedStart) {
-            state = GenStateCompleted;
-            throw context.arg;
-          }
-
-          context.dispatchException(context.arg);
-        } else if (context.method === "return") {
-          context.abrupt("return", context.arg);
-        }
-
-        state = GenStateExecuting;
-        var record = tryCatch(innerFn, self, context);
-
-        if (record.type === "normal") {
-          // If an exception is thrown from innerFn, we leave state ===
-          // GenStateExecuting and loop back for another invocation.
-          state = context.done ? GenStateCompleted : GenStateSuspendedYield;
-
-          if (record.arg === ContinueSentinel) {
-            continue;
-          }
-
-          return {
-            value: record.arg,
-            done: context.done
-          };
-        } else if (record.type === "throw") {
-          state = GenStateCompleted; // Dispatch the exception by looping back around to the
-          // context.dispatchException(context.arg) call above.
-
-          context.method = "throw";
-          context.arg = record.arg;
-        }
-      }
-    };
-  } // Call delegate.iterator[context.method](context.arg) and handle the
-  // result, either by returning a { value, done } result from the
-  // delegate iterator, or by modifying context.method and context.arg,
-  // setting context.delegate to null, and returning the ContinueSentinel.
-
-
-  function maybeInvokeDelegate(delegate, context) {
-    var method = delegate.iterator[context.method];
-
-    if (method === undefined) {
-      // A .throw or .return when the delegate iterator has no .throw
-      // method always terminates the yield* loop.
-      context.delegate = null;
-
-      if (context.method === "throw") {
-        // Note: ["return"] must be used for ES3 parsing compatibility.
-        if (delegate.iterator["return"]) {
-          // If the delegate iterator has a return method, give it a
-          // chance to clean up.
-          context.method = "return";
-          context.arg = undefined;
-          maybeInvokeDelegate(delegate, context);
-
-          if (context.method === "throw") {
-            // If maybeInvokeDelegate(context) changed context.method from
-            // "return" to "throw", let that override the TypeError below.
-            return ContinueSentinel;
-          }
-        }
-
-        context.method = "throw";
-        context.arg = new TypeError("The iterator does not provide a 'throw' method");
-      }
-
-      return ContinueSentinel;
-    }
-
-    var record = tryCatch(method, delegate.iterator, context.arg);
-
-    if (record.type === "throw") {
-      context.method = "throw";
-      context.arg = record.arg;
-      context.delegate = null;
-      return ContinueSentinel;
-    }
-
-    var info = record.arg;
-
-    if (!info) {
-      context.method = "throw";
-      context.arg = new TypeError("iterator result is not an object");
-      context.delegate = null;
-      return ContinueSentinel;
-    }
-
-    if (info.done) {
-      // Assign the result of the finished delegate to the temporary
-      // variable specified by delegate.resultName (see delegateYield).
-      context[delegate.resultName] = info.value; // Resume execution at the desired location (see delegateYield).
-
-      context.next = delegate.nextLoc; // If context.method was "throw" but the delegate handled the
-      // exception, let the outer generator proceed normally. If
-      // context.method was "next", forget context.arg since it has been
-      // "consumed" by the delegate iterator. If context.method was
-      // "return", allow the original .return call to continue in the
-      // outer generator.
-
-      if (context.method !== "return") {
-        context.method = "next";
-        context.arg = undefined;
-      }
-    } else {
-      // Re-yield the result returned by the delegate method.
-      return info;
-    } // The delegate iterator is finished, so forget it and continue with
-    // the outer generator.
-
-
-    context.delegate = null;
-    return ContinueSentinel;
-  } // Define Generator.prototype.{next,throw,return} in terms of the
-  // unified ._invoke helper method.
-
-
-  defineIteratorMethods(Gp);
-  Gp[toStringTagSymbol] = "Generator"; // A Generator should always return itself as the iterator object when the
-  // @@iterator function is called on it. Some browsers' implementations of the
-  // iterator prototype chain incorrectly implement this, causing the Generator
-  // object to not be returned from this call. This ensures that doesn't happen.
-  // See https://github.com/facebook/regenerator/issues/274 for more details.
-
-  Gp[iteratorSymbol] = function () {
-    return this;
-  };
-
-  Gp.toString = function () {
-    return "[object Generator]";
-  };
-
-  function pushTryEntry(locs) {
-    var entry = {
-      tryLoc: locs[0]
-    };
-
-    if (1 in locs) {
-      entry.catchLoc = locs[1];
-    }
-
-    if (2 in locs) {
-      entry.finallyLoc = locs[2];
-      entry.afterLoc = locs[3];
-    }
-
-    this.tryEntries.push(entry);
-  }
-
-  function resetTryEntry(entry) {
-    var record = entry.completion || {};
-    record.type = "normal";
-    delete record.arg;
-    entry.completion = record;
-  }
-
-  function Context(tryLocsList) {
-    // The root entry object (effectively a try statement without a catch
-    // or a finally block) gives us a place to store values thrown from
-    // locations where there is no enclosing try statement.
-    this.tryEntries = [{
-      tryLoc: "root"
-    }];
-    tryLocsList.forEach(pushTryEntry, this);
-    this.reset(true);
-  }
-
-  exports.keys = function (object) {
-    var keys = [];
-
-    for (var key in object) {
-      keys.push(key);
-    }
-
-    keys.reverse(); // Rather than returning an object with a next method, we keep
-    // things simple and return the next function itself.
-
-    return function next() {
-      while (keys.length) {
-        var key = keys.pop();
-
-        if (key in object) {
-          next.value = key;
-          next.done = false;
-          return next;
-        }
-      } // To avoid creating an additional object, we just hang the .value
-      // and .done properties off the next function object itself. This
-      // also ensures that the minifier will not anonymize the function.
-
-
-      next.done = true;
-      return next;
-    };
-  };
-
-  function values(iterable) {
-    if (iterable) {
-      var iteratorMethod = iterable[iteratorSymbol];
-
-      if (iteratorMethod) {
-        return iteratorMethod.call(iterable);
-      }
-
-      if (typeof iterable.next === "function") {
-        return iterable;
-      }
-
-      if (!isNaN(iterable.length)) {
-        var i = -1,
-            next = function next() {
-          while (++i < iterable.length) {
-            if (hasOwn.call(iterable, i)) {
-              next.value = iterable[i];
-              next.done = false;
-              return next;
-            }
-          }
-
-          next.value = undefined;
-          next.done = true;
-          return next;
-        };
-
-        return next.next = next;
-      }
-    } // Return an iterator with no values.
-
-
-    return {
-      next: doneResult
-    };
-  }
-
-  exports.values = values;
-
-  function doneResult() {
-    return {
-      value: undefined,
-      done: true
-    };
-  }
-
-  Context.prototype = {
-    constructor: Context,
-    reset: function reset(skipTempReset) {
-      this.prev = 0;
-      this.next = 0; // Resetting context._sent for legacy support of Babel's
-      // function.sent implementation.
-
-      this.sent = this._sent = undefined;
-      this.done = false;
-      this.delegate = null;
-      this.method = "next";
-      this.arg = undefined;
-      this.tryEntries.forEach(resetTryEntry);
-
-      if (!skipTempReset) {
-        for (var name in this) {
-          // Not sure about the optimal order of these conditions:
-          if (name.charAt(0) === "t" && hasOwn.call(this, name) && !isNaN(+name.slice(1))) {
-            this[name] = undefined;
-          }
-        }
-      }
-    },
-    stop: function stop() {
-      this.done = true;
-      var rootEntry = this.tryEntries[0];
-      var rootRecord = rootEntry.completion;
-
-      if (rootRecord.type === "throw") {
-        throw rootRecord.arg;
-      }
-
-      return this.rval;
-    },
-    dispatchException: function dispatchException(exception) {
-      if (this.done) {
-        throw exception;
-      }
-
-      var context = this;
-
-      function handle(loc, caught) {
-        record.type = "throw";
-        record.arg = exception;
-        context.next = loc;
-
-        if (caught) {
-          // If the dispatched exception was caught by a catch block,
-          // then let that catch block handle the exception normally.
-          context.method = "next";
-          context.arg = undefined;
-        }
-
-        return !!caught;
-      }
-
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        var record = entry.completion;
-
-        if (entry.tryLoc === "root") {
-          // Exception thrown outside of any try block that could handle
-          // it, so set the completion value of the entire function to
-          // throw the exception.
-          return handle("end");
-        }
-
-        if (entry.tryLoc <= this.prev) {
-          var hasCatch = hasOwn.call(entry, "catchLoc");
-          var hasFinally = hasOwn.call(entry, "finallyLoc");
-
-          if (hasCatch && hasFinally) {
-            if (this.prev < entry.catchLoc) {
-              return handle(entry.catchLoc, true);
-            } else if (this.prev < entry.finallyLoc) {
-              return handle(entry.finallyLoc);
-            }
-          } else if (hasCatch) {
-            if (this.prev < entry.catchLoc) {
-              return handle(entry.catchLoc, true);
-            }
-          } else if (hasFinally) {
-            if (this.prev < entry.finallyLoc) {
-              return handle(entry.finallyLoc);
-            }
-          } else {
-            throw new Error("try statement without catch or finally");
-          }
-        }
-      }
-    },
-    abrupt: function abrupt(type, arg) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-
-        if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) {
-          var finallyEntry = entry;
-          break;
-        }
-      }
-
-      if (finallyEntry && (type === "break" || type === "continue") && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc) {
-        // Ignore the finally entry if control is not jumping to a
-        // location outside the try/catch block.
-        finallyEntry = null;
-      }
-
-      var record = finallyEntry ? finallyEntry.completion : {};
-      record.type = type;
-      record.arg = arg;
-
-      if (finallyEntry) {
-        this.method = "next";
-        this.next = finallyEntry.finallyLoc;
-        return ContinueSentinel;
-      }
-
-      return this.complete(record);
-    },
-    complete: function complete(record, afterLoc) {
-      if (record.type === "throw") {
-        throw record.arg;
-      }
-
-      if (record.type === "break" || record.type === "continue") {
-        this.next = record.arg;
-      } else if (record.type === "return") {
-        this.rval = this.arg = record.arg;
-        this.method = "return";
-        this.next = "end";
-      } else if (record.type === "normal" && afterLoc) {
-        this.next = afterLoc;
-      }
-
-      return ContinueSentinel;
-    },
-    finish: function finish(finallyLoc) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-
-        if (entry.finallyLoc === finallyLoc) {
-          this.complete(entry.completion, entry.afterLoc);
-          resetTryEntry(entry);
-          return ContinueSentinel;
-        }
-      }
-    },
-    "catch": function _catch(tryLoc) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-
-        if (entry.tryLoc === tryLoc) {
-          var record = entry.completion;
-
-          if (record.type === "throw") {
-            var thrown = record.arg;
-            resetTryEntry(entry);
-          }
-
-          return thrown;
-        }
-      } // The context.catch method must only be called with a location
-      // argument that corresponds to a known catch block.
-
-
-      throw new Error("illegal catch attempt");
-    },
-    delegateYield: function delegateYield(iterable, resultName, nextLoc) {
-      this.delegate = {
-        iterator: values(iterable),
-        resultName: resultName,
-        nextLoc: nextLoc
-      };
-
-      if (this.method === "next") {
-        // Deliberately forget the last sent value so that we don't
-        // accidentally pass it on to the delegate.
-        this.arg = undefined;
-      }
-
-      return ContinueSentinel;
-    }
-  }; // Regardless of whether this script is executing as a CommonJS module
-  // or not, return the runtime object so that we can declare the variable
-  // regeneratorRuntime in the outer scope, which allows this module to be
-  // injected easily by `bin/regenerator --include-runtime script.js`.
-
-  return exports;
-}( // If this script is executing as a CommonJS module, use module.exports
-// as the regeneratorRuntime namespace. Otherwise create a new empty
-// object. Either way, the resulting object will be used to initialize
-// the regeneratorRuntime variable at the top of this file.
-( false ? undefined : _typeof(module)) === "object" ? module.exports : {});
-
-try {
-  regeneratorRuntime = runtime;
-} catch (accidentalStrictMode) {
-  // This module should not be running in strict mode, so the above
-  // assignment should always work unless something is misconfigured. Just
-  // in case runtime.js accidentally runs in strict mode, we can escape
-  // strict mode using a global Function call. This could conceivably fail
-  // if a Content Security Policy forbids using Function, but in that case
-  // the proper solution is to fix the accidental strict mode problem. If
-  // you've misconfigured your bundler to force strict mode and applied a
-  // CSP to forbid Function, and you're not willing to fix either of those
-  // problems, please detail your unique predicament in a GitHub issue.
-  Function("r", "regeneratorRuntime = r")(runtime);
-}
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
 
