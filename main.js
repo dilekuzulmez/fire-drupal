@@ -37,7 +37,7 @@ const onPageReady = () => {
   // global Drupal behaviors
   Drupal.behaviors.fireGlobal = {
     attach: (context, settings) => {
-      if ($(context).is('.toolbar-menu')) return;
+      if (FireHelpers.ignoreContext(context, ['.toolbar-menu', '.status-messages'])) return;
       componentRecord.registerAllComponents(true);
       lazyLoader.observer.observe();
     },
