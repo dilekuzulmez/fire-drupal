@@ -1,4 +1,5 @@
 const isProduction = process.env.NODE_ENV === 'production';
+const purgecss = require('@fullhuman/postcss-purgecss');
 
 // prettier-ignore
 module.exports = {
@@ -9,6 +10,10 @@ module.exports = {
     require('postcss-preset-env')({ stage: 1 }),
     isProduction ? require('cssnano')({
       preset: 'default',
-    }) : null
+    }) : null,
+    purgecss({
+      content: ['./**/*.twig'],
+      whitelist: ['block-fire-local-tasks']
+    })
   ]
 };

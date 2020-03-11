@@ -1,40 +1,21 @@
-/* #block-fire-local-tasks {
-  display: flex;
-  justify-content: center;
-  max-width: 100%;
-  padding: 10px 10px;
-  background-color: $black;
+#block-fire-local-tasks {
+  @apply flex content-center max-w-full p-3 bg-black;
 
   .is-logged-in & {
-    z-index: $zindex-fixed;
-    position: fixed;
+    @apply z-50 fixed pl-8 bg-black rounded-full;
     bottom: 25px;
     left: 25px;
-    padding-left: 35px;
-    background-color: $black;
-    border-radius: 25px;
   }
 
   ul {
-    @include reset-list;
-    display: flex;
-
-    @include media-breakpoint-down(sm) {
-      max-width: 100%;
-    }
+    @apply list-none flex;
 
     li {
-      padding: 0 8px;
-      font-size: 13px;
+      @apply text-sm text-xs px-2;
 
       a {
-        font-weight: bold;
-        color: $white;
-
-        .is-logged-in & {
-          color: $white;
-        }
+        @apply font-bold text-white no-underline;
       }
     }
   }
-} */
+}

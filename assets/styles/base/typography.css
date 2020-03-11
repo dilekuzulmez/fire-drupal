@@ -1,8 +1,6 @@
 html,
 body {
-  @apply font-body text-gray-900 text-base leading-normal font-normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @apply font-body text-gray-900 text-base leading-normal font-normal antialiased;
   text-rendering: optimizeLegibility;
 }
 
