@@ -53,10 +53,10 @@ module.exports = {
       bold: '700',
     },
     screens: {
-      sm: { max: '639px' },
-      md: { max: '767px' },
-      lg: { max: '1023px' },
-      xl: { max: '1279px' },
+      sm: { max: '575px' },
+      md: { max: '768px' },
+      lg: { max: '992px' },
+      xl: { max: '1200px' },
     },
     container: {
       center: true,
