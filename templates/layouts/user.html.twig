@@ -21,41 +21,36 @@
 {% set member_length = content.member_for['#markup'] %}
 {% set user_id = elements['#user'].uid.0.value %}
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-10 offset-lg-1 col-12 mb-5">
-      <article{{attributes}} class="mb-6">
-        {% if user %}
-          <h1 class="mb-0">Hello
-            {{ user|title }}</h1>
-        {% endif %}
-        {% if member_length %}
-          <p class="text-13">
-            {{member_length|striptags|raw}}
-          </p>
-        {% endif %}
+<article{{ attributes.addClass(['max-w-5xl mt-10 mx-auto']) }}>
+  {% if user %}
+    <h1 class="mb-0">Hello
+      {{ user|title }}</h1>
+  {% endif %}
+  {% if member_length %}
+    <p>
+      {{member_length|striptags|raw}}
+    </p>
+  {% endif %}
 
-        <div class="mb-3">
-          <strong>Quick Links</strong>
-          <ul class="mt-2">
-            <li>
-              <a class="link mb-3" href="/admin/content">Add / Edit Content</a>
-            </li>
-            <li>
-              <a class="link mb-3" href="/user/{{ user_id }}/edit">Update Profile</a>
-            </li>
-            <li>
-              <a class="link mb-3" href="/user/{{ user_id }}/edit">Change Password</a>
-            </li>
-            <li>
-              <a class="link mb-3" href="{{ path('<front>') }}">Go to Home Page</a>
-            </li>
-            <li>
-              <a class="link mb-3" href="{{ path('user.logout') }}">Logout</a>
-            </li>
-          </ul>
-        </div>
-      </article>
-    </div>
+  <div class="mb-3 mt-4">
+    <strong>Quick Links</strong>
+
+    <ul class="mt-2 ml-3 list-disc list-inside">
+      <li class="mb-1">
+        <a class="mb-3" href="/admin/content">Add / Edit Content</a>
+      </li>
+      <li class="mb-1">
+        <a class="mb-3" href="/user/{{ user_id }}/edit">Update Profile</a>
+      </li>
+      <li class="mb-1">
+        <a class="mb-3" href="/user/{{ user_id }}/edit">Change Password</a>
+      </li>
+      <li class="mb-1">
+        <a class="mb-3" href="{{ path('<front>') }}">Go to Home Page</a>
+      </li>
+      <li class="mb-1">
+        <a class="mb-3" href="{{ path('user.logout') }}">Logout</a>
+      </li>
+    </ul>
   </div>
-</div>
+</article>
