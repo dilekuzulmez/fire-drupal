@@ -6,12 +6,11 @@
 }
 
 /* Removes Chrome autofill yellow */
-/* @-webkit-keyframes autofill {
+@-webkit-keyframes autofill {
   to {
-    color: $body-color;
-    background-color: theme-color('white');
+    @apply text-black text-white;
   }
-} */
+}
 
 input:-webkit-autofill {
   -webkit-animation-name: autofill;
