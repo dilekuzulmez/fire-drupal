@@ -16,7 +16,7 @@ const aliases = {
 // prettier-ignore
 const styleLoaders = [
   {
-    test: /\.(css)$/,
+    test: /\.css$/,
     use: [
       MiniCssExtractPlugin.loader,
       { loader: 'css-loader', options: { importLoaders: 1 } },
