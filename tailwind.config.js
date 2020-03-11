@@ -1,12 +1,6 @@
 module.exports = {
   important: false,
   theme: {
-    extend: {
-      margin: {
-        96: '24rem',
-        128: '32rem',
-      },
-    },
     colors: {
       black: '#000',
       white: '#fff',
@@ -14,17 +8,23 @@ module.exports = {
       light: '#f2f2f2',
       dark: '#37373c',
 
-      'gray-100': '#f2f2f2',
-      'gray-300': '#cccccc',
-      'gray-900': '#37373c',
+      gray: {
+        '100': '#f2f2f2',
+        '300': '#cccccc',
+        '900': '#37373c',
+      },
 
-      'green-100': '#E8F5E9',
-      'green-400': '#28a745',
-      'green-700': '#2E7D32',
+      green: {
+        '100': '#E8F5E9',
+        '400': '#28a745',
+        '700': '#2E7D32',
+      },
 
-      'red-100': '#fff5f5',
-      'red-400': '#dc3545',
-      'red-700': '#c53030',
+      red: {
+        '100': '#fff5f5',
+        '400': '#dc3545',
+        '700': '#c53030',
+      },
 
       primary: '#37b57b',
       secondary: '#695b8e',
@@ -61,6 +61,12 @@ module.exports = {
     container: {
       center: true,
       padding: '1rem',
+    },
+  },
+  extend: {
+    margin: {
+      96: '24rem',
+      128: '32rem',
     },
   },
   variants: {
