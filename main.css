@@ -1,37 +1,19 @@
-// // `~` is a webpack alias for `node_modules/`
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-// // custom setup and helper classes
-// @import './assets/styles/base/variables';
-// @import './assets/styles/base/functions';
-// @import './assets/styles/base/mixins';
+@import './assets/styles/base/fonts';
+@import './assets/styles/base/scaffolding';
+@import './assets/styles/base/typography';
 
-// // dependencies
-// @import '~bootstrap/scss/bootstrap-reboot';
-// @import '~bootstrap/scss/bootstrap-grid';
-// @import '~bootstrap/scss/utilities';
-// @import '~bootstrap/scss/pagination';
-// @import '~bootstrap/scss/alert';
-// @import '~bootstrap/scss/forms';
-// @import '~bootstrap/scss/buttons';
-// @import '~bootstrap/scss/type';
+/* @import './assets/styles/utilities/index';
 
-// // base
-// @import './assets/styles/base/fonts';
-// @import './assets/styles/base/scaffolding';
-// @import './assets/styles/base/typography';
+@import './assets/styles/components/index';
 
-// // utilities
-// @import './assets/styles/utilities/index';
+@import './assets/styles/admin/index'; */
 
-// // global components
-// @import './assets/styles/components/index';
-
-// // admin
-// @import './assets/styles/admin/index';
-
-// // components
-// @import './templates/components/site-header/site-header';
-// @import './templates/components/site-footer/site-footer';
-// @import './templates/components/main-nav/main-nav';
-// @import './templates/components/status-messages/status-messages';
-// @import './templates/components/pagination/pagination';
+@import './templates/components/site-header/site-header.css';
+@import './templates/components/site-footer/site-footer.css';
+@import './templates/components/main-nav/main-nav.css';
+@import './templates/components/status-messages/status-messages.css';
+@import './templates/components/pagination/pagination.css';

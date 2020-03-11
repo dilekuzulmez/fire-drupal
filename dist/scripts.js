@@ -103,9 +103,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 // Note: Google Analytics should be initiated using a Drupal module
-var FireAnalytics =
-/*#__PURE__*/
-function () {
+var FireAnalytics = /*#__PURE__*/function () {
   function FireAnalytics() {
     _classCallCheck(this, FireAnalytics);
   }
@@ -185,9 +183,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  *
  **/
 
-var FireComponentRecord =
-/*#__PURE__*/
-function () {
+var FireComponentRecord = /*#__PURE__*/function () {
   function FireComponentRecord() {
     _classCallCheck(this, FireComponentRecord);
   }
@@ -283,9 +279,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  *
  **/
 
-var FireComponent =
-/*#__PURE__*/
-function () {
+var FireComponent = /*#__PURE__*/function () {
   function FireComponent(id) {
     _classCallCheck(this, FireComponent);
 
@@ -356,9 +350,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  *
  **/
 
-var FireDetect =
-/*#__PURE__*/
-function () {
+var FireDetect = /*#__PURE__*/function () {
   function FireDetect() {
     _classCallCheck(this, FireDetect);
 
@@ -949,9 +941,7 @@ var defaultConfig = {
     }
   }
 };
-var FireLazyLoader =
-/*#__PURE__*/
-function () {
+var FireLazyLoader = /*#__PURE__*/function () {
   function FireLazyLoader(config) {
     _classCallCheck(this, FireLazyLoader);
 
@@ -1070,20 +1060,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _base_polyfills__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @base/polyfills */ "./assets/scripts/base/polyfills.js");
-/* harmony import */ var bootstrap_js_src_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap/js/src/util */ "./node_modules/bootstrap/js/src/util.js");
-/* harmony import */ var bootstrap_js_src_alert__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/js/src/alert */ "./node_modules/bootstrap/js/src/alert.js");
-/* harmony import */ var balance_text__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! balance-text */ "./node_modules/balance-text/balancetext.js");
-/* harmony import */ var balance_text__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(balance_text__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @base */ "./assets/scripts/base/index.js");
+/* harmony import */ var balance_text__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! balance-text */ "./node_modules/balance-text/balancetext.js");
+/* harmony import */ var balance_text__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(balance_text__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @base */ "./assets/scripts/base/index.js");
 
 
 
 
-
-
-var detect = new _base__WEBPACK_IMPORTED_MODULE_5__["FireDetect"]();
-var componentRecord = new _base__WEBPACK_IMPORTED_MODULE_5__["FireComponentRecord"]();
-var lazyLoader = new _base__WEBPACK_IMPORTED_MODULE_5__["FireLazyLoader"]();
+var detect = new _base__WEBPACK_IMPORTED_MODULE_3__["FireDetect"]();
+var componentRecord = new _base__WEBPACK_IMPORTED_MODULE_3__["FireComponentRecord"]();
+var lazyLoader = new _base__WEBPACK_IMPORTED_MODULE_3__["FireLazyLoader"]();
 /**
  * @type function
  * @name onPageReady
@@ -1099,19 +1085,19 @@ var onPageReady = function onPageReady() {
   lazyLoader.init();
   lazyLoader.observer.observe();
   componentRecord.registerAllComponents();
-  _base__WEBPACK_IMPORTED_MODULE_5__["FireHelpers"].moveBootstrapModalsToBody();
+  _base__WEBPACK_IMPORTED_MODULE_3__["FireHelpers"].moveBootstrapModalsToBody();
 
   if (detect.touch && (detect.platform === 'iPhone' || detect.platform === 'iPad')) {
-    _base__WEBPACK_IMPORTED_MODULE_5__["FireHelpers"].iOSFixDoubleTap();
+    _base__WEBPACK_IMPORTED_MODULE_3__["FireHelpers"].iOSFixDoubleTap();
   }
 
-  balance_text__WEBPACK_IMPORTED_MODULE_4___default()(); // display page
+  balance_text__WEBPACK_IMPORTED_MODULE_2___default()(); // display page
 
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('has-loaded'); // global Drupal behaviors
 
   Drupal.behaviors.fireGlobal = {
     attach: function attach(context, settings) {
-      if (_base__WEBPACK_IMPORTED_MODULE_5__["FireHelpers"].ignoreContext(context, ['.toolbar-menu', '.status-messages'])) return;
+      if (_base__WEBPACK_IMPORTED_MODULE_3__["FireHelpers"].ignoreContext(context, ['.toolbar-menu', '.status-messages'])) return;
       componentRecord.registerAllComponents(true);
       lazyLoader.observer.observe();
     }
@@ -1945,7 +1931,7 @@ module.exports = !__webpack_require__(/*! ./_descriptors */ "./node_modules/@bab
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 module.exports = function (it) {
   return _typeof(it) === 'object' ? it !== null : typeof it === 'function';
@@ -3785,7 +3771,7 @@ module.exports = function isInteger(it) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 module.exports = function (it) {
   return _typeof(it) === 'object' ? it !== null : typeof it === 'function';
@@ -4162,7 +4148,7 @@ module.exports = Math.sign || function sign(x) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 var META = __webpack_require__(/*! ./_uid */ "./node_modules/@babel/polyfill/node_modules/core-js/modules/_uid.js")('meta');
 
@@ -4588,7 +4574,7 @@ exports.f = __webpack_require__(/*! ./_descriptors */ "./node_modules/@babel/pol
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
 var toIObject = __webpack_require__(/*! ./_to-iobject */ "./node_modules/@babel/polyfill/node_modules/core-js/modules/_to-iobject.js");
@@ -5004,7 +4990,7 @@ __webpack_require__(/*! ./_core */ "./node_modules/@babel/polyfill/node_modules/
 "use strict";
 
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 var classof = __webpack_require__(/*! ./_classof */ "./node_modules/@babel/polyfill/node_modules/core-js/modules/_classof.js");
 
@@ -5736,7 +5722,7 @@ module.exports = function (it, S) {
 "use strict";
 
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 if (__webpack_require__(/*! ./_descriptors */ "./node_modules/@babel/polyfill/node_modules/core-js/modules/_descriptors.js")) {
   var LIBRARY = __webpack_require__(/*! ./_library */ "./node_modules/@babel/polyfill/node_modules/core-js/modules/_library.js");
@@ -10767,7 +10753,7 @@ __webpack_require__(/*! ./_string-trim */ "./node_modules/@babel/polyfill/node_m
 "use strict";
  // ECMAScript 6 symbols shim
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 var global = __webpack_require__(/*! ./_global */ "./node_modules/@babel/polyfill/node_modules/core-js/modules/_global.js");
 
@@ -11867,7 +11853,7 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/@ba
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 /*
  * Copyright (c) 2012 Adobe Systems Incorporated. All rights reserved.
@@ -12639,395 +12625,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ "./node_modules/bootstrap/js/src/alert.js":
-/*!************************************************!*\
-  !*** ./node_modules/bootstrap/js/src/alert.js ***!
-  \************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util */ "./node_modules/bootstrap/js/src/util.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-/**
- * --------------------------------------------------------------------------
- * Bootstrap (v4.4.1): alert.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * ------------------------------------------------------------------------
- * Constants
- * ------------------------------------------------------------------------
- */
-
-var NAME = 'alert';
-var VERSION = '4.4.1';
-var DATA_KEY = 'bs.alert';
-var EVENT_KEY = ".".concat(DATA_KEY);
-var DATA_API_KEY = '.data-api';
-var JQUERY_NO_CONFLICT = jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn[NAME];
-var Selector = {
-  DISMISS: '[data-dismiss="alert"]'
-};
-var Event = {
-  CLOSE: "close".concat(EVENT_KEY),
-  CLOSED: "closed".concat(EVENT_KEY),
-  CLICK_DATA_API: "click".concat(EVENT_KEY).concat(DATA_API_KEY)
-};
-var ClassName = {
-  ALERT: 'alert',
-  FADE: 'fade',
-  SHOW: 'show'
-};
-/**
- * ------------------------------------------------------------------------
- * Class Definition
- * ------------------------------------------------------------------------
- */
-
-var Alert =
-/*#__PURE__*/
-function () {
-  function Alert(element) {
-    _classCallCheck(this, Alert);
-
-    this._element = element;
-  } // Getters
-
-
-  _createClass(Alert, [{
-    key: "close",
-    // Public
-    value: function close(element) {
-      var rootElement = this._element;
-
-      if (element) {
-        rootElement = this._getRootElement(element);
-      }
-
-      var customEvent = this._triggerCloseEvent(rootElement);
-
-      if (customEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      this._removeElement(rootElement);
-    }
-  }, {
-    key: "dispose",
-    value: function dispose() {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.removeData(this._element, DATA_KEY);
-      this._element = null;
-    } // Private
-
-  }, {
-    key: "_getRootElement",
-    value: function _getRootElement(element) {
-      var selector = _util__WEBPACK_IMPORTED_MODULE_1__["default"].getSelectorFromElement(element);
-      var parent = false;
-
-      if (selector) {
-        parent = document.querySelector(selector);
-      }
-
-      if (!parent) {
-        parent = jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).closest(".".concat(ClassName.ALERT))[0];
-      }
-
-      return parent;
-    }
-  }, {
-    key: "_triggerCloseEvent",
-    value: function _triggerCloseEvent(element) {
-      var closeEvent = jquery__WEBPACK_IMPORTED_MODULE_0___default.a.Event(Event.CLOSE);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).trigger(closeEvent);
-      return closeEvent;
-    }
-  }, {
-    key: "_removeElement",
-    value: function _removeElement(element) {
-      var _this = this;
-
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).removeClass(ClassName.SHOW);
-
-      if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).hasClass(ClassName.FADE)) {
-        this._destroyElement(element);
-
-        return;
-      }
-
-      var transitionDuration = _util__WEBPACK_IMPORTED_MODULE_1__["default"].getTransitionDurationFromElement(element);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).one(_util__WEBPACK_IMPORTED_MODULE_1__["default"].TRANSITION_END, function (event) {
-        return _this._destroyElement(element, event);
-      }).emulateTransitionEnd(transitionDuration);
-    }
-  }, {
-    key: "_destroyElement",
-    value: function _destroyElement(element) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).detach().trigger(Event.CLOSED).remove();
-    } // Static
-
-  }], [{
-    key: "_jQueryInterface",
-    value: function _jQueryInterface(config) {
-      return this.each(function () {
-        var $element = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this);
-        var data = $element.data(DATA_KEY);
-
-        if (!data) {
-          data = new Alert(this);
-          $element.data(DATA_KEY, data);
-        }
-
-        if (config === 'close') {
-          data[config](this);
-        }
-      });
-    }
-  }, {
-    key: "_handleDismiss",
-    value: function _handleDismiss(alertInstance) {
-      return function (event) {
-        if (event) {
-          event.preventDefault();
-        }
-
-        alertInstance.close(this);
-      };
-    }
-  }, {
-    key: "VERSION",
-    get: function get() {
-      return VERSION;
-    }
-  }]);
-
-  return Alert;
-}();
-/**
- * ------------------------------------------------------------------------
- * Data Api implementation
- * ------------------------------------------------------------------------
- */
-
-
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on(Event.CLICK_DATA_API, Selector.DISMISS, Alert._handleDismiss(new Alert()));
-/**
- * ------------------------------------------------------------------------
- * jQuery
- * ------------------------------------------------------------------------
- */
-
-jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn[NAME] = Alert._jQueryInterface;
-jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn[NAME].Constructor = Alert;
-
-jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn[NAME].noConflict = function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn[NAME] = JQUERY_NO_CONFLICT;
-  return Alert._jQueryInterface;
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Alert);
-
-/***/ }),
-
-/***/ "./node_modules/bootstrap/js/src/util.js":
-/*!***********************************************!*\
-  !*** ./node_modules/bootstrap/js/src/util.js ***!
-  \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/**
- * --------------------------------------------------------------------------
- * Bootstrap (v4.4.1): util.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-/**
- * ------------------------------------------------------------------------
- * Private TransitionEnd Helpers
- * ------------------------------------------------------------------------
- */
-
-var TRANSITION_END = 'transitionend';
-var MAX_UID = 1000000;
-var MILLISECONDS_MULTIPLIER = 1000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
-
-function toType(obj) {
-  return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase();
-}
-
-function getSpecialTransitionEndEvent() {
-  return {
-    bindType: TRANSITION_END,
-    delegateType: TRANSITION_END,
-    handle: function handle(event) {
-      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(event.target).is(this)) {
-        return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
-      }
-
-      return undefined; // eslint-disable-line no-undefined
-    }
-  };
-}
-
-function transitionEndEmulator(duration) {
-  var _this = this;
-
-  var called = false;
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).one(Util.TRANSITION_END, function () {
-    called = true;
-  });
-  setTimeout(function () {
-    if (!called) {
-      Util.triggerTransitionEnd(_this);
-    }
-  }, duration);
-  return this;
-}
-
-function setTransitionEndSupport() {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn.emulateTransitionEnd = transitionEndEmulator;
-  jquery__WEBPACK_IMPORTED_MODULE_0___default.a.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
-}
-/**
- * --------------------------------------------------------------------------
- * Public Util Api
- * --------------------------------------------------------------------------
- */
-
-
-var Util = {
-  TRANSITION_END: 'bsTransitionEnd',
-  getUID: function getUID(prefix) {
-    do {
-      // eslint-disable-next-line no-bitwise
-      prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
-    } while (document.getElementById(prefix));
-
-    return prefix;
-  },
-  getSelectorFromElement: function getSelectorFromElement(element) {
-    var selector = element.getAttribute('data-target');
-
-    if (!selector || selector === '#') {
-      var hrefAttr = element.getAttribute('href');
-      selector = hrefAttr && hrefAttr !== '#' ? hrefAttr.trim() : '';
-    }
-
-    try {
-      return document.querySelector(selector) ? selector : null;
-    } catch (err) {
-      return null;
-    }
-  },
-  getTransitionDurationFromElement: function getTransitionDurationFromElement(element) {
-    if (!element) {
-      return 0;
-    } // Get transition-duration of the element
-
-
-    var transitionDuration = jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).css('transition-duration');
-    var transitionDelay = jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).css('transition-delay');
-    var floatTransitionDuration = parseFloat(transitionDuration);
-    var floatTransitionDelay = parseFloat(transitionDelay); // Return 0 if element or transition duration is not found
-
-    if (!floatTransitionDuration && !floatTransitionDelay) {
-      return 0;
-    } // If multiple durations are defined, take the first
-
-
-    transitionDuration = transitionDuration.split(',')[0];
-    transitionDelay = transitionDelay.split(',')[0];
-    return (parseFloat(transitionDuration) + parseFloat(transitionDelay)) * MILLISECONDS_MULTIPLIER;
-  },
-  reflow: function reflow(element) {
-    return element.offsetHeight;
-  },
-  triggerTransitionEnd: function triggerTransitionEnd(element) {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).trigger(TRANSITION_END);
-  },
-  // TODO: Remove in v5
-  supportsTransitionEnd: function supportsTransitionEnd() {
-    return Boolean(TRANSITION_END);
-  },
-  isElement: function isElement(obj) {
-    return (obj[0] || obj).nodeType;
-  },
-  typeCheckConfig: function typeCheckConfig(componentName, config, configTypes) {
-    for (var property in configTypes) {
-      if (Object.prototype.hasOwnProperty.call(configTypes, property)) {
-        var expectedTypes = configTypes[property];
-        var value = config[property];
-        var valueType = value && Util.isElement(value) ? 'element' : toType(value);
-
-        if (!new RegExp(expectedTypes).test(valueType)) {
-          throw new Error("".concat(componentName.toUpperCase(), ": ") + "Option \"".concat(property, "\" provided type \"").concat(valueType, "\" ") + "but expected type \"".concat(expectedTypes, "\"."));
-        }
-      }
-    }
-  },
-  findShadowRoot: function findShadowRoot(element) {
-    if (!document.documentElement.attachShadow) {
-      return null;
-    } // Can find the shadow root otherwise it'll return the document
-
-
-    if (typeof element.getRootNode === 'function') {
-      var root = element.getRootNode();
-      return root instanceof ShadowRoot ? root : null;
-    }
-
-    if (element instanceof ShadowRoot) {
-      return element;
-    } // when we don't find a shadow root
-
-
-    if (!element.parentNode) {
-      return null;
-    }
-
-    return Util.findShadowRoot(element.parentNode);
-  },
-  jQueryDetection: function jQueryDetection() {
-    if (typeof jquery__WEBPACK_IMPORTED_MODULE_0___default.a === 'undefined') {
-      throw new TypeError('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
-    }
-
-    var version = jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn.jquery.split(' ')[0].split('.');
-    var minMajor = 1;
-    var ltMajor = 2;
-    var minMinor = 9;
-    var minPatch = 1;
-    var maxMajor = 4;
-
-    if (version[0] < ltMajor && version[1] < minMinor || version[0] === minMajor && version[1] === minMinor && version[2] < minPatch || version[0] >= maxMajor) {
-      throw new Error('Bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0');
-    }
-  }
-};
-Util.jQueryDetection();
-setTransitionEndSupport();
-/* harmony default export */ __webpack_exports__["default"] = (Util);
-
-/***/ }),
-
 /***/ "./node_modules/intersection-observer/intersection-observer.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/intersection-observer/intersection-observer.js ***!
@@ -13035,7 +12632,7 @@ setTransitionEndSupport();
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 /**
  * Copyright 2016 Google Inc. All Rights Reserved.
@@ -13824,7 +13421,7 @@ module.exports = baseGetTag;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+/* WEBPACK VAR INJECTION */(function(global) {function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 /** Detect free variable `global` from Node.js. */
 var freeGlobal = (typeof global === "undefined" ? "undefined" : _typeof(global)) == 'object' && global && global.Object === Object && global;
@@ -13931,7 +13528,7 @@ module.exports = objectToString;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 var freeGlobal = __webpack_require__(/*! ./_freeGlobal */ "./node_modules/lodash/_freeGlobal.js");
 /** Detect free variable `self`. */
@@ -14156,7 +13753,7 @@ module.exports = debounce;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 /**
  * Checks if `value` is the
@@ -14200,7 +13797,7 @@ module.exports = isObject;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 /**
  * Checks if `value` is object-like. A value is object-like if it's not `null`
@@ -14241,7 +13838,7 @@ module.exports = isObjectLike;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 var baseGetTag = __webpack_require__(/*! ./_baseGetTag */ "./node_modules/lodash/_baseGetTag.js"),
     isObjectLike = __webpack_require__(/*! ./isObjectLike */ "./node_modules/lodash/isObjectLike.js");
@@ -14477,7 +14074,7 @@ module.exports = toNumber;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 /*! lozad.js - v1.14.0 - 2019-10-19
 * https://github.com/ApoorvSaxena/lozad.js
@@ -14579,7 +14176,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _type
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+/* WEBPACK VAR INJECTION */(function(module) {function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -14715,7 +14312,7 @@ var runtime = function (exports) {
     };
   };
 
-  function AsyncIterator(generator) {
+  function AsyncIterator(generator, PromiseImpl) {
     function invoke(method, arg, resolve, reject) {
       var record = tryCatch(generator[method], generator, arg);
 
@@ -14726,14 +14323,14 @@ var runtime = function (exports) {
         var value = result.value;
 
         if (value && _typeof(value) === "object" && hasOwn.call(value, "__await")) {
-          return Promise.resolve(value.__await).then(function (value) {
+          return PromiseImpl.resolve(value.__await).then(function (value) {
             invoke("next", value, resolve, reject);
           }, function (err) {
             invoke("throw", err, resolve, reject);
           });
         }
 
-        return Promise.resolve(value).then(function (unwrapped) {
+        return PromiseImpl.resolve(value).then(function (unwrapped) {
           // When a yielded Promise is resolved, its final value becomes
           // the .value of the Promise<{value,done}> result for the
           // current iteration.
@@ -14751,7 +14348,7 @@ var runtime = function (exports) {
 
     function enqueue(method, arg) {
       function callInvokeWithMethodAndArg() {
-        return new Promise(function (resolve, reject) {
+        return new PromiseImpl(function (resolve, reject) {
           invoke(method, arg, resolve, reject);
         });
       }
@@ -14788,8 +14385,9 @@ var runtime = function (exports) {
   // AsyncIterator objects; they just return a Promise for the value of
   // the final result produced by the iterator.
 
-  exports.async = function (innerFn, outerFn, self, tryLocsList) {
-    var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList));
+  exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) {
+    if (PromiseImpl === void 0) PromiseImpl = Promise;
+    var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl);
     return exports.isGeneratorFunction(outerFn) ? iter // If outerFn is a generator, return the full iterator.
     : iter.next().then(function (result) {
       return result.done ? result.value : iter.next();
@@ -15297,7 +14895,7 @@ try {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 var g; // This works in non-strict mode
 
@@ -15367,7 +14965,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @base */ "./assets/scripts/base/index.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -15387,9 +14985,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var SiteHeader =
-/*#__PURE__*/
-function (_FireComponent) {
+var SiteHeader = /*#__PURE__*/function (_FireComponent) {
   _inherits(SiteHeader, _FireComponent);
 
   function SiteHeader(id) {
@@ -15427,4 +15023,4 @@ module.exports = jQuery;
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=scripts.js.map

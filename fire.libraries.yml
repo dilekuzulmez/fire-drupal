@@ -1,10 +1,10 @@
-bundle-styles:
+styles:
   css:
     theme:
-      dist/bundle.css: {}
-bundle-scripts:
+      dist/styles.css: {}
+scripts:
   js:
-    dist/bundle.js: {}
+    dist/scripts.js: {}
   dependencies:
     - core/drupal
     - core/jquery
