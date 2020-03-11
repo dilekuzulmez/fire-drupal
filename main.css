@@ -12,8 +12,8 @@
 
 @import './assets/styles/admin/index'; */
 
-@import './templates/components/site-header/site-header.css';
-@import './templates/components/site-footer/site-footer.css';
-@import './templates/components/main-nav/main-nav.css';
-@import './templates/components/status-messages/status-messages.css';
-@import './templates/components/pagination/pagination.css';
+@import './templates/components/site-header/site-header';
+@import './templates/components/site-footer/site-footer';
+@import './templates/components/main-nav/main-nav';
+@import './templates/components/status-messages/status-messages';
+@import './templates/components/pagination/pagination';
