@@ -30,7 +30,7 @@ const onPageReady = () => {
   balanceText();
 
   // display page
-  $('body').addClass('has-loaded');
+  $('body').removeClass('opacity-0');
 
   // global Drupal behaviors
   Drupal.behaviors.fireGlobal = {

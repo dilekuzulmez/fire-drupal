@@ -1,27 +1,3 @@
-body {
-  &.fire-page {
-    opacity: 0;
-  }
-}
-
-body {
-  &.has-loaded {
-    opacity: 1;
-  }
-}
-
-// added to markup by Drupal,
-// top-level most element after body
-.dialog-off-canvas-main-canvas {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex-grow: 1;
-}
-
 img {
   max-width: 100%;
 }

@@ -45,6 +45,10 @@ module.exports = {
       lg: { max: '1023px' },
       xl: { max: '1279px' },
     },
+    container: {
+      center: true,
+      padding: '1rem',
+    },
   },
   variants: {
     opacity: ['responsive', 'hover'],

@@ -595,6 +595,10 @@ video {
 
 .container {
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .sr-only {
@@ -7286,6 +7290,16 @@ video {
 @font-face {
   font-family: 'Open Sans';
 
+  src: url(fonts/OpenSans-Regular.ttf);
+
+  font-weight: 400;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+
   src: url(fonts/OpenSans-Italic.ttf);
 
   font-weight: normal;
@@ -7321,26 +7335,6 @@ video {
   font-weight: 300;
 
   font-style: normal;
-}
-
-body.fire-page {
-  opacity: 0;
-}
-
-body.has-loaded {
-  opacity: 1;
-}
-
-// added to markup by Drupal,
-// top-level most element after body
-.dialog-off-canvas-main-canvas {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex-grow: 1;
 }
 
 img {

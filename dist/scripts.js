@@ -1093,7 +1093,7 @@ var onPageReady = function onPageReady() {
 
   balance_text__WEBPACK_IMPORTED_MODULE_2___default()(); // display page
 
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('has-loaded'); // global Drupal behaviors
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('opacity-0'); // global Drupal behaviors
 
   Drupal.behaviors.fireGlobal = {
     attach: function attach(context, settings) {
