@@ -13,7 +13,7 @@ module.exports = {
     }) : null,
     purgecss({
       content: ['./**/*.twig'],
-      whitelist: ['block-fire-local-tasks']
+      whitelist: ['block-fire-local-tasks', 'user-login-form']
     })
   ]
 };

@@ -14,9 +14,9 @@
 {% set is_submit = attributes.type == 'submit' %}
 
 {% if is_submit %}
-  {% set btn_classes = ['btn', 'btn-secondary'] %}
+  {% set btn_classes = ['button', 'button--secondary'] %}
 {% else %}
-  {% set btn_classes = ['form-control'] %}
+  {% set btn_classes = ['appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight'] %}
 {% endif %}
 
 <input{{ attributes.addClass(btn_classes).removeClass(['form-text']) }} />{{ children }}

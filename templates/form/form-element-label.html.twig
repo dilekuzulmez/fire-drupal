@@ -14,10 +14,9 @@
 #}
 {%
   set classes = [
-    title_display == 'after' ? 'option',
-    title_display == 'invisible' ? 'visually-hidden',
-    required ? 'js-form-required',
-    required ? 'form-required',
+    title_display == 'after invisible' ? 'option visually-hidden',
+    required ? 'form-required js-form-required',
+    'mb-2 font-bold'
   ]
 %}
 {% if title is not empty or required -%}

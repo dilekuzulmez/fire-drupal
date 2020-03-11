@@ -11,7 +11,15 @@ module.exports = {
       black: '#000',
       white: '#fff',
 
-      'gray-900': '#3d3d3d',
+      light: '#f2f2f2',
+      dark: '#37373c',
+
+      'gray-100': ' #f2f2f2',
+      'gray-300': '#cccccc',
+      'gray-900': '#37373c',
+
+      success: '#28a745',
+      error: '#dc3545',
 
       primary: '#37b57b',
       secondary: '#695b8e',
