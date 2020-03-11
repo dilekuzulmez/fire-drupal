@@ -1060,16 +1060,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _base_polyfills__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @base/polyfills */ "./assets/scripts/base/polyfills.js");
-/* harmony import */ var balance_text__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! balance-text */ "./node_modules/balance-text/balancetext.js");
-/* harmony import */ var balance_text__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(balance_text__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @base */ "./assets/scripts/base/index.js");
+/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
+/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(alpinejs__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var balance_text__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! balance-text */ "./node_modules/balance-text/balancetext.js");
+/* harmony import */ var balance_text__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(balance_text__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @base */ "./assets/scripts/base/index.js");
 
 
 
 
-var detect = new _base__WEBPACK_IMPORTED_MODULE_3__["FireDetect"]();
-var componentRecord = new _base__WEBPACK_IMPORTED_MODULE_3__["FireComponentRecord"]();
-var lazyLoader = new _base__WEBPACK_IMPORTED_MODULE_3__["FireLazyLoader"]();
+
+var detect = new _base__WEBPACK_IMPORTED_MODULE_4__["FireDetect"]();
+var componentRecord = new _base__WEBPACK_IMPORTED_MODULE_4__["FireComponentRecord"]();
+var lazyLoader = new _base__WEBPACK_IMPORTED_MODULE_4__["FireLazyLoader"]();
 /**
  * @type function
  * @name onPageReady
@@ -1085,19 +1088,19 @@ var onPageReady = function onPageReady() {
   lazyLoader.init();
   lazyLoader.observer.observe();
   componentRecord.registerAllComponents();
-  _base__WEBPACK_IMPORTED_MODULE_3__["FireHelpers"].moveBootstrapModalsToBody();
+  _base__WEBPACK_IMPORTED_MODULE_4__["FireHelpers"].moveBootstrapModalsToBody();
 
   if (detect.touch && (detect.platform === 'iPhone' || detect.platform === 'iPad')) {
-    _base__WEBPACK_IMPORTED_MODULE_3__["FireHelpers"].iOSFixDoubleTap();
+    _base__WEBPACK_IMPORTED_MODULE_4__["FireHelpers"].iOSFixDoubleTap();
   }
 
-  balance_text__WEBPACK_IMPORTED_MODULE_2___default()(); // display page
+  balance_text__WEBPACK_IMPORTED_MODULE_3___default()(); // display page
 
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('opacity-0'); // global Drupal behaviors
 
   Drupal.behaviors.fireGlobal = {
     attach: function attach(context, settings) {
-      if (_base__WEBPACK_IMPORTED_MODULE_3__["FireHelpers"].ignoreContext(context, ['.toolbar-menu', '.status-messages'])) return;
+      if (_base__WEBPACK_IMPORTED_MODULE_4__["FireHelpers"].ignoreContext(context, ['.toolbar-menu', '.status-messages'])) return;
       componentRecord.registerAllComponents(true);
       lazyLoader.observer.observe();
     }
@@ -11843,6 +11846,2009 @@ __webpack_require__(/*! ../modules/web.immediate */ "./node_modules/@babel/polyf
 __webpack_require__(/*! ../modules/web.dom.iterable */ "./node_modules/@babel/polyfill/node_modules/core-js/modules/web.dom.iterable.js");
 
 module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/@babel/polyfill/node_modules/core-js/modules/_core.js");
+
+/***/ }),
+
+/***/ "./node_modules/alpinejs/dist/alpine.js":
+/*!**********************************************!*\
+  !*** ./node_modules/alpinejs/dist/alpine.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _defineProperty2(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+(function (global, factory) {
+  ( false ? undefined : _typeof(exports)) === 'object' && typeof module !== 'undefined' ? module.exports = factory() :  true ? !(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
+				__WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : (undefined);
+})(this, function () {
+  'use strict';
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+      if (enumerableOnly) symbols = symbols.filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+      keys.push.apply(keys, symbols);
+    }
+
+    return keys;
+  }
+
+  function _objectSpread2(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i] != null ? arguments[i] : {};
+
+      if (i % 2) {
+        ownKeys(Object(source), true).forEach(function (key) {
+          _defineProperty(target, key, source[key]);
+        });
+      } else if (Object.getOwnPropertyDescriptors) {
+        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+      } else {
+        ownKeys(Object(source)).forEach(function (key) {
+          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+      }
+    }
+
+    return target;
+  } // Thanks @stimulus:
+  // https://github.com/stimulusjs/stimulus/blob/master/packages/%40stimulus/core/src/application.ts
+
+
+  function domReady() {
+    return new Promise(function (resolve) {
+      if (document.readyState == "loading") {
+        document.addEventListener("DOMContentLoaded", resolve);
+      } else {
+        resolve();
+      }
+    });
+  }
+
+  function arrayUnique(array) {
+    var a = array.concat();
+
+    for (var i = 0; i < a.length; ++i) {
+      for (var j = i + 1; j < a.length; ++j) {
+        if (a[i] === a[j]) a.splice(j--, 1);
+      }
+    }
+
+    return a;
+  }
+
+  function isTesting() {
+    return navigator.userAgent.includes("Node.js") || navigator.userAgent.includes("jsdom");
+  }
+
+  function kebabCase(subject) {
+    return subject.replace(/([a-z])([A-Z])/g, '$1-$2').replace(/[_\s]/, '-').toLowerCase();
+  }
+
+  function walk(el, callback) {
+    if (callback(el) === false) return;
+    var node = el.firstElementChild;
+
+    while (node) {
+      walk(node, callback);
+      node = node.nextElementSibling;
+    }
+  }
+
+  function debounce(func, wait) {
+    var timeout;
+    return function () {
+      var context = this,
+          args = arguments;
+
+      var later = function later() {
+        timeout = null;
+        func.apply(context, args);
+      };
+
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  function saferEval(expression, dataContext) {
+    var additionalHelperVariables = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+    return new Function(['$data'].concat(_toConsumableArray(Object.keys(additionalHelperVariables))), "var result; with($data) { result = ".concat(expression, " }; return result")).apply(void 0, [dataContext].concat(_toConsumableArray(Object.values(additionalHelperVariables))));
+  }
+
+  function saferEvalNoReturn(expression, dataContext) {
+    var additionalHelperVariables = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+    // For the cases when users pass only a function reference to the caller: `x-on:click="foo"`
+    // Where "foo" is a function. Also, we'll pass the function the event instance when we call it.
+    if (Object.keys(dataContext).includes(expression)) {
+      var methodReference = new Function(['dataContext'].concat(_toConsumableArray(Object.keys(additionalHelperVariables))), "with(dataContext) { return ".concat(expression, " }")).apply(void 0, [dataContext].concat(_toConsumableArray(Object.values(additionalHelperVariables))));
+
+      if (typeof methodReference === 'function') {
+        return methodReference.call(dataContext, additionalHelperVariables['$event']);
+      }
+    }
+
+    return new Function(['dataContext'].concat(_toConsumableArray(Object.keys(additionalHelperVariables))), "with(dataContext) { ".concat(expression, " }")).apply(void 0, [dataContext].concat(_toConsumableArray(Object.values(additionalHelperVariables))));
+  }
+
+  var xAttrRE = /^x-(on|bind|data|text|html|model|if|for|show|cloak|transition|ref)\b/;
+
+  function isXAttr(attr) {
+    var name = replaceAtAndColonWithStandardSyntax(attr.name);
+    return xAttrRE.test(name);
+  }
+
+  function getXAttrs(el, type) {
+    return Array.from(el.attributes).filter(isXAttr).map(function (attr) {
+      var name = replaceAtAndColonWithStandardSyntax(attr.name);
+      var typeMatch = name.match(xAttrRE);
+      var valueMatch = name.match(/:([a-zA-Z\-:]+)/);
+      var modifiers = name.match(/\.[^.\]]+(?=[^\]]*$)/g) || [];
+      return {
+        type: typeMatch ? typeMatch[1] : null,
+        value: valueMatch ? valueMatch[1] : null,
+        modifiers: modifiers.map(function (i) {
+          return i.replace('.', '');
+        }),
+        expression: attr.value
+      };
+    }).filter(function (i) {
+      // If no type is passed in for filtering, bypass filter
+      if (!type) return true;
+      return i.type === type;
+    });
+  }
+
+  function isBooleanAttr(attrName) {
+    // As per HTML spec table https://html.spec.whatwg.org/multipage/indices.html#attributes-3:boolean-attribute
+    // Array roughly ordered by estimated usage
+    var booleanAttributes = ['disabled', 'checked', 'required', 'readonly', 'hidden', 'open', 'selected', 'autofocus', 'itemscope', 'multiple', 'novalidate', 'allowfullscreen', 'allowpaymentrequest', 'formnovalidate', 'autoplay', 'controls', 'loop', 'muted', 'playsinline', 'default', 'ismap', 'reversed', 'async', 'defer', 'nomodule'];
+    return booleanAttributes.includes(attrName);
+  }
+
+  function replaceAtAndColonWithStandardSyntax(name) {
+    if (name.startsWith('@')) {
+      return name.replace('@', 'x-on:');
+    } else if (name.startsWith(':')) {
+      return name.replace(':', 'x-bind:');
+    }
+
+    return name;
+  }
+
+  function transitionIn(el, show) {
+    var forceSkip = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+    // We don't want to transition on the initial page load.
+    if (forceSkip) return show();
+    var attrs = getXAttrs(el, 'transition');
+    var showAttr = getXAttrs(el, 'show')[0]; // If this is triggered by a x-show.transition.
+
+    if (showAttr && showAttr.modifiers.includes('transition')) {
+      var modifiers = showAttr.modifiers; // If x-show.transition.out, we'll skip the "in" transition.
+
+      if (modifiers.includes('out') && !modifiers.includes('in')) return show();
+      var settingBothSidesOfTransition = modifiers.includes('in') && modifiers.includes('out'); // If x-show.transition.in...out... only use "in" related modifiers for this transition.
+
+      modifiers = settingBothSidesOfTransition ? modifiers.filter(function (i, index) {
+        return index < modifiers.indexOf('out');
+      }) : modifiers;
+      transitionHelperIn(el, modifiers, show); // Otherwise, we can assume x-transition:enter.
+    } else if (attrs.length > 0) {
+      transitionClassesIn(el, attrs, show);
+    } else {
+      // If neither, just show that damn thing.
+      show();
+    }
+  }
+
+  function transitionOut(el, hide) {
+    var forceSkip = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+    if (forceSkip) return hide();
+    var attrs = getXAttrs(el, 'transition');
+    var showAttr = getXAttrs(el, 'show')[0];
+
+    if (showAttr && showAttr.modifiers.includes('transition')) {
+      var modifiers = showAttr.modifiers;
+      if (modifiers.includes('in') && !modifiers.includes('out')) return hide();
+      var settingBothSidesOfTransition = modifiers.includes('in') && modifiers.includes('out');
+      modifiers = settingBothSidesOfTransition ? modifiers.filter(function (i, index) {
+        return index > modifiers.indexOf('out');
+      }) : modifiers;
+      transitionHelperOut(el, modifiers, settingBothSidesOfTransition, hide);
+    } else if (attrs.length > 0) {
+      transitionClassesOut(el, attrs, hide);
+    } else {
+      hide();
+    }
+  }
+
+  function transitionHelperIn(el, modifiers, showCallback) {
+    // Default values inspired by: https://material.io/design/motion/speed.html#duration
+    var styleValues = {
+      duration: modifierValue(modifiers, 'duration', 150),
+      origin: modifierValue(modifiers, 'origin', 'center'),
+      first: {
+        opacity: 0,
+        scale: modifierValue(modifiers, 'scale', 95)
+      },
+      second: {
+        opacity: 1,
+        scale: 100
+      }
+    };
+    transitionHelper(el, modifiers, showCallback, function () {}, styleValues);
+  }
+
+  function transitionHelperOut(el, modifiers, settingBothSidesOfTransition, hideCallback) {
+    // Make the "out" transition .5x slower than the "in". (Visually better)
+    // HOWEVER, if they explicitly set a duration for the "out" transition,
+    // use that.
+    var duration = settingBothSidesOfTransition ? modifierValue(modifiers, 'duration', 150) : modifierValue(modifiers, 'duration', 150) / 2;
+    var styleValues = {
+      duration: duration,
+      origin: modifierValue(modifiers, 'origin', 'center'),
+      first: {
+        opacity: 1,
+        scale: 100
+      },
+      second: {
+        opacity: 0,
+        scale: modifierValue(modifiers, 'scale', 95)
+      }
+    };
+    transitionHelper(el, modifiers, function () {}, hideCallback, styleValues);
+  }
+
+  function modifierValue(modifiers, key, fallback) {
+    // If the modifier isn't present, use the default.
+    if (modifiers.indexOf(key) === -1) return fallback; // If it IS present, grab the value after it: x-show.transition.duration.500ms
+
+    var rawValue = modifiers[modifiers.indexOf(key) + 1];
+    if (!rawValue) return fallback;
+
+    if (key === 'scale') {
+      // Check if the very next value is NOT a number and return the fallback.
+      // If x-show.transition.scale, we'll use the default scale value.
+      // That is how a user opts out of the opacity transition.
+      if (!isNumeric(rawValue)) return fallback;
+    }
+
+    if (key === 'duration') {
+      // Support x-show.transition.duration.500ms && duration.500
+      var match = rawValue.match(/([0-9]+)ms/);
+      if (match) return match[1];
+    }
+
+    if (key === 'origin') {
+      // Support chaining origin directions: x-show.transition.top.right
+      if (['top', 'right', 'left', 'center', 'bottom'].includes(modifiers[modifiers.indexOf(key) + 2])) {
+        return [rawValue, modifiers[modifiers.indexOf(key) + 2]].join(' ');
+      }
+    }
+
+    return rawValue;
+  }
+
+  function transitionHelper(el, modifiers, hook1, hook2, styleValues) {
+    // If the user set these style values, we'll put them back when we're done with them.
+    var opacityCache = el.style.opacity;
+    var transformCache = el.style.transform;
+    var transformOriginCache = el.style.transformOrigin; // If no modifiers are present: x-show.transition, we'll default to both opacity and scale.
+
+    var noModifiers = !modifiers.includes('opacity') && !modifiers.includes('scale');
+    var transitionOpacity = noModifiers || modifiers.includes('opacity');
+    var transitionScale = noModifiers || modifiers.includes('scale'); // These are the explicit stages of a transition (same stages for in and for out).
+    // This way you can get a birds eye view of the hooks, and the differences
+    // between them.
+
+    var stages = {
+      start: function start() {
+        if (transitionOpacity) el.style.opacity = styleValues.first.opacity;
+        if (transitionScale) el.style.transform = "scale(".concat(styleValues.first.scale / 100, ")");
+      },
+      during: function during() {
+        if (transitionScale) el.style.transformOrigin = styleValues.origin;
+        el.style.transitionProperty = [transitionOpacity ? "opacity" : "", transitionScale ? "transform" : ""].join(' ').trim();
+        el.style.transitionDuration = "".concat(styleValues.duration / 1000, "s");
+        el.style.transitionTimingFunction = "cubic-bezier(0.4, 0.0, 0.2, 1)";
+      },
+      show: function show() {
+        hook1();
+      },
+      end: function end() {
+        if (transitionOpacity) el.style.opacity = styleValues.second.opacity;
+        if (transitionScale) el.style.transform = "scale(".concat(styleValues.second.scale / 100, ")");
+      },
+      hide: function hide() {
+        hook2();
+      },
+      cleanup: function cleanup() {
+        if (transitionOpacity) el.style.opacity = opacityCache;
+        if (transitionScale) el.style.transform = transformCache;
+        if (transitionScale) el.style.transformOrigin = transformOriginCache;
+        el.style.transitionProperty = null;
+        el.style.transitionDuration = null;
+        el.style.transitionTimingFunction = null;
+      }
+    };
+    transition(el, stages);
+  }
+
+  function transitionClassesIn(el, directives, showCallback) {
+    var enter = (directives.find(function (i) {
+      return i.value === 'enter';
+    }) || {
+      expression: ''
+    }).expression.split(' ').filter(function (i) {
+      return i !== '';
+    });
+    var enterStart = (directives.find(function (i) {
+      return i.value === 'enter-start';
+    }) || {
+      expression: ''
+    }).expression.split(' ').filter(function (i) {
+      return i !== '';
+    });
+    var enterEnd = (directives.find(function (i) {
+      return i.value === 'enter-end';
+    }) || {
+      expression: ''
+    }).expression.split(' ').filter(function (i) {
+      return i !== '';
+    });
+    transitionClasses(el, enter, enterStart, enterEnd, showCallback, function () {});
+  }
+
+  function transitionClassesOut(el, directives, hideCallback) {
+    var leave = (directives.find(function (i) {
+      return i.value === 'leave';
+    }) || {
+      expression: ''
+    }).expression.split(' ').filter(function (i) {
+      return i !== '';
+    });
+    var leaveStart = (directives.find(function (i) {
+      return i.value === 'leave-start';
+    }) || {
+      expression: ''
+    }).expression.split(' ').filter(function (i) {
+      return i !== '';
+    });
+    var leaveEnd = (directives.find(function (i) {
+      return i.value === 'leave-end';
+    }) || {
+      expression: ''
+    }).expression.split(' ').filter(function (i) {
+      return i !== '';
+    });
+    transitionClasses(el, leave, leaveStart, leaveEnd, function () {}, hideCallback);
+  }
+
+  function transitionClasses(el, classesDuring, classesStart, classesEnd, hook1, hook2) {
+    var originalClasses = el.__x_original_classes || [];
+    var stages = {
+      start: function start() {
+        var _el$classList;
+
+        (_el$classList = el.classList).add.apply(_el$classList, _toConsumableArray(classesStart));
+      },
+      during: function during() {
+        var _el$classList2;
+
+        (_el$classList2 = el.classList).add.apply(_el$classList2, _toConsumableArray(classesDuring));
+      },
+      show: function show() {
+        hook1();
+      },
+      end: function end() {
+        var _el$classList3, _el$classList4;
+
+        // Don't remove classes that were in the original class attribute.
+        (_el$classList3 = el.classList).remove.apply(_el$classList3, _toConsumableArray(classesStart.filter(function (i) {
+          return !originalClasses.includes(i);
+        })));
+
+        (_el$classList4 = el.classList).add.apply(_el$classList4, _toConsumableArray(classesEnd));
+      },
+      hide: function hide() {
+        hook2();
+      },
+      cleanup: function cleanup() {
+        var _el$classList5, _el$classList6;
+
+        (_el$classList5 = el.classList).remove.apply(_el$classList5, _toConsumableArray(classesDuring.filter(function (i) {
+          return !originalClasses.includes(i);
+        })));
+
+        (_el$classList6 = el.classList).remove.apply(_el$classList6, _toConsumableArray(classesEnd.filter(function (i) {
+          return !originalClasses.includes(i);
+        })));
+      }
+    };
+    transition(el, stages);
+  }
+
+  function transition(el, stages) {
+    stages.start();
+    stages.during();
+    requestAnimationFrame(function () {
+      // Note: Safari's transitionDuration property will list out comma separated transition durations
+      // for every single transition property. Let's grab the first one and call it a day.
+      var duration = Number(getComputedStyle(el).transitionDuration.replace(/,.*/, '').replace('s', '')) * 1000;
+      stages.show();
+      requestAnimationFrame(function () {
+        stages.end();
+        setTimeout(function () {
+          stages.hide(); // Adding an "isConnected" check, in case the callback
+          // removed the element from the DOM.
+
+          if (el.isConnected) {
+            stages.cleanup();
+          }
+        }, duration);
+      });
+    });
+  }
+
+  function isNumeric(subject) {
+    return !isNaN(subject);
+  }
+
+  function handleForDirective(component, el, expression, initialUpdate) {
+    if (el.tagName.toLowerCase() !== 'template') console.warn('Alpine: [x-for] directive should only be added to <template> tags.');
+
+    var _parseFor = parseFor(expression),
+        single = _parseFor.single,
+        bunch = _parseFor.bunch,
+        iterator1 = _parseFor.iterator1,
+        iterator2 = _parseFor.iterator2;
+
+    var items;
+    var ifAttr = getXAttrs(el, 'if')[0];
+
+    if (ifAttr && !component.evaluateReturnExpression(el, ifAttr.expression)) {
+      // If there is an "x-if" attribute in conjunction with an x-for,
+      // AND x-if resolves to false, just pretend the x-for is
+      // empty, effectively hiding it.
+      items = [];
+    } else {
+      items = component.evaluateReturnExpression(el, bunch);
+    } // As we walk the array, we'll also walk the DOM (updating/creating as we go).
+
+
+    var previousEl = el;
+    items.forEach(function (i, index, group) {
+      var currentKey = getThisIterationsKeyFromTemplateTag(component, el, single, iterator1, iterator2, i, index, group);
+      var currentEl = previousEl.nextElementSibling; // Let's check and see if the x-for has already generated an element last time it ran.
+
+      if (currentEl && currentEl.__x_for_key !== undefined) {
+        // If the the key's don't match.
+        if (currentEl.__x_for_key !== currentKey) {
+          // We'll look ahead to see if we can find it further down.
+          var tmpCurrentEl = currentEl;
+
+          while (tmpCurrentEl) {
+            // If we found it later in the DOM.
+            if (tmpCurrentEl.__x_for_key === currentKey) {
+              // Move it to where it's supposed to be in the DOM.
+              el.parentElement.insertBefore(tmpCurrentEl, currentEl); // And set it as the current element as if we just created it.
+
+              currentEl = tmpCurrentEl;
+              break;
+            }
+
+            tmpCurrentEl = tmpCurrentEl.nextElementSibling && tmpCurrentEl.nextElementSibling.__x_for_key !== undefined ? tmpCurrentEl.nextElementSibling : false;
+          }
+        } // Temporarily remove the key indicator to allow the normal "updateElements" to work
+
+
+        delete currentEl.__x_for_key;
+        var xForVars = {};
+        xForVars[single] = i;
+        if (iterator1) xForVars[iterator1] = index;
+        if (iterator2) xForVars[iterator2] = group;
+        currentEl.__x_for = xForVars;
+        component.updateElements(currentEl, function () {
+          return currentEl.__x_for;
+        });
+      } else {
+        // There are no more .__x_for_key elements, meaning the page is first loading, OR, there are
+        // extra items in the array that need to be added as new elements.
+        // Let's create a clone from the template.
+        var clone = document.importNode(el.content, true);
+        if (clone.childElementCount !== 1) console.warn('Alpine: <template> tag with [x-for] encountered with multiple element roots. Make sure <template> only has a single child node.'); // Insert it where we are in the DOM.
+
+        el.parentElement.insertBefore(clone, currentEl); // Set it as the current element.
+
+        currentEl = previousEl.nextElementSibling; // And transition it in if it's not the first page load.
+
+        transitionIn(currentEl, function () {}, initialUpdate); // Now, let's walk the new DOM node and initialize everything,
+        // including new nested components.
+        // Note we are resolving the "extraData" alias stuff from the dom element value so that it's
+        // always up to date for listener handlers that don't get re-registered.
+
+        var _xForVars = {};
+        _xForVars[single] = i;
+        if (iterator1) _xForVars[iterator1] = index;
+        if (iterator2) _xForVars[iterator2] = group;
+        currentEl.__x_for = _xForVars;
+        component.initializeElements(currentEl, function () {
+          return currentEl.__x_for;
+        });
+      }
+
+      currentEl.__x_for_key = currentKey;
+      previousEl = currentEl;
+    }); // Now that we've added/updated/moved all the elements for the current state of the loop.
+    // Anything left over, we can get rid of.
+
+    var nextElementFromOldLoop = previousEl.nextElementSibling && previousEl.nextElementSibling.__x_for_key !== undefined ? previousEl.nextElementSibling : false;
+
+    var _loop = function _loop() {
+      var nextElementFromOldLoopImmutable = nextElementFromOldLoop;
+      var nextSibling = nextElementFromOldLoop.nextElementSibling;
+      transitionOut(nextElementFromOldLoop, function () {
+        nextElementFromOldLoopImmutable.remove();
+      });
+      nextElementFromOldLoop = nextSibling && nextSibling.__x_for_key !== undefined ? nextSibling : false;
+    };
+
+    while (nextElementFromOldLoop) {
+      _loop();
+    }
+  } // This was taken from VueJS 2.* core. Thanks Vue!
+
+
+  function parseFor(expression) {
+    var forIteratorRE = /,([^,\}\]]*)(?:,([^,\}\]]*))?$/;
+    var stripParensRE = /^\(|\)$/g;
+    var forAliasRE = /([\s\S]*?)\s+(?:in|of)\s+([\s\S]*)/;
+    var inMatch = expression.match(forAliasRE);
+    if (!inMatch) return;
+    var res = {};
+    res.bunch = inMatch[2].trim();
+    var single = inMatch[1].trim().replace(stripParensRE, '');
+    var iteratorMatch = single.match(forIteratorRE);
+
+    if (iteratorMatch) {
+      res.single = single.replace(forIteratorRE, '').trim();
+      res.iterator1 = iteratorMatch[1].trim();
+
+      if (iteratorMatch[2]) {
+        res.iterator2 = iteratorMatch[2].trim();
+      }
+    } else {
+      res.single = single;
+    }
+
+    return res;
+  }
+
+  function getThisIterationsKeyFromTemplateTag(component, el, single, iterator1, iterator2, i, index, group) {
+    var keyAttr = getXAttrs(el, 'bind').filter(function (attr) {
+      return attr.value === 'key';
+    })[0];
+
+    var keyAliases = _defineProperty2({}, single, i);
+
+    if (iterator1) keyAliases[iterator1] = index;
+    if (iterator2) keyAliases[iterator2] = group;
+    return keyAttr ? component.evaluateReturnExpression(el, keyAttr.expression, function () {
+      return keyAliases;
+    }) : index;
+  }
+
+  function handleAttributeBindingDirective(component, el, attrName, expression, extraVars) {
+    var value = component.evaluateReturnExpression(el, expression, extraVars);
+
+    if (attrName === 'value') {
+      // If nested model key is undefined, set the default value to empty string.
+      if (value === undefined && expression.match(/\./).length) {
+        value = '';
+      }
+
+      if (el.type === 'radio') {
+        el.checked = el.value == value;
+      } else if (el.type === 'checkbox') {
+        if (Array.isArray(value)) {
+          // I'm purposely not using Array.includes here because it's
+          // strict, and because of Numeric/String mis-casting, I
+          // want the "includes" to be "fuzzy".
+          var valueFound = false;
+          value.forEach(function (val) {
+            if (val == el.value) {
+              valueFound = true;
+            }
+          });
+          el.checked = valueFound;
+        } else {
+          el.checked = !!value;
+        } // If we are explicitly binding a string to the :value, set the string,
+        // If the value is a boolean, leave it alone, it will be set to "on"
+        // automatically.
+
+
+        if (typeof value === 'string') {
+          el.value = value;
+        }
+      } else if (el.tagName === 'SELECT') {
+        updateSelect(el, value);
+      } else {
+        el.value = value;
+      }
+    } else if (attrName === 'class') {
+      if (Array.isArray(value)) {
+        var originalClasses = el.__x_original_classes || [];
+        el.setAttribute('class', arrayUnique(originalClasses.concat(value)).join(' '));
+      } else if (_typeof(value) === 'object') {
+        Object.keys(value).forEach(function (classNames) {
+          if (value[classNames]) {
+            classNames.split(' ').forEach(function (className) {
+              return el.classList.add(className);
+            });
+          } else {
+            classNames.split(' ').forEach(function (className) {
+              return el.classList.remove(className);
+            });
+          }
+        });
+      } else {
+        var _originalClasses = el.__x_original_classes || [];
+
+        var newClasses = value.split(' ');
+        el.setAttribute('class', arrayUnique(_originalClasses.concat(newClasses)).join(' '));
+      }
+    } else if (isBooleanAttr(attrName)) {
+      // Boolean attributes have to be explicitly added and removed, not just set.
+      if (!!value) {
+        el.setAttribute(attrName, '');
+      } else {
+        el.removeAttribute(attrName);
+      }
+    } else {
+      el.setAttribute(attrName, value);
+    }
+  }
+
+  function updateSelect(el, value) {
+    var arrayWrappedValue = [].concat(value).map(function (value) {
+      return value + '';
+    });
+    Array.from(el.options).forEach(function (option) {
+      option.selected = arrayWrappedValue.includes(option.value || option.text);
+    });
+  }
+
+  function handleShowDirective(component, el, value, modifiers) {
+    var initialUpdate = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
+
+    var hide = function hide() {
+      el.style.display = 'none';
+    };
+
+    var show = function show() {
+      if (el.style.length === 1 && el.style.display === 'none') {
+        el.removeAttribute('style');
+      } else {
+        el.style.removeProperty('display');
+      }
+    };
+
+    if (initialUpdate === true) {
+      if (value) {
+        show();
+      } else {
+        hide();
+      }
+
+      return;
+    }
+
+    var handle = function handle(resolve) {
+      if (!value) {
+        if (el.style.display !== 'none') {
+          transitionOut(el, function () {
+            resolve(function () {
+              hide();
+            });
+          });
+        } else {
+          resolve(function () {});
+        }
+      } else {
+        if (el.style.display !== '') {
+          transitionIn(el, function () {
+            show();
+          });
+        } // Resolve immediately, only hold up parent `x-show`s for hidin.
+
+
+        resolve(function () {});
+      }
+    }; // The working of x-show is a bit complex because we need to
+    // wait for any child transitions to finish before hiding
+    // some element. Also, this has to be done recursively.
+    // If x-show.immediate, foregoe the waiting.
+
+
+    if (modifiers.includes('immediate')) {
+      handle(function (finish) {
+        return finish();
+      });
+      return;
+    } // x-show is encountered during a DOM tree walk. If an element
+    // we encounter is NOT a child of another x-show element we
+    // can execute the previous x-show stack (if one exists).
+
+
+    if (component.showDirectiveLastElement && !component.showDirectiveLastElement.contains(el)) {
+      component.executeAndClearRemainingShowDirectiveStack();
+    } // We'll push the handler onto a stack to be handled later.
+
+
+    component.showDirectiveStack.push(handle);
+    component.showDirectiveLastElement = el;
+  }
+
+  function handleIfDirective(el, expressionResult, initialUpdate) {
+    if (el.nodeName.toLowerCase() !== 'template') console.warn("Alpine: [x-if] directive should only be added to <template> tags. See https://github.com/alpinejs/alpine#x-if");
+    var elementHasAlreadyBeenAdded = el.nextElementSibling && el.nextElementSibling.__x_inserted_me === true;
+
+    if (expressionResult && !elementHasAlreadyBeenAdded) {
+      var clone = document.importNode(el.content, true);
+      el.parentElement.insertBefore(clone, el.nextElementSibling);
+      el.nextElementSibling.__x_inserted_me = true;
+      transitionIn(el.nextElementSibling, function () {}, initialUpdate);
+    } else if (!expressionResult && elementHasAlreadyBeenAdded) {
+      transitionOut(el.nextElementSibling, function () {
+        el.nextElementSibling.remove();
+      }, initialUpdate);
+    }
+  }
+
+  function registerListener(component, el, event, modifiers, expression) {
+    var extraVars = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : {};
+
+    if (modifiers.includes('away')) {
+      var handler = function handler(e) {
+        // Don't do anything if the click came form the element or within it.
+        if (el.contains(e.target)) return; // Don't do anything if this element isn't currently visible.
+
+        if (el.offsetWidth < 1 && el.offsetHeight < 1) return; // Now that we are sure the element is visible, AND the click
+        // is from outside it, let's run the expression.
+
+        runListenerHandler(component, expression, e, extraVars);
+
+        if (modifiers.includes('once')) {
+          document.removeEventListener(event, handler);
+        }
+      }; // Listen for this event at the root level.
+
+
+      document.addEventListener(event, handler);
+    } else {
+      var listenerTarget = modifiers.includes('window') ? window : modifiers.includes('document') ? document : el;
+
+      var _handler = function _handler(e) {
+        // Remove this global event handler if the element that declared it
+        // has been removed. It's now stale.
+        if (listenerTarget === window || listenerTarget === document) {
+          if (!document.body.contains(el)) {
+            listenerTarget.removeEventListener(event, _handler);
+            return;
+          }
+        }
+
+        if (isKeyEvent(event)) {
+          if (isListeningForASpecificKeyThatHasntBeenPressed(e, modifiers)) {
+            return;
+          }
+        }
+
+        if (modifiers.includes('prevent')) e.preventDefault();
+        if (modifiers.includes('stop')) e.stopPropagation();
+        var returnValue = runListenerHandler(component, expression, e, extraVars);
+
+        if (returnValue === false) {
+          e.preventDefault();
+        } else {
+          if (modifiers.includes('once')) {
+            listenerTarget.removeEventListener(event, _handler);
+          }
+        }
+      };
+
+      listenerTarget.addEventListener(event, _handler);
+    }
+  }
+
+  function runListenerHandler(component, expression, e, extraVars) {
+    return component.evaluateCommandExpression(e.target, expression, function () {
+      return _objectSpread2({}, extraVars(), {
+        '$event': e
+      });
+    });
+  }
+
+  function isKeyEvent(event) {
+    return ['keydown', 'keyup'].includes(event);
+  }
+
+  function isListeningForASpecificKeyThatHasntBeenPressed(e, modifiers) {
+    var keyModifiers = modifiers.filter(function (i) {
+      return !['window', 'document', 'prevent', 'stop'].includes(i);
+    }); // If no modifier is specified, we'll call it a press.
+
+    if (keyModifiers.length === 0) return false; // If one is passed, AND it matches the key pressed, we'll call it a press.
+
+    if (keyModifiers.length === 1 && keyModifiers[0] === keyToModifier(e.key)) return false; // The user is listening for key combinations.
+
+    var systemKeyModifiers = ['ctrl', 'shift', 'alt', 'meta', 'cmd', 'super'];
+    var selectedSystemKeyModifiers = systemKeyModifiers.filter(function (modifier) {
+      return keyModifiers.includes(modifier);
+    });
+    keyModifiers = keyModifiers.filter(function (i) {
+      return !selectedSystemKeyModifiers.includes(i);
+    });
+
+    if (selectedSystemKeyModifiers.length > 0) {
+      var activelyPressedKeyModifiers = selectedSystemKeyModifiers.filter(function (modifier) {
+        // Alias "cmd" and "super" to "meta"
+        if (modifier === 'cmd' || modifier === 'super') modifier = 'meta';
+        return e["".concat(modifier, "Key")];
+      }); // If all the modifiers selected are pressed, ...
+
+      if (activelyPressedKeyModifiers.length === selectedSystemKeyModifiers.length) {
+        // AND the remaining key is pressed as well. It's a press.
+        if (keyModifiers[0] === keyToModifier(e.key)) return false;
+      }
+    } // We'll call it NOT a valid keypress.
+
+
+    return true;
+  }
+
+  function keyToModifier(key) {
+    switch (key) {
+      case '/':
+        return 'slash';
+
+      case ' ':
+      case 'Spacebar':
+        return 'space';
+
+      default:
+        return kebabCase(key);
+    }
+  }
+
+  function registerModelListener(component, el, modifiers, expression, extraVars) {
+    // If the element we are binding to is a select, a radio, or checkbox
+    // we'll listen for the change event instead of the "input" event.
+    var event = el.tagName.toLowerCase() === 'select' || ['checkbox', 'radio'].includes(el.type) || modifiers.includes('lazy') ? 'change' : 'input';
+    var listenerExpression = "".concat(expression, " = rightSideOfExpression($event, ").concat(expression, ")");
+    registerListener(component, el, event, modifiers, listenerExpression, function () {
+      return _objectSpread2({}, extraVars(), {
+        rightSideOfExpression: generateModelAssignmentFunction(el, modifiers, expression)
+      });
+    });
+  }
+
+  function generateModelAssignmentFunction(el, modifiers, expression) {
+    if (el.type === 'radio') {
+      // Radio buttons only work properly when they share a name attribute.
+      // People might assume we take care of that for them, because
+      // they already set a shared "x-model" attribute.
+      if (!el.hasAttribute('name')) el.setAttribute('name', expression);
+    }
+
+    return function (event, currentValue) {
+      // Check for event.detail due to an issue where IE11 handles other events as a CustomEvent.
+      if (event instanceof CustomEvent && event.detail) {
+        return event.detail;
+      } else if (el.type === 'checkbox') {
+        // If the data we are binding to is an array, toggle it's value inside the array.
+        if (Array.isArray(currentValue)) {
+          return event.target.checked ? currentValue.concat([event.target.value]) : currentValue.filter(function (i) {
+            return i !== event.target.value;
+          });
+        } else {
+          return event.target.checked;
+        }
+      } else if (el.tagName.toLowerCase() === 'select' && el.multiple) {
+        return modifiers.includes('number') ? Array.from(event.target.selectedOptions).map(function (option) {
+          return parseFloat(option.value || option.text);
+        }) : Array.from(event.target.selectedOptions).map(function (option) {
+          return option.value || option.text;
+        });
+      } else {
+        return modifiers.includes('number') ? parseFloat(event.target.value) : modifiers.includes('trim') ? event.target.value.trim() : event.target.value;
+      }
+    };
+  }
+  /**
+   * Copyright (C) 2017 salesforce.com, inc.
+   */
+
+
+  var isArray = Array.isArray;
+  var _getPrototypeOf = Object.getPrototypeOf,
+      ObjectCreate = Object.create,
+      ObjectDefineProperty = Object.defineProperty,
+      ObjectDefineProperties = Object.defineProperties,
+      _isExtensible = Object.isExtensible,
+      _getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor,
+      getOwnPropertyNames = Object.getOwnPropertyNames,
+      getOwnPropertySymbols = Object.getOwnPropertySymbols,
+      _preventExtensions = Object.preventExtensions,
+      hasOwnProperty = Object.hasOwnProperty;
+  var _Array$prototype = Array.prototype,
+      ArrayPush = _Array$prototype.push,
+      ArrayConcat = _Array$prototype.concat,
+      ArrayMap = _Array$prototype.map;
+
+  function isUndefined(obj) {
+    return obj === undefined;
+  }
+
+  function isFunction(obj) {
+    return typeof obj === 'function';
+  }
+
+  function isObject(obj) {
+    return _typeof(obj) === 'object';
+  }
+
+  var proxyToValueMap = new WeakMap();
+
+  function registerProxy(proxy, value) {
+    proxyToValueMap.set(proxy, value);
+  }
+
+  var unwrap = function unwrap(replicaOrAny) {
+    return proxyToValueMap.get(replicaOrAny) || replicaOrAny;
+  };
+
+  function wrapValue(membrane, value) {
+    return membrane.valueIsObservable(value) ? membrane.getProxy(value) : value;
+  }
+  /**
+   * Unwrap property descriptors will set value on original descriptor
+   * We only need to unwrap if value is specified
+   * @param descriptor external descrpitor provided to define new property on original value
+   */
+
+
+  function unwrapDescriptor(descriptor) {
+    if (hasOwnProperty.call(descriptor, 'value')) {
+      descriptor.value = unwrap(descriptor.value);
+    }
+
+    return descriptor;
+  }
+
+  function lockShadowTarget(membrane, shadowTarget, originalTarget) {
+    var targetKeys = ArrayConcat.call(getOwnPropertyNames(originalTarget), getOwnPropertySymbols(originalTarget));
+    targetKeys.forEach(function (key) {
+      var descriptor = _getOwnPropertyDescriptor(originalTarget, key); // We do not need to wrap the descriptor if configurable
+      // Because we can deal with wrapping it when user goes through
+      // Get own property descriptor. There is also a chance that this descriptor
+      // could change sometime in the future, so we can defer wrapping
+      // until we need to
+
+
+      if (!descriptor.configurable) {
+        descriptor = wrapDescriptor(membrane, descriptor, wrapValue);
+      }
+
+      ObjectDefineProperty(shadowTarget, key, descriptor);
+    });
+
+    _preventExtensions(shadowTarget);
+  }
+
+  var ReactiveProxyHandler = /*#__PURE__*/function () {
+    function ReactiveProxyHandler(membrane, value) {
+      _classCallCheck(this, ReactiveProxyHandler);
+
+      this.originalTarget = value;
+      this.membrane = membrane;
+    }
+
+    _createClass(ReactiveProxyHandler, [{
+      key: "get",
+      value: function get(shadowTarget, key) {
+        var originalTarget = this.originalTarget,
+            membrane = this.membrane;
+        var value = originalTarget[key];
+        var valueObserved = membrane.valueObserved;
+        valueObserved(originalTarget, key);
+        return membrane.getProxy(value);
+      }
+    }, {
+      key: "set",
+      value: function set(shadowTarget, key, value) {
+        var originalTarget = this.originalTarget,
+            valueMutated = this.membrane.valueMutated;
+        var oldValue = originalTarget[key];
+
+        if (oldValue !== value) {
+          originalTarget[key] = value;
+          valueMutated(originalTarget, key);
+        } else if (key === 'length' && isArray(originalTarget)) {
+          // fix for issue #236: push will add the new index, and by the time length
+          // is updated, the internal length is already equal to the new length value
+          // therefore, the oldValue is equal to the value. This is the forking logic
+          // to support this use case.
+          valueMutated(originalTarget, key);
+        }
+
+        return true;
+      }
+    }, {
+      key: "deleteProperty",
+      value: function deleteProperty(shadowTarget, key) {
+        var originalTarget = this.originalTarget,
+            valueMutated = this.membrane.valueMutated;
+        delete originalTarget[key];
+        valueMutated(originalTarget, key);
+        return true;
+      }
+    }, {
+      key: "apply",
+      value: function apply(shadowTarget, thisArg, argArray) {
+        /* No op */
+      }
+    }, {
+      key: "construct",
+      value: function construct(target, argArray, newTarget) {
+        /* No op */
+      }
+    }, {
+      key: "has",
+      value: function has(shadowTarget, key) {
+        var originalTarget = this.originalTarget,
+            valueObserved = this.membrane.valueObserved;
+        valueObserved(originalTarget, key);
+        return key in originalTarget;
+      }
+    }, {
+      key: "ownKeys",
+      value: function ownKeys(shadowTarget) {
+        var originalTarget = this.originalTarget;
+        return ArrayConcat.call(getOwnPropertyNames(originalTarget), getOwnPropertySymbols(originalTarget));
+      }
+    }, {
+      key: "isExtensible",
+      value: function isExtensible(shadowTarget) {
+        var shadowIsExtensible = _isExtensible(shadowTarget);
+
+        if (!shadowIsExtensible) {
+          return shadowIsExtensible;
+        }
+
+        var originalTarget = this.originalTarget,
+            membrane = this.membrane;
+
+        var targetIsExtensible = _isExtensible(originalTarget);
+
+        if (!targetIsExtensible) {
+          lockShadowTarget(membrane, shadowTarget, originalTarget);
+        }
+
+        return targetIsExtensible;
+      }
+    }, {
+      key: "setPrototypeOf",
+      value: function setPrototypeOf(shadowTarget, prototype) {}
+    }, {
+      key: "getPrototypeOf",
+      value: function getPrototypeOf(shadowTarget) {
+        var originalTarget = this.originalTarget;
+        return _getPrototypeOf(originalTarget);
+      }
+    }, {
+      key: "getOwnPropertyDescriptor",
+      value: function getOwnPropertyDescriptor(shadowTarget, key) {
+        var originalTarget = this.originalTarget,
+            membrane = this.membrane;
+        var valueObserved = this.membrane.valueObserved; // keys looked up via hasOwnProperty need to be reactive
+
+        valueObserved(originalTarget, key);
+
+        var desc = _getOwnPropertyDescriptor(originalTarget, key);
+
+        if (isUndefined(desc)) {
+          return desc;
+        }
+
+        var shadowDescriptor = _getOwnPropertyDescriptor(shadowTarget, key);
+
+        if (!isUndefined(shadowDescriptor)) {
+          return shadowDescriptor;
+        } // Note: by accessing the descriptor, the key is marked as observed
+        // but access to the value, setter or getter (if available) cannot observe
+        // mutations, just like regular methods, in which case we just do nothing.
+
+
+        desc = wrapDescriptor(membrane, desc, wrapValue);
+
+        if (!desc.configurable) {
+          // If descriptor from original target is not configurable,
+          // We must copy the wrapped descriptor over to the shadow target.
+          // Otherwise, proxy will throw an invariant error.
+          // This is our last chance to lock the value.
+          // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/getOwnPropertyDescriptor#Invariants
+          ObjectDefineProperty(shadowTarget, key, desc);
+        }
+
+        return desc;
+      }
+    }, {
+      key: "preventExtensions",
+      value: function preventExtensions(shadowTarget) {
+        var originalTarget = this.originalTarget,
+            membrane = this.membrane;
+        lockShadowTarget(membrane, shadowTarget, originalTarget);
+
+        _preventExtensions(originalTarget);
+
+        return true;
+      }
+    }, {
+      key: "defineProperty",
+      value: function defineProperty(shadowTarget, key, descriptor) {
+        var originalTarget = this.originalTarget,
+            membrane = this.membrane;
+        var valueMutated = membrane.valueMutated;
+        var configurable = descriptor.configurable; // We have to check for value in descriptor
+        // because Object.freeze(proxy) calls this method
+        // with only { configurable: false, writeable: false }
+        // Additionally, method will only be called with writeable:false
+        // if the descriptor has a value, as opposed to getter/setter
+        // So we can just check if writable is present and then see if
+        // value is present. This eliminates getter and setter descriptors
+
+        if (hasOwnProperty.call(descriptor, 'writable') && !hasOwnProperty.call(descriptor, 'value')) {
+          var originalDescriptor = _getOwnPropertyDescriptor(originalTarget, key);
+
+          descriptor.value = originalDescriptor.value;
+        }
+
+        ObjectDefineProperty(originalTarget, key, unwrapDescriptor(descriptor));
+
+        if (configurable === false) {
+          ObjectDefineProperty(shadowTarget, key, wrapDescriptor(membrane, descriptor, wrapValue));
+        }
+
+        valueMutated(originalTarget, key);
+        return true;
+      }
+    }]);
+
+    return ReactiveProxyHandler;
+  }();
+
+  function wrapReadOnlyValue(membrane, value) {
+    return membrane.valueIsObservable(value) ? membrane.getReadOnlyProxy(value) : value;
+  }
+
+  var ReadOnlyHandler = /*#__PURE__*/function () {
+    function ReadOnlyHandler(membrane, value) {
+      _classCallCheck(this, ReadOnlyHandler);
+
+      this.originalTarget = value;
+      this.membrane = membrane;
+    }
+
+    _createClass(ReadOnlyHandler, [{
+      key: "get",
+      value: function get(shadowTarget, key) {
+        var membrane = this.membrane,
+            originalTarget = this.originalTarget;
+        var value = originalTarget[key];
+        var valueObserved = membrane.valueObserved;
+        valueObserved(originalTarget, key);
+        return membrane.getReadOnlyProxy(value);
+      }
+    }, {
+      key: "set",
+      value: function set(shadowTarget, key, value) {
+        return false;
+      }
+    }, {
+      key: "deleteProperty",
+      value: function deleteProperty(shadowTarget, key) {
+        return false;
+      }
+    }, {
+      key: "apply",
+      value: function apply(shadowTarget, thisArg, argArray) {
+        /* No op */
+      }
+    }, {
+      key: "construct",
+      value: function construct(target, argArray, newTarget) {
+        /* No op */
+      }
+    }, {
+      key: "has",
+      value: function has(shadowTarget, key) {
+        var originalTarget = this.originalTarget,
+            valueObserved = this.membrane.valueObserved;
+        valueObserved(originalTarget, key);
+        return key in originalTarget;
+      }
+    }, {
+      key: "ownKeys",
+      value: function ownKeys(shadowTarget) {
+        var originalTarget = this.originalTarget;
+        return ArrayConcat.call(getOwnPropertyNames(originalTarget), getOwnPropertySymbols(originalTarget));
+      }
+    }, {
+      key: "setPrototypeOf",
+      value: function setPrototypeOf(shadowTarget, prototype) {}
+    }, {
+      key: "getOwnPropertyDescriptor",
+      value: function getOwnPropertyDescriptor(shadowTarget, key) {
+        var originalTarget = this.originalTarget,
+            membrane = this.membrane;
+        var valueObserved = membrane.valueObserved; // keys looked up via hasOwnProperty need to be reactive
+
+        valueObserved(originalTarget, key);
+
+        var desc = _getOwnPropertyDescriptor(originalTarget, key);
+
+        if (isUndefined(desc)) {
+          return desc;
+        }
+
+        var shadowDescriptor = _getOwnPropertyDescriptor(shadowTarget, key);
+
+        if (!isUndefined(shadowDescriptor)) {
+          return shadowDescriptor;
+        } // Note: by accessing the descriptor, the key is marked as observed
+        // but access to the value or getter (if available) cannot be observed,
+        // just like regular methods, in which case we just do nothing.
+
+
+        desc = wrapDescriptor(membrane, desc, wrapReadOnlyValue);
+
+        if (hasOwnProperty.call(desc, 'set')) {
+          desc.set = undefined; // readOnly membrane does not allow setters
+        }
+
+        if (!desc.configurable) {
+          // If descriptor from original target is not configurable,
+          // We must copy the wrapped descriptor over to the shadow target.
+          // Otherwise, proxy will throw an invariant error.
+          // This is our last chance to lock the value.
+          // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/getOwnPropertyDescriptor#Invariants
+          ObjectDefineProperty(shadowTarget, key, desc);
+        }
+
+        return desc;
+      }
+    }, {
+      key: "preventExtensions",
+      value: function preventExtensions(shadowTarget) {
+        return false;
+      }
+    }, {
+      key: "defineProperty",
+      value: function defineProperty(shadowTarget, key, descriptor) {
+        return false;
+      }
+    }]);
+
+    return ReadOnlyHandler;
+  }();
+
+  function createShadowTarget(value) {
+    var shadowTarget = undefined;
+
+    if (isArray(value)) {
+      shadowTarget = [];
+    } else if (isObject(value)) {
+      shadowTarget = {};
+    }
+
+    return shadowTarget;
+  }
+
+  var ObjectDotPrototype = Object.prototype;
+
+  function defaultValueIsObservable(value) {
+    // intentionally checking for null
+    if (value === null) {
+      return false;
+    } // treat all non-object types, including undefined, as non-observable values
+
+
+    if (_typeof(value) !== 'object') {
+      return false;
+    }
+
+    if (isArray(value)) {
+      return true;
+    }
+
+    var proto = _getPrototypeOf(value);
+
+    return proto === ObjectDotPrototype || proto === null || _getPrototypeOf(proto) === null;
+  }
+
+  var defaultValueObserved = function defaultValueObserved(obj, key) {
+    /* do nothing */
+  };
+
+  var defaultValueMutated = function defaultValueMutated(obj, key) {
+    /* do nothing */
+  };
+
+  var defaultValueDistortion = function defaultValueDistortion(value) {
+    return value;
+  };
+
+  function wrapDescriptor(membrane, descriptor, getValue) {
+    var set = descriptor.set,
+        get = descriptor.get;
+
+    if (hasOwnProperty.call(descriptor, 'value')) {
+      descriptor.value = getValue(membrane, descriptor.value);
+    } else {
+      if (!isUndefined(get)) {
+        descriptor.get = function () {
+          // invoking the original getter with the original target
+          return getValue(membrane, get.call(unwrap(this)));
+        };
+      }
+
+      if (!isUndefined(set)) {
+        descriptor.set = function (value) {
+          // At this point we don't have a clear indication of whether
+          // or not a valid mutation will occur, we don't have the key,
+          // and we are not sure why and how they are invoking this setter.
+          // Nevertheless we preserve the original semantics by invoking the
+          // original setter with the original target and the unwrapped value
+          set.call(unwrap(this), membrane.unwrapProxy(value));
+        };
+      }
+    }
+
+    return descriptor;
+  }
+
+  var ReactiveMembrane = /*#__PURE__*/function () {
+    function ReactiveMembrane(options) {
+      _classCallCheck(this, ReactiveMembrane);
+
+      this.valueDistortion = defaultValueDistortion;
+      this.valueMutated = defaultValueMutated;
+      this.valueObserved = defaultValueObserved;
+      this.valueIsObservable = defaultValueIsObservable;
+      this.objectGraph = new WeakMap();
+
+      if (!isUndefined(options)) {
+        var valueDistortion = options.valueDistortion,
+            valueMutated = options.valueMutated,
+            valueObserved = options.valueObserved,
+            valueIsObservable = options.valueIsObservable;
+        this.valueDistortion = isFunction(valueDistortion) ? valueDistortion : defaultValueDistortion;
+        this.valueMutated = isFunction(valueMutated) ? valueMutated : defaultValueMutated;
+        this.valueObserved = isFunction(valueObserved) ? valueObserved : defaultValueObserved;
+        this.valueIsObservable = isFunction(valueIsObservable) ? valueIsObservable : defaultValueIsObservable;
+      }
+    }
+
+    _createClass(ReactiveMembrane, [{
+      key: "getProxy",
+      value: function getProxy(value) {
+        var unwrappedValue = unwrap(value);
+        var distorted = this.valueDistortion(unwrappedValue);
+
+        if (this.valueIsObservable(distorted)) {
+          var o = this.getReactiveState(unwrappedValue, distorted); // when trying to extract the writable version of a readonly
+          // we return the readonly.
+
+          return o.readOnly === value ? value : o.reactive;
+        }
+
+        return distorted;
+      }
+    }, {
+      key: "getReadOnlyProxy",
+      value: function getReadOnlyProxy(value) {
+        value = unwrap(value);
+        var distorted = this.valueDistortion(value);
+
+        if (this.valueIsObservable(distorted)) {
+          return this.getReactiveState(value, distorted).readOnly;
+        }
+
+        return distorted;
+      }
+    }, {
+      key: "unwrapProxy",
+      value: function unwrapProxy(p) {
+        return unwrap(p);
+      }
+    }, {
+      key: "getReactiveState",
+      value: function getReactiveState(value, distortedValue) {
+        var objectGraph = this.objectGraph;
+        var reactiveState = objectGraph.get(distortedValue);
+
+        if (reactiveState) {
+          return reactiveState;
+        }
+
+        var membrane = this;
+        reactiveState = {
+          get reactive() {
+            var reactiveHandler = new ReactiveProxyHandler(membrane, distortedValue); // caching the reactive proxy after the first time it is accessed
+
+            var proxy = new Proxy(createShadowTarget(distortedValue), reactiveHandler);
+            registerProxy(proxy, value);
+            ObjectDefineProperty(this, 'reactive', {
+              value: proxy
+            });
+            return proxy;
+          },
+
+          get readOnly() {
+            var readOnlyHandler = new ReadOnlyHandler(membrane, distortedValue); // caching the readOnly proxy after the first time it is accessed
+
+            var proxy = new Proxy(createShadowTarget(distortedValue), readOnlyHandler);
+            registerProxy(proxy, value);
+            ObjectDefineProperty(this, 'readOnly', {
+              value: proxy
+            });
+            return proxy;
+          }
+
+        };
+        objectGraph.set(distortedValue, reactiveState);
+        return reactiveState;
+      }
+    }]);
+
+    return ReactiveMembrane;
+  }();
+  /** version: 0.26.0 */
+
+
+  var Component = /*#__PURE__*/function () {
+    function Component(el) {
+      var _this = this;
+
+      var seedDataForCloning = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+
+      _classCallCheck(this, Component);
+
+      this.$el = el;
+      var dataAttr = this.$el.getAttribute('x-data');
+      var dataExpression = dataAttr === '' ? '{}' : dataAttr;
+      var initExpression = this.$el.getAttribute('x-init');
+      this.unobservedData = seedDataForCloning ? seedDataForCloning : saferEval(dataExpression, {}); // Construct a Proxy-based observable. This will be used to handle reactivity.
+
+      var _this$wrapDataInObser = this.wrapDataInObservable(this.unobservedData),
+          membrane = _this$wrapDataInObser.membrane,
+          data = _this$wrapDataInObser.data;
+
+      this.$data = data;
+      this.membrane = membrane; // After making user-supplied data methods reactive, we can now add
+      // our magic properties to the original data for access.
+
+      this.unobservedData.$el = this.$el;
+      this.unobservedData.$refs = this.getRefsProxy();
+      this.nextTickStack = [];
+
+      this.unobservedData.$nextTick = function (callback) {
+        _this.nextTickStack.push(callback);
+      };
+
+      this.showDirectiveStack = [];
+      this.showDirectiveLastElement;
+      var initReturnedCallback; // If x-init is present AND we aren't cloning (skip x-init on clone)
+
+      if (initExpression && !seedDataForCloning) {
+        // We want to allow data manipulation, but not trigger DOM updates just yet.
+        // We haven't even initialized the elements with their Alpine bindings. I mean c'mon.
+        this.pauseReactivity = true;
+        initReturnedCallback = this.evaluateReturnExpression(this.$el, initExpression);
+        this.pauseReactivity = false;
+      } // Register all our listeners and set all our attribute bindings.
+
+
+      this.initializeElements(this.$el); // Use mutation observer to detect new elements being added within this component at run-time.
+      // Alpine's just so darn flexible amirite?
+
+      this.listenForNewElementsToInitialize();
+
+      if (typeof initReturnedCallback === 'function') {
+        // Run the callback returned form the "x-init" hook to allow the user to do stuff after
+        // Alpine's got it's grubby little paws all over everything.
+        initReturnedCallback.call(this.$data);
+      }
+    }
+
+    _createClass(Component, [{
+      key: "getUnobservedData",
+      value: function getUnobservedData() {
+        var unwrappedData = this.membrane.unwrapProxy(this.$data);
+        var copy = {};
+        Object.keys(unwrappedData).forEach(function (key) {
+          if (['$el', '$refs', '$nextTick'].includes(key)) return;
+          copy[key] = unwrappedData[key];
+        });
+        return copy;
+      }
+    }, {
+      key: "wrapDataInObservable",
+      value: function wrapDataInObservable(data) {
+        var self = this;
+        var membrane = new ReactiveMembrane({
+          valueMutated: function valueMutated(target, key) {
+            // Don't react to data changes for cases like the `x-created` hook.
+            if (self.pauseReactivity) return;
+            debounce(function () {
+              self.updateElements(self.$el); // Walk through the $nextTick stack and clear it as we go.
+
+              while (self.nextTickStack.length > 0) {
+                self.nextTickStack.shift()();
+              }
+            }, 0)();
+          }
+        });
+        return {
+          data: membrane.getProxy(data),
+          membrane: membrane
+        };
+      }
+    }, {
+      key: "walkAndSkipNestedComponents",
+      value: function walkAndSkipNestedComponents(el, callback) {
+        var _this2 = this;
+
+        var initializeComponentCallback = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : function () {};
+        walk(el, function (el) {
+          // We've hit a component.
+          if (el.hasAttribute('x-data')) {
+            // If it's not the current one.
+            if (!el.isSameNode(_this2.$el)) {
+              // Initialize it if it's not.
+              if (!el.__x) initializeComponentCallback(el); // Now we'll let that sub-component deal with itself.
+
+              return false;
+            }
+          }
+
+          return callback(el);
+        });
+      }
+    }, {
+      key: "initializeElements",
+      value: function initializeElements(rootEl) {
+        var _this3 = this;
+
+        var extraVars = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
+        this.walkAndSkipNestedComponents(rootEl, function (el) {
+          // Don't touch spawns from for loop
+          if (el.__x_for_key !== undefined) return false;
+
+          _this3.initializeElement(el, extraVars);
+        }, function (el) {
+          el.__x = new Component(el);
+        });
+        this.executeAndClearRemainingShowDirectiveStack(); // Walk through the $nextTick stack and clear it as we go.
+
+        while (this.nextTickStack.length > 0) {
+          this.nextTickStack.shift()();
+        }
+      }
+    }, {
+      key: "initializeElement",
+      value: function initializeElement(el, extraVars) {
+        // To support class attribute merging, we have to know what the element's
+        // original class attribute looked like for reference.
+        if (el.hasAttribute('class') && getXAttrs(el).length > 0) {
+          el.__x_original_classes = el.getAttribute('class').split(' ');
+        }
+
+        this.registerListeners(el, extraVars);
+        this.resolveBoundAttributes(el, true, extraVars);
+      }
+    }, {
+      key: "updateElements",
+      value: function updateElements(rootEl) {
+        var _this4 = this;
+
+        var extraVars = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
+        this.walkAndSkipNestedComponents(rootEl, function (el) {
+          // Don't touch spawns from for loop (and check if the root is actually a for loop in a parent, don't skip it.)
+          if (el.__x_for_key !== undefined && !el.isSameNode(_this4.$el)) return false;
+
+          _this4.updateElement(el, extraVars);
+        }, function (el) {
+          el.__x = new Component(el);
+        });
+        this.executeAndClearRemainingShowDirectiveStack(); // Walk through the $nextTick stack and clear it as we go.
+
+        while (this.nextTickStack.length > 0) {
+          this.nextTickStack.shift()();
+        }
+      }
+    }, {
+      key: "executeAndClearRemainingShowDirectiveStack",
+      value: function executeAndClearRemainingShowDirectiveStack() {
+        // The goal here is to start all the x-show transitions
+        // and build a nested promise chain so that elements
+        // only hide when the children are finished hiding.
+        this.showDirectiveStack.reverse().map(function (thing) {
+          return new Promise(function (resolve) {
+            thing(function (finish) {
+              resolve(finish);
+            });
+          });
+        }).reduce(function (nestedPromise, promise) {
+          return nestedPromise.then(function () {
+            return promise.then(function (finish) {
+              return finish();
+            });
+          });
+        }, Promise.resolve(function () {})); // We've processed the handler stack. let's clear it.
+
+        this.showDirectiveStack = [];
+        this.showDirectiveLastElement = undefined;
+      }
+    }, {
+      key: "updateElement",
+      value: function updateElement(el, extraVars) {
+        this.resolveBoundAttributes(el, false, extraVars);
+      }
+    }, {
+      key: "registerListeners",
+      value: function registerListeners(el, extraVars) {
+        var _this5 = this;
+
+        getXAttrs(el).forEach(function (_ref) {
+          var type = _ref.type,
+              value = _ref.value,
+              modifiers = _ref.modifiers,
+              expression = _ref.expression;
+
+          switch (type) {
+            case 'on':
+              registerListener(_this5, el, value, modifiers, expression, extraVars);
+              break;
+
+            case 'model':
+              registerModelListener(_this5, el, modifiers, expression, extraVars);
+              break;
+          }
+        });
+      }
+    }, {
+      key: "resolveBoundAttributes",
+      value: function resolveBoundAttributes(el) {
+        var _this6 = this;
+
+        var initialUpdate = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+        var extraVars = arguments.length > 2 ? arguments[2] : undefined;
+        var attrs = getXAttrs(el);
+        attrs.forEach(function (_ref2) {
+          var type = _ref2.type,
+              value = _ref2.value,
+              modifiers = _ref2.modifiers,
+              expression = _ref2.expression;
+
+          switch (type) {
+            case 'model':
+              handleAttributeBindingDirective(_this6, el, 'value', expression, extraVars);
+              break;
+
+            case 'bind':
+              // The :key binding on an x-for is special, ignore it.
+              if (el.tagName.toLowerCase() === 'template' && value === 'key') return;
+              handleAttributeBindingDirective(_this6, el, value, expression, extraVars);
+              break;
+
+            case 'text':
+              var output = _this6.evaluateReturnExpression(el, expression, extraVars); // If nested model key is undefined, set the default value to empty string.
+
+
+              if (output === undefined && expression.match(/\./).length) {
+                output = '';
+              }
+
+              el.innerText = output;
+              break;
+
+            case 'html':
+              el.innerHTML = _this6.evaluateReturnExpression(el, expression, extraVars);
+              break;
+
+            case 'show':
+              var output = _this6.evaluateReturnExpression(el, expression, extraVars);
+
+              handleShowDirective(_this6, el, output, modifiers, initialUpdate);
+              break;
+
+            case 'if':
+              // If this element also has x-for on it, don't process x-if.
+              // We will let the "x-for" directive handle the "if"ing.
+              if (attrs.filter(function (i) {
+                return i.type === 'for';
+              }).length > 0) return;
+
+              var output = _this6.evaluateReturnExpression(el, expression, extraVars);
+
+              handleIfDirective(el, output, initialUpdate);
+              break;
+
+            case 'for':
+              handleForDirective(_this6, el, expression, initialUpdate);
+              break;
+
+            case 'cloak':
+              el.removeAttribute('x-cloak');
+              break;
+          }
+        });
+      }
+    }, {
+      key: "evaluateReturnExpression",
+      value: function evaluateReturnExpression(el, expression) {
+        var extraVars = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : function () {};
+        return saferEval(expression, this.$data, _objectSpread2({}, extraVars(), {
+          $dispatch: this.getDispatchFunction(el)
+        }));
+      }
+    }, {
+      key: "evaluateCommandExpression",
+      value: function evaluateCommandExpression(el, expression) {
+        var extraVars = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : function () {};
+        return saferEvalNoReturn(expression, this.$data, _objectSpread2({}, extraVars(), {
+          $dispatch: this.getDispatchFunction(el)
+        }));
+      }
+    }, {
+      key: "getDispatchFunction",
+      value: function getDispatchFunction(el) {
+        return function (event) {
+          var detail = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+          el.dispatchEvent(new CustomEvent(event, {
+            detail: detail,
+            bubbles: true
+          }));
+        };
+      }
+    }, {
+      key: "listenForNewElementsToInitialize",
+      value: function listenForNewElementsToInitialize() {
+        var _this7 = this;
+
+        var targetNode = this.$el;
+        var observerOptions = {
+          childList: true,
+          attributes: true,
+          subtree: true
+        };
+        var observer = new MutationObserver(function (mutations) {
+          for (var i = 0; i < mutations.length; i++) {
+            // Filter out mutations triggered from child components.
+            var closestParentComponent = mutations[i].target.closest('[x-data]');
+            if (!(closestParentComponent && closestParentComponent.isSameNode(_this7.$el))) return;
+
+            if (mutations[i].type === 'attributes' && mutations[i].attributeName === 'x-data') {
+              (function () {
+                var rawData = saferEval(mutations[i].target.getAttribute('x-data'), {});
+                Object.keys(rawData).forEach(function (key) {
+                  if (_this7.$data[key] !== rawData[key]) {
+                    _this7.$data[key] = rawData[key];
+                  }
+                });
+              })();
+            }
+
+            if (mutations[i].addedNodes.length > 0) {
+              mutations[i].addedNodes.forEach(function (node) {
+                if (node.nodeType !== 1) return;
+
+                if (node.matches('[x-data]')) {
+                  node.__x = new Component(node);
+                  return;
+                }
+
+                _this7.initializeElements(node);
+              });
+            }
+          }
+        });
+        observer.observe(targetNode, observerOptions);
+      }
+    }, {
+      key: "getRefsProxy",
+      value: function getRefsProxy() {
+        var self = this;
+        var refObj = {}; // One of the goals of this is to not hold elements in memory, but rather re-evaluate
+        // the DOM when the system needs something from it. This way, the framework is flexible and
+        // friendly to outside DOM changes from libraries like Vue/Livewire.
+        // For this reason, I'm using an "on-demand" proxy to fake a "$refs" object.
+
+        return new Proxy(refObj, {
+          get: function get(object, property) {
+            if (property === '$isAlpineProxy') return true;
+            var ref; // We can't just query the DOM because it's hard to filter out refs in
+            // nested components.
+
+            self.walkAndSkipNestedComponents(self.$el, function (el) {
+              if (el.hasAttribute('x-ref') && el.getAttribute('x-ref') === property) {
+                ref = el;
+              }
+            });
+            return ref;
+          }
+        });
+      }
+    }]);
+
+    return Component;
+  }();
+
+  var Alpine = {
+    start: function () {
+      var _start = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+        var _this8 = this;
+
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (isTesting()) {
+                  _context.next = 3;
+                  break;
+                }
+
+                _context.next = 3;
+                return domReady();
+
+              case 3:
+                this.discoverComponents(function (el) {
+                  _this8.initializeComponent(el);
+                }); // It's easier and more performant to just support Turbolinks than listen
+                // to MutationObserver mutations at the document level.
+
+                document.addEventListener("turbolinks:load", function () {
+                  _this8.discoverUninitializedComponents(function (el) {
+                    _this8.initializeComponent(el);
+                  });
+                });
+                this.listenForNewUninitializedComponentsAtRunTime(function (el) {
+                  _this8.initializeComponent(el);
+                });
+
+              case 6:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function start() {
+        return _start.apply(this, arguments);
+      }
+
+      return start;
+    }(),
+    discoverComponents: function discoverComponents(callback) {
+      var rootEls = document.querySelectorAll('[x-data]');
+      rootEls.forEach(function (rootEl) {
+        callback(rootEl);
+      });
+    },
+    discoverUninitializedComponents: function discoverUninitializedComponents(callback) {
+      var el = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      var rootEls = (el || document).querySelectorAll('[x-data]');
+      Array.from(rootEls).filter(function (el) {
+        return el.__x === undefined;
+      }).forEach(function (rootEl) {
+        callback(rootEl);
+      });
+    },
+    listenForNewUninitializedComponentsAtRunTime: function listenForNewUninitializedComponentsAtRunTime(callback) {
+      var _this9 = this;
+
+      var targetNode = document.querySelector('body');
+      var observerOptions = {
+        childList: true,
+        attributes: true,
+        subtree: true
+      };
+      var observer = new MutationObserver(function (mutations) {
+        for (var i = 0; i < mutations.length; i++) {
+          if (mutations[i].addedNodes.length > 0) {
+            mutations[i].addedNodes.forEach(function (node) {
+              // Discard non-element nodes (like line-breaks)
+              if (node.nodeType !== 1) return; // Discard any changes happening within an existing component.
+              // They will take care of themselves.
+
+              if (node.parentElement && node.parentElement.closest('[x-data]')) return;
+
+              _this9.discoverUninitializedComponents(function (el) {
+                _this9.initializeComponent(el);
+              }, node.parentElement);
+            });
+          }
+        }
+      });
+      observer.observe(targetNode, observerOptions);
+    },
+    initializeComponent: function initializeComponent(el) {
+      if (!el.__x) {
+        el.__x = new Component(el);
+      }
+    },
+    clone: function clone(component, newEl) {
+      if (!newEl.__x) {
+        newEl.__x = new Component(newEl, component.getUnobservedData());
+      }
+    }
+  };
+
+  if (!isTesting()) {
+    window.Alpine = Alpine;
+    window.Alpine.start();
+  }
+
+  return Alpine;
+});
 
 /***/ }),
 

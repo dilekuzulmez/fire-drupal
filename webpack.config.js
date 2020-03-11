@@ -68,11 +68,10 @@ module.exports = {
       {
         proxy: FireConstants.PROXY_URL,
         port: process.env.PORT || FireConstants.DEFAULT_PORT,
-        files: [path.resolve(__dirname, '**/*.twig')],
+        files: [path.resolve(__dirname, '**/*.twig'), path.resolve(__dirname, '**/*.js'), path.resolve(__dirname, '**/*.css')],
+        ghostMode: false,
       },
-      {
-        injectCss: true,
-      }
+      { injectCss: true }
     ),
   ],
 };

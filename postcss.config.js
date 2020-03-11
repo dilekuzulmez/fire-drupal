@@ -11,9 +11,9 @@ module.exports = {
     isProduction ? require('cssnano')({
       preset: 'default',
     }) : null,
-    purgecss({
+    isProduction ? purgecss({
       content: ['./**/*.twig'],
       whitelist: ['block-fire-local-tasks', 'user-login-form']
-    })
+    }) : null
   ]
 };

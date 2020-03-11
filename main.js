@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import '@base/polyfills';
+import 'alpinejs';
 import balanceText from 'balance-text';
 import { FireDetect, FireComponentRecord, FireLazyLoader, FireHelpers } from '@base';
 
