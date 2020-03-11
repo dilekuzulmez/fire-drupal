@@ -46,23 +46,22 @@
 #}
 {%
   set classes = [
-    'form-item',
-    'js-form-item',
-    'form-item-' ~ name|clean_class,
-    'js-form-item-' ~ name|clean_class,
+    'flex flex-col mb-5',
+    'form-type-' ~ type|clean_class,
     'js-form-type-' ~ type|clean_class,
-    'form-group',
     title_display not in ['after', 'before'] ? 'form-no-label',
     disabled == 'disabled' ? 'form-disabled',
     errors ? 'form-item--error',
   ]
 %}
+
 {%
   set description_classes = [
-    'description',
+    'description text-sm mt-1 italic',
     description_display == 'invisible' ? 'visually-hidden',
   ]
 %}
+
 <div{{ attributes.addClass(classes) }}>
   {% if label_display in ['before', 'invisible'] %}
     {{ label }}

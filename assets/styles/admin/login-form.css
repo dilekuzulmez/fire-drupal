@@ -1,0 +1,3 @@
+.user-login-form {
+  @apply flex flex-col max-w-md mx-auto my-16;
+}

@@ -3,10 +3,10 @@ description: Custom Drupal 8 Theme
 type: theme
 core: 8.x
 libraries:
-  - fire/bundle-styles
-  - fire/bundle-scripts
+  - fire/styles
+  - fire/scripts
 ckeditor_stylesheets:
-  - dist/bundle.css
+  - dist/styles.css
 stylesheets-remove:
   - core/themes/stable/css/views/views.module.css
   - core/themes/stable/css/system/components/align.module.css
@@ -22,7 +22,6 @@ stylesheets-remove:
   - core/themes/stable/css/system/components/tree-child.module.css
   - core/themes/stable/css/system/components/container-inline.module.css
   - core/themes/stable/css/system/components/details.module.css
-  - core/themes/stable/css/system/components/hidden.module.css
   - core/themes/stable/css/system/components/item-list.module.css
   - core/themes/stable/css/system/components/position-container.module.css
   - core/themes/stable/css/system/components/reset-appearance.module.css

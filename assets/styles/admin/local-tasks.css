@@ -1,0 +1,21 @@
+#block-fire-local-tasks {
+  @apply flex content-center max-w-full p-3 bg-black;
+
+  .is-logged-in & {
+    @apply z-50 fixed pl-8 bg-black rounded-full;
+    bottom: 25px;
+    left: 25px;
+  }
+
+  ul {
+    @apply list-none flex;
+
+    li {
+      @apply text-sm text-xs px-2;
+
+      a {
+        @apply font-bold text-white no-underline;
+      }
+    }
+  }
+}

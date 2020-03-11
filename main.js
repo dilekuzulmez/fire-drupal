@@ -1,7 +1,6 @@
 import $ from 'jquery';
 import '@base/polyfills';
-import 'bootstrap/js/src/util';
-import 'bootstrap/js/src/alert';
+import 'alpinejs';
 import balanceText from 'balance-text';
 import { FireDetect, FireComponentRecord, FireLazyLoader, FireHelpers } from '@base';
 
@@ -32,7 +31,7 @@ const onPageReady = () => {
   balanceText();
 
   // display page
-  $('body').addClass('has-loaded');
+  $('body').removeClass('opacity-0');
 
   // global Drupal behaviors
   Drupal.behaviors.fireGlobal = {

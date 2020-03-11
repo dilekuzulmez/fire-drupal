@@ -1,0 +1,18 @@
+.form-required {
+  &::after {
+    @apply text-red-400 ml-1;
+    content: '*';
+  }
+}
+
+/* Removes Chrome autofill yellow */
+@-webkit-keyframes autofill {
+  to {
+    @apply text-black text-white;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
