@@ -1,6 +1,6 @@
 .form-required {
   &::after {
-    @apply text-error ml-1;
+    @apply text-red-400 ml-1;
     content: '*';
   }
 }

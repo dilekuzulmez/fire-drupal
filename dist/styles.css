@@ -475,10 +475,30 @@ object {
   padding-left: 1rem;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .appearance-none {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+
+.bg-green-100 {
+  background-color: #E8F5E9;
+}
+
+.bg-red-100 {
+  background-color: #fff5f5;
 }
 
 .bg-primary {
@@ -487,6 +507,14 @@ object {
 
 .border-gray-300 {
   border-color: #cccccc;
+}
+
+.border-green-400 {
+  border-color: #28a745;
+}
+
+.border-red-400 {
+  border-color: #dc3545;
 }
 
 .rounded {
@@ -598,6 +626,15 @@ object {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.relative {
+  position: relative;
 }
 
 .text-center {

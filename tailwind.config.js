@@ -14,12 +14,17 @@ module.exports = {
       light: '#f2f2f2',
       dark: '#37373c',
 
-      'gray-100': ' #f2f2f2',
+      'gray-100': '#f2f2f2',
       'gray-300': '#cccccc',
       'gray-900': '#37373c',
 
-      success: '#28a745',
-      error: '#dc3545',
+      'green-100': '#E8F5E9',
+      'green-400': '#28a745',
+      'green-700': '#2E7D32',
+
+      'red-100': '#fff5f5',
+      'red-400': '#dc3545',
+      'red-700': '#c53030',
 
       primary: '#37b57b',
       secondary: '#695b8e',
