@@ -1,4 +1,4 @@
-body.toolbar-fixed {
+/* body.toolbar-fixed {
   #toolbar-administration {
     position: relative;
     z-index: $z-index-admin-header;
@@ -105,4 +105,4 @@ div.ipe-actions-block.ipe-actions {
       margin-top: 20px;
     }
   }
-}
+} */

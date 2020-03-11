@@ -1,4 +1,4 @@
-// src is relative to `main.scss`
+// src is relative to `main.css`
 @font-face {
   font-family: 'Open Sans';
   src: url('./assets/fonts/Open_Sans/OpenSans-Regular.ttf');
@@ -16,7 +16,7 @@
 @font-face {
   font-family: 'Open Sans';
   src: url('./assets/fonts/Open_Sans/OpenSans-Bold.ttf');
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
 }
 

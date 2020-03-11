@@ -1,15 +1,17 @@
-body.fire-page {
-  opacity: 0;
+body {
+  &.fire-page {
+    opacity: 0;
+  }
 }
 
-body.has-loaded {
-  opacity: 1;
+body {
+  &.has-loaded {
+    opacity: 1;
+  }
 }
 
-/*
- * added to markup by Drupal,
- * top-level most element after body
- */
+// added to markup by Drupal,
+// top-level most element after body
 .dialog-off-canvas-main-canvas {
   display: flex;
   flex-direction: column;
@@ -24,13 +26,13 @@ img {
   max-width: 100%;
 }
 
-/* Removes Chrome autofill yellow */
-@-webkit-keyframes autofill {
+// Removes Chrome autofill yellow
+/* @-webkit-keyframes autofill {
   to {
-    /* color: $body-color;
-    background-color: theme-color('white'); */
+    color: $body-color;
+    background-color: theme-color('white');
   }
-}
+} */
 
 input:-webkit-autofill {
   -webkit-animation-name: autofill;

@@ -1,8 +1,9 @@
 {#
-	Note: the Twig Tweak module can be used to include menus
-	Example: {{ drupal_menu('main') }}
+  Note: the Twig Tweak module can be used to include menus
+  Example: {{ drupal_menu('main') }}
 #}
-
-<header class="site-header" role="banner" data-fire-component="site-header">
-	<a href="{{ path('<front>') }}" class="site-header__logo">Fire Theme</a>
+<header class="bg-primary py-3" role="banner" data-fire-component="site-header">
+  <div class="container">
+    <a href="{{ path('<front>') }}" class="site-header__logo no-underline text-white">Fire Theme</a>
+  </div>
 </header>
