@@ -1040,18 +1040,15 @@ div.ipe-actions-block.ipe-actions {
   }
 } */
 
-.wizzy {
-}
-
-.text-align-center {
+.wizzy .text-align-center {
   text-align: center;
 }
 
-.text-align-right {
+.wizzy .text-align-right {
   text-align: right;
 }
 
-.text-align-left {
+.wizzy .text-align-left {
   text-align: left;
 }
 

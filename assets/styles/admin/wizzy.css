@@ -1,14 +1,13 @@
 .wizzy {
-}
+  .text-align-center {
+    @apply text-center;
+  }
 
-.text-align-center {
-  @apply text-center;
-}
+  .text-align-right {
+    @apply text-right;
+  }
 
-.text-align-right {
-  @apply text-right;
-}
-
-.text-align-left {
-  @apply text-left;
+  .text-align-left {
+    @apply text-left;
+  }
 }

@@ -2,10 +2,13 @@
 
 {%
   set classes = [
-    'hero',
+    'hero py-32 bg-secondary text-white',
   ]
 %}
 
+{% set fire_component = 'hero' %}
+{% set copy = content.field_copy.0 %}
+
 {% block content %}
-  ... content goes here
+  <div class="wizzy">{{ copy }}</div>
 {% endblock %}

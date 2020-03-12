@@ -53,9 +53,6 @@ module.exports = {
     'sm:mb-gap-lg',
     'sm:mb-gap-xl',
 
-    // wizzy editor
-    'text-align-center',
-    'text-align-left',
-    'text-align-right',
+    'wizzy',
   ],
 };
