@@ -7,5 +7,5 @@ module.exports = {
   ASSET_PATH: path.resolve(__dirname, './assets'),
   DESTINATION_PATH: path.resolve(__dirname, './dist'),
 
-  SELECTOR_WHITELIST: ['block-fire-local-tasks', 'user-login-form'],
+  PURGE_CSS_WHITELIST: ['block-fire-local-tasks', 'user-login-form'],
 };

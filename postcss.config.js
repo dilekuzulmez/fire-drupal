@@ -14,7 +14,7 @@ module.exports = {
     }) : null,
     isProduction ? purgecss({
       content: ['./**/*.twig'],
-      whitelist: FireConfig.SELECTOR_WHITELIST
+      whitelist: FireConfig.PURGE_CSS_WHITELIST
     }) : null
   ]
 };
