@@ -122,8 +122,8 @@ module.exports = {
         '11/12': '91.666667%',
 
         'gap-0': '0',
-        'gap-xs': '0.75rem',
-        'gap-sm': '1.25rem',
+        'gap-xs': '1.25rem',
+        'gap-sm': '2rem',
         'gap-md': '3rem',
         'gap-lg': '5rem',
         'gap-xl': '8rem',
