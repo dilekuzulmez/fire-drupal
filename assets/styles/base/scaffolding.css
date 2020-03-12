@@ -3,5 +3,5 @@ img {
 }
 
 pre {
-  /* background-color: theme-color('gray-300'); */
+  @apply bg-gray-100 p-2 rounded-lg text-sm text-gray-800;
 }

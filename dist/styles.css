@@ -694,7 +694,11 @@ img {
 }
 
 pre {
-  /* background-color: theme-color('gray-300'); */
+  background-color: #f7fafc;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: #2d3748;
 }
 
 html,
@@ -1050,7 +1054,18 @@ div.ipe-actions-block.ipe-actions {
 .main-nav {
 }
 
-.status-messages {
+.status-messages ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.status-messages pre {
+  margin-top: 0.75rem;
+}
+
+.status-messages .icon--times {
+  width: 1rem;
+  height: 1rem;
 }
 
 .pagination {
