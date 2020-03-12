@@ -1,5 +1,6 @@
 const isProduction = process.env.NODE_ENV === 'production';
 const purgecss = require('@fullhuman/postcss-purgecss');
+const FireConfig = require('./fire.config');
 
 // prettier-ignore
 module.exports = {
@@ -13,7 +14,7 @@ module.exports = {
     }) : null,
     isProduction ? purgecss({
       content: ['./**/*.twig'],
-      whitelist: ['block-fire-local-tasks', 'user-login-form']
+      whitelist: FireConfig.SELECTOR_WHITELIST
     }) : null
   ]
 };

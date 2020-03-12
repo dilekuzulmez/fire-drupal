@@ -2,7 +2,7 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const FireConstants = require('./fire.config');
+const FireConfig = require('./fire.config');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -49,7 +49,7 @@ const fontLoaders = [
 module.exports = {
   mode: isProduction === true ? 'production' : 'development',
   entry: { styles: path.resolve(__dirname, `./main.css`), scripts: path.resolve(__dirname, `./main.js`) },
-  output: { path: FireConstants.DESTINATION_PATH, filename: '[name].js' },
+  output: { path: FireConfig.DESTINATION_PATH, filename: '[name].js' },
   module: { rules: [...scriptLoaders, ...styleLoaders, ...fontLoaders] },
   resolve: { alias: aliases },
   devtool: 'source-map',
@@ -66,8 +66,8 @@ module.exports = {
     }),
     new BrowserSyncPlugin(
       {
-        proxy: FireConstants.PROXY_URL,
-        port: process.env.PORT || FireConstants.DEFAULT_PORT,
+        proxy: FireConfig.PROXY_URL,
+        port: process.env.PORT || FireConfig.DEFAULT_PORT,
         files: [path.resolve(__dirname, '**/*.twig'), path.resolve(__dirname, '**/*.js'), path.resolve(__dirname, '**/*.css')],
         ghostMode: false,
       },
