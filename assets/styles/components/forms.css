@@ -5,6 +5,42 @@
   }
 }
 
+/* wrapper for label/input */
+.form-group {
+  @apply flex flex-col mb-4;
+
+  .description {
+    @apply text-sm mt-1 italic;
+  }
+}
+
+.form-input-label {
+  @apply mb-2 font-bold;
+}
+
+.form-input,
+.form-select {
+  @apply appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight bg-white;
+}
+
+.form-input {
+}
+
+.form-select {
+  background-image: url(/themes/fire/assets/media/svgs/icon--chevron-down.svg);
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+}
+
+.image-widget {
+  @apply flex items-center;
+
+  .button {
+    @apply ml-3;
+  }
+}
+
 /* Removes Chrome autofill yellow */
 @-webkit-keyframes autofill {
   to {

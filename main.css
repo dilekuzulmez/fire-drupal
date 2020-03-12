@@ -1,7 +1,6 @@
 /* dependencies */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
 
 /* base */
 @import './assets/styles/base/fonts';
@@ -16,7 +15,7 @@
 
 /* admin */
 @import './assets/styles/admin/local-tasks';
-@import './assets/styles/admin/login-form';
+@import './assets/styles/admin/user';
 @import './assets/styles/admin/misc';
 @import './assets/styles/admin/wizzy';
 
@@ -26,3 +25,5 @@
 @import './templates/components/main-nav/main-nav';
 @import './templates/components/status-messages/status-messages';
 @import './templates/components/pagination/pagination';
+
+@import 'tailwindcss/utilities';

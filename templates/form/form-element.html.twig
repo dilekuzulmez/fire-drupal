@@ -46,7 +46,7 @@
 #}
 {%
   set classes = [
-    'flex flex-col mb-5',
+    'form-group',
     'form-type-' ~ type|clean_class,
     'js-form-type-' ~ type|clean_class,
     title_display not in ['after', 'before'] ? 'form-no-label',
@@ -57,7 +57,7 @@
 
 {%
   set description_classes = [
-    'description text-sm mt-1 italic',
+    'description',
     description_display == 'invisible' ? 'visually-hidden',
   ]
 %}

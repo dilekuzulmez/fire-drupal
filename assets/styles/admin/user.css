@@ -1,0 +1,12 @@
+.user-login-form,
+.user-pass,
+.user-register-form {
+  @apply flex flex-col max-w-md mx-auto my-16;
+}
+
+.user-pass {
+  > p {
+    @apply text-sm mb-4 italic;
+    margin-top: -0.75rem;
+  }
+}
