@@ -23,12 +23,12 @@
 
 <article{{ attributes.addClass(['max-w-5xl mt-10 mx-auto']) }}>
   {% if user %}
-    <h1 class="mb-0">Hello
+    <h1 class="mb-0 leading-snug">Hello
       {{ user|title }}</h1>
   {% endif %}
   {% if member_length %}
-    <p>
-      {{member_length|striptags|raw}}
+    <p class="text-gray-600">
+      {{ member_length|striptags|raw }}
     </p>
   {% endif %}
 
