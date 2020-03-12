@@ -1053,6 +1053,8 @@ div.ipe-actions-block.ipe-actions {
 .pagination {
 }
 
+/* dependencies */
+
 .sr-only {
   position: absolute;
   width: 1px;

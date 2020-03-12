@@ -26,4 +26,5 @@
 @import './templates/components/status-messages/status-messages';
 @import './templates/components/pagination/pagination';
 
+/* dependencies */
 @import 'tailwindcss/utilities';
