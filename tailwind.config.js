@@ -1,4 +1,6 @@
 // Default Config: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
+const plugin = require('tailwindcss/plugin');
+const _ = require('lodash');
 
 module.exports = {
   important: false,
@@ -120,27 +122,32 @@ module.exports = {
       function ColorShades(hex, lum) {
         hex = String(hex).replace(/[^0-9a-f]/gi, '');
         if (hex.length < 6) {
-          hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+          hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
         }
         lum = lum || 0;
-        var rgb = "#", c, i;
+        var rgb = '#',
+          c,
+          i;
         for (i = 0; i < 3; i++) {
-          c = parseInt(hex.substr(i*2,2), 16);
-          c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
-          rgb += ("00"+c).substr(c.length);
+          c = parseInt(hex.substr(i * 2, 2), 16);
+          c = Math.round(Math.min(Math.max(0, c + c * lum), 255)).toString(16);
+          rgb += ('00' + c).substr(c.length);
         }
         return rgb;
       }
-
-      const colorLight = _.map(config('theme.colors'), (value, key) => {
+      const newUtilities = _.map(config('theme.colors'), (value, key) => {
+        const darkResult = ColorShades(value, 2.0);
+        const lightResult = ColorShades(value, -2.0);
         return {
-          [`.${e(`colors-${key}-light`)}`]: {
-            ColorShades(`${value}`, 0.2);
-          }
-        }
+          [`.bg-${key}-dark`]: {
+            backgroundColor: darkResult,
+          },
+          [`.bg-${key}-light`]: {
+            backgroundColor: lightResult,
+          },
+        };
       });
-
-      addUtilities(colorLight);
-    })
+      addUtilities(newUtilities);
+    }),
   ],
 };

@@ -10413,6 +10413,78 @@ div.ipe-actions-block.ipe-actions {
   padding-bottom: 42.857142857142854%;
 }
 
+.bg-transparent-dark {
+  background-color: #ffffff;
+}
+
+.bg-transparent-light {
+  background-color: #000000;
+}
+
+.bg-black-dark {
+  background-color: #000000;
+}
+
+.bg-black-light {
+  background-color: #000000;
+}
+
+.bg-white-dark {
+  background-color: #ffffff;
+}
+
+.bg-white-light {
+  background-color: #000000;
+}
+
+.bg-gray-dark {
+  background-color: #ffffff;
+}
+
+.bg-gray-light {
+  background-color: #000000;
+}
+
+.bg-red-dark {
+  background-color: #ffffff;
+}
+
+.bg-red-light {
+  background-color: #000000;
+}
+
+.bg-green-dark {
+  background-color: #ffffff;
+}
+
+.bg-green-light {
+  background-color: #000000;
+}
+
+.bg-primary-dark {
+  background-color: #a5ffff;
+}
+
+.bg-primary-light {
+  background-color: #000000;
+}
+
+.bg-secondary-dark {
+  background-color: #ffffff;
+}
+
+.bg-secondary-light {
+  background-color: #000000;
+}
+
+.bg-accent-dark {
+  background-color: #ffffff;
+}
+
+.bg-accent-light {
+  background-color: #000000;
+}
+
 @media (max-width: 575px) {
   .smd\:sr-only {
     position: absolute;
