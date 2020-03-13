@@ -777,17 +777,18 @@ button {
 }
 
 .button {
-  color: #fff;
-  font-weight: 700;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  border-radius: 0.25rem;
-  cursor: pointer;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   font-size: 0.875rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
   transition-property: all;
   transition-duration: 200ms;
+  border-radius: 0.25rem;
+  cursor: pointer;
 }
 
 .button--primary {
