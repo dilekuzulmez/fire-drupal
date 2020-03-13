@@ -1,4 +1,5 @@
 // Default Config: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
+const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   important: false,
