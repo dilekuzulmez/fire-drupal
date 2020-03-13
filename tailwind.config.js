@@ -136,8 +136,8 @@ module.exports = {
         return rgb;
       }
       const newUtilities = _.map(config('theme.colors'), (value, key) => {
-        const darkResult = ColorShades(value, 2.0);
-        const lightResult = ColorShades(value, -2.0);
+        const darkResult = ColorShades(value, -2.0);
+        const lightResult = ColorShades(value, 2.0);
         return {
           [`.bg-${key}-dark`]: {
             backgroundColor: darkResult,

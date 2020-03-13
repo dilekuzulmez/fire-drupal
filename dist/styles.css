@@ -10414,11 +10414,11 @@ div.ipe-actions-block.ipe-actions {
 }
 
 .bg-transparent-dark {
-  background-color: #ffffff;
+  background-color: #000000;
 }
 
 .bg-transparent-light {
-  background-color: #000000;
+  background-color: #ffffff;
 }
 
 .bg-black-dark {
@@ -10430,59 +10430,59 @@ div.ipe-actions-block.ipe-actions {
 }
 
 .bg-white-dark {
-  background-color: #ffffff;
+  background-color: #000000;
 }
 
 .bg-white-light {
-  background-color: #000000;
+  background-color: #ffffff;
 }
 
 .bg-gray-dark {
-  background-color: #ffffff;
+  background-color: #000000;
 }
 
 .bg-gray-light {
-  background-color: #000000;
+  background-color: #ffffff;
 }
 
 .bg-red-dark {
-  background-color: #ffffff;
+  background-color: #000000;
 }
 
 .bg-red-light {
-  background-color: #000000;
+  background-color: #ffffff;
 }
 
 .bg-green-dark {
-  background-color: #ffffff;
+  background-color: #000000;
 }
 
 .bg-green-light {
-  background-color: #000000;
+  background-color: #ffffff;
 }
 
 .bg-primary-dark {
-  background-color: #a5ffff;
+  background-color: #000000;
 }
 
 .bg-primary-light {
-  background-color: #000000;
+  background-color: #a5ffff;
 }
 
 .bg-secondary-dark {
-  background-color: #ffffff;
+  background-color: #000000;
 }
 
 .bg-secondary-light {
-  background-color: #000000;
-}
-
-.bg-accent-dark {
   background-color: #ffffff;
 }
 
-.bg-accent-light {
+.bg-accent-dark {
   background-color: #000000;
+}
+
+.bg-accent-light {
+  background-color: #ffffff;
 }
 
 @media (max-width: 575px) {
