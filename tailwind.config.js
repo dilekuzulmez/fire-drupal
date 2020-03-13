@@ -125,6 +125,8 @@ module.exports = {
           hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
         }
         lum = lum || 0;
+
+        // convert to decimal and change luminosity
         var rgb = '#',
           c,
           i;
@@ -133,19 +135,33 @@ module.exports = {
           c = Math.round(Math.min(Math.max(0, c + c * lum), 255)).toString(16);
           rgb += ('00' + c).substr(c.length);
         }
+
         return rgb;
       }
+
       const newUtilities = _.map(config('theme.colors'), (value, key) => {
-        const darkResult = ColorShades(value, -2.0);
-        const lightResult = ColorShades(value, 2.0);
-        return {
-          [`.bg-${key}-dark`]: {
-            backgroundColor: darkResult,
-          },
-          [`.bg-${key}-light`]: {
-            backgroundColor: lightResult,
-          },
-        };
+        const customColors = ['primary', 'secondary', 'accent'];
+        if (typeof value != 'string') {
+          return;
+        }
+        if (customColors.includes(key)) {
+          let lightResult = ColorShades(value, 0.3);
+          let darkResult = ColorShades(value, -0.3);
+          return {
+            [`.bg-${key}-dark`]: {
+              backgroundColor: darkResult,
+            },
+            [`.bg-${key}-light`]: {
+              backgroundColor: lightResult,
+            },
+            [`.text-${key}-dark`]: {
+              backgroundColor: darkResult,
+            },
+            [`.text-${key}-light`]: {
+              backgroundColor: lightResult,
+            },
+          };
+        }
       });
       addUtilities(newUtilities);
     }),
