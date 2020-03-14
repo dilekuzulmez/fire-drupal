@@ -115,9 +115,13 @@ module.exports = {
       },
     },
   },
+  variants: {
+    display: ['responsive', 'ie'],
+  },
   corePlugins: {},
   plugins: [
     require('tailwindcss-aspect-ratio'),
+
     plugin(function({ addUtilities, config, e }) {
       const newUtilities = _.map(config('theme.colors'), (value, key) => {
         if (typeof value != 'string') {
@@ -135,13 +139,20 @@ module.exports = {
       });
       addUtilities(newUtilities);
     }),
-    require('tailwind-css-variables')(
-      {
-        colors: 'color',
-      },
-      {
-        // options
-      }
-    ),
+
+    require('tailwind-css-variables')({
+      colors: 'color',
+    }),
+
+    plugin(function({ addVariant, e, postcss }) {
+      addVariant('ie', ({ container, separator }) => {
+        const supportsRule = postcss.atRule({ name: 'media', params: 'all and (-ms-high-contrast: none), (-ms-high-contrast: active)' });
+        supportsRule.append(container.nodes);
+        container.append(supportsRule);
+        supportsRule.walkRules((rule) => {
+          rule.selector = `.${e(`ie${separator}${rule.selector.slice(1)}`)}`;
+        });
+      });
+    }),
   ],
 };
