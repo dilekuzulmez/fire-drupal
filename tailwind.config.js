@@ -2,6 +2,26 @@
 const plugin = require('tailwindcss/plugin');
 const _ = require('lodash');
 
+function ColorShades(hex, lum) {
+  hex = String(hex).replace(/[^0-9a-f]/gi, '');
+  if (hex.length < 6) {
+    hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+  }
+  lum = lum || 0;
+
+  // convert to decimal and change luminosity
+  var rgb = '#',
+    c,
+    i;
+  for (i = 0; i < 3; i++) {
+    c = parseInt(hex.substr(i * 2, 2), 16);
+    c = Math.round(Math.min(Math.max(0, c + c * lum), 255)).toString(16);
+    rgb += ('00' + c).substr(c.length);
+  }
+
+  return rgb;
+}
+
 module.exports = {
   important: false,
   theme: {
@@ -117,53 +137,30 @@ module.exports = {
   corePlugins: {},
   plugins: [
     require('tailwindcss-aspect-ratio'),
-
     plugin(function({ addUtilities, config, e }) {
-      function ColorShades(hex, lum) {
-        hex = String(hex).replace(/[^0-9a-f]/gi, '');
-        if (hex.length < 6) {
-          hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
-        }
-        lum = lum || 0;
-
-        // convert to decimal and change luminosity
-        var rgb = '#',
-          c,
-          i;
-        for (i = 0; i < 3; i++) {
-          c = parseInt(hex.substr(i * 2, 2), 16);
-          c = Math.round(Math.min(Math.max(0, c + c * lum), 255)).toString(16);
-          rgb += ('00' + c).substr(c.length);
-        }
-
-        return rgb;
-      }
-
       const newUtilities = _.map(config('theme.colors'), (value, key) => {
-        const customColors = ['primary', 'secondary', 'accent'];
         if (typeof value != 'string') {
           return;
         }
+        const customColors = ['primary', 'secondary', 'accent'];
         if (customColors.includes(key)) {
           let lightResult = ColorShades(value, 0.3);
           let darkResult = ColorShades(value, -0.3);
-          return {
-            [`.bg-${key}-dark`]: {
-              backgroundColor: darkResult,
-            },
-            [`.bg-${key}-light`]: {
-              backgroundColor: lightResult,
-            },
-            [`.text-${key}-dark`]: {
-              backgroundColor: darkResult,
-            },
-            [`.text-${key}-light`]: {
-              backgroundColor: lightResult,
-            },
-          };
+          const newColors = config('theme.colors');
+          newColors[`${key}-light`] = lightResult;
+          newColors[`${key}-dark`] = darkResult;
+          return;
         }
       });
       addUtilities(newUtilities);
     }),
+    require('tailwind-css-variables')(
+      {
+        colors: 'color',
+      },
+      {
+        // options
+      }
+    ),
   ],
 };
