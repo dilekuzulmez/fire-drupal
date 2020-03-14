@@ -1,26 +1,7 @@
 // Default Config: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 const plugin = require('tailwindcss/plugin');
 const _ = require('lodash');
-
-function ColorShades(hex, lum) {
-  hex = String(hex).replace(/[^0-9a-f]/gi, '');
-  if (hex.length < 6) {
-    hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
-  }
-  lum = lum || 0;
-
-  // convert to decimal and change luminosity
-  var rgb = '#',
-    c,
-    i;
-  for (i = 0; i < 3; i++) {
-    c = parseInt(hex.substr(i * 2, 2), 16);
-    c = Math.round(Math.min(Math.max(0, c + c * lum), 255)).toString(16);
-    rgb += ('00' + c).substr(c.length);
-  }
-
-  return rgb;
-}
+const colorShades = require('./assets/scripts/base/colorshades');
 
 module.exports = {
   important: false,
@@ -144,8 +125,8 @@ module.exports = {
         }
         const customColors = ['primary', 'secondary', 'accent'];
         if (customColors.includes(key)) {
-          let lightResult = ColorShades(value, 0.3);
-          let darkResult = ColorShades(value, -0.3);
+          let lightResult = colorShades(value, 0.3);
+          let darkResult = colorShades(value, -0.3);
           const newColors = config('theme.colors');
           newColors[`${key}-light`] = lightResult;
           newColors[`${key}-dark`] = darkResult;
