@@ -1,4 +1,5 @@
 // Default Config: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
+const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   important: false,
@@ -112,6 +113,22 @@ module.exports = {
       },
     },
   },
+  variants: {
+    display: ['responsive', 'ie'],
+  },
   corePlugins: {},
-  plugins: [require('tailwindcss-aspect-ratio')],
+  plugins: [
+    require('tailwindcss-aspect-ratio'),
+
+    plugin(function({ addVariant, e, postcss }) {
+      addVariant('ie', ({ container, separator }) => {
+        const supportsRule = postcss.atRule({ name: 'media', params: 'all and (-ms-high-contrast: none), (-ms-high-contrast: active)' });
+        supportsRule.append(container.nodes);
+        container.append(supportsRule);
+        supportsRule.walkRules((rule) => {
+          rule.selector = `.${e(`ie${separator}${rule.selector.slice(1)}`)}`;
+        });
+      });
+    }),
+  ],
 };
