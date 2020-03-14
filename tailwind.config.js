@@ -115,6 +115,9 @@ module.exports = {
       },
     },
   },
+  variants: {
+    display: ['responsive', 'ie'],
+  },
   corePlugins: {},
   plugins: [
     require('tailwindcss-aspect-ratio'),
@@ -143,5 +146,15 @@ module.exports = {
         // options
       }
     ),
+    plugin(function({ addVariant, e, postcss }) {
+      addVariant('ie', ({ container, separator }) => {
+        const supportsRule = postcss.atRule({ name: 'media', params: 'all and (-ms-high-contrast: none), (-ms-high-contrast: active)' });
+        supportsRule.append(container.nodes);
+        container.append(supportsRule);
+        supportsRule.walkRules((rule) => {
+          rule.selector = `.${e(`ie${separator}${rule.selector.slice(1)}`)}`;
+        });
+      });
+    }),
   ],
 };
