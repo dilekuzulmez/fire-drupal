@@ -1,7 +1,4 @@
 // Default Config: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
-const plugin = require('tailwindcss/plugin');
-const _ = require('lodash');
-const colorShades = require('./assets/scripts/base/colorshades');
 
 module.exports = {
   important: false,
@@ -121,38 +118,10 @@ module.exports = {
   corePlugins: {},
   plugins: [
     require('tailwindcss-aspect-ratio'),
-
-    plugin(function({ addUtilities, config, e }) {
-      const newUtilities = _.map(config('theme.colors'), (value, key) => {
-        if (typeof value != 'string') {
-          return;
-        }
-        const customColors = ['primary', 'secondary', 'accent'];
-        if (customColors.includes(key)) {
-          let lightResult = colorShades(value, 0.3);
-          let darkResult = colorShades(value, -0.3);
-          const newColors = config('theme.colors');
-          newColors[`${key}-light`] = lightResult;
-          newColors[`${key}-dark`] = darkResult;
-          return;
-        }
-      });
-      addUtilities(newUtilities);
-    }),
-
+    require('./.tailwind/plugins/colors'),
     require('tailwind-css-variables')({
       colors: 'color',
     }),
-
-    plugin(function({ addVariant, e, postcss }) {
-      addVariant('ie', ({ container, separator }) => {
-        const supportsRule = postcss.atRule({ name: 'media', params: 'all and (-ms-high-contrast: none), (-ms-high-contrast: active)' });
-        supportsRule.append(container.nodes);
-        container.append(supportsRule);
-        supportsRule.walkRules((rule) => {
-          rule.selector = `.${e(`ie${separator}${rule.selector.slice(1)}`)}`;
-        });
-      });
-    }),
+    require('./.tailwind/plugins/ie'),
   ],
 };
