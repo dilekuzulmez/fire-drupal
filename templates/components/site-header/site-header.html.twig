@@ -3,7 +3,7 @@
   Example: {{ drupal_menu('main') }}
 #}
 <header class="px-4 py-3 bg-primary-500" role="banner" data-fire-component="site-header">
-  <a href="{{ path('<front>') }}" class="flex items-center text-lg leading-none text-white no-underline site-header__logo">
+  <a href="{{ path('<front>') }}" class="inline-flex items-center text-lg leading-none text-white no-underline site-header__logo">
     <div class="w-5 h-5 mr-2">
       {% include directory ~ '/assets/media/svgs/fire.svg' %}
     </div>
