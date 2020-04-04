@@ -11856,13 +11856,7 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/@ba
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global, process) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _classCallCheck2(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+/* WEBPACK VAR INJECTION */(function(global, process) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
 (function (factory) {
    true ? !(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
@@ -11894,99 +11888,104 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
   }
 
   (function () {
-    function l() {
-      function n(a) {
+    function k() {
+      function p(a) {
         return a ? "object" === _typeof2(a) || "function" === typeof a : !1;
       }
 
-      var p = null;
+      var l = null;
 
-      var g = function g(a, b) {
-        function f() {}
+      var n = function n(a, c) {
+        function g() {}
 
-        if (!n(a) || !n(b)) throw new TypeError("Cannot create proxy with a non-object as target or handler");
+        if (!p(a) || !p(c)) throw new TypeError("Cannot create proxy with a non-object as target or handler");
 
-        p = function p() {
-          f = function f(a) {
-            throw new TypeError("Cannot perform '" + a + "' on a proxy that has been revoked");
+        l = function l() {
+          a = null;
+
+          g = function g(b) {
+            throw new TypeError("Cannot perform '" + b + "' on a proxy that has been revoked");
           };
         };
 
-        var e = b;
-        b = {
+        setTimeout(function () {
+          l = null;
+        }, 0);
+        var f = c;
+        c = {
           get: null,
           set: null,
           apply: null,
           construct: null
         };
 
-        for (var k in e) {
-          if (!(k in b)) throw new TypeError("Proxy polyfill does not support trap '" + k + "'");
-          b[k] = e[k];
+        for (var h in f) {
+          if (!(h in c)) throw new TypeError("Proxy polyfill does not support trap '" + h + "'");
+          c[h] = f[h];
         }
 
-        "function" === typeof e && (b.apply = e.apply.bind(e));
+        "function" === typeof f && (c.apply = f.apply.bind(f));
 
-        var _c = this,
-            g = !1,
-            q = !1;
+        var _d = this,
+            q = !1,
+            r = !1;
 
-        "function" === typeof a ? (_c = function c() {
-          var h = this && this.constructor === _c,
-              d = Array.prototype.slice.call(arguments);
-          f(h ? "construct" : "apply");
-          return h && b.construct ? b.construct.call(this, a, d) : !h && b.apply ? b.apply(a, this, d) : h ? (d.unshift(a), new (a.bind.apply(a, d))()) : a.apply(this, d);
-        }, g = !0) : a instanceof Array && (_c = [], q = !0);
-        var r = b.get ? function (a) {
-          f("get");
-          return b.get(this, a, _c);
-        } : function (a) {
-          f("get");
-          return this[a];
+        "function" === typeof a ? (_d = function d() {
+          var b = this && this.constructor === _d,
+              e = Array.prototype.slice.call(arguments);
+          g(b ? "construct" : "apply");
+          return b && c.construct ? c.construct.call(this, a, e) : !b && c.apply ? c.apply(a, this, e) : b ? (e.unshift(a), new (a.bind.apply(a, e))()) : a.apply(this, e);
+        }, q = !0) : a instanceof Array && (_d = [], r = !0);
+        var t = c.get ? function (b) {
+          g("get");
+          return c.get(this, b, _d);
+        } : function (b) {
+          g("get");
+          return this[b];
         },
-            v = b.set ? function (a, d) {
-          f("set");
-          b.set(this, a, d, _c);
-        } : function (a, b) {
-          f("set");
-          this[a] = b;
+            w = c.set ? function (b, e) {
+          g("set");
+          c.set(this, b, e, _d);
+        } : function (b, e) {
+          g("set");
+          this[b] = e;
         },
-            t = {};
+            u = {};
         Object.getOwnPropertyNames(a).forEach(function (b) {
-          if (!((g || q) && b in _c)) {
-            var d = {
+          if (!((q || r) && b in _d)) {
+            var e = {
               enumerable: !!Object.getOwnPropertyDescriptor(a, b).enumerable,
-              get: r.bind(a, b),
-              set: v.bind(a, b)
+              get: t.bind(a, b),
+              set: w.bind(a, b)
             };
-            Object.defineProperty(_c, b, d);
-            t[b] = !0;
+            Object.defineProperty(_d, b, e);
+            u[b] = !0;
           }
         });
-        e = !0;
-        Object.setPrototypeOf ? Object.setPrototypeOf(_c, Object.getPrototypeOf(a)) : _c.__proto__ ? _c.__proto__ = a.__proto__ : e = !1;
-        if (b.get || !e) for (var m in a) {
-          t[m] || Object.defineProperty(_c, m, {
-            get: r.bind(a, m)
+        f = !0;
+        Object.setPrototypeOf ? Object.setPrototypeOf(_d, Object.getPrototypeOf(a)) : _d.__proto__ ? _d.__proto__ = a.__proto__ : f = !1;
+        if (c.get || !f) for (var m in a) {
+          u[m] || Object.defineProperty(_d, m, {
+            get: t.bind(a, m)
           });
         }
         Object.seal(a);
-        Object.seal(_c);
-        return _c;
+        Object.seal(_d);
+        return _d;
       };
 
-      g.revocable = function (a, b) {
+      n.revocable = function (a, c) {
         return {
-          proxy: new g(a, b),
-          revoke: p
+          proxy: new n(a, c),
+          revoke: l
         };
       };
 
-      return g;
+      return n;
     }
 
-    var u = "undefined" !== typeof process && "[object process]" === {}.toString.call(process) || "undefined" !== typeof navigator && "ReactNative" === navigator.product ? commonjsGlobal : self;
-    u.Proxy || (u.Proxy = l(), u.Proxy.revocable = u.Proxy.revocable);
+    var v = "undefined" !== typeof process && "[object process]" === {}.toString.call(process) || "undefined" !== typeof navigator && "ReactNative" === navigator.product ? commonjsGlobal : self;
+    v.Proxy || (v.Proxy = k(), v.Proxy.revocable = v.Proxy.revocable);
   })();
 
   !function (e) {
@@ -13112,8 +13111,8 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
   }
 
   var inspectSource = sharedStore.inspectSource;
-  var WeakMap$1 = global_1.WeakMap;
-  var nativeWeakMap = typeof WeakMap$1 === 'function' && /native code/.test(inspectSource(WeakMap$1));
+  var WeakMap = global_1.WeakMap;
+  var nativeWeakMap = typeof WeakMap === 'function' && /native code/.test(inspectSource(WeakMap));
   var shared = createCommonjsModule(function (module) {
     (module.exports = function (key, value) {
       return sharedStore[key] || (sharedStore[key] = value !== undefined ? value : {});
@@ -13137,7 +13136,7 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
   };
 
   var hiddenKeys = {};
-  var WeakMap$2 = global_1.WeakMap;
+  var WeakMap$1 = global_1.WeakMap;
   var set, get, has$1;
 
   var enforce = function enforce(it) {
@@ -13157,7 +13156,7 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
   };
 
   if (nativeWeakMap) {
-    var store$1 = new WeakMap$2();
+    var store$1 = new WeakMap$1();
     var wmget = store$1.get;
     var wmhas = store$1.has;
     var wmset = store$1.set;
@@ -14557,7 +14556,7 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
         };
       };
 
-      function AsyncIterator(generator) {
+      function AsyncIterator(generator, PromiseImpl) {
         function invoke(method, arg, resolve, reject) {
           var record = tryCatch(generator[method], generator, arg);
 
@@ -14568,14 +14567,14 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
             var value = result.value;
 
             if (value && _typeof2(value) === "object" && hasOwn.call(value, "__await")) {
-              return Promise.resolve(value.__await).then(function (value) {
+              return PromiseImpl.resolve(value.__await).then(function (value) {
                 invoke("next", value, resolve, reject);
               }, function (err) {
                 invoke("throw", err, resolve, reject);
               });
             }
 
-            return Promise.resolve(value).then(function (unwrapped) {
+            return PromiseImpl.resolve(value).then(function (unwrapped) {
               // When a yielded Promise is resolved, its final value becomes
               // the .value of the Promise<{value,done}> result for the
               // current iteration.
@@ -14593,7 +14592,7 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
 
         function enqueue(method, arg) {
           function callInvokeWithMethodAndArg() {
-            return new Promise(function (resolve, reject) {
+            return new PromiseImpl(function (resolve, reject) {
               invoke(method, arg, resolve, reject);
             });
           }
@@ -14630,8 +14629,9 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
       // AsyncIterator objects; they just return a Promise for the value of
       // the final result produced by the iterator.
 
-      exports.async = function (innerFn, outerFn, self, tryLocsList) {
-        var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList));
+      exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) {
+        if (PromiseImpl === void 0) PromiseImpl = Promise;
+        var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl);
         return exports.isGeneratorFunction(outerFn) ? iter // If outerFn is a generator, return the full iterator.
         : iter.next().then(function (result) {
           return result.done ? result.value : iter.next();
@@ -15243,6 +15243,22 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
     ) {
       return $reduce(this, callbackfn, arguments.length, arguments.length > 1 ? arguments[1] : undefined);
     }
+  }); // `SameValue` abstract operation
+  // https://tc39.github.io/ecma262/#sec-samevalue
+
+
+  var sameValue = Object.is || function is(x, y) {
+    // eslint-disable-next-line no-self-compare
+    return x === y ? x !== 0 || 1 / x === 1 / y : x != x && y != y;
+  }; // `Object.is` method
+  // https://tc39.github.io/ecma262/#sec-object.is
+
+
+  _export({
+    target: 'Object',
+    stat: true
+  }, {
+    is: sameValue
   });
 
   var FAILS_ON_PRIMITIVES = fails(function () {
@@ -16114,6 +16130,55 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
     forced: /./.exec !== regexpExec
   }, {
     exec: regexpExec
+  });
+
+  var MATCH = wellKnownSymbol('match'); // `IsRegExp` abstract operation
+  // https://tc39.github.io/ecma262/#sec-isregexp
+
+  var isRegexp = function isRegexp(it) {
+    var isRegExp;
+    return isObject(it) && ((isRegExp = it[MATCH]) !== undefined ? !!isRegExp : classofRaw(it) == 'RegExp');
+  };
+
+  var notARegexp = function notARegexp(it) {
+    if (isRegexp(it)) {
+      throw TypeError("The method doesn't accept regular expressions");
+    }
+
+    return it;
+  };
+
+  var MATCH$1 = wellKnownSymbol('match');
+
+  var correctIsRegexpLogic = function correctIsRegexpLogic(METHOD_NAME) {
+    var regexp = /./;
+
+    try {
+      '/./'[METHOD_NAME](regexp);
+    } catch (e) {
+      try {
+        regexp[MATCH$1] = false;
+        return '/./'[METHOD_NAME](regexp);
+      } catch (f) {
+        /* empty */
+      }
+    }
+
+    return false;
+  }; // `String.prototype.includes` method
+  // https://tc39.github.io/ecma262/#sec-string.prototype.includes
+
+
+  _export({
+    target: 'String',
+    proto: true,
+    forced: !correctIsRegexpLogic('includes')
+  }, {
+    includes: function includes(searchString
+    /* , position = 0 */
+    ) {
+      return !!~String(requireObjectCoercible(this)).indexOf(notARegexp(searchString), arguments.length > 1 ? arguments[1] : undefined);
+    }
   }); // TODO: Remove from `core-js@4` since it's moved to entry points
 
 
@@ -16312,14 +16377,6 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
       return n === 0 ? null : A;
     }];
   });
-  var MATCH = wellKnownSymbol('match'); // `IsRegExp` abstract operation
-  // https://tc39.github.io/ecma262/#sec-isregexp
-
-  var isRegexp = function isRegexp(it) {
-    var isRegExp;
-    return isObject(it) && ((isRegExp = it[MATCH]) !== undefined ? !!isRegExp : classofRaw(it) == 'RegExp');
-  };
-
   var arrayPush = [].push;
   var min$2 = Math.min;
   var MAX_UINT32 = 0xFFFFFFFF; // babel-minify transpiles RegExp('x', 'y') -> /x/y and it causes SyntaxError
@@ -16805,47 +16862,6 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
   }, {
     values: function values(O) {
       return $values(O);
-    }
-  });
-
-  var notARegexp = function notARegexp(it) {
-    if (isRegexp(it)) {
-      throw TypeError("The method doesn't accept regular expressions");
-    }
-
-    return it;
-  };
-
-  var MATCH$1 = wellKnownSymbol('match');
-
-  var correctIsRegexpLogic = function correctIsRegexpLogic(METHOD_NAME) {
-    var regexp = /./;
-
-    try {
-      '/./'[METHOD_NAME](regexp);
-    } catch (e) {
-      try {
-        regexp[MATCH$1] = false;
-        return '/./'[METHOD_NAME](regexp);
-      } catch (f) {
-        /* empty */
-      }
-    }
-
-    return false;
-  }; // `String.prototype.includes` method
-  // https://tc39.github.io/ecma262/#sec-string.prototype.includes
-
-
-  _export({
-    target: 'String',
-    proto: true,
-    forced: !correctIsRegexpLogic('includes')
-  }, {
-    includes: function includes(searchString
-    /* , position = 0 */
-    ) {
-      return !!~String(requireObjectCoercible(this)).indexOf(notARegexp(searchString), arguments.length > 1 ? arguments[1] : undefined);
     }
   });
 
@@ -17519,7 +17535,7 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
     return !isNaN(subject);
   }
 
-  function handleForDirective(component, el, expression, initialUpdate) {
+  function handleForDirective(component, el, expression, initialUpdate, extraVars) {
     var _this = this;
 
     if (el.tagName.toLowerCase() !== 'template') console.warn('Alpine: [x-for] directive should only be added to <template> tags.');
@@ -17539,7 +17555,7 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
       // empty, effectively hiding it.
       items = [];
     } else {
-      items = component.evaluateReturnExpression(el, bunch);
+      items = component.evaluateReturnExpression(el, bunch, extraVars);
     } // As we walk the array, we'll also walk the DOM (updating/creating as we go).
 
 
@@ -17879,7 +17895,7 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
     component.showDirectiveLastElement = el;
   }
 
-  function handleIfDirective(el, expressionResult, initialUpdate) {
+  function handleIfDirective(component, el, expressionResult, initialUpdate, extraVars) {
     var _this = this;
 
     if (el.nodeName.toLowerCase() !== 'template') console.warn("Alpine: [x-if] directive should only be added to <template> tags. See https://github.com/alpinejs/alpine#x-if");
@@ -17892,6 +17908,7 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
       transitionIn(el.nextElementSibling, function () {
         _newArrowCheck(this, _this);
       }.bind(this), initialUpdate);
+      component.initializeElements(el.nextElementSibling, extraVars);
     } else if (!expressionResult && elementHasAlreadyBeenAdded) {
       transitionOut(el.nextElementSibling, function () {
         _newArrowCheck(this, _this);
@@ -17959,6 +17976,12 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
         }
       }.bind(this);
 
+      if (modifiers.includes('debounce')) {
+        var nextModifier = modifiers[modifiers.indexOf('debounce') + 1] || 'invalid-wait';
+        var wait = isNumeric(nextModifier.split('ms')[0]) ? Number(nextModifier.split('ms')[0]) : 250;
+        _handler2 = debounce(_handler2, wait);
+      }
+
       listenerTarget.addEventListener(event, _handler2);
     }
   }
@@ -17986,7 +18009,13 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
       _newArrowCheck(this, _this3);
 
       return !['window', 'document', 'prevent', 'stop'].includes(i);
-    }.bind(this)); // If no modifier is specified, we'll call it a press.
+    }.bind(this));
+
+    if (keyModifiers.includes('debounce')) {
+      var debounceIndex = keyModifiers.indexOf('debounce');
+      keyModifiers.splice(debounceIndex, isNumeric((keyModifiers[debounceIndex + 1] || 'invalid-wait').split('ms')[0]) ? 2 : 1);
+    } // If no modifier is specified, we'll call it a press.
+
 
     if (keyModifiers.length === 0) return false; // If one is passed, AND it matches the key pressed, we'll call it a press.
 
@@ -18086,564 +18115,135 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
         return modifiers.includes('number') ? Array.from(event.target.selectedOptions).map(function (option) {
           _newArrowCheck(this, _this3);
 
-          return parseFloat(option.value || option.text);
+          var rawValue = option.value || option.text;
+          var number = rawValue ? parseFloat(rawValue) : null;
+          return isNaN(number) ? rawValue : number;
         }.bind(this)) : Array.from(event.target.selectedOptions).map(function (option) {
           _newArrowCheck(this, _this3);
 
           return option.value || option.text;
         }.bind(this));
       } else {
-        return modifiers.includes('number') ? parseFloat(event.target.value) : modifiers.includes('trim') ? event.target.value.trim() : event.target.value;
+        var rawValue = event.target.value;
+        var number = rawValue ? parseFloat(rawValue) : null;
+        return modifiers.includes('number') ? isNaN(number) ? rawValue : number : modifiers.includes('trim') ? rawValue.trim() : rawValue;
       }
     }.bind(this);
-  }
-  /**
-   * Copyright (C) 2017 salesforce.com, inc.
-   */
+  } // `Reflect.set` method
+  // https://tc39.github.io/ecma262/#sec-reflect.set
 
 
-  var isArray$1 = Array.isArray;
-  var _getPrototypeOf = Object.getPrototypeOf,
-      ObjectCreate = Object.create,
-      ObjectDefineProperty = Object.defineProperty,
-      ObjectDefineProperties = Object.defineProperties,
-      _isExtensible = Object.isExtensible,
-      getOwnPropertyDescriptor$5 = Object.getOwnPropertyDescriptor,
-      getOwnPropertyNames$1 = Object.getOwnPropertyNames,
-      getOwnPropertySymbols = Object.getOwnPropertySymbols,
-      _preventExtensions = Object.preventExtensions,
-      hasOwnProperty$1 = Object.hasOwnProperty;
-  var _Array$prototype = Array.prototype,
-      ArrayPush = _Array$prototype.push,
-      ArrayConcat = _Array$prototype.concat,
-      ArrayMap = _Array$prototype.map;
+  function set$2(target, propertyKey, V
+  /* , receiver */
+  ) {
+    var receiver = arguments.length < 4 ? target : arguments[3];
+    var ownDescriptor = objectGetOwnPropertyDescriptor.f(anObject(target), propertyKey);
+    var existingDescriptor, prototype;
 
-  function isUndefined(obj) {
-    return obj === undefined;
-  }
+    if (!ownDescriptor) {
+      if (isObject(prototype = objectGetPrototypeOf(target))) {
+        return set$2(prototype, propertyKey, V, receiver);
+      }
 
-  function isFunction(obj) {
-    return typeof obj === 'function';
-  }
-
-  function isObject$1(obj) {
-    return _typeof2(obj) === 'object';
-  }
-
-  var proxyToValueMap = new WeakMap();
-
-  function registerProxy(proxy, value) {
-    proxyToValueMap.set(proxy, value);
-  }
-
-  var unwrap = function unwrap(replicaOrAny) {
-    return proxyToValueMap.get(replicaOrAny) || replicaOrAny;
-  };
-
-  function wrapValue(membrane, value) {
-    return membrane.valueIsObservable(value) ? membrane.getProxy(value) : value;
-  }
-  /**
-   * Unwrap property descriptors will set value on original descriptor
-   * We only need to unwrap if value is specified
-   * @param descriptor external descrpitor provided to define new property on original value
-   */
-
-
-  function unwrapDescriptor(descriptor) {
-    if (hasOwnProperty$1.call(descriptor, 'value')) {
-      descriptor.value = unwrap(descriptor.value);
+      ownDescriptor = createPropertyDescriptor(0);
     }
 
-    return descriptor;
-  }
+    if (has(ownDescriptor, 'value')) {
+      if (ownDescriptor.writable === false || !isObject(receiver)) return false;
 
-  function lockShadowTarget(membrane, shadowTarget, originalTarget) {
-    var targetKeys = ArrayConcat.call(getOwnPropertyNames$1(originalTarget), getOwnPropertySymbols(originalTarget));
-    targetKeys.forEach(function (key) {
-      var descriptor = getOwnPropertyDescriptor$5(originalTarget, key); // We do not need to wrap the descriptor if configurable
-      // Because we can deal with wrapping it when user goes through
-      // Get own property descriptor. There is also a chance that this descriptor
-      // could change sometime in the future, so we can defer wrapping
-      // until we need to
+      if (existingDescriptor = objectGetOwnPropertyDescriptor.f(receiver, propertyKey)) {
+        if (existingDescriptor.get || existingDescriptor.set || existingDescriptor.writable === false) return false;
+        existingDescriptor.value = V;
+        objectDefineProperty.f(receiver, propertyKey, existingDescriptor);
+      } else objectDefineProperty.f(receiver, propertyKey, createPropertyDescriptor(0, V));
 
-      if (!descriptor.configurable) {
-        descriptor = wrapDescriptor(membrane, descriptor, wrapValue);
-      }
-
-      ObjectDefineProperty(shadowTarget, key, descriptor);
-    });
-
-    _preventExtensions(shadowTarget);
-  }
-
-  var ReactiveProxyHandler = /*#__PURE__*/function () {
-    function ReactiveProxyHandler(membrane, value) {
-      _classCallCheck2(this, ReactiveProxyHandler);
-
-      this.originalTarget = value;
-      this.membrane = membrane;
-    }
-
-    _createClass2(ReactiveProxyHandler, [{
-      key: "get",
-      value: function get(shadowTarget, key) {
-        var originalTarget = this.originalTarget,
-            membrane = this.membrane;
-        var value = originalTarget[key];
-        var valueObserved = membrane.valueObserved;
-        valueObserved(originalTarget, key);
-        return membrane.getProxy(value);
-      }
-    }, {
-      key: "set",
-      value: function set(shadowTarget, key, value) {
-        var originalTarget = this.originalTarget,
-            valueMutated = this.membrane.valueMutated;
-        var oldValue = originalTarget[key];
-
-        if (oldValue !== value) {
-          originalTarget[key] = value;
-          valueMutated(originalTarget, key);
-        } else if (key === 'length' && isArray$1(originalTarget)) {
-          // fix for issue #236: push will add the new index, and by the time length
-          // is updated, the internal length is already equal to the new length value
-          // therefore, the oldValue is equal to the value. This is the forking logic
-          // to support this use case.
-          valueMutated(originalTarget, key);
-        }
-
-        return true;
-      }
-    }, {
-      key: "deleteProperty",
-      value: function deleteProperty(shadowTarget, key) {
-        var originalTarget = this.originalTarget,
-            valueMutated = this.membrane.valueMutated;
-        delete originalTarget[key];
-        valueMutated(originalTarget, key);
-        return true;
-      }
-    }, {
-      key: "apply",
-      value: function apply(shadowTarget, thisArg, argArray) {
-        /* No op */
-      }
-    }, {
-      key: "construct",
-      value: function construct(target, argArray, newTarget) {
-        /* No op */
-      }
-    }, {
-      key: "has",
-      value: function has(shadowTarget, key) {
-        var originalTarget = this.originalTarget,
-            valueObserved = this.membrane.valueObserved;
-        valueObserved(originalTarget, key);
-        return key in originalTarget;
-      }
-    }, {
-      key: "ownKeys",
-      value: function ownKeys(shadowTarget) {
-        var originalTarget = this.originalTarget;
-        return ArrayConcat.call(getOwnPropertyNames$1(originalTarget), getOwnPropertySymbols(originalTarget));
-      }
-    }, {
-      key: "isExtensible",
-      value: function isExtensible(shadowTarget) {
-        var shadowIsExtensible = _isExtensible(shadowTarget);
-
-        if (!shadowIsExtensible) {
-          return shadowIsExtensible;
-        }
-
-        var originalTarget = this.originalTarget,
-            membrane = this.membrane;
-
-        var targetIsExtensible = _isExtensible(originalTarget);
-
-        if (!targetIsExtensible) {
-          lockShadowTarget(membrane, shadowTarget, originalTarget);
-        }
-
-        return targetIsExtensible;
-      }
-    }, {
-      key: "setPrototypeOf",
-      value: function setPrototypeOf(shadowTarget, prototype) {}
-    }, {
-      key: "getPrototypeOf",
-      value: function getPrototypeOf(shadowTarget) {
-        var originalTarget = this.originalTarget;
-        return _getPrototypeOf(originalTarget);
-      }
-    }, {
-      key: "getOwnPropertyDescriptor",
-      value: function getOwnPropertyDescriptor(shadowTarget, key) {
-        var originalTarget = this.originalTarget,
-            membrane = this.membrane;
-        var valueObserved = this.membrane.valueObserved; // keys looked up via hasOwnProperty need to be reactive
-
-        valueObserved(originalTarget, key);
-        var desc = getOwnPropertyDescriptor$5(originalTarget, key);
-
-        if (isUndefined(desc)) {
-          return desc;
-        }
-
-        var shadowDescriptor = getOwnPropertyDescriptor$5(shadowTarget, key);
-
-        if (!isUndefined(shadowDescriptor)) {
-          return shadowDescriptor;
-        } // Note: by accessing the descriptor, the key is marked as observed
-        // but access to the value, setter or getter (if available) cannot observe
-        // mutations, just like regular methods, in which case we just do nothing.
-
-
-        desc = wrapDescriptor(membrane, desc, wrapValue);
-
-        if (!desc.configurable) {
-          // If descriptor from original target is not configurable,
-          // We must copy the wrapped descriptor over to the shadow target.
-          // Otherwise, proxy will throw an invariant error.
-          // This is our last chance to lock the value.
-          // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/getOwnPropertyDescriptor#Invariants
-          ObjectDefineProperty(shadowTarget, key, desc);
-        }
-
-        return desc;
-      }
-    }, {
-      key: "preventExtensions",
-      value: function preventExtensions(shadowTarget) {
-        var originalTarget = this.originalTarget,
-            membrane = this.membrane;
-        lockShadowTarget(membrane, shadowTarget, originalTarget);
-
-        _preventExtensions(originalTarget);
-
-        return true;
-      }
-    }, {
-      key: "defineProperty",
-      value: function defineProperty(shadowTarget, key, descriptor) {
-        var originalTarget = this.originalTarget,
-            membrane = this.membrane;
-        var valueMutated = membrane.valueMutated;
-        var configurable = descriptor.configurable; // We have to check for value in descriptor
-        // because Object.freeze(proxy) calls this method
-        // with only { configurable: false, writeable: false }
-        // Additionally, method will only be called with writeable:false
-        // if the descriptor has a value, as opposed to getter/setter
-        // So we can just check if writable is present and then see if
-        // value is present. This eliminates getter and setter descriptors
-
-        if (hasOwnProperty$1.call(descriptor, 'writable') && !hasOwnProperty$1.call(descriptor, 'value')) {
-          var originalDescriptor = getOwnPropertyDescriptor$5(originalTarget, key);
-          descriptor.value = originalDescriptor.value;
-        }
-
-        ObjectDefineProperty(originalTarget, key, unwrapDescriptor(descriptor));
-
-        if (configurable === false) {
-          ObjectDefineProperty(shadowTarget, key, wrapDescriptor(membrane, descriptor, wrapValue));
-        }
-
-        valueMutated(originalTarget, key);
-        return true;
-      }
-    }]);
-
-    return ReactiveProxyHandler;
-  }();
-
-  function wrapReadOnlyValue(membrane, value) {
-    return membrane.valueIsObservable(value) ? membrane.getReadOnlyProxy(value) : value;
-  }
-
-  var ReadOnlyHandler = /*#__PURE__*/function () {
-    function ReadOnlyHandler(membrane, value) {
-      _classCallCheck2(this, ReadOnlyHandler);
-
-      this.originalTarget = value;
-      this.membrane = membrane;
-    }
-
-    _createClass2(ReadOnlyHandler, [{
-      key: "get",
-      value: function get(shadowTarget, key) {
-        var membrane = this.membrane,
-            originalTarget = this.originalTarget;
-        var value = originalTarget[key];
-        var valueObserved = membrane.valueObserved;
-        valueObserved(originalTarget, key);
-        return membrane.getReadOnlyProxy(value);
-      }
-    }, {
-      key: "set",
-      value: function set(shadowTarget, key, value) {
-        return false;
-      }
-    }, {
-      key: "deleteProperty",
-      value: function deleteProperty(shadowTarget, key) {
-        return false;
-      }
-    }, {
-      key: "apply",
-      value: function apply(shadowTarget, thisArg, argArray) {
-        /* No op */
-      }
-    }, {
-      key: "construct",
-      value: function construct(target, argArray, newTarget) {
-        /* No op */
-      }
-    }, {
-      key: "has",
-      value: function has(shadowTarget, key) {
-        var originalTarget = this.originalTarget,
-            valueObserved = this.membrane.valueObserved;
-        valueObserved(originalTarget, key);
-        return key in originalTarget;
-      }
-    }, {
-      key: "ownKeys",
-      value: function ownKeys(shadowTarget) {
-        var originalTarget = this.originalTarget;
-        return ArrayConcat.call(getOwnPropertyNames$1(originalTarget), getOwnPropertySymbols(originalTarget));
-      }
-    }, {
-      key: "setPrototypeOf",
-      value: function setPrototypeOf(shadowTarget, prototype) {}
-    }, {
-      key: "getOwnPropertyDescriptor",
-      value: function getOwnPropertyDescriptor(shadowTarget, key) {
-        var originalTarget = this.originalTarget,
-            membrane = this.membrane;
-        var valueObserved = membrane.valueObserved; // keys looked up via hasOwnProperty need to be reactive
-
-        valueObserved(originalTarget, key);
-        var desc = getOwnPropertyDescriptor$5(originalTarget, key);
-
-        if (isUndefined(desc)) {
-          return desc;
-        }
-
-        var shadowDescriptor = getOwnPropertyDescriptor$5(shadowTarget, key);
-
-        if (!isUndefined(shadowDescriptor)) {
-          return shadowDescriptor;
-        } // Note: by accessing the descriptor, the key is marked as observed
-        // but access to the value or getter (if available) cannot be observed,
-        // just like regular methods, in which case we just do nothing.
-
-
-        desc = wrapDescriptor(membrane, desc, wrapReadOnlyValue);
-
-        if (hasOwnProperty$1.call(desc, 'set')) {
-          desc.set = undefined; // readOnly membrane does not allow setters
-        }
-
-        if (!desc.configurable) {
-          // If descriptor from original target is not configurable,
-          // We must copy the wrapped descriptor over to the shadow target.
-          // Otherwise, proxy will throw an invariant error.
-          // This is our last chance to lock the value.
-          // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/getOwnPropertyDescriptor#Invariants
-          ObjectDefineProperty(shadowTarget, key, desc);
-        }
-
-        return desc;
-      }
-    }, {
-      key: "preventExtensions",
-      value: function preventExtensions(shadowTarget) {
-        return false;
-      }
-    }, {
-      key: "defineProperty",
-      value: function defineProperty(shadowTarget, key, descriptor) {
-        return false;
-      }
-    }]);
-
-    return ReadOnlyHandler;
-  }();
-
-  function createShadowTarget(value) {
-    var shadowTarget = undefined;
-
-    if (isArray$1(value)) {
-      shadowTarget = [];
-    } else if (isObject$1(value)) {
-      shadowTarget = {};
-    }
-
-    return shadowTarget;
-  }
-
-  var ObjectDotPrototype = Object.prototype;
-
-  function defaultValueIsObservable(value) {
-    // intentionally checking for null
-    if (value === null) {
-      return false;
-    } // treat all non-object types, including undefined, as non-observable values
-
-
-    if (_typeof2(value) !== 'object') {
-      return false;
-    }
-
-    if (isArray$1(value)) {
       return true;
     }
 
-    var proto = _getPrototypeOf(value);
+    return ownDescriptor.set === undefined ? false : (ownDescriptor.set.call(receiver, V), true);
+  } // MS Edge 17-18 Reflect.set allows setting the property to object
+  // with non-writable property on the prototype
 
-    return proto === ObjectDotPrototype || proto === null || _getPrototypeOf(proto) === null;
+
+  var MS_EDGE_BUG = fails(function () {
+    var object = objectDefineProperty.f({}, 'a', {
+      configurable: true
+    }); // eslint-disable-next-line no-undef
+
+    return Reflect.set(objectGetPrototypeOf(object), 'a', 1, object) !== false;
+  });
+
+  _export({
+    target: 'Reflect',
+    stat: true,
+    forced: MS_EDGE_BUG
+  }, {
+    set: set$2
+  });
+
+  function wrap(data, mutationCallback) {
+    /* IE11-ONLY:START */
+    return wrapForIe11(data, mutationCallback);
   }
 
-  var defaultValueObserved = function defaultValueObserved(obj, key) {
-    /* do nothing */
-  };
+  function unwrap(membrane, observable) {
+    var _this = this;
 
-  var defaultValueMutated = function defaultValueMutated(obj, key) {
-    /* do nothing */
-  };
+    var unwrappedData = membrane.unwrapProxy(observable);
+    var copy = {};
+    Object.keys(unwrappedData).forEach(function (key) {
+      _newArrowCheck(this, _this);
 
-  var defaultValueDistortion = function defaultValueDistortion(value) {
-    return value;
-  };
-
-  function wrapDescriptor(membrane, descriptor, getValue) {
-    var set = descriptor.set,
-        get = descriptor.get;
-
-    if (hasOwnProperty$1.call(descriptor, 'value')) {
-      descriptor.value = getValue(membrane, descriptor.value);
-    } else {
-      if (!isUndefined(get)) {
-        descriptor.get = function () {
-          // invoking the original getter with the original target
-          return getValue(membrane, get.call(unwrap(this)));
-        };
-      }
-
-      if (!isUndefined(set)) {
-        descriptor.set = function (value) {
-          // At this point we don't have a clear indication of whether
-          // or not a valid mutation will occur, we don't have the key,
-          // and we are not sure why and how they are invoking this setter.
-          // Nevertheless we preserve the original semantics by invoking the
-          // original setter with the original target and the unwrapped value
-          set.call(unwrap(this), membrane.unwrapProxy(value));
-        };
-      }
-    }
-
-    return descriptor;
+      if (['$el', '$refs', '$nextTick', '$watch'].includes(key)) return;
+      copy[key] = unwrappedData[key];
+    }.bind(this));
+    return copy;
   }
 
-  var ReactiveMembrane = /*#__PURE__*/function () {
-    function ReactiveMembrane(options) {
-      _classCallCheck2(this, ReactiveMembrane);
+  function wrapForIe11(data, mutationCallback) {
+    var proxyHandler = {
+      set: function set(target, key, value) {
+        // Set the value converting it to a "Deep Proxy" when required
+        // Note that if a project is not a valid object, it won't be converted to a proxy
+        var setWasSuccessful = Reflect.set(target, key, deepProxy(value, proxyHandler));
+        mutationCallback(target, key);
+        return setWasSuccessful;
+      },
+      get: function get(target, key) {
+        // Provide a way to determine if this object is an Alpine proxy or not.
+        if (key === "$isAlpineProxy") return true; // Just return the flippin' value. Gawsh.
 
-      this.valueDistortion = defaultValueDistortion;
-      this.valueMutated = defaultValueMutated;
-      this.valueObserved = defaultValueObserved;
-      this.valueIsObservable = defaultValueIsObservable;
-      this.objectGraph = new WeakMap();
-
-      if (!isUndefined(options)) {
-        var valueDistortion = options.valueDistortion,
-            valueMutated = options.valueMutated,
-            valueObserved = options.valueObserved,
-            valueIsObservable = options.valueIsObservable;
-        this.valueDistortion = isFunction(valueDistortion) ? valueDistortion : defaultValueDistortion;
-        this.valueMutated = isFunction(valueMutated) ? valueMutated : defaultValueMutated;
-        this.valueObserved = isFunction(valueObserved) ? valueObserved : defaultValueObserved;
-        this.valueIsObservable = isFunction(valueIsObservable) ? valueIsObservable : defaultValueIsObservable;
+        return target[key];
       }
+    };
+    return {
+      data: deepProxy(data, proxyHandler),
+      membrane: {
+        unwrapProxy: function unwrapProxy(proxy) {
+          return proxy;
+        }
+      }
+    };
+  }
+
+  function deepProxy(target, proxyHandler) {
+    // If target is null, return it.
+    if (target === null) return target; // If target is not an object, return it.
+
+    if (_typeof(target) !== 'object') return target; // If target is a DOM node (like in the case of this.$el), return it.
+
+    if (target instanceof Node) return target; // If target is already an Alpine proxy, return it.
+
+    if (target['$isAlpineProxy']) return target; // Otherwise proxy the properties recursively.
+    // This enables reactivity on setting nested data.
+    // Note that if a project is not a valid object, it won't be converted to a proxy
+
+    for (var property in target) {
+      target[property] = deepProxy(target[property], proxyHandler);
     }
 
-    _createClass2(ReactiveMembrane, [{
-      key: "getProxy",
-      value: function getProxy(value) {
-        var unwrappedValue = unwrap(value);
-        var distorted = this.valueDistortion(unwrappedValue);
-
-        if (this.valueIsObservable(distorted)) {
-          var o = this.getReactiveState(unwrappedValue, distorted); // when trying to extract the writable version of a readonly
-          // we return the readonly.
-
-          return o.readOnly === value ? value : o.reactive;
-        }
-
-        return distorted;
-      }
-    }, {
-      key: "getReadOnlyProxy",
-      value: function getReadOnlyProxy(value) {
-        value = unwrap(value);
-        var distorted = this.valueDistortion(value);
-
-        if (this.valueIsObservable(distorted)) {
-          return this.getReactiveState(value, distorted).readOnly;
-        }
-
-        return distorted;
-      }
-    }, {
-      key: "unwrapProxy",
-      value: function unwrapProxy(p) {
-        return unwrap(p);
-      }
-    }, {
-      key: "getReactiveState",
-      value: function getReactiveState(value, distortedValue) {
-        var objectGraph = this.objectGraph;
-        var reactiveState = objectGraph.get(distortedValue);
-
-        if (reactiveState) {
-          return reactiveState;
-        }
-
-        var membrane = this;
-        reactiveState = {
-          get reactive() {
-            var reactiveHandler = new ReactiveProxyHandler(membrane, distortedValue); // caching the reactive proxy after the first time it is accessed
-
-            var proxy = new Proxy(createShadowTarget(distortedValue), reactiveHandler);
-            registerProxy(proxy, value);
-            ObjectDefineProperty(this, 'reactive', {
-              value: proxy
-            });
-            return proxy;
-          },
-
-          get readOnly() {
-            var readOnlyHandler = new ReadOnlyHandler(membrane, distortedValue); // caching the readOnly proxy after the first time it is accessed
-
-            var proxy = new Proxy(createShadowTarget(distortedValue), readOnlyHandler);
-            registerProxy(proxy, value);
-            ObjectDefineProperty(this, 'readOnly', {
-              value: proxy
-            });
-            return proxy;
-          }
-
-        };
-        objectGraph.set(distortedValue, reactiveState);
-        return reactiveState;
-      }
-    }]);
-
-    return ReactiveMembrane;
-  }();
-  /** version: 0.26.0 */
-
+    return new Proxy(target, proxyHandler);
+  }
 
   var Component = /*#__PURE__*/function () {
     function Component(el) {
@@ -18665,6 +18265,7 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
       this.unobservedData.$el = null;
       this.unobservedData.$refs = null;
       this.unobservedData.$nextTick = null;
+      this.unobservedData.$watch = null;
       /* IE11-ONLY:END */
       // Construct a Proxy-based observable. This will be used to handle reactivity.
 
@@ -18684,6 +18285,15 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
         _newArrowCheck(this, _this);
 
         this.nextTickStack.push(callback);
+      }.bind(this);
+
+      this.watchers = {};
+
+      this.unobservedData.$watch = function (property, callback) {
+        _newArrowCheck(this, _this);
+
+        if (!this.watchers[property]) this.watchers[property] = [];
+        this.watchers[property].push(callback);
       }.bind(this);
 
       this.showDirectiveStack = [];
@@ -18714,54 +18324,81 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
     _createClass(Component, [{
       key: "getUnobservedData",
       value: function getUnobservedData() {
-        var _this2 = this;
-
-        var unwrappedData = this.membrane.unwrapProxy(this.$data);
-        var copy = {};
-        Object.keys(unwrappedData).forEach(function (key) {
-          _newArrowCheck(this, _this2);
-
-          if (['$el', '$refs', '$nextTick'].includes(key)) return;
-          copy[key] = unwrappedData[key];
-        }.bind(this));
-        return copy;
+        return unwrap(this.membrane, this.$data);
       }
     }, {
       key: "wrapDataInObservable",
       value: function wrapDataInObservable(data) {
+        var _this2 = this;
+
         var self = this;
-        var membrane = new ReactiveMembrane({
-          valueMutated: function valueMutated(target, key) {
-            var _this3 = this; // Don't react to data changes for cases like the `x-created` hook.
+        var updateDom = debounce(function () {
+          self.updateElements(self.$el);
+        }, 0);
+        return wrap(data, function (target, key) {
+          var _this3 = this;
 
+          _newArrowCheck(this, _this2);
 
-            if (self.pauseReactivity) return;
-            debounce(function () {
+          if (self.watchers[key]) {
+            // If there's a watcher for this specific key, run it.
+            self.watchers[key].forEach(function (callback) {
               _newArrowCheck(this, _this3);
 
-              self.updateElements(self.$el); // Walk through the $nextTick stack and clear it as we go.
+              return callback(target[key]);
+            }.bind(this));
+          } else {
+            // Let's walk through the watchers with "dot-notation" (foo.bar) and see
+            // if this mutation fits any of them.
+            Object.keys(self.watchers).filter(function (i) {
+              _newArrowCheck(this, _this3);
 
-              while (self.nextTickStack.length > 0) {
-                self.nextTickStack.shift()();
-              }
-            }.bind(this), 0)();
-          }
-        });
-        return {
-          data: membrane.getProxy(data),
-          membrane: membrane
-        };
+              return i.includes('.');
+            }.bind(this)).forEach(function (fullDotNotationKey) {
+              var _this4 = this;
+
+              _newArrowCheck(this, _this3);
+
+              var dotNotationParts = fullDotNotationKey.split('.'); // If this dot-notation watcher's last "part" doesn't match the current
+              // key, then skip it early for performance reasons.
+
+              if (key !== dotNotationParts[dotNotationParts.length - 1]) return; // Now, walk through the dot-notation "parts" recursively to find
+              // a match, and call the watcher if one's found.
+
+              dotNotationParts.reduce(function (comparisonData, part) {
+                var _this5 = this;
+
+                _newArrowCheck(this, _this4);
+
+                if (Object.is(target, comparisonData)) {
+                  // Run the watchers.
+                  self.watchers[fullDotNotationKey].forEach(function (callback) {
+                    _newArrowCheck(this, _this5);
+
+                    return callback(target[key]);
+                  }.bind(this));
+                }
+
+                return comparisonData[part];
+              }.bind(this), self.getUnobservedData());
+            }.bind(this));
+          } // Don't react to data changes for cases like the `x-created` hook.
+
+
+          if (self.pauseReactivity) return;
+          updateDom();
+        }.bind(this));
       }
     }, {
       key: "walkAndSkipNestedComponents",
       value: function walkAndSkipNestedComponents(el, callback) {
-        var _this4 = this;
+        var _this6 = this;
 
         var initializeComponentCallback = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : function () {
-          _newArrowCheck(this, _this4);
+          _newArrowCheck(this, _this6);
         }.bind(this);
         walk(el, function (el) {
-          _newArrowCheck(this, _this4); // We've hit a component.
+          _newArrowCheck(this, _this6); // We've hit a component.
 
 
           if (el.hasAttribute('x-data')) {
@@ -18780,19 +18417,19 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
     }, {
       key: "initializeElements",
       value: function initializeElements(rootEl) {
-        var _this5 = this;
+        var _this7 = this;
 
         var extraVars = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {
-          _newArrowCheck(this, _this5);
+          _newArrowCheck(this, _this7);
         }.bind(this);
         this.walkAndSkipNestedComponents(rootEl, function (el) {
-          _newArrowCheck(this, _this5); // Don't touch spawns from for loop
+          _newArrowCheck(this, _this7); // Don't touch spawns from for loop
 
 
           if (el.__x_for_key !== undefined) return false;
           this.initializeElement(el, extraVars);
         }.bind(this), function (el) {
-          _newArrowCheck(this, _this5);
+          _newArrowCheck(this, _this7);
 
           el.__x = new Component(el);
         }.bind(this));
@@ -18817,19 +18454,19 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
     }, {
       key: "updateElements",
       value: function updateElements(rootEl) {
-        var _this6 = this;
+        var _this8 = this;
 
         var extraVars = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {
-          _newArrowCheck(this, _this6);
+          _newArrowCheck(this, _this8);
         }.bind(this);
         this.walkAndSkipNestedComponents(rootEl, function (el) {
-          _newArrowCheck(this, _this6); // Don't touch spawns from for loop (and check if the root is actually a for loop in a parent, don't skip it.)
+          _newArrowCheck(this, _this8); // Don't touch spawns from for loop (and check if the root is actually a for loop in a parent, don't skip it.)
 
 
           if (el.__x_for_key !== undefined && !el.isSameNode(this.$el)) return false;
           this.updateElement(el, extraVars);
         }.bind(this), function (el) {
-          _newArrowCheck(this, _this6);
+          _newArrowCheck(this, _this8);
 
           el.__x = new Component(el);
         }.bind(this));
@@ -18842,45 +18479,45 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
     }, {
       key: "executeAndClearRemainingShowDirectiveStack",
       value: function executeAndClearRemainingShowDirectiveStack() {
-        var _this7 = this; // The goal here is to start all the x-show transitions
+        var _this9 = this; // The goal here is to start all the x-show transitions
         // and build a nested promise chain so that elements
         // only hide when the children are finished hiding.
 
 
         this.showDirectiveStack.reverse().map(function (thing) {
-          var _this8 = this;
+          var _this10 = this;
 
-          _newArrowCheck(this, _this7);
+          _newArrowCheck(this, _this9);
 
           return new Promise(function (resolve) {
-            var _this9 = this;
+            var _this11 = this;
 
-            _newArrowCheck(this, _this8);
+            _newArrowCheck(this, _this10);
 
             thing(function (finish) {
-              _newArrowCheck(this, _this9);
+              _newArrowCheck(this, _this11);
 
               resolve(finish);
             }.bind(this));
           }.bind(this));
         }.bind(this)).reduce(function (nestedPromise, promise) {
-          var _this10 = this;
+          var _this12 = this;
 
-          _newArrowCheck(this, _this7);
+          _newArrowCheck(this, _this9);
 
           return nestedPromise.then(function () {
-            var _this11 = this;
+            var _this13 = this;
 
-            _newArrowCheck(this, _this10);
+            _newArrowCheck(this, _this12);
 
             return promise.then(function (finish) {
-              _newArrowCheck(this, _this11);
+              _newArrowCheck(this, _this13);
 
               return finish();
             }.bind(this));
           }.bind(this));
         }.bind(this), Promise.resolve(function () {
-          _newArrowCheck(this, _this7);
+          _newArrowCheck(this, _this9);
         }.bind(this))); // We've processed the handler stack. let's clear it.
 
         this.showDirectiveStack = [];
@@ -18894,7 +18531,7 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
     }, {
       key: "registerListeners",
       value: function registerListeners(el, extraVars) {
-        var _this12 = this;
+        var _this14 = this;
 
         getXAttrs(el).forEach(function (_ref) {
           var type = _ref.type,
@@ -18902,7 +18539,7 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
               modifiers = _ref.modifiers,
               expression = _ref.expression;
 
-          _newArrowCheck(this, _this12);
+          _newArrowCheck(this, _this14);
 
           switch (type) {
             case 'on':
@@ -18918,20 +18555,20 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
     }, {
       key: "resolveBoundAttributes",
       value: function resolveBoundAttributes(el) {
-        var _this13 = this;
+        var _this15 = this;
 
         var initialUpdate = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
         var extraVars = arguments.length > 2 ? arguments[2] : undefined;
         var attrs = getXAttrs(el);
         attrs.forEach(function (_ref2) {
-          var _this14 = this;
+          var _this16 = this;
 
           var type = _ref2.type,
               value = _ref2.value,
               modifiers = _ref2.modifiers,
               expression = _ref2.expression;
 
-          _newArrowCheck(this, _this13);
+          _newArrowCheck(this, _this15);
 
           switch (type) {
             case 'model':
@@ -18967,16 +18604,16 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
               // If this element also has x-for on it, don't process x-if.
               // We will let the "x-for" directive handle the "if"ing.
               if (attrs.filter(function (i) {
-                _newArrowCheck(this, _this14);
+                _newArrowCheck(this, _this16);
 
                 return i.type === 'for';
               }.bind(this)).length > 0) return;
               var output = this.evaluateReturnExpression(el, expression, extraVars);
-              handleIfDirective(el, output, initialUpdate);
+              handleIfDirective(this, el, output, initialUpdate, extraVars);
               break;
 
             case 'for':
-              handleForDirective(this, el, expression, initialUpdate);
+              handleForDirective(this, el, expression, initialUpdate, extraVars);
               break;
 
             case 'cloak':
@@ -18988,10 +18625,10 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
     }, {
       key: "evaluateReturnExpression",
       value: function evaluateReturnExpression(el, expression) {
-        var _this15 = this;
+        var _this17 = this;
 
         var extraVars = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : function () {
-          _newArrowCheck(this, _this15);
+          _newArrowCheck(this, _this17);
         }.bind(this);
         return saferEval(expression, this.$data, _objectSpread2({}, extraVars(), {
           $dispatch: this.getDispatchFunction(el)
@@ -19000,10 +18637,10 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
     }, {
       key: "evaluateCommandExpression",
       value: function evaluateCommandExpression(el, expression) {
-        var _this16 = this;
+        var _this18 = this;
 
         var extraVars = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : function () {
-          _newArrowCheck(this, _this16);
+          _newArrowCheck(this, _this18);
         }.bind(this);
         return saferEvalNoReturn(expression, this.$data, _objectSpread2({}, extraVars(), {
           $dispatch: this.getDispatchFunction(el)
@@ -19012,12 +18649,12 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
     }, {
       key: "getDispatchFunction",
       value: function getDispatchFunction(el) {
-        var _this17 = this;
+        var _this19 = this;
 
         return function (event) {
           var detail = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-          _newArrowCheck(this, _this17);
+          _newArrowCheck(this, _this19);
 
           el.dispatchEvent(new CustomEvent(event, {
             detail: detail,
@@ -19028,7 +18665,7 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
     }, {
       key: "listenForNewElementsToInitialize",
       value: function listenForNewElementsToInitialize() {
-        var _this18 = this;
+        var _this20 = this;
 
         var targetNode = this.$el;
         var observerOptions = {
@@ -19037,9 +18674,9 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
           subtree: true
         };
         var observer = new MutationObserver(function (mutations) {
-          var _this19 = this;
+          var _this21 = this;
 
-          _newArrowCheck(this, _this18);
+          _newArrowCheck(this, _this20);
 
           for (var i = 0; i < mutations.length; i++) {
             // Filter out mutations triggered from child components.
@@ -19048,14 +18685,14 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
 
             if (mutations[i].type === 'attributes' && mutations[i].attributeName === 'x-data') {
               (function () {
-                var _this20 = this;
+                var _this22 = this;
 
                 var rawData = saferEval(mutations[i].target.getAttribute('x-data'), {});
                 Object.keys(rawData).forEach(function (key) {
-                  _newArrowCheck(this, _this20);
+                  _newArrowCheck(this, _this22);
 
-                  if (_this19.$data[key] !== rawData[key]) {
-                    _this19.$data[key] = rawData[key];
+                  if (_this21.$data[key] !== rawData[key]) {
+                    _this21.$data[key] = rawData[key];
                   }
                 }.bind(this));
               })();
@@ -19063,9 +18700,9 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
 
             if (mutations[i].addedNodes.length > 0) {
               mutations[i].addedNodes.forEach(function (node) {
-                _newArrowCheck(this, _this19);
+                _newArrowCheck(this, _this21);
 
-                if (node.nodeType !== 1) return;
+                if (node.nodeType !== 1 || node.__x_inserted_me) return;
 
                 if (node.matches('[x-data]')) {
                   node.__x = new Component(node);
@@ -19082,7 +18719,7 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
     }, {
       key: "getRefsProxy",
       value: function getRefsProxy() {
-        var _this21 = this;
+        var _this23 = this;
 
         var self = this;
         var refObj = {};
@@ -19094,7 +18731,7 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
         // we just loop on the element, look for any x-ref and create a tmp property on a fake object.
 
         this.walkAndSkipNestedComponents(self.$el, function (el) {
-          _newArrowCheck(this, _this21);
+          _newArrowCheck(this, _this23);
 
           if (el.hasAttribute('x-ref')) {
             refObj[el.getAttribute('x-ref')] = true;
@@ -19108,14 +18745,14 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
 
         return new Proxy(refObj, {
           get: function get(object, property) {
-            var _this22 = this;
+            var _this24 = this;
 
             if (property === '$isAlpineProxy') return true;
             var ref; // We can't just query the DOM because it's hard to filter out refs in
             // nested components.
 
             self.walkAndSkipNestedComponents(self.$el, function (el) {
-              _newArrowCheck(this, _this22);
+              _newArrowCheck(this, _this24);
 
               if (el.hasAttribute('x-ref') && el.getAttribute('x-ref') === property) {
                 ref = el;
@@ -19262,7 +18899,14 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
 
   if (!isTesting()) {
     window.Alpine = Alpine;
-    window.Alpine.start();
+
+    if (window.deferLoadingAlpine) {
+      window.deferLoadingAlpine(function () {
+        window.Alpine.start();
+      });
+    } else {
+      window.Alpine.start();
+    }
   }
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../../process/browser.js */ "./node_modules/process/browser.js")))
