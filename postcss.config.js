@@ -18,7 +18,7 @@ module.exports = {
     isProduction ? require('cssnano')({
       preset: 'default',
     }) : null,
-    isProduction || shouldPurge ? purgecss({
+    isProduction ? purgecss({
       content: ['./**/*.twig'],
       whitelist: FireConfig.PURGE_CSS_WHITELIST,
       whitelistPatterns: FireConfig.PURGE_CSS_WHITELIST_PATTERNS,
