@@ -7,6 +7,9 @@ module.exports = plugin(function({ addVariant, e, postcss }) {
     container.append(supportsRule);
     supportsRule.walkRules((rule) => {
       rule.selector = `.${e(`ie${separator}${rule.selector.slice(1)}`)}`;
+      rule.walkDecls((decl) => {
+        decl.important = true;
+      });
     });
   });
 });
