@@ -1,53 +1,32 @@
 button {
-  @apply cursor-pointer;
+  @apply transition-all duration-200 cursor-pointer;
+
+  &:focus {
+    @apply outline-none;
+    box-shadow: 0px 0px 0px 2px theme(colors.accent.500);
+  }
 }
 
 .button {
   @apply px-4 py-2;
   @apply rounded;
-  @apply text-sm font-bold text-white no-underline;
+  @apply text-sm font-bold no-underline;
   @apply transition-all duration-200 cursor-pointer;
 
   &:focus {
     outline: none;
   }
 
-  &--primary {
-    @apply bg-primary;
+  &-primary {
+    @apply bg-primary-500;
 
     &:hover,
     &:active {
-      background: var(--color-primary-dark);
+      @apply bg-primary-700;
     }
 
     &:focus {
-      box-shadow: 0px 0px 0px 2px var(--color-primary-light);
-    }
-  }
-
-  &--secondary {
-    @apply bg-secondary;
-
-    &:hover,
-    &:active {
-      background: var(--color-secondary-dark);
-    }
-
-    &:focus {
-      box-shadow: 0px 0px 0px 2px var(--color-secondary-light);
-    }
-  }
-
-  &--accent {
-    @apply bg-accent;
-
-    &:hover,
-    &:active {
-      background: var(--color-accent-dark);
-    }
-
-    &:focus {
-      box-shadow: 0px 0px 0px 2px var(--color-accent-dark);
+      box-shadow: 0px 0px 0px 2px theme(colors.primary.700);
     }
   }
 }
