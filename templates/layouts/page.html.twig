@@ -43,8 +43,11 @@
  * @see html.html.twig
  */
 #}
-{% include "@fire/components/site-header/site-header.html.twig" %}
-<main class="flex-grow">
-  {{ page.content }}
-</main>
-{% include "@fire/components/site-footer/site-footer.html.twig" %}
+<div class="{{ is_front ? 'is-front' }} flex flex-col min-h-screen">
+  <a class="absolute top-auto w-px h-px overflow-hidden text-lg text-center text-white no-underline bg-black skip-to-main" href="#site-main">Skip to main content</a>
+  {% include "@fire/components/site-header/site-header.html.twig" %}
+  <main id="site-main" class="flex-grow focus:outline-none" tabindex="-1">
+    {{ page.content }}
+  </main>
+  {% include "@fire/components/site-footer/site-footer.html.twig" %}
+</div>
