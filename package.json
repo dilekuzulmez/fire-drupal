@@ -28,20 +28,20 @@
     "postcss-nested": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.19.1",
-    "tailwind-css-variables": "^2.0.3",
+    "tailwindcss-aspect-ratio": "^3.0.0",
+    "tailwindcss-filters": "^3.0.0",
     "url-loader": "^1.1.2",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "alpinejs": "^2.1.2",
+    "alpinejs": "^2.2.5",
     "balance-text": "^3.3.0",
     "core-js": "^3.1.2",
     "intersection-observer": "^0.7.0",
     "lodash": "^4.17.15",
     "lozad": "^1.14.0",
-    "tailwindcss": "^1.2.0",
-    "tailwindcss-aspect-ratio": "^3.0.0"
+    "tailwindcss": "^1.2.0"
   }
 }
