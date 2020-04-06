@@ -9,13 +9,20 @@ module.exports = {
     require('postcss-import'),
     require('postcss-nested'),
     require('tailwindcss'),
-    require('postcss-preset-env')({ stage: 1 }),
+    require('postcss-preset-env')({
+      stage: 1,
+      features: {
+        'focus-within-pseudo-class': false
+      }
+    }),
     isProduction ? require('cssnano')({
       preset: 'default',
     }) : null,
     isProduction ? purgecss({
       content: ['./**/*.twig'],
       whitelist: FireConfig.PURGE_CSS_WHITELIST,
+      whitelistPatterns: FireConfig.PURGE_CSS_WHITELIST_PATTERNS,
+      whitelistPatternsChildren: FireConfig.PURGE_CSS_WHITELIST_PATTERNS_CHILDREN,
       defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
     }) : null
   ]

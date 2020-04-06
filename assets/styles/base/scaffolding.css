@@ -5,3 +5,7 @@ img {
 pre {
   @apply bg-gray-100 p-2 rounded-lg text-sm text-gray-800;
 }
+
+hr {
+  @apply my-6;
+}

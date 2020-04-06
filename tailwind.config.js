@@ -20,15 +20,15 @@ module.exports = {
       white: '#fff',
 
       gray: {
-        100: '#f7fafc',
-        200: '#edf2f7',
-        300: '#e2e8f0',
-        400: '#cbd5e0',
-        500: '#a0aec0',
-        600: '#718096',
-        700: '#4a5568',
-        800: '#2d3748',
-        900: '#1a202c',
+        100: '#F5F5F5',
+        200: '#E7E7E7',
+        300: '#D8D8D8',
+        400: '#BBBBBB',
+        500: '#9E9E9E',
+        600: '#8E8E8E',
+        700: '#5F5F5F',
+        800: '#474747',
+        900: '#2F2F2F',
       },
       red: {
         100: '#fff5f5',
@@ -53,13 +53,43 @@ module.exports = {
         900: '#22543d',
       },
 
-      primary: '#37b57b',
-      secondary: '#695b8e',
-      accent: '#ba95e8',
+      primary: {
+        100: '#EBF8F2',
+        200: '#CDEDDE',
+        300: '#AFE1CA',
+        400: '#73CBA3',
+        500: '#37B57B',
+        600: '#32A36F',
+        700: '#216D4A',
+        800: '#195137',
+        900: '#113625',
+      },
+      secondary: {
+        100: '#F0EFF4',
+        200: '#DAD6E3',
+        300: '#C3BDD2',
+        400: '#968CB0',
+        500: '#695B8E',
+        600: '#5F5280',
+        700: '#3F3755',
+        800: '#2F2940',
+        900: '#201B2B',
+      },
+      accent: {
+        100: '#F8F4FD',
+        200: '#EEE5F9',
+        300: '#E3D5F6',
+        400: '#CFB5EF',
+        500: '#BA95E8',
+        600: '#A786D1',
+        700: '#70598B',
+        800: '#544368',
+        900: '#382D46',
+      },
     },
     boxShadow: {
-      default: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
       none: 'none',
+      400: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
     },
     container: {
       center: true,
@@ -94,6 +124,22 @@ module.exports = {
       medium: '500',
       bold: '700',
     },
+    fontSize: {
+      xs: '0.75rem', // 12px
+      sm: '0.875rem', // 14px
+      base: '1rem', // 16px
+      lg: '1.125rem', // 18px
+      xl: '1.25rem', // 20px
+      '2xl': '1.5rem', // 24px
+      '3xl': '1.625rem', // 26px
+      '4xl': '1.75rem', // 28px,
+      '5xl': '2.125rem', // 34px
+      '6xl': '2.25rem', // 36px
+      '7xl': '3.125rem', // 50px
+      '8xl': '3.625rem', // 58px
+      '9xl': '4.375rem', // 70px
+      '10xl': '7rem', // 112px
+    },
     aspectRatio: {
       none: 0,
       square: [1, 1],
@@ -101,8 +147,16 @@ module.exports = {
       '4/3': [4, 3],
       '21/9': [21, 9],
     },
+    filter: {
+      none: 'none',
+    },
+    backdropFilter: {
+      none: 'none',
+    },
     extend: {
       spacing: {
+        '14': '3.5rem',
+
         'gap-0': '0',
         'gap-xs': '1.25rem',
         'gap-sm': '2rem',
@@ -110,18 +164,50 @@ module.exports = {
         'gap-lg': '5rem',
         'gap-xl': '8rem',
       },
+      borderWidth: {
+        1: '1px',
+      },
+      padding: {
+        '18': '4.5rem',
+      },
+      maxHeight: {
+        0: '0',
+      },
+      zIndex: {
+        '-1': '-1',
+      },
+      opacity: {
+        10: '.10',
+        20: '.20',
+        30: '.30',
+        40: '.40',
+        50: '.50',
+        60: '.60',
+        70: '.70',
+        90: '.90',
+        90: '.90',
+      },
+      inset: {
+        full: '100%',
+        '1/2': '50%',
+        '-1/2': '-50%',
+      },
     },
   },
   variants: {
     display: ['responsive', 'ie'],
+    opacity: ['responsive', 'hover', 'focus', 'focus-within', 'group-hover'],
+    textColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    maxHeight: ['responsive', 'hover', 'focus', 'group-hover'],
+    aspectRatio: ['responsive'],
+    width: ['responsive', 'ie'],
+    height: ['responsive', 'ie'],
+    filter: ['group-hover'],
+    backdropFilter: ['group-hover'],
+    scale: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+    position: ['responsive', 'ie'],
   },
   corePlugins: {},
-  plugins: [
-    require('tailwindcss-aspect-ratio'),
-    require('./.tailwind/plugins/colors'),
-    require('tailwind-css-variables')({
-      colors: 'color',
-    }),
-    require('./.tailwind/plugins/ie'),
-  ],
+  plugins: [require('tailwindcss-aspect-ratio'), require('tailwindcss-filters'), require('./.tailwind/plugins/ie')],
 };

@@ -1,6 +1,7 @@
 .form-required {
   &::after {
-    @apply text-red-400 ml-1;
+    @apply ml-1;
+    @apply text-red-400;
     content: '*';
   }
 }
@@ -10,27 +11,82 @@
   @apply flex flex-col mb-4;
 
   .description {
-    @apply text-sm mt-1 italic;
+    @apply mt-1;
+    @apply text-sm italic;
   }
 }
 
 .form-input-label {
-  @apply mb-2 font-bold;
+  @apply mb-2;
+  @apply font-bold text-sm;
 }
 
 .form-input,
-.form-select {
-  @apply appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight bg-white;
+.form-select,
+.form-textarea {
+  @apply w-full py-2 px-3;
+  @apply text-gray-800 leading-tight;
+  @apply appearance-none border border-gray-300 rounded bg-white;
+
+  &:focus {
+    @apply outline-none;
+    box-shadow: 0px 0px 0px 2px theme(colors.secondary.500);
+  }
 }
 
-.form-input {
-}
-
 .form-select {
+  @apply bg-no-repeat;
   background-image: url(/themes/fire/assets/media/svgs/icon--chevron-down.svg);
   background-position: right 10px center;
-  background-repeat: no-repeat;
   background-size: 15px 15px;
+}
+
+textarea.form-input,
+.form-textarea {
+  min-height: 7rem;
+}
+
+.form-type-checkbox {
+  @apply relative;
+  @apply block;
+
+  .form-checkbox {
+    @apply absolute -z-1;
+    @apply opacity-0;
+
+    &:checked ~ .form-input-label:before {
+      @apply bg-primary-500 border-primary-500;
+    }
+  }
+
+  .form-input-label {
+    @apply relative;
+    @apply inline-block mb-0 align-top;
+    @apply text-base antialiased font-normal leading-normal text-gray-700 font-body;
+
+    &:before,
+    &:after {
+      @apply top-0;
+      content: '';
+      height: 20px;
+      width: 20px;
+      left: -29px;
+    }
+
+    &:before {
+      @appl absolute;
+      @apply block;
+      @apply border-2 border-gray-500 rounded-sm;
+      @apply pointer-events-none;
+    }
+
+    &:after {
+      @apply absolute;
+      @apply block;
+      background: no-repeat 50% / 50% 50%;
+      background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' data-prefix='fas' data-icon='check' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='svg-inline--fa fa-check fa-w-16 fa-9x'%3E%3Cpath fill='%23fff' d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z'/%3E%3C/svg%3E");
+    }
+  }
 }
 
 .image-widget {
@@ -39,6 +95,11 @@
   .button {
     @apply ml-3;
   }
+}
+
+.webform-flexbox {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 /* Removes Chrome autofill yellow */
