@@ -1,15 +1,7 @@
 /*! purgecss start ignore */
 .status-messages {
-  ul {
-    @apply list-disc list-inside;
-  }
-
   pre {
     @apply mt-3;
-  }
-
-  .icon--times {
-    @apply w-4 h-4;
   }
 }
 /*! purgecss end ignore */
