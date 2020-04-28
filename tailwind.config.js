@@ -142,8 +142,6 @@ module.exports = {
     },
     extend: {
       spacing: {
-        unset: 'unset',
-
         '13': '3.25rem',
         '14': '3.5rem',
         '17': '4.25rem',
@@ -158,6 +156,12 @@ module.exports = {
       },
       maxHeight: {
         0: '0',
+      },
+      width: {
+        unset: 'unset',
+      },
+      height: {
+        unset: 'unset',
       },
       borderWidth: {
         1: '1px',
