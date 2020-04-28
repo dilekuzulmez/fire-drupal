@@ -1,3 +1,4 @@
+/*! purgecss start ignore */
 .ajax-progress.ajax-progress-fullscreen {
   @apply fixed top-0 left-0;
   @apply w-full h-full flex items-center justify-center;
@@ -17,3 +18,4 @@
     background-image: url(/themes/fire/assets/media/svgs/spinner.svg);
   }
 }
+/*! purgecss end ignore */

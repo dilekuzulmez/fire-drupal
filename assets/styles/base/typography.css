@@ -1,3 +1,4 @@
+/*! purgecss start ignore */
 html,
 body {
   @apply font-body text-gray-900 text-base leading-normal font-normal antialiased;
@@ -60,3 +61,4 @@ h6 {
 .heading-6 {
   @apply text-base;
 }
+/*! purgecss end ignore */
