@@ -10,7 +10,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-body leading-tight;
+  @apply font-body;
 }
 
 h1 {
@@ -37,62 +37,26 @@ h6 {
   @apply text-base;
 }
 
-.display-1 {
-  @apply text-10xl leading-none;
-
-  @screen mdd {
-    @apply text-9xl;
-  }
-
-  @screen smd {
-    @apply text-8xl;
-  }
-}
-
-.display-2 {
-  @apply text-9xl leading-tight;
-}
-
-.display-3 {
-  @apply text-8xl leading-tight;
-
-  @screen lgd {
-    @apply text-5xl;
-  }
-}
-
-.display-4 {
-  @apply text-7xl leading-tight;
-}
-
-.display-5 {
-  @apply text-6xl leading-tight;
-}
-
-.display-6 {
-  @apply text-5xl leading-tight;
-}
-
 .heading-1 {
-  @apply text-4xl leading-tight;
+  @apply text-4xl;
 }
 
 .heading-2 {
-  @apply text-3xl leading-tight;
+  @apply text-3xl;
 }
 
 .heading-3 {
-  @apply text-2xl leading-tight;
+  @apply text-2xl;
 }
 
 .heading-4 {
-  @apply text-xl leading-tight;
+  @apply text-xl;
 }
 
 .heading-5 {
-  @apply text-lg leading-tight;
+  @apply text-lg;
 }
 
 .heading-6 {
-  @apply text-base leading-tight;
+  @apply text-base;
 }

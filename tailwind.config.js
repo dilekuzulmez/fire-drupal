@@ -125,20 +125,15 @@ module.exports = {
       bold: '700',
     },
     fontSize: {
-      xs: '0.75rem', // 12px
-      sm: '0.875rem', // 14px
-      base: '1rem', // 16px
-      lg: '1.125rem', // 18px
-      xl: '1.25rem', // 20px
-      '2xl': '1.5rem', // 24px
-      '3xl': '1.625rem', // 26px
-      '4xl': '1.75rem', // 28px,
-      '5xl': '2.125rem', // 34px
-      '6xl': '2.25rem', // 36px
-      '7xl': '3.125rem', // 50px
-      '8xl': '3.625rem', // 58px
-      '9xl': '4.375rem', // 70px
-      '10xl': '7rem', // 112px
+      xs: ['0.75rem', '1rem'], // 12px
+      sm: ['0.875rem', '1rem'], // 14px
+      base: ['1rem', '1.25rem'], // 16px
+      lg: ['1.125rem', '1.5rem'], // 18px
+      xl: ['1.25rem', '1.5rem'], // 20px
+      '2xl': ['1.5rem', '1.75rem'], // 24px
+      '3xl': ['1.625rem', '1.75rem'], // 26px
+      '4xl': ['1.75rem', '2.125rem'], // 28px,
+      '5xl': ['2.125rem', '2.5rem'], // 34px
     },
     aspectRatio: {
       none: 0,
