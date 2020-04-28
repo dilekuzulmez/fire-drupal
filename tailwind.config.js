@@ -89,7 +89,7 @@ module.exports = {
     },
     boxShadow: {
       none: 'none',
-      400: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+      500: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
     },
     container: {
       center: true,
@@ -99,24 +99,10 @@ module.exports = {
       default: 'default',
       pointer: 'pointer',
       'not-allowed': 'not-allowed',
+      move: 'move',
     },
     fontFamily: {
-      body: [
-        '"Open Sans"',
-        'system-ui',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        '"Noto Sans"',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
-      ],
+      body: ['Open Sans', 'Arial', 'sans-serif'],
     },
     fontWeight: {
       light: '300',
@@ -138,9 +124,15 @@ module.exports = {
     aspectRatio: {
       none: 0,
       square: [1, 1],
-      '16/9': [16, 9],
-      '4/3': [4, 3],
       '21/9': [21, 9],
+      '16/9': [16, 9],
+      '16/5': [16, 5],
+      '4/3': [4, 3],
+      '5/3': [5, 3],
+      '5/4': [5, 4],
+      '4/5': [4, 5],
+      '3/2': [3, 2],
+      '3/4': [3, 4],
     },
     filter: {
       none: 'none',
@@ -150,7 +142,12 @@ module.exports = {
     },
     extend: {
       spacing: {
+        unset: 'unset',
+
+        '13': '3.25rem',
         '14': '3.5rem',
+        '17': '4.25rem',
+        '18': '4.5rem',
 
         'gap-0': '0',
         'gap-xs': '1.25rem',
@@ -159,14 +156,11 @@ module.exports = {
         'gap-lg': '5rem',
         'gap-xl': '8rem',
       },
-      borderWidth: {
-        1: '1px',
-      },
-      padding: {
-        '18': '4.5rem',
-      },
       maxHeight: {
         0: '0',
+      },
+      borderWidth: {
+        1: '1px',
       },
       zIndex: {
         '-1': '-1',
