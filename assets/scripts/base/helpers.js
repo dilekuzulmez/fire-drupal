@@ -242,12 +242,7 @@ export function shuffle(array) {
  *
  **/
 export function generateUniqueId() {
-  return shuffle(
-    btoa(Math.random())
-      .toLowerCase()
-      .replace(/=/, '')
-      .split('')
-  ).join('');
+  return shuffle(btoa(Math.random()).toLowerCase().replace(/=/, '').split('')).join('');
 }
 
 /**
@@ -288,7 +283,7 @@ export function addScript(attribute, text, callback) {
  * @return {Void}
  *
  **/
-export function convertSourceToSVG(target, url, color, classes, id) {
+export function convertSourceToSVG(target, url, color, classes) {
   const fileExtension = url.split('.').pop();
 
   if (fileExtension !== 'svg') return;
@@ -296,22 +291,10 @@ export function convertSourceToSVG(target, url, color, classes, id) {
   $.get(url, (data) => {
     let $svg = $(data).find('svg');
 
-    // re-appends id
-    if (id) {
-      $svg.attr('id', id);
-    }
-
     // re-appends classes
     if (classes) {
       $svg.attr('class', classes);
     }
-
-    // Generates unqiue IDs for SVGs
-    const ids = $svg.find('[id]');
-    ids.each((index, id) => {
-      const currentId = $(id).attr('id');
-      $(id).attr('id', currentId + generateUniqueId());
-    });
 
     // manually sets viewBox so SVG can be scaled
     if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {

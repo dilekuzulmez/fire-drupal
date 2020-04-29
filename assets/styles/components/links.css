@@ -1,20 +1,17 @@
+/*! purgecss start ignore */
 a {
   @apply text-primary-500 underline;
   @apply transition-all duration-200 cursor-pointer;
 
   &:focus {
-    @apply outline-none;
-    box-shadow: 0px 0px 0px 2px theme(colors.accent.500);
+    outline: thin dotted theme(colors.accent.400);
   }
 }
 
 .link {
   @apply inline-flex items-center;
   @apply font-body text-lg tracking-wide leading-none no-underline;
-
-  &:focus {
-    @apply shadow-none underline;
-  }
+  @apply transition-all duration-200 cursor-pointer;
 
   svg {
     @apply w-4;
@@ -37,3 +34,4 @@ a {
     }
   }
 }
+/*! purgecss end ignore */

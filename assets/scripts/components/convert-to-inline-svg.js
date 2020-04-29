@@ -15,11 +15,7 @@ export class ConvertToInlineSvg extends FireComponent {
   }
 
   get url() {
-    return this.$component.attr('src');
-  }
-
-  get id() {
-    return this.$component.attr('id');
+    return this.$component.attr('data-src');
   }
 
   get classes() {
@@ -32,6 +28,6 @@ export class ConvertToInlineSvg extends FireComponent {
 
   init() {
     if (!this.componentExists) return;
-    FireHelpers.convertSourceToSVG(this.$component, this.url, this.color, this.classes, this.id);
+    FireHelpers.convertSourceToSVG(this.$component, this.url, this.color, this.classes);
   }
 }

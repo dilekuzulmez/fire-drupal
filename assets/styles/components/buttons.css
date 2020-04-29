@@ -1,9 +1,10 @@
+/*! purgecss start ignore */
 button {
+  @apply cursor-pointer;
   @apply transition-all duration-200 cursor-pointer;
 
   &:focus {
-    @apply outline-none;
-    box-shadow: 0px 0px 0px 2px theme(colors.accent.500);
+    outline: thin dotted theme(colors.gray.500);
   }
 }
 
@@ -30,3 +31,4 @@ button {
     }
   }
 }
+/*! purgecss end ignore */
