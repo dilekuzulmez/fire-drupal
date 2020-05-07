@@ -141,6 +141,9 @@ module.exports = {
       none: 'none',
     },
     extend: {
+      screens: {
+        ie: { raw: 'all and (-ms-high-contrast: none), (-ms-high-contrast: active)' },
+      },
       spacing: {
         '13': '3.25rem',
         '14': '3.5rem',
@@ -188,19 +191,19 @@ module.exports = {
     },
   },
   variants: {
-    display: ['responsive', 'ie'],
+    display: ['responsive'],
     opacity: ['responsive', 'hover', 'focus', 'focus-within', 'group-hover'],
     textColor: ['responsive', 'hover', 'focus', 'group-hover'],
     backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
     maxHeight: ['responsive', 'hover', 'focus', 'group-hover'],
     aspectRatio: ['responsive'],
-    width: ['responsive', 'ie'],
-    height: ['responsive', 'ie'],
+    width: ['responsive'],
+    height: ['responsive'],
     filter: ['group-hover'],
     backdropFilter: ['group-hover'],
     scale: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
-    position: ['responsive', 'ie'],
+    position: ['responsive'],
   },
   corePlugins: {},
-  plugins: [require('tailwindcss-aspect-ratio'), require('tailwindcss-filters'), require('./.tailwind/plugins/ie')],
+  plugins: [require('tailwindcss-aspect-ratio'), require('tailwindcss-filters')],
 };
