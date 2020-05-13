@@ -7066,6 +7066,10 @@ div.ipe-actions-block.ipe-actions {
   opacity: 0.75;
 }
 
+.opacity-80 {
+  opacity: .80;
+}
+
 .opacity-90 {
   opacity: .90;
 }
@@ -7112,6 +7116,10 @@ div.ipe-actions-block.ipe-actions {
 
 .hover\:opacity-75:hover {
   opacity: 0.75;
+}
+
+.hover\:opacity-80:hover {
+  opacity: .80;
 }
 
 .hover\:opacity-90:hover {
@@ -7162,6 +7170,10 @@ div.ipe-actions-block.ipe-actions {
   opacity: 0.75;
 }
 
+.focus\:opacity-80:focus {
+  opacity: .80;
+}
+
 .focus\:opacity-90:focus {
   opacity: .90;
 }
@@ -7210,6 +7222,10 @@ div.ipe-actions-block.ipe-actions {
   opacity: 0.75;
 }
 
+.focus-within\:opacity-80:focus-within {
+  opacity: .80;
+}
+
 .focus-within\:opacity-90:focus-within {
   opacity: .90;
 }
@@ -7256,6 +7272,10 @@ div.ipe-actions-block.ipe-actions {
 
 .group:hover .group-hover\:opacity-75 {
   opacity: 0.75;
+}
+
+.group:hover .group-hover\:opacity-80 {
+  opacity: .80;
 }
 
 .group:hover .group-hover\:opacity-90 {
@@ -22648,6 +22668,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .smd\:opacity-80 {
+    opacity: .80;
+  }
+
   .smd\:opacity-90 {
     opacity: .90;
   }
@@ -22694,6 +22718,10 @@ div.ipe-actions-block.ipe-actions {
 
   .smd\:hover\:opacity-75:hover {
     opacity: 0.75;
+  }
+
+  .smd\:hover\:opacity-80:hover {
+    opacity: .80;
   }
 
   .smd\:hover\:opacity-90:hover {
@@ -22744,6 +22772,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .smd\:focus\:opacity-80:focus {
+    opacity: .80;
+  }
+
   .smd\:focus\:opacity-90:focus {
     opacity: .90;
   }
@@ -22792,6 +22824,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .smd\:focus-within\:opacity-80:focus-within {
+    opacity: .80;
+  }
+
   .smd\:focus-within\:opacity-90:focus-within {
     opacity: .90;
   }
@@ -22838,6 +22874,10 @@ div.ipe-actions-block.ipe-actions {
 
   .group:hover .smd\:group-hover\:opacity-75 {
     opacity: 0.75;
+  }
+
+  .group:hover .smd\:group-hover\:opacity-80 {
+    opacity: .80;
   }
 
   .group:hover .smd\:group-hover\:opacity-90 {
@@ -38211,6 +38251,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .mdd\:opacity-80 {
+    opacity: .80;
+  }
+
   .mdd\:opacity-90 {
     opacity: .90;
   }
@@ -38257,6 +38301,10 @@ div.ipe-actions-block.ipe-actions {
 
   .mdd\:hover\:opacity-75:hover {
     opacity: 0.75;
+  }
+
+  .mdd\:hover\:opacity-80:hover {
+    opacity: .80;
   }
 
   .mdd\:hover\:opacity-90:hover {
@@ -38307,6 +38355,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .mdd\:focus\:opacity-80:focus {
+    opacity: .80;
+  }
+
   .mdd\:focus\:opacity-90:focus {
     opacity: .90;
   }
@@ -38355,6 +38407,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .mdd\:focus-within\:opacity-80:focus-within {
+    opacity: .80;
+  }
+
   .mdd\:focus-within\:opacity-90:focus-within {
     opacity: .90;
   }
@@ -38401,6 +38457,10 @@ div.ipe-actions-block.ipe-actions {
 
   .group:hover .mdd\:group-hover\:opacity-75 {
     opacity: 0.75;
+  }
+
+  .group:hover .mdd\:group-hover\:opacity-80 {
+    opacity: .80;
   }
 
   .group:hover .mdd\:group-hover\:opacity-90 {
@@ -53774,6 +53834,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .lgd\:opacity-80 {
+    opacity: .80;
+  }
+
   .lgd\:opacity-90 {
     opacity: .90;
   }
@@ -53820,6 +53884,10 @@ div.ipe-actions-block.ipe-actions {
 
   .lgd\:hover\:opacity-75:hover {
     opacity: 0.75;
+  }
+
+  .lgd\:hover\:opacity-80:hover {
+    opacity: .80;
   }
 
   .lgd\:hover\:opacity-90:hover {
@@ -53870,6 +53938,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .lgd\:focus\:opacity-80:focus {
+    opacity: .80;
+  }
+
   .lgd\:focus\:opacity-90:focus {
     opacity: .90;
   }
@@ -53918,6 +53990,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .lgd\:focus-within\:opacity-80:focus-within {
+    opacity: .80;
+  }
+
   .lgd\:focus-within\:opacity-90:focus-within {
     opacity: .90;
   }
@@ -53964,6 +54040,10 @@ div.ipe-actions-block.ipe-actions {
 
   .group:hover .lgd\:group-hover\:opacity-75 {
     opacity: 0.75;
+  }
+
+  .group:hover .lgd\:group-hover\:opacity-80 {
+    opacity: .80;
   }
 
   .group:hover .lgd\:group-hover\:opacity-90 {
@@ -69337,6 +69417,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .xld\:opacity-80 {
+    opacity: .80;
+  }
+
   .xld\:opacity-90 {
     opacity: .90;
   }
@@ -69383,6 +69467,10 @@ div.ipe-actions-block.ipe-actions {
 
   .xld\:hover\:opacity-75:hover {
     opacity: 0.75;
+  }
+
+  .xld\:hover\:opacity-80:hover {
+    opacity: .80;
   }
 
   .xld\:hover\:opacity-90:hover {
@@ -69433,6 +69521,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .xld\:focus\:opacity-80:focus {
+    opacity: .80;
+  }
+
   .xld\:focus\:opacity-90:focus {
     opacity: .90;
   }
@@ -69481,6 +69573,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .xld\:focus-within\:opacity-80:focus-within {
+    opacity: .80;
+  }
+
   .xld\:focus-within\:opacity-90:focus-within {
     opacity: .90;
   }
@@ -69527,6 +69623,10 @@ div.ipe-actions-block.ipe-actions {
 
   .group:hover .xld\:group-hover\:opacity-75 {
     opacity: 0.75;
+  }
+
+  .group:hover .xld\:group-hover\:opacity-80 {
+    opacity: .80;
   }
 
   .group:hover .xld\:group-hover\:opacity-90 {
@@ -84900,6 +85000,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .sm\:opacity-80 {
+    opacity: .80;
+  }
+
   .sm\:opacity-90 {
     opacity: .90;
   }
@@ -84946,6 +85050,10 @@ div.ipe-actions-block.ipe-actions {
 
   .sm\:hover\:opacity-75:hover {
     opacity: 0.75;
+  }
+
+  .sm\:hover\:opacity-80:hover {
+    opacity: .80;
   }
 
   .sm\:hover\:opacity-90:hover {
@@ -84996,6 +85104,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .sm\:focus\:opacity-80:focus {
+    opacity: .80;
+  }
+
   .sm\:focus\:opacity-90:focus {
     opacity: .90;
   }
@@ -85044,6 +85156,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .sm\:focus-within\:opacity-80:focus-within {
+    opacity: .80;
+  }
+
   .sm\:focus-within\:opacity-90:focus-within {
     opacity: .90;
   }
@@ -85090,6 +85206,10 @@ div.ipe-actions-block.ipe-actions {
 
   .group:hover .sm\:group-hover\:opacity-75 {
     opacity: 0.75;
+  }
+
+  .group:hover .sm\:group-hover\:opacity-80 {
+    opacity: .80;
   }
 
   .group:hover .sm\:group-hover\:opacity-90 {
@@ -100463,6 +100583,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .md\:opacity-80 {
+    opacity: .80;
+  }
+
   .md\:opacity-90 {
     opacity: .90;
   }
@@ -100509,6 +100633,10 @@ div.ipe-actions-block.ipe-actions {
 
   .md\:hover\:opacity-75:hover {
     opacity: 0.75;
+  }
+
+  .md\:hover\:opacity-80:hover {
+    opacity: .80;
   }
 
   .md\:hover\:opacity-90:hover {
@@ -100559,6 +100687,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .md\:focus\:opacity-80:focus {
+    opacity: .80;
+  }
+
   .md\:focus\:opacity-90:focus {
     opacity: .90;
   }
@@ -100607,6 +100739,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .md\:focus-within\:opacity-80:focus-within {
+    opacity: .80;
+  }
+
   .md\:focus-within\:opacity-90:focus-within {
     opacity: .90;
   }
@@ -100653,6 +100789,10 @@ div.ipe-actions-block.ipe-actions {
 
   .group:hover .md\:group-hover\:opacity-75 {
     opacity: 0.75;
+  }
+
+  .group:hover .md\:group-hover\:opacity-80 {
+    opacity: .80;
   }
 
   .group:hover .md\:group-hover\:opacity-90 {
@@ -116026,6 +116166,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .lg\:opacity-80 {
+    opacity: .80;
+  }
+
   .lg\:opacity-90 {
     opacity: .90;
   }
@@ -116072,6 +116216,10 @@ div.ipe-actions-block.ipe-actions {
 
   .lg\:hover\:opacity-75:hover {
     opacity: 0.75;
+  }
+
+  .lg\:hover\:opacity-80:hover {
+    opacity: .80;
   }
 
   .lg\:hover\:opacity-90:hover {
@@ -116122,6 +116270,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .lg\:focus\:opacity-80:focus {
+    opacity: .80;
+  }
+
   .lg\:focus\:opacity-90:focus {
     opacity: .90;
   }
@@ -116170,6 +116322,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .lg\:focus-within\:opacity-80:focus-within {
+    opacity: .80;
+  }
+
   .lg\:focus-within\:opacity-90:focus-within {
     opacity: .90;
   }
@@ -116216,6 +116372,10 @@ div.ipe-actions-block.ipe-actions {
 
   .group:hover .lg\:group-hover\:opacity-75 {
     opacity: 0.75;
+  }
+
+  .group:hover .lg\:group-hover\:opacity-80 {
+    opacity: .80;
   }
 
   .group:hover .lg\:group-hover\:opacity-90 {
@@ -131589,6 +131749,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .xl\:opacity-80 {
+    opacity: .80;
+  }
+
   .xl\:opacity-90 {
     opacity: .90;
   }
@@ -131635,6 +131799,10 @@ div.ipe-actions-block.ipe-actions {
 
   .xl\:hover\:opacity-75:hover {
     opacity: 0.75;
+  }
+
+  .xl\:hover\:opacity-80:hover {
+    opacity: .80;
   }
 
   .xl\:hover\:opacity-90:hover {
@@ -131685,6 +131853,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .xl\:focus\:opacity-80:focus {
+    opacity: .80;
+  }
+
   .xl\:focus\:opacity-90:focus {
     opacity: .90;
   }
@@ -131733,6 +131905,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .xl\:focus-within\:opacity-80:focus-within {
+    opacity: .80;
+  }
+
   .xl\:focus-within\:opacity-90:focus-within {
     opacity: .90;
   }
@@ -131779,6 +131955,10 @@ div.ipe-actions-block.ipe-actions {
 
   .group:hover .xl\:group-hover\:opacity-75 {
     opacity: 0.75;
+  }
+
+  .group:hover .xl\:group-hover\:opacity-80 {
+    opacity: .80;
   }
 
   .group:hover .xl\:group-hover\:opacity-90 {
@@ -147152,6 +147332,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .ie\:opacity-80 {
+    opacity: .80;
+  }
+
   .ie\:opacity-90 {
     opacity: .90;
   }
@@ -147198,6 +147382,10 @@ div.ipe-actions-block.ipe-actions {
 
   .ie\:hover\:opacity-75:hover {
     opacity: 0.75;
+  }
+
+  .ie\:hover\:opacity-80:hover {
+    opacity: .80;
   }
 
   .ie\:hover\:opacity-90:hover {
@@ -147248,6 +147436,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .ie\:focus\:opacity-80:focus {
+    opacity: .80;
+  }
+
   .ie\:focus\:opacity-90:focus {
     opacity: .90;
   }
@@ -147296,6 +147488,10 @@ div.ipe-actions-block.ipe-actions {
     opacity: 0.75;
   }
 
+  .ie\:focus-within\:opacity-80:focus-within {
+    opacity: .80;
+  }
+
   .ie\:focus-within\:opacity-90:focus-within {
     opacity: .90;
   }
@@ -147342,6 +147538,10 @@ div.ipe-actions-block.ipe-actions {
 
   .group:hover .ie\:group-hover\:opacity-75 {
     opacity: 0.75;
+  }
+
+  .group:hover .ie\:group-hover\:opacity-80 {
+    opacity: .80;
   }
 
   .group:hover .ie\:group-hover\:opacity-90 {
