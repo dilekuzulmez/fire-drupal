@@ -3,7 +3,7 @@ img {
 }
 
 pre {
-  @apply bg-gray-100 p-2 rounded-lg text-sm text-gray-800;
+  @apply bg-gray-100 p-2 rounded-lg text-14 text-gray-800;
 }
 
 hr {

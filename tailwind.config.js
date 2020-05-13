@@ -12,6 +12,7 @@ module.exports = {
       md: '768px',
       lg: '992px',
       xl: '1200px',
+      ie: { raw: 'all and (-ms-high-contrast: none), (-ms-high-contrast: active)' },
     },
     colors: {
       transparent: 'transparent',
@@ -111,15 +112,15 @@ module.exports = {
       bold: '700',
     },
     fontSize: {
-      xs: ['0.75rem', '1rem'], // 12px
-      sm: ['0.875rem', '1rem'], // 14px
-      base: ['1rem', '1.25rem'], // 16px
-      lg: ['1.125rem', '1.5rem'], // 18px
-      xl: ['1.25rem', '1.5rem'], // 20px
-      '2xl': ['1.5rem', '1.75rem'], // 24px
-      '3xl': ['1.625rem', '1.75rem'], // 26px
-      '4xl': ['1.75rem', '2.125rem'], // 28px,
-      '5xl': ['2.125rem', '2.5rem'], // 34px
+      12: ['0.75rem', '1rem'], // 12px
+      14: ['0.875rem', '1rem'], // 14px
+      16: ['1rem', '1.25rem'], // 16px
+      18: ['1.125rem', '1.5rem'], // 18px
+      20: ['1.25rem', '1.5rem'], // 20px
+      24: ['1.5rem', '1.75rem'], // 24px
+      26: ['1.625rem', '1.75rem'], // 26px
+      28: ['1.75rem', '2.125rem'], // 28px,
+      34: ['2.125rem', '2.5rem'], // 34px
     },
     aspectRatio: {
       none: 0,
@@ -141,9 +142,6 @@ module.exports = {
       none: 'none',
     },
     extend: {
-      screens: {
-        ie: { raw: 'all and (-ms-high-contrast: none), (-ms-high-contrast: active)' },
-      },
       spacing: {
         '13': '3.25rem',
         '14': '3.5rem',
@@ -183,11 +181,9 @@ module.exports = {
         90: '.90',
         90: '.90',
       },
-      inset: {
-        full: '100%',
-        '1/2': '50%',
-        '-1/2': '-50%',
-      },
+      inset: (theme) => ({
+        ...theme('width'),
+      }),
     },
   },
   variants: {

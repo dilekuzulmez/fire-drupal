@@ -7,7 +7,7 @@
 
 .user-pass {
   > p {
-    @apply text-sm mb-4 italic;
+    @apply text-14 mb-4 italic;
     margin-top: -0.75rem;
   }
 }

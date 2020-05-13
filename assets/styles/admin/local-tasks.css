@@ -12,7 +12,7 @@
     @apply list-none flex;
 
     li {
-      @apply text-sm text-xs px-2;
+      @apply text-14 px-2;
 
       a {
         @apply font-bold text-white no-underline;

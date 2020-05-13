@@ -11,7 +11,7 @@ button {
 .button {
   @apply px-4 py-2;
   @apply rounded;
-  @apply text-sm font-bold no-underline;
+  @apply text-14 font-bold no-underline;
   @apply transition-all duration-200 cursor-pointer;
 
   &:focus {
