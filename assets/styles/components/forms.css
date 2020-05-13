@@ -13,13 +13,13 @@
 
   .description {
     @apply mt-1;
-    @apply text-sm italic;
+    @apply text-16 italic;
   }
 }
 
 .form-input-label {
   @apply mb-2;
-  @apply font-bold text-sm;
+  @apply font-bold text-16;
 }
 
 .form-input,
@@ -63,7 +63,7 @@ textarea.form-input,
   .form-input-label {
     @apply relative;
     @apply inline-block mb-0 align-top;
-    @apply text-base antialiased font-normal leading-normal text-gray-700 font-body;
+    @apply text-16 antialiased font-normal leading-normal text-gray-700 font-body;
 
     &:before,
     &:after {
@@ -106,7 +106,7 @@ textarea.form-input,
 /* Removes Chrome autofill yellow */
 @-webkit-keyframes autofill {
   to {
-    @apply text-black text-white;
+    @apply text-black bg-white;
   }
 }
 

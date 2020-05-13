@@ -1,7 +1,7 @@
 /*! purgecss start ignore */
 html,
 body {
-  @apply font-body text-gray-900 text-base leading-normal font-normal antialiased;
+  @apply font-body text-gray-900 text-16 leading-normal font-normal antialiased;
   text-rendering: optimizeLegibility;
 }
 
@@ -15,50 +15,50 @@ h6 {
 }
 
 h1 {
-  @apply text-4xl;
+  @apply text-34;
 }
 
 h2 {
-  @apply text-3xl;
+  @apply text-28;
 }
 
 h3 {
-  @apply text-2xl;
+  @apply text-26;
 }
 
 h4 {
-  @apply text-xl;
+  @apply text-24;
 }
 
 h5 {
-  @apply text-lg;
+  @apply text-20;
 }
 
 h6 {
-  @apply text-base;
+  @apply text-18;
 }
 
 .heading-1 {
-  @apply text-4xl;
+  @apply text-34;
 }
 
 .heading-2 {
-  @apply text-3xl;
+  @apply text-28;
 }
 
 .heading-3 {
-  @apply text-2xl;
+  @apply text-26;
 }
 
 .heading-4 {
-  @apply text-xl;
+  @apply text-24;
 }
 
 .heading-5 {
-  @apply text-lg;
+  @apply text-20;
 }
 
 .heading-6 {
-  @apply text-base;
+  @apply text-18;
 }
 /*! purgecss end ignore */
