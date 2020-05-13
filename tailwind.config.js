@@ -160,6 +160,8 @@ module.exports = {
       },
       width: {
         unset: 'unset',
+        '1/2vw': '50vw',
+        '-1/2vw': '-50vw',
       },
       height: {
         unset: 'unset',

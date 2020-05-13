@@ -10486,6 +10486,20 @@ div.ipe-actions-block.ipe-actions {
   left: unset;
 }
 
+.inset-1\/2vw {
+  top: 50vw;
+  right: 50vw;
+  bottom: 50vw;
+  left: 50vw;
+}
+
+.-inset-1\/2vw {
+  top: -50vw;
+  right: -50vw;
+  bottom: -50vw;
+  left: -50vw;
+}
+
 .inset-y-0 {
   top: 0;
   bottom: 0;
@@ -11074,6 +11088,26 @@ div.ipe-actions-block.ipe-actions {
 .inset-x-unset {
   right: unset;
   left: unset;
+}
+
+.inset-y-1\/2vw {
+  top: 50vw;
+  bottom: 50vw;
+}
+
+.inset-x-1\/2vw {
+  right: 50vw;
+  left: 50vw;
+}
+
+.-inset-y-1\/2vw {
+  top: -50vw;
+  bottom: -50vw;
+}
+
+.-inset-x-1\/2vw {
+  right: -50vw;
+  left: -50vw;
 }
 
 .top-0 {
@@ -12018,6 +12052,38 @@ div.ipe-actions-block.ipe-actions {
 
 .left-unset {
   left: unset;
+}
+
+.top-1\/2vw {
+  top: 50vw;
+}
+
+.right-1\/2vw {
+  right: 50vw;
+}
+
+.bottom-1\/2vw {
+  bottom: 50vw;
+}
+
+.left-1\/2vw {
+  left: 50vw;
+}
+
+.-top-1\/2vw {
+  top: -50vw;
+}
+
+.-right-1\/2vw {
+  right: -50vw;
+}
+
+.-bottom-1\/2vw {
+  bottom: -50vw;
+}
+
+.-left-1\/2vw {
+  left: -50vw;
 }
 
 .resize-none {
@@ -13439,6 +13505,14 @@ div.ipe-actions-block.ipe-actions {
 
 .w-unset {
   width: unset;
+}
+
+.w-1\/2vw {
+  width: 50vw;
+}
+
+.w--1\/2vw {
+  width: -50vw;
 }
 
 .z-0 {
@@ -26088,6 +26162,20 @@ div.ipe-actions-block.ipe-actions {
     left: unset;
   }
 
+  .smd\:inset-1\/2vw {
+    top: 50vw;
+    right: 50vw;
+    bottom: 50vw;
+    left: 50vw;
+  }
+
+  .smd\:-inset-1\/2vw {
+    top: -50vw;
+    right: -50vw;
+    bottom: -50vw;
+    left: -50vw;
+  }
+
   .smd\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -26676,6 +26764,26 @@ div.ipe-actions-block.ipe-actions {
   .smd\:inset-x-unset {
     right: unset;
     left: unset;
+  }
+
+  .smd\:inset-y-1\/2vw {
+    top: 50vw;
+    bottom: 50vw;
+  }
+
+  .smd\:inset-x-1\/2vw {
+    right: 50vw;
+    left: 50vw;
+  }
+
+  .smd\:-inset-y-1\/2vw {
+    top: -50vw;
+    bottom: -50vw;
+  }
+
+  .smd\:-inset-x-1\/2vw {
+    right: -50vw;
+    left: -50vw;
   }
 
   .smd\:top-0 {
@@ -27620,6 +27728,38 @@ div.ipe-actions-block.ipe-actions {
 
   .smd\:left-unset {
     left: unset;
+  }
+
+  .smd\:top-1\/2vw {
+    top: 50vw;
+  }
+
+  .smd\:right-1\/2vw {
+    right: 50vw;
+  }
+
+  .smd\:bottom-1\/2vw {
+    bottom: 50vw;
+  }
+
+  .smd\:left-1\/2vw {
+    left: 50vw;
+  }
+
+  .smd\:-top-1\/2vw {
+    top: -50vw;
+  }
+
+  .smd\:-right-1\/2vw {
+    right: -50vw;
+  }
+
+  .smd\:-bottom-1\/2vw {
+    bottom: -50vw;
+  }
+
+  .smd\:-left-1\/2vw {
+    left: -50vw;
   }
 
   .smd\:resize-none {
@@ -29041,6 +29181,14 @@ div.ipe-actions-block.ipe-actions {
 
   .smd\:w-unset {
     width: unset;
+  }
+
+  .smd\:w-1\/2vw {
+    width: 50vw;
+  }
+
+  .smd\:w--1\/2vw {
+    width: -50vw;
   }
 
   .smd\:z-0 {
@@ -41671,6 +41819,20 @@ div.ipe-actions-block.ipe-actions {
     left: unset;
   }
 
+  .mdd\:inset-1\/2vw {
+    top: 50vw;
+    right: 50vw;
+    bottom: 50vw;
+    left: 50vw;
+  }
+
+  .mdd\:-inset-1\/2vw {
+    top: -50vw;
+    right: -50vw;
+    bottom: -50vw;
+    left: -50vw;
+  }
+
   .mdd\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -42259,6 +42421,26 @@ div.ipe-actions-block.ipe-actions {
   .mdd\:inset-x-unset {
     right: unset;
     left: unset;
+  }
+
+  .mdd\:inset-y-1\/2vw {
+    top: 50vw;
+    bottom: 50vw;
+  }
+
+  .mdd\:inset-x-1\/2vw {
+    right: 50vw;
+    left: 50vw;
+  }
+
+  .mdd\:-inset-y-1\/2vw {
+    top: -50vw;
+    bottom: -50vw;
+  }
+
+  .mdd\:-inset-x-1\/2vw {
+    right: -50vw;
+    left: -50vw;
   }
 
   .mdd\:top-0 {
@@ -43203,6 +43385,38 @@ div.ipe-actions-block.ipe-actions {
 
   .mdd\:left-unset {
     left: unset;
+  }
+
+  .mdd\:top-1\/2vw {
+    top: 50vw;
+  }
+
+  .mdd\:right-1\/2vw {
+    right: 50vw;
+  }
+
+  .mdd\:bottom-1\/2vw {
+    bottom: 50vw;
+  }
+
+  .mdd\:left-1\/2vw {
+    left: 50vw;
+  }
+
+  .mdd\:-top-1\/2vw {
+    top: -50vw;
+  }
+
+  .mdd\:-right-1\/2vw {
+    right: -50vw;
+  }
+
+  .mdd\:-bottom-1\/2vw {
+    bottom: -50vw;
+  }
+
+  .mdd\:-left-1\/2vw {
+    left: -50vw;
   }
 
   .mdd\:resize-none {
@@ -44624,6 +44838,14 @@ div.ipe-actions-block.ipe-actions {
 
   .mdd\:w-unset {
     width: unset;
+  }
+
+  .mdd\:w-1\/2vw {
+    width: 50vw;
+  }
+
+  .mdd\:w--1\/2vw {
+    width: -50vw;
   }
 
   .mdd\:z-0 {
@@ -57254,6 +57476,20 @@ div.ipe-actions-block.ipe-actions {
     left: unset;
   }
 
+  .lgd\:inset-1\/2vw {
+    top: 50vw;
+    right: 50vw;
+    bottom: 50vw;
+    left: 50vw;
+  }
+
+  .lgd\:-inset-1\/2vw {
+    top: -50vw;
+    right: -50vw;
+    bottom: -50vw;
+    left: -50vw;
+  }
+
   .lgd\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -57842,6 +58078,26 @@ div.ipe-actions-block.ipe-actions {
   .lgd\:inset-x-unset {
     right: unset;
     left: unset;
+  }
+
+  .lgd\:inset-y-1\/2vw {
+    top: 50vw;
+    bottom: 50vw;
+  }
+
+  .lgd\:inset-x-1\/2vw {
+    right: 50vw;
+    left: 50vw;
+  }
+
+  .lgd\:-inset-y-1\/2vw {
+    top: -50vw;
+    bottom: -50vw;
+  }
+
+  .lgd\:-inset-x-1\/2vw {
+    right: -50vw;
+    left: -50vw;
   }
 
   .lgd\:top-0 {
@@ -58786,6 +59042,38 @@ div.ipe-actions-block.ipe-actions {
 
   .lgd\:left-unset {
     left: unset;
+  }
+
+  .lgd\:top-1\/2vw {
+    top: 50vw;
+  }
+
+  .lgd\:right-1\/2vw {
+    right: 50vw;
+  }
+
+  .lgd\:bottom-1\/2vw {
+    bottom: 50vw;
+  }
+
+  .lgd\:left-1\/2vw {
+    left: 50vw;
+  }
+
+  .lgd\:-top-1\/2vw {
+    top: -50vw;
+  }
+
+  .lgd\:-right-1\/2vw {
+    right: -50vw;
+  }
+
+  .lgd\:-bottom-1\/2vw {
+    bottom: -50vw;
+  }
+
+  .lgd\:-left-1\/2vw {
+    left: -50vw;
   }
 
   .lgd\:resize-none {
@@ -60207,6 +60495,14 @@ div.ipe-actions-block.ipe-actions {
 
   .lgd\:w-unset {
     width: unset;
+  }
+
+  .lgd\:w-1\/2vw {
+    width: 50vw;
+  }
+
+  .lgd\:w--1\/2vw {
+    width: -50vw;
   }
 
   .lgd\:z-0 {
@@ -72837,6 +73133,20 @@ div.ipe-actions-block.ipe-actions {
     left: unset;
   }
 
+  .xld\:inset-1\/2vw {
+    top: 50vw;
+    right: 50vw;
+    bottom: 50vw;
+    left: 50vw;
+  }
+
+  .xld\:-inset-1\/2vw {
+    top: -50vw;
+    right: -50vw;
+    bottom: -50vw;
+    left: -50vw;
+  }
+
   .xld\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -73425,6 +73735,26 @@ div.ipe-actions-block.ipe-actions {
   .xld\:inset-x-unset {
     right: unset;
     left: unset;
+  }
+
+  .xld\:inset-y-1\/2vw {
+    top: 50vw;
+    bottom: 50vw;
+  }
+
+  .xld\:inset-x-1\/2vw {
+    right: 50vw;
+    left: 50vw;
+  }
+
+  .xld\:-inset-y-1\/2vw {
+    top: -50vw;
+    bottom: -50vw;
+  }
+
+  .xld\:-inset-x-1\/2vw {
+    right: -50vw;
+    left: -50vw;
   }
 
   .xld\:top-0 {
@@ -74369,6 +74699,38 @@ div.ipe-actions-block.ipe-actions {
 
   .xld\:left-unset {
     left: unset;
+  }
+
+  .xld\:top-1\/2vw {
+    top: 50vw;
+  }
+
+  .xld\:right-1\/2vw {
+    right: 50vw;
+  }
+
+  .xld\:bottom-1\/2vw {
+    bottom: 50vw;
+  }
+
+  .xld\:left-1\/2vw {
+    left: 50vw;
+  }
+
+  .xld\:-top-1\/2vw {
+    top: -50vw;
+  }
+
+  .xld\:-right-1\/2vw {
+    right: -50vw;
+  }
+
+  .xld\:-bottom-1\/2vw {
+    bottom: -50vw;
+  }
+
+  .xld\:-left-1\/2vw {
+    left: -50vw;
   }
 
   .xld\:resize-none {
@@ -75790,6 +76152,14 @@ div.ipe-actions-block.ipe-actions {
 
   .xld\:w-unset {
     width: unset;
+  }
+
+  .xld\:w-1\/2vw {
+    width: 50vw;
+  }
+
+  .xld\:w--1\/2vw {
+    width: -50vw;
   }
 
   .xld\:z-0 {
@@ -88420,6 +88790,20 @@ div.ipe-actions-block.ipe-actions {
     left: unset;
   }
 
+  .sm\:inset-1\/2vw {
+    top: 50vw;
+    right: 50vw;
+    bottom: 50vw;
+    left: 50vw;
+  }
+
+  .sm\:-inset-1\/2vw {
+    top: -50vw;
+    right: -50vw;
+    bottom: -50vw;
+    left: -50vw;
+  }
+
   .sm\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -89008,6 +89392,26 @@ div.ipe-actions-block.ipe-actions {
   .sm\:inset-x-unset {
     right: unset;
     left: unset;
+  }
+
+  .sm\:inset-y-1\/2vw {
+    top: 50vw;
+    bottom: 50vw;
+  }
+
+  .sm\:inset-x-1\/2vw {
+    right: 50vw;
+    left: 50vw;
+  }
+
+  .sm\:-inset-y-1\/2vw {
+    top: -50vw;
+    bottom: -50vw;
+  }
+
+  .sm\:-inset-x-1\/2vw {
+    right: -50vw;
+    left: -50vw;
   }
 
   .sm\:top-0 {
@@ -89952,6 +90356,38 @@ div.ipe-actions-block.ipe-actions {
 
   .sm\:left-unset {
     left: unset;
+  }
+
+  .sm\:top-1\/2vw {
+    top: 50vw;
+  }
+
+  .sm\:right-1\/2vw {
+    right: 50vw;
+  }
+
+  .sm\:bottom-1\/2vw {
+    bottom: 50vw;
+  }
+
+  .sm\:left-1\/2vw {
+    left: 50vw;
+  }
+
+  .sm\:-top-1\/2vw {
+    top: -50vw;
+  }
+
+  .sm\:-right-1\/2vw {
+    right: -50vw;
+  }
+
+  .sm\:-bottom-1\/2vw {
+    bottom: -50vw;
+  }
+
+  .sm\:-left-1\/2vw {
+    left: -50vw;
   }
 
   .sm\:resize-none {
@@ -91373,6 +91809,14 @@ div.ipe-actions-block.ipe-actions {
 
   .sm\:w-unset {
     width: unset;
+  }
+
+  .sm\:w-1\/2vw {
+    width: 50vw;
+  }
+
+  .sm\:w--1\/2vw {
+    width: -50vw;
   }
 
   .sm\:z-0 {
@@ -104003,6 +104447,20 @@ div.ipe-actions-block.ipe-actions {
     left: unset;
   }
 
+  .md\:inset-1\/2vw {
+    top: 50vw;
+    right: 50vw;
+    bottom: 50vw;
+    left: 50vw;
+  }
+
+  .md\:-inset-1\/2vw {
+    top: -50vw;
+    right: -50vw;
+    bottom: -50vw;
+    left: -50vw;
+  }
+
   .md\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -104591,6 +105049,26 @@ div.ipe-actions-block.ipe-actions {
   .md\:inset-x-unset {
     right: unset;
     left: unset;
+  }
+
+  .md\:inset-y-1\/2vw {
+    top: 50vw;
+    bottom: 50vw;
+  }
+
+  .md\:inset-x-1\/2vw {
+    right: 50vw;
+    left: 50vw;
+  }
+
+  .md\:-inset-y-1\/2vw {
+    top: -50vw;
+    bottom: -50vw;
+  }
+
+  .md\:-inset-x-1\/2vw {
+    right: -50vw;
+    left: -50vw;
   }
 
   .md\:top-0 {
@@ -105535,6 +106013,38 @@ div.ipe-actions-block.ipe-actions {
 
   .md\:left-unset {
     left: unset;
+  }
+
+  .md\:top-1\/2vw {
+    top: 50vw;
+  }
+
+  .md\:right-1\/2vw {
+    right: 50vw;
+  }
+
+  .md\:bottom-1\/2vw {
+    bottom: 50vw;
+  }
+
+  .md\:left-1\/2vw {
+    left: 50vw;
+  }
+
+  .md\:-top-1\/2vw {
+    top: -50vw;
+  }
+
+  .md\:-right-1\/2vw {
+    right: -50vw;
+  }
+
+  .md\:-bottom-1\/2vw {
+    bottom: -50vw;
+  }
+
+  .md\:-left-1\/2vw {
+    left: -50vw;
   }
 
   .md\:resize-none {
@@ -106956,6 +107466,14 @@ div.ipe-actions-block.ipe-actions {
 
   .md\:w-unset {
     width: unset;
+  }
+
+  .md\:w-1\/2vw {
+    width: 50vw;
+  }
+
+  .md\:w--1\/2vw {
+    width: -50vw;
   }
 
   .md\:z-0 {
@@ -119586,6 +120104,20 @@ div.ipe-actions-block.ipe-actions {
     left: unset;
   }
 
+  .lg\:inset-1\/2vw {
+    top: 50vw;
+    right: 50vw;
+    bottom: 50vw;
+    left: 50vw;
+  }
+
+  .lg\:-inset-1\/2vw {
+    top: -50vw;
+    right: -50vw;
+    bottom: -50vw;
+    left: -50vw;
+  }
+
   .lg\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -120174,6 +120706,26 @@ div.ipe-actions-block.ipe-actions {
   .lg\:inset-x-unset {
     right: unset;
     left: unset;
+  }
+
+  .lg\:inset-y-1\/2vw {
+    top: 50vw;
+    bottom: 50vw;
+  }
+
+  .lg\:inset-x-1\/2vw {
+    right: 50vw;
+    left: 50vw;
+  }
+
+  .lg\:-inset-y-1\/2vw {
+    top: -50vw;
+    bottom: -50vw;
+  }
+
+  .lg\:-inset-x-1\/2vw {
+    right: -50vw;
+    left: -50vw;
   }
 
   .lg\:top-0 {
@@ -121118,6 +121670,38 @@ div.ipe-actions-block.ipe-actions {
 
   .lg\:left-unset {
     left: unset;
+  }
+
+  .lg\:top-1\/2vw {
+    top: 50vw;
+  }
+
+  .lg\:right-1\/2vw {
+    right: 50vw;
+  }
+
+  .lg\:bottom-1\/2vw {
+    bottom: 50vw;
+  }
+
+  .lg\:left-1\/2vw {
+    left: 50vw;
+  }
+
+  .lg\:-top-1\/2vw {
+    top: -50vw;
+  }
+
+  .lg\:-right-1\/2vw {
+    right: -50vw;
+  }
+
+  .lg\:-bottom-1\/2vw {
+    bottom: -50vw;
+  }
+
+  .lg\:-left-1\/2vw {
+    left: -50vw;
   }
 
   .lg\:resize-none {
@@ -122539,6 +123123,14 @@ div.ipe-actions-block.ipe-actions {
 
   .lg\:w-unset {
     width: unset;
+  }
+
+  .lg\:w-1\/2vw {
+    width: 50vw;
+  }
+
+  .lg\:w--1\/2vw {
+    width: -50vw;
   }
 
   .lg\:z-0 {
@@ -135169,6 +135761,20 @@ div.ipe-actions-block.ipe-actions {
     left: unset;
   }
 
+  .xl\:inset-1\/2vw {
+    top: 50vw;
+    right: 50vw;
+    bottom: 50vw;
+    left: 50vw;
+  }
+
+  .xl\:-inset-1\/2vw {
+    top: -50vw;
+    right: -50vw;
+    bottom: -50vw;
+    left: -50vw;
+  }
+
   .xl\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -135757,6 +136363,26 @@ div.ipe-actions-block.ipe-actions {
   .xl\:inset-x-unset {
     right: unset;
     left: unset;
+  }
+
+  .xl\:inset-y-1\/2vw {
+    top: 50vw;
+    bottom: 50vw;
+  }
+
+  .xl\:inset-x-1\/2vw {
+    right: 50vw;
+    left: 50vw;
+  }
+
+  .xl\:-inset-y-1\/2vw {
+    top: -50vw;
+    bottom: -50vw;
+  }
+
+  .xl\:-inset-x-1\/2vw {
+    right: -50vw;
+    left: -50vw;
   }
 
   .xl\:top-0 {
@@ -136701,6 +137327,38 @@ div.ipe-actions-block.ipe-actions {
 
   .xl\:left-unset {
     left: unset;
+  }
+
+  .xl\:top-1\/2vw {
+    top: 50vw;
+  }
+
+  .xl\:right-1\/2vw {
+    right: 50vw;
+  }
+
+  .xl\:bottom-1\/2vw {
+    bottom: 50vw;
+  }
+
+  .xl\:left-1\/2vw {
+    left: 50vw;
+  }
+
+  .xl\:-top-1\/2vw {
+    top: -50vw;
+  }
+
+  .xl\:-right-1\/2vw {
+    right: -50vw;
+  }
+
+  .xl\:-bottom-1\/2vw {
+    bottom: -50vw;
+  }
+
+  .xl\:-left-1\/2vw {
+    left: -50vw;
   }
 
   .xl\:resize-none {
@@ -138122,6 +138780,14 @@ div.ipe-actions-block.ipe-actions {
 
   .xl\:w-unset {
     width: unset;
+  }
+
+  .xl\:w-1\/2vw {
+    width: 50vw;
+  }
+
+  .xl\:w--1\/2vw {
+    width: -50vw;
   }
 
   .xl\:z-0 {
@@ -150752,6 +151418,20 @@ div.ipe-actions-block.ipe-actions {
     left: unset;
   }
 
+  .ie\:inset-1\/2vw {
+    top: 50vw;
+    right: 50vw;
+    bottom: 50vw;
+    left: 50vw;
+  }
+
+  .ie\:-inset-1\/2vw {
+    top: -50vw;
+    right: -50vw;
+    bottom: -50vw;
+    left: -50vw;
+  }
+
   .ie\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -151340,6 +152020,26 @@ div.ipe-actions-block.ipe-actions {
   .ie\:inset-x-unset {
     right: unset;
     left: unset;
+  }
+
+  .ie\:inset-y-1\/2vw {
+    top: 50vw;
+    bottom: 50vw;
+  }
+
+  .ie\:inset-x-1\/2vw {
+    right: 50vw;
+    left: 50vw;
+  }
+
+  .ie\:-inset-y-1\/2vw {
+    top: -50vw;
+    bottom: -50vw;
+  }
+
+  .ie\:-inset-x-1\/2vw {
+    right: -50vw;
+    left: -50vw;
   }
 
   .ie\:top-0 {
@@ -152284,6 +152984,38 @@ div.ipe-actions-block.ipe-actions {
 
   .ie\:left-unset {
     left: unset;
+  }
+
+  .ie\:top-1\/2vw {
+    top: 50vw;
+  }
+
+  .ie\:right-1\/2vw {
+    right: 50vw;
+  }
+
+  .ie\:bottom-1\/2vw {
+    bottom: 50vw;
+  }
+
+  .ie\:left-1\/2vw {
+    left: 50vw;
+  }
+
+  .ie\:-top-1\/2vw {
+    top: -50vw;
+  }
+
+  .ie\:-right-1\/2vw {
+    right: -50vw;
+  }
+
+  .ie\:-bottom-1\/2vw {
+    bottom: -50vw;
+  }
+
+  .ie\:-left-1\/2vw {
+    left: -50vw;
   }
 
   .ie\:resize-none {
@@ -153705,6 +154437,14 @@ div.ipe-actions-block.ipe-actions {
 
   .ie\:w-unset {
     width: unset;
+  }
+
+  .ie\:w-1\/2vw {
+    width: 50vw;
+  }
+
+  .ie\:w--1\/2vw {
+    width: -50vw;
   }
 
   .ie\:z-0 {
