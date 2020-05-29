@@ -2,12 +2,10 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 
-/* base */
-@import './assets/styles/base/fonts';
-@import './assets/styles/base/scaffolding';
-@import './assets/styles/base/typography';
-
 /* global components */
+@import './assets/styles/components/fonts';
+@import './assets/styles/components/scaffolding';
+@import './assets/styles/components/typography';
 @import './assets/styles/components/ajax-progress';
 @import './assets/styles/components/buttons';
 @import './assets/styles/components/column-count';
@@ -28,7 +26,7 @@
 @import './templates/components/site-footer/site-footer';
 @import './templates/components/main-nav/main-nav';
 @import './templates/components/status-messages/status-messages';
-@import './templates/components/pagination/pagination';
+@import './templates/components/pager/pager';
 
 /* dependencies */
 @import 'tailwindcss/utilities';

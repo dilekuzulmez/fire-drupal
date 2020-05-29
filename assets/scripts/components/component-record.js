@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { FireHelpers } from '@base';
+import { generateUniqueId } from '@utility';
 import { SiteHeader } from '@template/components/site-header/site-header';
 
 /**
@@ -34,7 +34,7 @@ export class FireComponentRecord {
       names = names.split(', ');
 
       // generate a unique ID
-      const id = FireHelpers.generateUniqueId();
+      const id = generateUniqueId();
 
       for (const name of names) {
         this._registerComponent(component, name, id, afterBehaviorHit);

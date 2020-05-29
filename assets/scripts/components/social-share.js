@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-import { FireComponent, FireAnalytics } from '@base';
+import { FireComponent, FireAnalytics } from '@component';
 
 export class SocialShare extends FireComponent {
   constructor(id) {

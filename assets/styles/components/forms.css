@@ -1,4 +1,3 @@
-/*! purgecss start ignore */
 .form-required {
   &::after {
     @apply ml-1;
@@ -114,4 +113,3 @@ input:-webkit-autofill {
   -webkit-animation-name: autofill;
   -webkit-animation-fill-mode: both;
 }
-/*! purgecss end ignore */

@@ -1,4 +1,5 @@
-import { FireComponent, FireHelpers } from '@base';
+import { FireComponent } from '@component';
+import { convertSourceToSVG } from '@utility';
 
 /**
  * @type public
@@ -28,6 +29,6 @@ export class ConvertToInlineSvg extends FireComponent {
 
   init() {
     if (!this.componentExists) return;
-    FireHelpers.convertSourceToSVG(this.$component, this.url, this.color, this.classes);
+    convertSourceToSVG(this.$component, this.url, this.color, this.classes);
   }
 }

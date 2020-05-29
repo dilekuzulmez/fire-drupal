@@ -1,7 +1,17 @@
 // Default Config: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 
+const FireConfig = require('./fire.config');
+
 module.exports = {
   important: false,
+  purge: {
+    content: ['./templates/**/*.html.twig', './templates/**/*.js', './assets/**/*.js', './main.js'],
+    options: {
+      whitelist: FireConfig.PURGE_CSS_WHITELIST,
+      whitelistPatterns: FireConfig.PURGE_CSS_WHITELIST_PATTERNS,
+      whitelistPatternsChildren: FireConfig.PURGE_CSS_WHITELIST_PATTERNS_CHILDREN,
+    },
+  },
   theme: {
     screens: {
       smd: { max: '575px' },
@@ -171,6 +181,8 @@ module.exports = {
       },
       zIndex: {
         '-1': '-1',
+        10000: 10000,
+        10001: 10001,
       },
       opacity: {
         10: '.10',

@@ -1,8 +1,9 @@
 import $ from 'jquery';
-import '@base/polyfills';
+import '@component/polyfills';
 import 'alpinejs/dist/alpine-ie11';
 import balanceText from 'balance-text';
-import { FireDetect, FireComponentRecord, FireLazyLoader, FireHelpers } from '@base';
+import { FireLazyLoader, FireDetect, FireComponentRecord } from '@component';
+import { moveBootstrapModalsToBody, iOSFixDoubleTap, ignoreContext } from '@utility';
 
 const detect = new FireDetect();
 const componentRecord = new FireComponentRecord();
@@ -22,10 +23,10 @@ const onPageReady = () => {
   lazyLoader.init();
   lazyLoader.observer.observe();
   componentRecord.registerAllComponents();
-  FireHelpers.moveBootstrapModalsToBody();
+  moveBootstrapModalsToBody();
 
   if (detect.touch && (detect.platform === 'iPhone' || detect.platform === 'iPad')) {
-    FireHelpers.iOSFixDoubleTap();
+    iOSFixDoubleTap();
   }
 
   balanceText();
@@ -36,7 +37,7 @@ const onPageReady = () => {
   // global Drupal behaviors
   Drupal.behaviors.fireGlobal = {
     attach: (context, settings) => {
-      if (FireHelpers.ignoreContext(context, ['.toolbar-menu', '.status-messages'])) return;
+      if (ignoreContext(context, ['.toolbar-menu', '.status-messages'])) return;
       componentRecord.registerAllComponents(true);
       lazyLoader.observer.observe();
     },

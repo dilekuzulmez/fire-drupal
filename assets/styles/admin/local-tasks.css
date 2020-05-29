@@ -1,4 +1,3 @@
-/*! purgecss start ignore */
 #block-fire-local-tasks {
   @apply flex content-center max-w-full p-3 bg-black;
 
@@ -20,4 +19,3 @@
     }
   }
 }
-/*! purgecss end ignore */
