@@ -1,0 +1,22 @@
+img {
+  max-width: 100%;
+}
+
+pre {
+  @apply bg-gray-100 p-2 rounded-lg text-14 text-gray-800;
+}
+
+hr {
+  @apply my-6;
+}
+
+/* Code for Firefox */
+::-moz-selection {
+  @apply bg-primary-500;
+  @apply text-white;
+}
+
+::selection {
+  @apply bg-primary-500;
+  @apply text-white;
+}

@@ -1,12 +1,11 @@
-/* body.toolbar-fixed {
+body.toolbar-fixed {
   #toolbar-administration {
-    position: relative;
-    z-index: $z-index-admin-header;
+    @apply relative z-10000;
   }
 }
 
 #panels-ipe-tray {
-  z-index: $z-index-admin-header + 1;
+  @apply z-10001;
 
   .panels-ipe-tabs-open & {
     top: 40px;
@@ -14,31 +13,24 @@
 }
 
 .ipe-tab-content.active {
-  height: 100vh;
-  overflow: scroll;
+  @apply h-screen;
+  @apply overflow-scroll;
 }
 
 div.ipe-actions-block.ipe-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 30px;
+  @apply flex justify-between items-center py-2 px-8;
 
   .ipe-action-list {
-    display: flex;
-    align-items: center;
+    @apply flex items-center;
 
     li,
     a,
     span {
-      display: flex;
-      align-items: center;
-      height: 30px;
-      margin: 0;
+      @apply flex items-center m-0 h-8;
     }
 
     li {
-      margin-left: 10px;
+      @apply ml-3;
     }
   }
 }
@@ -49,19 +41,12 @@ div.ipe-actions-block.ipe-actions {
   }
 
   .ipe-tab {
-    &.active {
-      a {
-        color: $primary;
-        border: none;
-        border-bottom: 3px solid $primary;
-      }
-    }
-
+    &.active,
     &:hover {
       a {
-        color: $primary;
-        border: none;
-        border-bottom: 3px solid $primary;
+        @apply text-primary-500;
+        @apply border-none;
+        border-bottom: 3px solid theme(colors.primary.500);
       }
     }
   }
@@ -97,7 +82,7 @@ div.ipe-actions-block.ipe-actions {
       border: 0;
 
       &-item {
-        border: 1px solid $gray-400 !important;
+        border: 1px solid theme(colors.grays.500) !important;
       }
     }
 
@@ -105,4 +90,10 @@ div.ipe-actions-block.ipe-actions {
       margin-top: 20px;
     }
   }
-} */
+}
+
+.is-logged-in {
+  #drupal-live-announce {
+    @apply hidden;
+  }
+}

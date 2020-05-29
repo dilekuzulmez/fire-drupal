@@ -1,4 +1,3 @@
-/*! purgecss start ignore */
 .wizzy {
   .text-align-center {
     @apply text-center;
@@ -12,4 +11,3 @@
     @apply text-left;
   }
 }
-/*! purgecss end ignore */

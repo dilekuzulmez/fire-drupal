@@ -1,6 +1,3 @@
-const purgecss = require('@fullhuman/postcss-purgecss');
-const FireConfig = require('./fire.config');
-
 const isProduction = process.env.NODE_ENV === 'production';
 
 // prettier-ignore
@@ -18,12 +15,5 @@ module.exports = {
     isProduction ? require('cssnano')({
       preset: 'default',
     }) : null,
-    isProduction ? purgecss({
-      content: ['./**/*.twig'],
-      whitelist: FireConfig.PURGE_CSS_WHITELIST,
-      whitelistPatterns: FireConfig.PURGE_CSS_WHITELIST_PATTERNS,
-      whitelistPatternsChildren: FireConfig.PURGE_CSS_WHITELIST_PATTERNS_CHILDREN,
-      defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
-    }) : null
   ]
 };

@@ -1,7 +1,5 @@
-/*! purgecss start ignore */
 .status-messages {
   pre {
     @apply mt-3;
   }
 }
-/*! purgecss end ignore */
