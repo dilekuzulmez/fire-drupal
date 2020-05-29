@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-import { FireComponent } from '@base';
+import { FireComponent } from '@component';
 
 export class SiteHeader extends FireComponent {
   constructor(id) {

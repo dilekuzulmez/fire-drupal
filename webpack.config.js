@@ -8,8 +8,8 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 const aliases = {
   '@': path.resolve(__dirname, '.'),
-  '@base': path.resolve(__dirname, 'assets/scripts/base'),
   '@component': path.resolve(__dirname, 'assets/scripts/components'),
+  '@utility': path.resolve(__dirname, 'assets/scripts/utilities'),
   '@template': path.resolve(__dirname, 'templates'),
 };
 
