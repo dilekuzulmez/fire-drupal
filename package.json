@@ -41,6 +41,7 @@
     "intersection-observer": "^0.7.0",
     "lodash": "^4.17.15",
     "lozad": "^1.14.0",
-    "tailwindcss": "^1.4.6"
+    "tailwindcss": "^1.4.6",
+    "tailwindcss-responsive-embed": "^1.0.0"
   }
 }

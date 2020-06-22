@@ -215,5 +215,5 @@ module.exports = {
     position: ['responsive'],
   },
   corePlugins: {},
-  plugins: [require('tailwindcss-aspect-ratio'), require('tailwindcss-filters')],
+  plugins: [require('tailwindcss-aspect-ratio'), require('tailwindcss-responsive-embed'), require('tailwindcss-filters')],
 };
