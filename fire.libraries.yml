@@ -1,9 +1,14 @@
 styles:
   css:
+    base:
+      dist/tailwind-base.css: {}
+      dist/libraries.css: {}
     theme:
       dist/styles.css: {}
+      dist/tailwind-utilities: {}
 scripts:
   js:
+    dist/vendor.js: {}
     dist/scripts.js: {}
   dependencies:
     - core/drupal

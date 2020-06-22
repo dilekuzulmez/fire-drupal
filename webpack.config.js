@@ -48,13 +48,25 @@ const fontLoaders = [
 
 module.exports = {
   mode: isProduction === true ? 'production' : 'development',
-  entry: { styles: path.resolve(__dirname, `./main.css`), scripts: path.resolve(__dirname, `./main.js`) },
+  entry: {
+    base: path.resolve(__dirname, `./tailwind-base.css`),
+    base: path.resolve(__dirname, `./tailwind-utilities.css`),
+    base: path.resolve(__dirname, `./vendor.css`),
+    theme: path.resolve(__dirname, `./main.css`),
+    scripts: path.resolve(__dirname, `./main.js`),
+  },
   output: { path: FireConfig.DESTINATION_PATH, filename: '[name].js' },
   module: { rules: [...scriptLoaders, ...styleLoaders, ...fontLoaders] },
   resolve: { alias: aliases },
   devtool: 'source-map',
   externals: {
     jquery: 'jQuery',
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      name: 'vendor',
+    },
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -68,7 +80,7 @@ module.exports = {
       {
         proxy: FireConfig.PROXY_URL,
         port: process.env.PORT || FireConfig.DEFAULT_PORT,
-        files: [path.resolve(__dirname, '**/*.twig'), path.resolve(__dirname, '**/*.js'), path.resolve(__dirname, '**/*.css')],
+        files: FireConfig.watchedFiles,
         ghostMode: false,
       },
       { injectCss: true }
