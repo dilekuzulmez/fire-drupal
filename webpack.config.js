@@ -51,7 +51,7 @@ module.exports = {
   entry: {
     'tailwind-base': path.resolve(__dirname, `./theme/tailwind-base.css`),
     'tailwind-utilities': path.resolve(__dirname, `./theme/tailwind-utilities.css`),
-    // vendor: path.resolve(__dirname, `./theme/vendor.css`),
+    'css-vendor': path.resolve(__dirname, `./theme/vendor.css`),
     theme: path.resolve(__dirname, `./theme/theme.css`),
     scripts: path.resolve(__dirname, `./theme/main.js`),
   },
