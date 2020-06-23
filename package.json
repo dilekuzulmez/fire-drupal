@@ -27,8 +27,6 @@
     "postcss-nested": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.0.2",
-    "tailwindcss-aspect-ratio": "^3.0.0",
-    "tailwindcss-filters": "^3.0.0",
     "url-loader": "^4.0.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
@@ -41,6 +39,9 @@
     "intersection-observer": "^0.7.0",
     "lodash": "^4.17.15",
     "lozad": "^1.14.0",
-    "tailwindcss": "^1.4.6"
+    "tailwindcss": "^1.4.6",
+    "tailwindcss-aspect-ratio": "^3.0.0",
+    "tailwindcss-responsive-embed": "^1.0.0",
+    "tailwindcss-filters": "^3.0.0"
   }
 }
