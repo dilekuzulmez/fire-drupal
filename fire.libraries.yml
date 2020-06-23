@@ -2,10 +2,10 @@ styles:
   css:
     base:
       dist/tailwind-base.css: {}
-      dist/libraries.css: {}
+      dist/vendor.css: {}
     theme:
-      dist/styles.css: {}
-      dist/tailwind-utilities: {}
+      dist/theme.css: {}
+      dist/tailwind-utilities.css: {}
 scripts:
   js:
     dist/vendor.js: {}

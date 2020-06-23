@@ -8,9 +8,9 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 const aliases = {
   '@': path.resolve(__dirname, '.'),
-  '@component': path.resolve(__dirname, 'assets/scripts/components'),
-  '@utility': path.resolve(__dirname, 'assets/scripts/utilities'),
-  '@template': path.resolve(__dirname, 'templates'),
+  '@component': path.resolve(__dirname, 'theme/assets/scripts/components'),
+  '@utility': path.resolve(__dirname, 'theme/assets/scripts/utilities'),
+  '@template': path.resolve(__dirname, 'theme/templates'),
 };
 
 // prettier-ignore
@@ -49,11 +49,11 @@ const fontLoaders = [
 module.exports = {
   mode: isProduction === true ? 'production' : 'development',
   entry: {
-    base: path.resolve(__dirname, `./tailwind-base.css`),
-    base: path.resolve(__dirname, `./tailwind-utilities.css`),
-    base: path.resolve(__dirname, `./vendor.css`),
-    theme: path.resolve(__dirname, `./main.css`),
-    scripts: path.resolve(__dirname, `./main.js`),
+    'tailwind-base': path.resolve(__dirname, `./theme/tailwind-base.css`),
+    'tailwind-utilities': path.resolve(__dirname, `./theme/tailwind-utilities.css`),
+    // vendor: path.resolve(__dirname, `./theme/vendor.css`),
+    theme: path.resolve(__dirname, `./theme/theme.css`),
+    scripts: path.resolve(__dirname, `./theme/main.js`),
   },
   output: { path: FireConfig.DESTINATION_PATH, filename: '[name].js' },
   module: { rules: [...scriptLoaders, ...styleLoaders, ...fontLoaders] },
