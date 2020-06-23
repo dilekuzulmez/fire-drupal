@@ -5,7 +5,7 @@ const FireConfig = require('./fire.config');
 module.exports = {
   important: false,
   purge: {
-    content: ['./templates/**/*.html.twig', './templates/**/*.js', './assets/**/*.js', './main.js'],
+    content: ['./theme/templates/**/*.html.twig', './theme/templates/**/*.js', './theme/assets/**/*.js', './theme/main.js'],
     options: {
       whitelist: FireConfig.PURGE_CSS_WHITELIST,
       whitelistPatterns: FireConfig.PURGE_CSS_WHITELIST_PATTERNS,
