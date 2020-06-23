@@ -6,3 +6,7 @@ npm-debug.log
 
 dist/*.map
 dist/styles.js
+dist/tailwind-base.js
+dist/tailwind-utilities.js
+dist/vendor.js
+dist/theme.js
