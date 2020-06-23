@@ -8,4 +8,5 @@ dist/*.map
 dist/styles.js
 dist/tailwind-base.js
 dist/tailwind-utilities.js
+dist/css-vendor.js
 dist/theme.js
