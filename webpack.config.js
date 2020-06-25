@@ -80,7 +80,7 @@ module.exports = {
       {
         proxy: FireConfig.PROXY_URL,
         port: process.env.PORT || FireConfig.DEFAULT_PORT,
-        files: FireConfig.watchedFiles,
+        files: FireConfig.WATCHED_FILES,
         ghostMode: false,
       },
       { injectCss: true }
