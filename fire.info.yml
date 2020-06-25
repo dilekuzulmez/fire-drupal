@@ -14,8 +14,10 @@ libraries:
   - fire/styles
   - fire/scripts
 ckeditor_stylesheets:
-  - dist/vendor.css
+  - dist/css-vendor.css
+  - dist/tailwind-base.css
   - dist/theme.css
+  - dist/tailwind-utilities.css
 stylesheets-remove:
   - core/themes/stable/css/views/views.module.css
   - core/themes/stable/css/system/components/align.module.css
